@@ -1,0 +1,365 @@
+﻿capital = 500
+OOB = "BRA"
+set_research_slots = 3
+set_technology = {
+
+	### Navy ###
+	shipbuild_basics = 1
+	early_submarine = 1
+	early_destroyer = 1
+	early_light_cruiser = 1
+	early_battleship = 1
+	transport = 1
+	####Tanks ###
+	gwtank = 1
+	### INF ###
+	infantry_weapons = 1
+	tech_support = 1
+	tech_engineers = 1
+	gw_artillery = 1
+	### AIR ###
+	early_fighter = 1
+	naval_bomber1 = 1
+	CAS1 = 1
+
+}
+
+set_politics = {
+
+	parties = {
+		totalist = {
+			popularity = 0
+		}
+		radical_socialist = {
+			popularity = 2
+		}
+		syndicalist = {
+			popularity = 5
+		}
+		social_democrat = {
+			popularity = 9
+		}
+		social_liberal = {
+			popularity = 10
+		}
+		market_liberal = {
+			popularity = 12
+		}
+		social_conservative = {
+			popularity = 47
+		}
+		authoritarian_democrat = {
+			popularity = 8
+		}
+		paternal_autocrat = {
+			popularity = 5
+		}
+		national_populist = {
+			popularity = 2
+		}
+	}
+	
+	ruling_party = social_conservative
+	last_election = "1888.15.6"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_convoys = 50
+add_political_power = -60
+
+add_ideas = { 
+	#medium_economy
+	BRA_Fernando_de_Melo_Viana_hog_sco
+	BRA_Otavio_Mangabeira_for_sde
+	BRA_Washington_Luis_Pereira_eco_sco
+	BRA_Mario_de_Pimentel_Brandao_sec_sde
+	low_stability
+}
+
+create_country_leader = {
+	name = "Artur da Silva Bernardes"
+	desc = "POLITICS_ARTUR_BERNARDES_DESC"
+	picture = "Portrait_Brazil_Artur_Bernardes.tga"
+	expire = "1965.1.1"
+	ideology = social_conservative_subtype
+	traits = {}
+}
+create_country_leader = {
+	name = "Plínio Salgado"
+	desc = "POLITICS_PLINIO_SALGADO_DESC"
+	picture = "Portrait_KR_Brazil_Plinio_Salgado.tga"
+	expire = "1965.1.1"
+	ideology = national_populist_subtype
+	traits = {}
+}
+create_country_leader = {
+	name = "Getúlio Vargas"
+	desc = "POLITICS_GETULIO_VARGAS_DESC"
+	picture = "Portrait_KR_Brazil_Getulio_Vargas.tga"
+	expire = "1965.1.1"
+	ideology = paternal_autocrat_subtype
+	traits = {}
+}
+create_country_leader = {
+	name = "Multiple Leaders/Decentralized Movement"
+	desc = "POLITICS_LEADERS_DESC"
+	picture = "Portrait_Leaders.tga"
+	expire = "1965.1.1"
+	ideology = authoritarian_democrat_subtype
+	traits = {}
+}
+create_country_leader = {
+	name = "Júlio Prestes"
+	desc = "POLITICS_JULIO_PRESTES_DESC"
+	picture = "Portrait_Brazil_Julio_Prestes.tga"
+	expire = "1965.1.1"
+	ideology = market_liberal_subtype
+	traits = {}
+}
+
+create_country_leader = {
+	name = "Edgard Leuenroth"
+	desc = "POLITICS_EDGARD_LEUENROTH_DESC"
+	picture = "Portrait_Edgard_Leuenroth.tga"
+	expire = "1965.1.1"
+	ideology = radical_socialist_subtype
+	traits = {}
+}
+
+create_country_leader = {
+	name = "João Amazonas"
+	desc = "POLITICS_JOAO_AMAZONAS_DESC"
+	picture = "Portrait_João_Amazonas.tga"
+	expire = "1965.1.1"
+	ideology = totalist_subtype
+	traits = {}
+}
+
+	
+create_country_leader = {
+	name = "Minervino de Oliveira"
+	desc = "POLITICS_MINERVINO_OLIVEIRA_DESC"
+	picture = "Portrait_Minervino_Oliveira.tga"
+	expire = "1965.1.1"
+	ideology = syndicalist_subtype
+	traits = {}
+}
+
+create_country_leader = {
+	name = "Ernesto Dornelles"
+	desc = "POLITICS_JULIO_PRESTES_DESC"
+	picture = "Portrait_Brazil_Julio_Prestes.tga"
+	expire = "1965.1.1"
+	ideology = social_liberal_subtype
+	traits = {}
+}
+
+create_country_leader = {
+	name = "Ildo Meneghetti"
+	desc = "POLITICS_ILDO_MENEGHETTI_DESC"
+	picture = "Portrait_Brazil_Ildo_Meneghetti.tga"
+	expire = "1965.1.1"
+	ideology = social_democrat_subtype
+	traits = {}
+}
+
+
+### Field Marshal
+create_field_marshal = { #Auto-Generated
+	name = "Eurico Gaspar Dutra"
+	portrait_path = "gfx/leaders/BRA/Portrait_BRA_GEN_Gaspar_Dutra.tga"
+	traits = {
+	offensive_doctrine
+	}
+	skill = 2
+}
+
+### Corps Commander
+create_corps_commander = { #Auto-Generated
+	name = "Otavio Valgas Neves"
+	portrait_path = "gfx/leaders/BRA/Portrait_BRA_Valgas_Neves.tga"
+	traits = {
+		trait_engineer
+	}
+	skill = 1
+}
+
+create_corps_commander = {
+	name = "Mascarenhas de Morais"
+	portrait_path = "gfx/leaders/BRA/Portrait_BRA_GEN_Mascarenhas_Morais.tga"
+	traits = { fortress_buster trickster }
+	skill = 4
+}
+
+create_corps_commander = { #Auto-Generated
+	name = "Sezefredo Passos"
+	portrait_path = "gfx/leaders/BRA/Portrait_BRA_Sezefredo_Passos.tga"
+	traits = {
+	commando
+	}
+	skill = 2
+}
+
+create_corps_commander = { #Auto-Generated
+	name = "Euclides Zenóbio da Costa"
+	portrait_path = "gfx/leaders/BRA/Portrait_BRA_Zenobio_Costa.tga"
+	traits = {
+	}
+	skill = 1
+}
+
+create_corps_commander = { #Auto-Generated
+	name = "Newton Cavalcanti"
+	portrait_path = "gfx/leaders/BRA/Portrait_BRA_Newton_Cavalcanti.tga"
+	traits = {
+	}
+	skill = 2
+}
+
+create_corps_commander = { #Auto-Generated
+	name = "Euclides Figueiredo"
+	portrait_path = "gfx/leaders/BRA/Portrait_BRA_Euclides_Figueiredo.tga"
+	traits = {
+		old_guard
+		hill_fighter
+	}
+	skill = 2
+}
+
+create_corps_commander = { #Auto-Generated
+	name = "Castelo Branco"
+	portrait_path = "gfx/leaders/BRA/Portrait_BRA_Castelo_Branco.tga"
+	traits = {
+	 old_guard
+	}
+	skill = 1
+}
+
+create_corps_commander = { #Auto-Generated
+	name = "Góis Monteiro "
+	portrait_path = "gfx/leaders/BRA/Portrait_BRA_Gois_Monteiro.tga"
+	traits = {
+		panzer_leader
+	}
+	skill = 2
+}
+
+create_corps_commander = { #Auto-Generated
+	name = "Isidoro Dias Lopes"
+	portrait_path = "gfx/leaders/BRA/Portrait_BRA_Isidoro_Dias.tga"
+	traits = {
+	 old_guard
+	 urban_assault_specialist
+	}
+	skill = 2
+}
+
+create_corps_commander = { #Auto-Generated
+	name = "Setembrino de Carvalho"
+	portrait_path = "gfx/leaders/BRA/Portrait_BRA_Setembrino_Carvalho.tga"
+	traits = {
+		old_guard
+	}
+	skill = 1
+}
+
+create_corps_commander = { #Auto-Generated
+	name = "José Leite de Castro"
+	portrait_path = "gfx/leaders/BRA/Portrait_BRA_Jose_Leite.tga"
+	traits = {
+		old_guard
+	}
+	skill = 2
+}
+
+create_corps_commander = { #Auto-Generated
+	name = "Tertuliano Potiguara"
+	portrait_path = "gfx/leaders/BRA/Portrait_BRA_Tertuliano_Potiguara.tga"
+	traits = {
+		commando
+	}
+	skill = 3
+}
+
+create_corps_commander = { #Auto-Generated
+	name = "Newton Estillac Leal"
+	portrait_path = "gfx/leaders/BRA/Portrait_BRA_Estillac_Leal.tga"
+	traits = {
+	hill_fighter
+	}
+	skill = 2
+}
+
+create_corps_commander = { #Auto-Generated
+	name = "Bertoldo Klinger"
+	portrait_path = "gfx/leaders/BRA/Portrait_BRA_Bertoldo_Klinger.tga"
+	traits = {
+	}
+	skill = 1
+}
+
+### Navy Leader
+create_navy_leader = { #Auto-Generated
+	name = "Protógenes Guimarães"
+	portrait_path = "gfx/leaders/BRA/Portrait_BRA_Protogenes.tga"
+	traits = {
+		old_guard
+		seawolf
+	}
+	skill = 1
+}
+
+create_navy_leader = { #Auto-Generated
+	name = "Moraes Rego"
+	portrait_path = "gfx/leaders/BRA/Portrait_BRA_Moraes_Rego.tga"
+	traits = {
+	}
+	skill = 1
+}
+
+create_navy_leader = { #Auto-Generated
+	name = "Padilha"
+	portrait_path = "gfx/leaders/BRA/Portrait_BRA_Padilha.tga"
+	traits = {
+	}
+	skill = 2
+}
+
+create_navy_leader = { #Auto-Generated
+	name = "Peixoto"
+	portrait_path = "gfx/leaders/BRA/Portrait_BRA_Peixoto.tga"
+	traits = {
+		old_guard
+		spotter
+	}
+	skill = 1
+}
+
+create_navy_leader = { #Auto-Generated
+	name = "Simoes da Silva"
+	portrait_path = "gfx/leaders/BRA/Portrait_BRA_Simoes_da_Silva.tga"
+	traits = {
+		old_guard
+		superior_tactician
+	}
+	skill = 1
+}
+
+create_navy_leader = { #Auto-Generated
+	name = "Isaías de Noronha"
+	portrait_path = "gfx/leaders/BRA/Portrait_BRA_de_Noronha.tga"
+	traits = {
+	}
+	skill = 1
+}
+
+create_navy_leader = { #Auto-Generated
+	name = "Faria de Alencar"
+	portrait_path = "gfx/leaders/BRA/Portrait_BRA_Faria_de_Alencar.tga"
+	traits = {
+		old_guard
+		spotter
+	}
+	skill = 1
+}

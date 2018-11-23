@@ -1,0 +1,396 @@
+﻿capital = 291
+
+oob = "IRQ_1949"
+
+set_technology = {
+	CAS1 = 1
+	CAS2 = 1
+	CAS3 = 1
+	CAS4 = 1
+	advanced_destroyer = 1
+	advanced_rocket_engines = 1
+	amphibious1 = 1
+	antiair1 = 1
+	basic_carrier = 1
+	basic_destroyer = 1
+	basic_light_cruiser = 1
+	ww_production = 1
+	basic_submarine = 1
+	battle_cruiser_1 = 1
+	battleship_2 = 1
+	battleship_3 = 1
+	ww_construction = 1
+	cv_CAS1 = 1
+	cv_CAS2 = 1
+	cv_CAS3 = 1
+	cv_CAS4 = 1
+	cv_early_fighter = 1
+	cv_fighter1 = 1
+	cv_fighter2 = 1
+	cv_fighter3 = 1
+	cv_jet_multirole1 = 1
+	cv_jet_CAS1 = 1
+	cv_naval_bomber1 = 1
+	cv_naval_bomber2 = 1
+	cv_naval_bomber3 = 1
+	cv_naval_bomber4 = 1
+	early_battleship = 1
+	early_bomber = 1
+	early_carrier = 1
+	early_destroyer = 1
+	early_fighter = 1
+	early_light_cruiser = 1
+	early_submarine = 1
+	ww_pc = 1 
+	radio = 1 
+	experimental_rockets = 1
+	fighter1 = 1
+	fighter2 = 1
+	fighter3 = 1
+	frigate_1 = 1
+	frigate_2 = 1
+	infantry_equip_1 = 1 
+	iw_armored_vehicles = 1
+	gw_artillery = 1
+	selfpropart1 = 1
+	sp_aa1 = 1
+	interwar_antitank = 1
+	heavy_fighter1 = 1
+	heavy_fighter2 = 1
+	heavy_fighter3 = 1
+	team_weapons_1 = 1
+	team_weapons_2 = 1
+	heavy_tanks_1 = 1
+	heavy_tanks_2 = 1
+	improved_destroyer = 1
+	improved_light_cruiser = 1
+	improved_rocket_engines = 1
+	interwar_antiair = 1
+	infantry_equip_1 = 1 
+	iw_armored_vehicles = 1
+	jet_CAS1 = 1
+	jet_engines = 1
+	jet_multirole1 = 1
+	jet_multirole2 = 1
+	jet_interceptor1 = 1
+	jet_interceptor2 = 1
+	jet_strategic_bomber1 = 1
+	jet_tactical_bomber1 = 1
+	landing_craft = 1
+	light_carrier1 = 1
+	light_carrier2 = 1
+	light_tanks_1 = 1
+	main_battle_tanks_1 = 1
+	main_battle_tanks_2 = 1
+	mechanized_heavy_infantry = 1
+	mechanized_infantry = 1
+	mechanized_infantry2 = 1
+	motorised_infantry = 1
+	naval_bomber1 = 1
+	naval_bomber2 = 1
+	naval_bomber3 = 1
+	naval_bomber4 = 1
+		
+	tech_support = 1
+	tech_engineers = 1
+	tech_recon = 1
+	tech_field_hospital = 1
+	tech_logistics_company = 1
+	tech_military_police = 1
+	tech_signal_company = 1
+	tech_maintenance_company = 1
+	
+	rocket_engines = 1
+	sp_rocket1 = 1
+	sp_rocket2 = 1
+	strategic_bomber1 = 1
+	strategic_bomber2 = 1
+	strategic_bomber3 = 1
+	suicide_craft = 1
+	ww_oil = 1
+	tactical_bomber1 = 1
+	tactical_bomber2 = 1
+	tactical_bomber3 = 1
+	tank_landing_craft = 1
+	tech_support = 1
+	transport = 1
+}
+
+
+ENG = { diplomatic_relation = { country = IRQ relation = military_access active = yes } }
+
+set_convoys = 200
+
+set_politics = {
+
+	parties = {
+		democratic = { 
+			popularity = 0
+		}
+
+		fascism = {
+			popularity = 20
+		}
+		
+		communism = {
+			popularity = 0
+		}
+		
+		monarchism = { 
+			popularity = 60
+		}
+		pan_arabism = {
+			popularity = 20
+		}
+	}
+	
+	ruling_party = monarchism
+	last_election = "1949.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+add_ideas = {
+	population_growth_explosion
+	idea_IRQ_Mobilizate_League_Arabe
+	Iraq_Petroleum_Company
+	kurdish_conflict
+	incompetent_officer_corps
+}
+
+create_country_leader = {
+	name = "Abdul Salam Arif"
+	picture = "Abdul_Salam_Arif.dds"
+	ideology = nasserism
+}
+
+create_country_leader = {
+	name = "King Faisal II"
+	picture = "Faisal_II.dds"
+	ideology = absolute_monarchist
+}
+
+create_country_leader = {
+	name = "Abd al-Karim Qasim"
+	picture = "Abd_al_Karim_Qasim.dds"
+	ideology = socialism
+}	
+
+#create_country_leader = {
+#	name = "Rashid Ali al-Gaylani"
+#	picture = "Gaylani.dds"
+#	ideology = nasserism
+#}
+
+create_country_leader = {
+	name = "Abu Bakr al-Baghdadi"
+	picture = "Abu_Bakr_al_Baghdadi.dds"
+	ideology = jihadist
+}
+
+create_country_leader = {
+	name = "Ahmed Hassan al-Bakr"
+	picture = "Ahmed_Hassan_al_Bakr.dds"
+	ideology = baathism
+}
+
+create_country_leader = {
+	name = "Muhammad Baqir al-Sadr"
+	picture = "Muhammad_Baqir_al_Sadr.dds"
+	ideology = shia_islamism
+}
+
+create_field_marshal = {
+	name = "Ahmed Hassan al-Bakr"
+	picture = "Ahmed_Hassan_al_Bakr.dds"
+	traits = {  }
+	skill = 4
+	attack_skill = 4
+	defense_skill = 4
+	planning_skill = 4
+	logistics_skill = 4 
+}
+
+create_corps_commander = {
+	name = "Fawzi al-Qawuqji"
+	picture = "Qawuqji.dds"
+	traits = {  }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 2
+}
+
+1958.1.1 = {
+	set_politics = {
+
+		parties = {
+			radical_shiaism = { 
+				popularity = 4
+			}
+
+			National_Socialism = {
+				popularity = 11
+			}
+			
+			communism = {
+				popularity = 19
+			}
+
+			monarchism = { 
+				popularity = 9
+			}
+			pan_arabism = {
+				popularity = 21
+			}	
+			socialist = {
+				popularity = 36
+			}
+		}
+		
+		ruling_party = socialist
+		last_election = "1945.6.26"
+		election_frequency = 48
+		elections_allowed = no
+	}
+}
+1960.1.1 = {
+	load_focus_tree = IRQ_1960s
+}
+1968.1.1 = {
+	set_politics = {
+
+		parties = {
+			radical_shiaism = { 
+				popularity = 19
+			}
+
+			National_Socialism = {
+				popularity = 43
+			}
+			
+			communism = {
+				popularity = 12
+			}
+
+			Salafism = { 
+				popularity = 15
+			}
+			pan_arabism = {
+				popularity = 11
+			}	
+		}
+		
+		ruling_party = National_Socialism
+		last_election = "1968.1.1"
+		election_frequency = 48
+		elections_allowed = no
+	}
+}
+
+1970.1.1 = {
+    remove_ideas = kurdish_conflict
+    if = {
+		limit = {
+			has_dlc = "Together for Victory"
+		}
+		set_autonomy = { target = KUR autonomous_state = autonomy_protectorate freedom_level = 0.4 }
+		else = {
+			puppet = KUR
+		}
+	}
+}
+
+1979.1.1 = {
+	create_country_leader = {
+		name = "Saddam Hussein"
+		picture = "Saddam_Hussein.dds"
+		ideology = baathism
+	}
+}
+
+2003.1.1 = {
+	set_politics = {
+
+		parties = {
+			radical_shiaism = { 
+				popularity = 52
+			}
+
+			National_Socialism = {
+				popularity = 28
+			}
+
+			Salafism = { 
+				popularity = 20
+			}
+		}
+		
+		ruling_party = radical_shiaism
+		last_election = "2003.1.1"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+	create_country_leader = {
+		name = "Nouri al-Maliki"
+		picture = "Nouri_al_Maliki.dds"
+		ideology = shia_islamism
+	}
+	create_country_leader = {
+		name = "Izzat Ibrahim al-Douri"
+		picture = "Izzat_Ibrahim_al_Douri.dds"
+		ideology = baathism
+	}
+}
+create_corps_commander = {
+    name = "Abdul Rahman"
+    picture = "Abdul_Rahman.dds"
+    traits = {   }
+    skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 2
+}
+create_corps_commander = {
+    name = "Ali Al-Ayoubi"
+    picture = "Ali_Al_Ayoubi.dds"
+    traits = {   }
+    skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 2
+}
+create_corps_commander = {
+    name = "Aref Abdel Razzaq"
+    picture = "Aref_Abdel_Razzaq.dds"
+    traits = {   }
+    skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 2
+}
+create_corps_commander = {
+    name = "Naji Talib"
+    picture = "Naji_Talib.dds"
+    traits = {   }
+    skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 2
+}
+create_corps_commander = {
+    name = "Tahir Yahya"
+    picture = "Tahir_Yahya.dds"
+    traits = {   }
+    skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 2
+}
+

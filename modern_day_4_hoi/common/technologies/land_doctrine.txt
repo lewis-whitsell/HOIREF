@@ -1,0 +1,1383 @@
+#Written by Hiddengearz
+
+technologies = {
+
+#TODO tactics (enable_tactic)
+#TODO modifers
+
+	legacy_doctrines = {
+		
+		#xor = { infiltration_assault grand_battleplan armoured_mass_assault } 
+
+		path = {
+			leads_to_tech = modern_blitzkrieg
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = grand_battleplan
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = armoured_mass_assault
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = infiltration_assault
+			research_cost_coeff = 1
+		}
+
+		doctrine = yes	
+		research_cost = 1.5
+
+		folder = {
+			name = land_doctrine_folder
+			position = { x = 2 y = -4 }
+		}
+		
+		categories = {
+			land_doctrine
+			legacy_doctrines
+		}
+		
+		ai_will_do = {
+			factor = 20 
+		}
+	}
+	modern_blitzkrieg = { 
+
+		xor = { grand_battleplan armoured_mass_assault infiltration_assault }
+		
+		enable_tactic = tactic_blitz
+	
+		path = {
+			leads_to_tech = forward_defense 
+			research_cost_coeff = 1
+		}
+		dependencies = {
+			grand_battleplan = 2
+			armoured_mass_assault = 2
+			infiltration_assault = 2
+		}
+
+		doctrine = yes	
+		research_cost = 1.5
+
+		folder = {
+			name = land_doctrine_folder
+			position = { x = -2 y = -2 }
+		}
+		
+		categories = {
+			land_doctrine
+			legacy_doctrines
+		}
+		
+		ai_will_do = {
+			factor = 1 
+		}
+		
+		ai_research_weights = {
+			armor = 4.0
+		}
+	}
+	
+	forward_defense = {
+
+		path = {
+			leads_to_tech = encourage_nco_iniative 
+			research_cost_coeff = 1
+		}
+		
+		dig_in_speed_factor = 0.25
+		org_loss_when_moving = -0.25
+		
+		doctrine = yes	
+		research_cost = 1.5
+
+		folder = {
+			name = land_doctrine_folder
+			position = { x = -2 y = 0 }
+		}
+		
+		categories = {
+			land_doctrine
+			legacy_doctrines
+		}
+		
+		ai_will_do = {
+			factor = 1 
+		}
+		
+		ai_research_weights = {
+			armor = 4.0
+		}
+	}
+	
+	encourage_nco_iniative = { 
+
+		path = {
+			leads_to_tech = air_land_battle 
+			research_cost_coeff = 1
+		}
+		
+		category_front_line = {
+			soft_attack = 0.05
+			hard_attack = 0.05
+			defense = 0.05
+		}
+		
+		doctrine = yes	
+		research_cost = 1.5
+
+		folder = {
+			name = land_doctrine_folder
+			position = { x = -2 y = 2 }
+		}
+		
+		categories = {
+			land_doctrine
+			legacy_doctrines
+		}
+		
+		ai_will_do = {
+			factor = 1 
+		}
+		
+		ai_research_weights = {
+			armor = 4.0
+		}
+	}
+	
+	air_land_battle = {
+		
+		path = {
+			leads_to_tech = Century_Re_Evaluation
+			research_cost_coeff = 1
+		}
+		
+		army_bonus_air_superiority_factor = 0.25
+		
+		doctrine = yes	
+		research_cost = 1.5
+
+		folder = {
+			name = land_doctrine_folder
+			position = { x = -2 y = 4 }
+		}
+		
+		categories = {
+			land_doctrine
+			legacy_doctrines
+		}
+		
+		ai_will_do = {
+			factor = 1 
+		}
+		
+		ai_research_weights = {
+			armor = 4.0
+		}
+	}
+	
+	grand_battleplan = {
+	
+		xor = { modern_blitzkrieg armoured_mass_assault infiltration_assault }
+		
+		planning_speed = 0.25
+		max_planning = 0.25
+		enable_tactic = tactic_planned_attack
+
+		path = {
+			leads_to_tech = forward_defense
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = deep_echelon_advance
+			research_cost_coeff = 1
+		}
+		dependencies = {
+			modern_blitzkrieg = 2
+			armoured_mass_assault = 2
+			infiltration_assault = 2
+		}
+		
+		doctrine = yes	
+		research_cost = 1.5
+
+		folder = {
+			name = land_doctrine_folder
+			position = { x = 0 y = -2 }
+		}
+		
+		categories = {
+			land_doctrine
+			legacy_doctrines
+		}
+		
+		ai_will_do = {
+			factor = 1 
+		}
+		
+	}
+	
+	rigid_hierarchy = {
+		
+		xor = { army_group_operational_freedom }
+		
+		path = {
+			leads_to_tech = praetorian_guard 
+			research_cost_coeff = 1
+		}
+		category_army = {
+			max_organisation = 4
+		}
+		
+		doctrine = yes	
+		research_cost = 1.5
+
+		folder = {
+			name = land_doctrine_folder
+			position = { x = 0 y = 2 }
+		}
+		
+		categories = {
+			land_doctrine
+			legacy_doctrines
+		}
+		
+		ai_will_do = {
+			factor = 1 
+		}
+	
+	}
+	
+	praetorian_guard = {
+	
+		path = {
+			leads_to_tech = Century_Re_Evaluation
+			research_cost_coeff = 1
+		}
+		
+		partisan_effect = -0.25 #the idea is that your pop is less likely to revolt against a foreign army if you have 
+		enemy_partisan_effect = 0.25 #in return enemies will revolt less
+		
+		doctrine = yes	
+		research_cost = 1.5
+
+		folder = {
+			name = land_doctrine_folder
+			position = { x = 0 y = 4 }
+		}
+		
+		categories = {
+			land_doctrine
+			legacy_doctrines
+		}
+		
+		ai_will_do = {
+			factor = 1 
+		}
+	
+	}
+	
+	armoured_mass_assault = { 
+
+		xor = { infiltration_assault modern_blitzkrieg grand_battleplan }
+		
+		path = {
+			leads_to_tech = deep_echelon_advance
+			research_cost_coeff = 1
+		}
+		dependencies = {
+			modern_blitzkrieg = 2
+			grand_battleplan = 2
+			infiltration_assault = 2
+		}
+		
+		land_reinforce_rate = 0.05
+		category_all_armor = {
+			breakthrough = 0.10
+		}
+		
+		doctrine = yes	
+		research_cost = 1.5
+
+		folder = {
+			name = land_doctrine_folder
+			position = { x = 2 y = -2 }
+		}
+		
+		categories = {
+			land_doctrine
+			legacy_doctrines
+		}
+		
+		ai_will_do = {
+			factor = 1 
+		}
+		
+	}
+	
+	deep_echelon_advance = { 
+
+		path = {
+			leads_to_tech = rigid_hierarchy
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = army_group_operational_freedom
+			research_cost_coeff = 1
+		}
+		
+		
+		category_all_armor = {
+			hard_attack = 0.05
+			soft_attack = 0.05
+			maximum_speed = 0.1
+		}
+		
+		doctrine = yes	
+		research_cost = 1.5
+
+		folder = {
+			name = land_doctrine_folder
+			position = { x = 2 y = 0 }
+		}
+		
+		categories = {
+			land_doctrine
+			legacy_doctrines
+		}
+		
+		ai_will_do = {
+			factor = 1 
+		}
+		
+	}
+	
+	army_group_operational_freedom = {
+	
+		xor = {  rigid_hierarchy }
+
+		path = {
+			leads_to_tech = massed_artillery
+			research_cost_coeff = 1
+		}
+		
+		planning_speed = 0.15
+		
+		doctrine = yes	
+		research_cost = 1.5
+
+		folder = {
+			name = land_doctrine_folder
+			position = { x = 2 y = 2 }
+		}
+		
+		categories = {
+			land_doctrine
+			legacy_doctrines
+		}
+		
+		ai_will_do = {
+			factor = 1 
+		}
+		
+	}
+	
+	massed_artillery = { 
+
+		path = {
+			leads_to_tech = Century_Re_Evaluation
+			research_cost_coeff = 1
+		}
+		
+		enable_tactic = tactic_barrage
+		
+		doctrine = yes	
+		research_cost = 1.5
+
+		folder = {
+			name = land_doctrine_folder
+			position = { x = 2 y = 4 }
+		}
+		
+		categories = {
+			land_doctrine
+			legacy_doctrines
+		}
+		
+		ai_will_do = {
+			factor = 1 
+		}
+		
+	}
+	
+	infiltration_assault = {
+	
+		xor = { armoured_mass_assault modern_blitzkrieg  grand_battleplan }
+
+		path = {
+			leads_to_tech = defence_in_depth
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = frontline_defence
+			research_cost_coeff = 1
+		}
+		dependencies = {
+			modern_blitzkrieg = 2
+			grand_battleplan = 2
+			armoured_mass_assault = 2
+		}
+		
+		enable_tactic = tactic_infantry_charge
+		
+		doctrine = yes	
+		research_cost = 1.5
+
+		folder = {
+			name = land_doctrine_folder
+			position = { x = 4 y = -2 }
+		}
+		
+		categories = {
+			land_doctrine
+			legacy_doctrines
+		}
+		
+		ai_will_do = {
+			factor = 1 
+		}
+		
+	}
+	
+	defence_in_depth = {
+		
+		xor  = { frontline_defence }
+		
+		path = {
+			leads_to_tech = armoured_counterpunch
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = early_tunnel_warfare
+			research_cost_coeff = 1
+		}
+		
+		enable_tactic = tactic_elastic_defense
+		
+		doctrine = yes	
+		research_cost = 1.5
+
+		folder = {
+			name = land_doctrine_folder
+			position = { x = 4 y = 0 }
+		}
+		
+		categories = {
+			land_doctrine
+			legacy_doctrines
+		}
+		
+		ai_will_do = {
+			factor = 1 
+		}
+		
+	}
+	
+	armoured_counterpunch = { 
+	
+		xor = { early_tunnel_warfare }
+	
+		path = {
+			leads_to_tech = massed_artillery
+			research_cost_coeff = 1
+		}
+		
+		category_all_armor = {
+			defense = 0.1
+			max_organisation = 5
+		}
+		
+		doctrine = yes	
+		research_cost = 1.5
+
+		folder = {
+			name = land_doctrine_folder
+			position = { x = 4 y = 2 }
+		}
+		
+		categories = {
+			land_doctrine
+			legacy_doctrines
+		}
+		
+		ai_will_do = {
+			factor = 1 
+		}
+		
+	}
+	
+	frontline_defence = { 
+
+		xor = { defence_in_depth }
+		
+		path = {
+			leads_to_tech = early_tunnel_warfare
+			research_cost_coeff = 1
+		}
+		
+		max_dig_in = 5
+		dig_in_speed_factor = 0.25
+		
+		doctrine = yes	
+		research_cost = 1.5
+
+		folder = {
+			name = land_doctrine_folder
+			position = { x = 6 y = 0 }
+		}
+		
+		categories = {
+			land_doctrine
+			legacy_doctrines
+		}
+		
+		ai_will_do = {
+			factor = 1 
+		}
+		
+	}
+	
+	early_tunnel_warfare = { 
+
+		xor = { armoured_counterpunch }
+	
+		path = {
+			leads_to_tech = guerilla_specialisation
+			research_cost_coeff = 1
+		}
+		
+		path = {
+			leads_to_tech = massed_artillery
+			research_cost_coeff = 1
+		}
+		
+		max_dig_in = 10
+		
+		doctrine = yes	
+		research_cost = 1.5
+
+		folder = {
+			name = land_doctrine_folder
+			position = { x = 6 y = 2 }
+		}
+		
+		categories = {
+			land_doctrine
+			legacy_doctrines
+		}
+		
+		ai_will_do = {
+			factor = 1 
+		}
+		
+	}
+	
+	guerilla_specialisation = { 
+		
+		path = {
+			leads_to_tech = Century_Re_Evaluation
+			research_cost_coeff = 1
+		}
+		
+		partisan_effect = 0.25
+		
+		doctrine = yes	
+		research_cost = 1.5
+
+		folder = {
+			name = land_doctrine_folder
+			position = { x = 6 y = 4 }
+		}
+		
+		categories = {
+			land_doctrine
+			legacy_doctrines
+		}
+		
+		ai_will_do = {
+			factor = 1 
+		}
+		
+	}
+	
+	Century_Re_Evaluation = { 
+	
+		
+		path = {
+			leads_to_tech = Network_Centric_Warfare
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = Decentralized_Warfare
+			research_cost_coeff = 1
+		}
+		path = {
+			leads_to_tech = Guerilla_Warfare
+			research_cost_coeff = 1
+		}
+		
+		
+		doctrine = yes	
+		research_cost = 1.5
+
+		folder = {
+			name = land_doctrine_folder
+			position = { x = 2 y = 6 }
+		}
+		
+		categories = {
+			land_doctrine
+			legacy_doctrines
+		}
+		
+		ai_will_do = {
+			factor = 1 
+		}
+		
+	}
+	
+	#### Network Centric Warfare ####
+	
+	Network_Centric_Warfare = { 
+	
+		xor = { Guerilla_Warfare Decentralized_Warfare }
+		
+		doctrine = yes	
+		research_cost = 1.5
+
+		folder = {
+			name = land_doctrine_folder
+			position = { x = -12 y = 10 }
+		}
+		
+		categories = {
+			land_doctrine
+		}
+		
+		ai_will_do = {
+			factor = 1 
+		}
+		
+	}
+	
+	#### Decentralized Warfare ####
+	
+	Decentralized_Warfare = { 
+	
+		xor = { Guerilla_Warfare Network_Centric_Warfare }
+		
+		doctrine = yes	
+		research_cost = 1.5
+
+		folder = {
+			name = land_doctrine_folder
+			position = { x = 2 y = 10 }
+		}
+		
+		categories = {
+			land_doctrine
+		}
+		
+		ai_will_do = {
+			factor = 1 
+		}
+		
+	}
+	
+	#### Guerilla Tree ###
+	
+	Guerilla_Warfare = { 
+		
+		# path = {
+			# leads_to_tech = Civilian_Infiltration
+			# research_cost_coeff = 1
+		# }
+		
+		xor = { Network_Centric_Warfare Decentralized_Warfare }
+		
+		doctrine = yes	
+		research_cost = 1.5
+
+		folder = {
+			name = land_doctrine_folder
+			position = { x = 16 y = 10 }
+		}
+		
+		categories = {
+			land_doctrine
+		}
+		
+		ai_will_do = {
+			factor = 1 
+		}
+		
+	}
+	
+	# Civilian_Infiltration = { 
+	
+		# path = {
+			# leads_to_tech = Drug_Manufacture
+			# research_cost_coeff = 1
+		# }
+		# path = {
+			# leads_to_tech = Ideological_Purity
+			# research_cost_coeff = 1
+		# }
+		# path = {
+			# leads_to_tech = Hit_and_Run_Tactics
+			# research_cost_coeff = 1
+		# }
+		
+		# doctrine = yes	
+		# research_cost = 1.5
+
+		# folder = {
+			# name = land_doctrine_folder
+			# position = { x = 16 y = 12 }
+		# }
+		
+		# categories = {
+			# land_doctrine
+		# }
+		
+		# ai_will_do = {
+			# factor = 1 
+		# }
+		
+	# }
+	
+	# Drug_Manufacture = { 
+		
+		# path = {
+			# leads_to_tech = Social_Services
+			# research_cost_coeff = 1
+		# }
+		
+		# xor = { Ideological_Purity }
+		
+		# doctrine = yes	
+		# research_cost = 1.5
+
+		# folder = {
+			# name = land_doctrine_folder
+			# position = { x = 10 y = 14 }
+		# }
+		
+		# categories = {
+			# land_doctrine
+		# }
+		
+		# ai_will_do = {
+			# factor = 1 
+		# }
+		
+	# }
+	
+	# Ideological_Purity = { 
+		
+		# path = {
+			# leads_to_tech = Social_Services
+			# research_cost_coeff = 1
+		# }
+		
+		# xor = { Drug_Manufacture }
+		
+		# doctrine = yes	
+		# research_cost = 1.5
+
+		# folder = {
+			# name = land_doctrine_folder
+			# position = { x = 8 y = 14 }
+		# }
+		
+		# categories = {
+			# land_doctrine
+		# }
+		
+		# ai_will_do = {
+			# factor = 1 
+		# }
+		
+	# }
+	
+	# Social_Services = { 
+		
+		# path = {
+			# leads_to_tech = Human_Shield
+			# research_cost_coeff = 1
+		# }
+		
+		# path = {
+			# leads_to_tech = Youth_Indoctination
+			# research_cost_coeff = 1
+		# }
+		
+		# doctrine = yes	
+		# research_cost = 1.5
+
+		# folder = {
+			# name = land_doctrine_folder
+			# position = { x = 9 y = 16 }
+		# }
+		
+		# categories = {
+			# land_doctrine
+		# }
+		
+		# ai_will_do = {
+			# factor = 1 
+		# }
+		
+	# }
+	
+	# Human_Shield = { 
+		
+		# doctrine = yes	
+		# research_cost = 1.5
+
+		# folder = {
+			# name = land_doctrine_folder
+			# position = { x = 8 y = 18 }
+		# }
+		
+		# categories = {
+			# land_doctrine
+		# }
+		
+		# ai_will_do = {
+			# factor = 1 
+		# }
+		
+	# }
+	
+	# Youth_Indoctination = { 
+		
+		# doctrine = yes	
+		# research_cost = 1.5
+
+		# folder = {
+			# name = land_doctrine_folder
+			# position = { x = 10 y = 18 }
+		# }
+		
+		# categories = {
+			# land_doctrine
+		# }
+		
+		# ai_will_do = {
+			# factor = 1 
+		# }
+		
+	# }
+	
+	# Hit_and_Run_Tactics = { 
+	
+		
+		# path = {
+			# leads_to_tech = Prison_Raids
+			# research_cost_coeff = 1
+		# }
+		
+		# path = {
+			# leads_to_tech = Light_Infantry_Focus
+			# research_cost_coeff = 1
+		# }
+		# path = {
+			# leads_to_tech = IED_and_Mine_Focus
+			# research_cost_coeff = 1
+		# }
+		# path = {
+			# leads_to_tech = Cult_of_Martyrs
+			# research_cost_coeff = 1
+		# }
+		# path = {
+			# leads_to_tech = Autonomus_Combat_Cells
+			# research_cost_coeff = 1
+		# }
+		
+		
+		# doctrine = yes	
+		# research_cost = 1.5
+
+		# folder = {
+			# name = land_doctrine_folder
+			# position = { x = 16 y = 14 }
+		# }
+		
+		# categories = {
+			# land_doctrine
+		# }
+		
+		# ai_will_do = {
+			# factor = 1 
+		# }
+		
+	# }
+	
+	# Prison_Raids = { 
+	
+		# path = {
+			# leads_to_tech = Urban_Focus
+			# research_cost_coeff = 1
+		# }
+		# path = {
+			# leads_to_tech = Rural_Focus
+			# research_cost_coeff = 1
+		# }
+		
+		# doctrine = yes	
+		# research_cost = 1.5
+
+		# folder = {
+			# name = land_doctrine_folder
+			# position = { x = 24 y = 16 }
+		# }
+		
+		# categories = {
+			# land_doctrine
+		# }
+		
+		# ai_will_do = {
+			# factor = 1 
+		# }
+		
+	# }
+	
+	# Urban_Focus = { 
+	
+		# path = {
+			# leads_to_tech = 3D_Swarming
+			# research_cost_coeff = 1
+		# }
+		
+		# xor = { Rural_Focus }
+		
+		# doctrine = yes	
+		# research_cost = 1.5
+
+		# folder = {
+			# name = land_doctrine_folder
+			# position = { x = 25 y = 18 }
+		# }
+		
+		# categories = {
+			# land_doctrine
+		# }
+		
+		# ai_will_do = {
+			# factor = 1 
+		# }
+		
+	# }
+	
+	# 3D_Swarming = { 
+	
+		# path = {
+			# leads_to_tech = No_Surrender
+			# research_cost_coeff = 1
+		# }
+		
+		# doctrine = yes	
+		# research_cost = 1.5
+
+		# folder = {
+			# name = land_doctrine_folder
+			# position = { x = 25 y = 20 }
+		# }
+		
+		# categories = {
+			# land_doctrine
+		# }
+		
+		# ai_will_do = {
+			# factor = 1 
+		# }
+		
+	# }
+	
+	# No_Surrender = { 
+	
+		# doctrine = yes	
+		# research_cost = 1.5
+
+		# folder = {
+			# name = land_doctrine_folder
+			# position = { x = 25 y = 22 }
+		# }
+		
+		# categories = {
+			# land_doctrine
+		# }
+		
+		# ai_will_do = {
+			# factor = 1 
+		# }
+		
+	# }
+	
+	# Rural_Focus = { 
+	
+		# path = {
+			# leads_to_tech = Tactical_Retreats
+			# research_cost_coeff = 1
+		# }
+		
+		# xor = { Urban_Focus }
+		
+		# doctrine = yes	
+		# research_cost = 1.5
+
+		# folder = {
+			# name = land_doctrine_folder
+			# position = { x = 23 y = 18 }
+		# }
+		
+		# categories = {
+			# land_doctrine
+		# }
+		
+		# ai_will_do = {
+			# factor = 1 
+		# }
+		
+	# }
+	
+	# Tactical_Retreats = { 
+	
+		# path = {
+			# leads_to_tech = Covert_Relocation
+			# research_cost_coeff = 1
+		# }
+		
+		# doctrine = yes	
+		# research_cost = 1.5
+
+		# folder = {
+			# name = land_doctrine_folder
+			# position = { x = 23 y = 20 }
+		# }
+		
+		# categories = {
+			# land_doctrine
+		# }
+		
+		# ai_will_do = {
+			# factor = 1 
+		# }
+		
+	# }
+	
+	# Covert_Relocation = { 
+		
+		# doctrine = yes	
+		# research_cost = 1.5
+
+		# folder = {
+			# name = land_doctrine_folder
+			# position = { x = 23 y = 18 }
+		# }
+		
+		# categories = {
+			# land_doctrine
+		# }
+		
+		# ai_will_do = {
+			# factor = 1 
+		# }
+		
+	# }
+	
+	# Autonomus_Combat_Cells = { 
+	
+		
+		# path = {
+			# leads_to_tech = Tunnel_Warfare
+			# research_cost_coeff = 1
+		# }
+		
+		
+		# doctrine = yes	
+		# research_cost = 1.5
+
+		# folder = {
+			# name = land_doctrine_folder
+			# position = { x = 12 y = 16 }
+		# }
+		
+		# categories = {
+			# land_doctrine
+		# }
+		
+		# ai_will_do = {
+			# factor = 1 
+		# }
+		
+	# }
+	# Tunnel_Warfare = { 
+	
+		
+		# path = {
+			# leads_to_tech = Rhizome_Manoeuver
+			# research_cost_coeff = 1
+		# }
+		
+		
+		# doctrine = yes	
+		# research_cost = 1.5
+
+		# folder = {
+			# name = land_doctrine_folder
+			# position = { x = 12 y = 18 }
+		# }
+		
+		# categories = {
+			# land_doctrine
+		# }
+		
+		# ai_will_do = {
+			# factor = 1 
+		# }
+		
+	# }
+	
+	# Rhizome_Manoeuver = { 
+	
+		
+		# doctrine = yes	
+		# research_cost = 1.5
+
+		# folder = {
+			# name = land_doctrine_folder
+			# position = { x = 12 y = 20 }
+		# }
+		
+		# categories = {
+			# land_doctrine
+		# }
+		
+		# ai_will_do = {
+			# factor = 1 
+		# }
+		
+	# }
+	
+		# Light_Infantry_Focus = { 
+		
+		# xor = { IED_and_Mine_Focus }
+		
+		# doctrine = yes	
+		# research_cost = 1.5
+
+		# folder = {
+			# name = land_doctrine_folder
+			# position = { x = 14 y = 16 }
+		# }
+		
+		# categories = {
+			# land_doctrine
+		# }
+		
+		# ai_will_do = {
+			# factor = 1 
+		# }
+		
+	# }
+	
+	# IED_and_Mine_Focus = { 
+		
+		# xor = { Light_Infantry_Focus }
+		
+		# doctrine = yes	
+		# research_cost = 1.5
+
+		# folder = {
+			# name = land_doctrine_folder
+			# position = { x = 18 y = 16 }
+		# }
+		
+		# categories = {
+			# land_doctrine
+		# }
+		
+		# ai_will_do = {
+			# factor = 1 
+		# }
+		
+	# }
+	
+	# Cult_of_Martyrs = { 
+	
+		# path = {
+			# leads_to_tech = Suicide_Bombings
+			# research_cost_coeff = 1
+		# }
+		
+		# doctrine = yes	
+		# research_cost = 1.5
+
+		# folder = {
+			# name = land_doctrine_folder
+			# position = { x = 16 y = 18 }
+		# }
+		
+		# categories = {
+			# land_doctrine
+		# }
+		
+		# ai_will_do = {
+			# factor = 1 
+		# }
+		
+	# }
+	
+	# Suicide_Bombings = { 
+	
+		# path = {
+			# leads_to_tech = Major_Terror_Attacks
+			# research_cost_coeff = 1
+		# }
+		# path = {
+			# leads_to_tech = Lone_Wolf_Terrorism
+			# research_cost_coeff = 1
+		# }
+		# path = {
+			# leads_to_tech = Combat_Applications
+			# research_cost_coeff = 1
+		# }
+		
+		# doctrine = yes	
+		# research_cost = 1.5
+
+		# folder = {
+			# name = land_doctrine_folder
+			# position = { x = 18 y = 20 }
+		# }
+		
+		# categories = {
+			# land_doctrine
+		# }
+		
+		# ai_will_do = {
+			# factor = 1 
+		# }
+		
+	# }
+	# Combat_Applications = { 
+		
+		# doctrine = yes	
+		# research_cost = 1.5
+
+		# folder = {
+			# name = land_doctrine_folder
+			# position = { x = 20 y = 20 }
+		# }
+		
+		# categories = {
+			# land_doctrine
+		# }
+		
+		# ai_will_do = {
+			# factor = 1 
+		# }
+		
+	# }
+	# Lone_Wolf_Terrorism = { 
+		
+		# path = {
+			# leads_to_tech = Cyber_Propaganda
+			# research_cost_coeff = 1
+		# }
+		
+		# xor = { Major_Terror_Attacks }
+		
+		# doctrine = yes	
+		# research_cost = 1.5
+
+		# folder = {
+			# name = land_doctrine_folder
+			# position = { x = 17 y = 22 }
+		# }
+		
+		# categories = {
+			# land_doctrine
+		# }
+		
+		# ai_will_do = {
+			# factor = 1 
+		# }
+		
+	# }
+	# Major_Terror_Attacks = { 
+		
+		# path = {
+			# leads_to_tech = Cyber_Propaganda
+			# research_cost_coeff = 1
+		# }
+		
+		# xor = { Lone_Wolf_Terrorism }
+		
+		# doctrine = yes	
+		# research_cost = 1.5
+
+		# folder = {
+			# name = land_doctrine_folder
+			# position = { x = 19 y = 22 }
+		# }
+		
+		# categories = {
+			# land_doctrine
+		# }
+		
+		# ai_will_do = {
+			# factor = 1 
+		# }
+		
+	# }
+	# Cyber_Propaganda = { 
+		
+		# doctrine = yes	
+		# research_cost = 1.5
+
+		# folder = {
+			# name = land_doctrine_folder
+			# position = { x = 18 y = 24 }
+		# }
+		
+		# categories = {
+			# land_doctrine
+		# }
+		
+		# ai_will_do = {
+			# factor = 1 
+		# }
+		
+	# }
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}

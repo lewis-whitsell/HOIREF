@@ -1,0 +1,45 @@
+#Written by Hiddengearz
+
+technologies = {
+
+	nuclear_reactor = {
+
+		# can build reactors
+		
+		start_year = 9999
+		research_cost = 5
+		
+		folder = {
+			name = electronics_folder
+			position = { x = 0 y = 2 }
+		}
+
+		path = {
+			leads_to_tech = nukes 
+			research_cost_coeff = 1
+		}
+		
+		ai_will_do = {
+			factor = 3
+		}
+		
+		categories = {
+			nuclear
+		}
+		
+		enable_building = {
+			building = nuclear_reactor
+			level = 1
+		}
+		enable_building = {
+			building = synthetic_refinery
+			level = 1
+		}
+		enable_building = {
+			building = rocket_site
+			level = 1
+		}
+		
+	}
+
+}

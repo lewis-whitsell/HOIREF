@@ -1,0 +1,167 @@
+﻿capital = 141	
+OOB = "empty"
+set_convoys = 150
+set_research_slots = 4
+set_technology = {
+### MOD ###
+	### General ###
+	shipbuild_basics = 1
+	electronic_mechanical_engineering = 1
+	### Navy ###
+	early_submarine = 1
+	early_destroyer = 1
+	basic_destroyer = 1
+	transport = 1
+	### Tanks ###
+	gwtank = 1
+	### INF ###
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	gw_artillery = 1
+	tech_support = 1
+	### AIR ###
+	early_fighter = 1
+	naval_bomber1 = 1
+	cv_naval_bomber1 = 1
+	early_bomber = 1
+}
+
+
+
+set_politics = {
+
+	parties = {
+		totalist = {
+			popularity = 0
+		}
+		radical_socialist = {
+			popularity = 1
+		}
+		syndicalist = {
+			popularity = 4
+		}
+		social_democrat = {
+			popularity = 30
+		}
+		social_liberal = {
+			popularity = 14
+		}
+		market_liberal = {
+			popularity = 24
+		}
+		social_conservative = {
+			popularity = 6
+		}
+		authoritarian_democrat = {
+			popularity = 19
+		}
+		paternal_autocrat = {
+			popularity = 2
+		}
+		national_populist = {
+			popularity = 0
+		}
+	}
+	
+	ruling_party = social_liberal
+	last_election = "1934.4.10"
+	election_frequency = 48
+	elections_allowed = no
+
+}
+
+create_country_leader = {
+	name = "Federal Council"
+	desc = "SCA_FEDERAL_COUNCIL_DESC"
+	picture = "Portrait_Scandinavia_Royal_Council.tga"
+	expire = "1965.1.1"
+	ideology = social_democrat_subtype
+	traits = {
+	}
+}
+
+create_country_leader = {
+	name = "Federal Council"
+	desc = "SCA_FEDERAL_COUNCIL_DESC"
+	picture = "Portrait_Scandinavia_Royal_Council.tga"
+	expire = "1965.1.1"
+	ideology = social_liberal_subtype
+	traits = {
+	}
+}
+
+create_country_leader = {
+	name = "Federal Council"
+	desc = "SCA_FEDERAL_COUNCIL_DESC"
+	picture = "Portrait_Scandinavia_Royal_Council.tga"
+	expire = "1965.1.1"
+	ideology = market_liberal_subtype
+	traits = {
+	}
+}
+
+create_country_leader = {
+	name = "Federal Council"
+	desc = "SCA_FEDERAL_COUNCIL_DESC"
+	picture = "Portrait_Scandinavia_Royal_Council.tga"
+	expire = "1965.1.1"
+	ideology = authoritarian_democrat_subtype
+	traits = {
+	}
+}
+
+### Field Marshal
+### Corps Commander
+create_corps_commander = {
+	name = "Carl Gustav Fleischer"
+	portrait_path = "gfx/leaders/NOR/Portrait_Norway_Carl_Gustav_Fleischer.tga"
+	traits = {
+		trickster
+		winter_specialist
+	}
+	skill = 4
+}
+
+create_corps_commander = {
+	name = "Otto Ruge"
+	portrait_path = "gfx/leaders/NOR/Portrait_Norway_Otto_Ruge.tga"
+	traits = {
+		winter_specialist
+	}
+	skill = 3
+}
+
+create_corps_commander = {
+	name = "Helge Jung"
+	portrait_path = "gfx/leaders/SWE/Portrait_Sweden_Helge_Jung.tga"
+	traits = {
+		panzer_leader
+	}
+	skill = 3
+}
+
+create_corps_commander = {
+	name = "William Prior"
+	portrait_path = "gfx/leaders/DEN/Portrait_Denmark_William_Prior.tga"
+	traits = {
+	}
+	skill = 2
+}
+
+create_corps_commander = {
+	name = "Erik Leschly"
+	portrait_path = "gfx/leaders/DEN/Portrait_Denmark_Erik_Leschly.tga"
+	traits = {
+	}
+	skill = 2
+}
+
+### Navy Leader
+create_navy_leader = {
+	name = "Carsten Tank-Nielsen"
+	portrait_path = "gfx/leaders/NOR/Portrait_Norway_Carsten_Tank_Nielsen.tga"
+	traits = {
+		spotter
+	}
+	skill = 2
+}

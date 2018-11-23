@@ -1,0 +1,5960 @@
+﻿###########################
+# Renaming Events
+###########################
+#
+# Each event id should be 4 digits long
+# Add extra digits where necessary - state 12 is 1200 - 1209 in event id's
+#
+# All events need to be added into on_state_control_changed in KR_on_actions_renaming - use the examples there
+#
+# Use the first event for a state (for example, '1200') for the original owner
+# Then subsequent id's are for other countries that can own & rename that state
+#
+###########################
+
+add_namespace = rename
+
+### 1 - Corsica
+# Restore Italian Name
+country_event = {
+	id = rename.100
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		OR = {
+			tag = ITA
+			tag = SRI
+		}
+		1 = {
+			is_controlled_by = ROOT
+			has_state_flag = renamed_state
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			1 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+			}
+		}
+	}
+}
+
+# FRA/NFA/FRP: rename Corse
+country_event = {
+	id = rename.101
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = { tag = FRA tag = FRP tag = NFA }
+		1 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			1 = {
+				set_state_name = "Corse"
+				set_state_flag = renamed_state
+			}
+		}
+	}
+}
+
+### 8 - Luxemburg
+# Restore German Name
+country_event = {
+	id = rename.800
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		OR = {
+			tag = GER
+			tag = AUS
+			tag = GRU
+			tag = RHI
+		}
+		8 = {
+			is_controlled_by = ROOT
+			has_state_flag = renamed_state
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			8 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+			}
+			reset_province_name = 6583
+		}
+	}
+}
+
+# FRA/NFA/FRP: rename Luxembourg
+country_event = {
+	id = rename.801
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = { tag = FRA tag = FRP tag = NFA }
+		8 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			8 = {
+				set_state_name = "Luxembourg"
+				set_state_flag = renamed_state
+			}
+			set_province_name = { id = 6583 name = "Ville de Luxembourg"}
+		}
+	}
+}
+
+### 9 - Cechy
+# Restore Czech Name
+country_event = {
+	id = rename.900
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		OR = {
+			tag = BOM
+			tag = CZE
+		}
+		9 = {
+			is_controlled_by = ROOT
+			has_state_flag = renamed_state
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			9 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+			}
+			reset_province_name = 11542
+			reset_province_name = 6418
+		}
+	}
+}
+
+# AUS/GER rename Cechy
+country_event = {
+	id = rename.901
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = {
+			tag = AUS
+			tag = GER
+		}
+		9 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			9 = {
+				set_state_name = "Böhmen"
+				set_state_flag = renamed_state
+			}
+			set_province_name = { id = 11542 name = "Prag"}
+			set_province_name = { id = 6418 name = "Pilsen"}
+		}
+	}
+}
+
+### 10, 90, 97 - Poland
+# POL/PLC - restore Poland
+country_event = {
+	id = rename.1000
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		OR = {
+			tag = POL
+			tag = PLC
+			tag = GAL
+		}
+		10 = { is_controlled_by = ROOT }
+		90 = { is_controlled_by = ROOT }
+		97 = { is_controlled_by = ROOT }
+		has_global_flag = renamed_poland
+	}
+
+	immediate = {
+		hidden_effect = {
+			clr_global_flag = renamed_poland
+			10 = { reset_state_name = yes }
+			90 = { reset_state_name = yes }
+			97 = { reset_state_name = yes }
+			reset_province_name = 3544
+		}
+	}
+}
+
+# RUS/SOV - rename Poland
+country_event = {
+	id = rename.1001
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		OR = {
+			tag = RUS
+			tag = SOV
+		}
+		10 = { is_controlled_by = ROOT }
+		90 = { is_controlled_by = ROOT }
+		97 = { is_controlled_by = ROOT }
+		NOT = { has_global_flag = renamed_poland }
+	}
+
+	immediate = {
+		hidden_effect = {
+			set_global_flag = renamed_poland
+			10 = { set_state_name = "Varshava" }
+			90 = { set_state_name = "Keltsy" }
+			97 = { set_state_name = "Belostok" }
+			set_province_name = { id = 3544 name = "Varshava" }
+		}
+	}
+}
+
+### 11 - Vilnius
+# LIT/PLC - restore Vilnius
+country_event = {
+	id = rename.1100
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		OR = {
+			tag = LIT
+			tag = PLC
+		}
+		11 = {
+			is_controlled_by = ROOT
+			has_state_flag = renamed_state
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			11 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+			}
+			reset_province_name = 3320
+			reset_province_name = 3393
+			reset_province_name = 6296
+		}
+	}
+}
+
+# RUS/SOV - rename Vilnius
+country_event = {
+	id = rename.1101
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = {
+			tag = RUS
+			tag = SOV
+		}
+		11 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			11 = {
+				set_state_name = "Vilna"
+				set_state_flag = renamed_state
+			}
+			set_province_name = { id = 3320 name = "Vilna" }
+			set_province_name = { id = 3393 name = "Grodno" }
+			set_province_name = { id = 6296 name = "Kovno" }
+		}
+	}
+}
+
+### 12 - Livonia
+# restore Livonia
+country_event = {
+	id = rename.1200
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		NOT = {
+			tag = RUS
+			tag = SOV
+		}
+		12 = {
+			is_controlled_by = ROOT
+			has_state_flag = renamed_state
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			12 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+			}
+		}
+	}
+}
+
+# RUS/SOV - rename Livonia
+country_event = {
+	id = rename.1201
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = {
+			tag = RUS
+			tag = SOV
+		}
+		12 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			12 = {
+				set_state_name = "Livoniya"
+				set_state_flag = renamed_state
+			}
+		}
+	}
+}
+
+### 13 - Reval
+# restore Reval
+country_event = {
+	id = rename.1300
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		NOT = {
+			tag = RUS
+			tag = SOV
+		}
+		13 = {
+			is_controlled_by = ROOT
+			has_state_flag = renamed_state
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			13 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+			}
+			reset_province_name = 3152
+		}
+	}
+}
+
+# RUS/SOV - rename Reval
+country_event = {
+	id = rename.1301
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = {
+			tag = RUS
+			tag = SOV
+		}
+		13 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			13 = {
+				set_state_name = "Revel"
+				set_state_flag = renamed_state
+			}
+			set_province_name = { id = 3152 name = "Revel" }
+		}
+	}
+}
+
+### 28 - Alsace
+# Restore German Name
+country_event = {
+	id = rename.2800
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		OR = {
+			tag = GER
+			tag = AUS
+		}
+		28 = {
+			is_controlled_by = ROOT
+			has_state_flag = renamed_state
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			28 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+			}
+			reset_province_name = 9503
+			reset_province_name = 678
+		}
+	}
+}
+
+# FRA/NFA/FRP: rename Alsace
+country_event = {
+	id = rename.2801
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = { tag = FRA tag = FRP tag = NFA }
+		28 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			28 = {
+				set_state_name = "Alsace"
+				set_state_flag = renamed_state
+			}
+			set_province_name = { id = 9503 name = "Strasbourg"}
+			set_province_name = { id = 678 name = "Mulhouse"}
+		}
+	}
+}
+
+### 39 - Sudtirol
+# AUS/GER - restore Sudtirol's name
+country_event = {
+	id = rename.3900
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		OR = {
+			tag = AUS
+			tag = GER
+		}
+		39 = {
+			is_controlled_by = ROOT
+			has_state_flag = renamed_state
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			39 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+			}
+		}
+	}
+}
+
+# ITA - rename Sudtirol
+country_event = {
+	id = rename.3901
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = {
+			tag = ITA
+			tag = SRI
+		}
+		39 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			39 = {
+				set_state_name = "Alto Adige"
+				set_state_flag = renamed_state
+			}
+		}
+	}
+}
+
+### 45 - Vojvodina
+# HUN - restore Vojvodina's name
+country_event = {
+	id = rename.4500
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		tag = HUN
+		45 = {
+			is_controlled_by = ROOT
+			OR = {
+				has_state_flag = renamed_state
+				has_state_flag = renamed_state_ROM
+				has_state_flag = renamed_state_AUS
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			45 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+				clr_state_flag = renamed_state_ROM
+				clr_state_flag = renamed_state_AUS
+			}
+		}
+	}
+}
+
+# SER: rename Vojvodina
+country_event = {
+	id = rename.4501
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		tag = SER
+		45 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			45 = {
+				set_state_name = "Vojvodina"
+				set_state_flag = renamed_state
+				clr_state_flag = renamed_state_ROM
+				clr_state_flag = renamed_state_AUS
+			}
+		}
+	}
+}
+
+# ROM/RRM: rename Vojvodina
+country_event = {
+	id = rename.4502
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = {
+			tag = ROM
+			tag = RRM
+			tag = TRS
+		}
+		45 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state_ROM }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			45 = {
+				set_state_name = "Voivodina"
+				set_state_flag = renamed_state_ROM
+				clr_state_flag = renamed_state
+				clr_state_flag = renamed_state_AUS
+			}
+		}
+	}
+}
+
+# AUS: rename Vojvodina
+country_event = {
+	id = rename.4503
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = {
+			tag = AUS
+			tag = GER
+		}
+		45 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state_AUS }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			45 = {
+				set_state_name = "Woiwodina"
+				set_state_flag = renamed_state_AUS
+				clr_state_flag = renamed_state
+				clr_state_flag = renamed_state_ROM
+			}
+		}
+	}
+}
+
+### 75 - Morava
+# Restore Czech Name
+country_event = {
+	id = rename.7500
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		OR = {
+			tag = BOM
+			tag = CZE
+		}
+		75 = {
+			is_controlled_by = ROOT
+			has_state_flag = renamed_state
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			75 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+			}
+			reset_province_name = 3569
+		}
+	}
+}
+
+# AUS/GER rename Morava
+country_event = {
+	id = rename.7501
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = {
+			tag = AUS
+			tag = GER
+		}
+		75 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			75 = {
+				set_state_name = "Mähren"
+				set_state_flag = renamed_state
+			}
+			set_province_name = { id = 3569 name = "Brünn"}
+		}
+	}
+}
+
+### 76 - Észak-Érdely/Northern Transylvania
+# HUN - restore Észak-Érdely's name
+country_event = {
+	id = rename.7600
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		tag = HUN
+		76 = {
+			is_controlled_by = ROOT
+			OR = {
+				has_state_flag = renamed_state
+				has_state_flag = renamed_state_AUS
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			76 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+				clr_state_flag = renamed_state_AUS
+			}
+			reset_province_name = 6711
+		}
+	}
+}
+
+# ROM/RRM/TRS: rename Észak-Érdely
+country_event = {
+	id = rename.7601
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = {
+			tag = ROM
+			tag = RRM
+			tag = TRS
+		}
+		76 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			76 = {
+				set_state_name = "Transilvania de Nord"
+				set_state_flag = renamed_state
+				clr_state_flag = renamed_state_AUS
+			}
+			set_province_name = { id = 6711 name = "Cluj"}
+		}
+	}
+}
+
+# AUS: rename Észak-Érdely
+country_event = {
+	id = rename.7602
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = {
+			tag = AUS
+			tag = GER
+		}
+		76 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state_AUS }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			76 = {
+				set_state_name = "Nord-Siebenbürgen"
+				set_state_flag = renamed_state_AUS
+				clr_state_flag = renamed_state
+			}
+			set_province_name = { id = 6711 name = "Clausenburg"}
+		}
+	}
+}
+
+### 77 - Silistra / Southern Dobruja
+# BUL - restore Silistra
+country_event = {
+	id = rename.7700
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		tag = BUL
+		77 = {
+			is_controlled_by = ROOT
+			has_state_flag = renamed_state
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			77 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+			}
+		}
+	}
+}
+
+# ROM/RRM - rename Dobrudzha
+country_event = {
+	id = rename.7701
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = {
+			tag = ROM
+			tag = RRM
+			tag = TRS
+		}
+		77 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			77 = {
+				set_state_name = "Cadrilater"
+				set_state_flag = renamed_state
+			}
+		}
+	}
+}
+
+### 78 - Bessarabia
+# ROM/RRM - restore Bessarabia
+country_event = {
+	id = rename.7800
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		OR = {
+			tag = ROM
+			tag = RRM
+		}
+		78 = {
+			is_controlled_by = ROOT
+			has_state_flag = renamed_state
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			78 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+			}
+			reset_province_name = 3707
+			reset_province_name = 6727			
+		}
+	}
+}
+
+# RUS/SOV - rename Bessarabia
+country_event = {
+	id = rename.7801
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = {
+			tag = RUS
+			tag = SOV
+		}
+		78 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			78 = {
+				set_state_name = "Bessarabia"
+				set_state_flag = renamed_state			
+			}
+			set_province_name = { id = 3707 name = "Kishinyov" }
+			set_province_name = { id = 6727 name = "Akkerman" }		
+		}
+	}
+}
+
+# UKR - rename Bessarabia
+country_event = {
+	id = rename.7802
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		tag = UKR
+		78 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			78 = {
+				set_state_name = "Bessarabia"
+				set_state_flag = renamed_state			
+			}
+			set_province_name = { id = 3707 name = "Kyshyniv" }
+			set_province_name = { id = 6727 name = "Akkerman" }
+		}
+	}
+}
+
+### 80 - Bukovina
+# POL/PLC/GAL - restore Bukovina
+country_event = {
+	id = rename.8000
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		OR = {
+			tag = POL
+			tag = PLC
+			tag = GAL
+		}
+		80 = {
+			is_controlled_by = ROOT
+			OR = {
+				has_state_flag = renamed_state
+				has_state_flag = renamed_state_ROM
+				has_state_flag = renamed_state_AUS
+				has_state_flag = renamed_state_UKR
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			80 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+				clr_state_flag = renamed_state_ROM
+				clr_state_flag = renamed_state_AUS
+				clr_state_flag = renamed_state_UKR
+			}
+		}
+	}
+}
+
+# RUS/SOV - rename Bukovina
+country_event = {
+	id = rename.8001
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = {
+			tag = RUS
+			tag = SOV
+		}
+		80 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			80 = {
+				set_state_name = "Bukovina"
+				set_state_flag = renamed_state
+				clr_state_flag = renamed_state_ROM
+				clr_state_flag = renamed_state_AUS
+				clr_state_flag = renamed_state_UKR
+			}
+		}
+	}
+}
+
+# ROM/RRM/TRS - rename Bukovina
+country_event = {
+	id = rename.8002
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = {
+			tag = ROM
+			tag = RRM
+			tag = TRS
+		}
+		80 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state_ROM }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			80 = {
+				set_state_name = "Bucovina"
+				set_state_flag = renamed_state_ROM
+				clr_state_flag = renamed_state
+				clr_state_flag = renamed_state_AUS
+				clr_state_flag = renamed_state_UKR
+			}
+		}
+	}
+}
+
+# AUS/GER - rename Bukovina
+country_event = {
+	id = rename.8003
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = {
+			tag = AUS
+			tag = GER
+		}
+		80 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state_AUS }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			80 = {
+				set_state_name = "Buchenland"
+				set_state_flag = renamed_state_AUS
+				clr_state_flag = renamed_state
+				clr_state_flag = renamed_state_ROM
+				clr_state_flag = renamed_state_UKR
+			}
+		}
+	}
+}
+
+# UKR - rename Bukovina
+country_event = {
+	id = rename.8004
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		tag = UKR
+		80 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state_UKR }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			80 = {
+				set_state_name = "Bukovyna"
+				set_state_flag = renamed_state_UKR
+				clr_state_flag = renamed_state
+				clr_state_flag = renamed_state_ROM
+				clr_state_flag = renamed_state_AUS
+			}
+		}
+	}
+}
+
+### 82 - Bánság/Banat
+# HUN - restore Bánság's name
+country_event = {
+	id = rename.8200
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		tag = HUN
+		82 = {
+			is_controlled_by = ROOT
+			OR = {
+				has_state_flag = renamed_state
+				has_state_flag = renamed_state_AUS
+				has_state_flag = renamed_state_SER
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			82 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+				clr_state_flag = renamed_state_AUS
+				clr_state_flag = renamed_state_SER
+			}
+			reset_province_name = 9606
+		}
+	}
+}
+
+# ROM/RRM/TRS: rename Bánság
+country_event = {
+	id = rename.8201
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = {
+			tag = ROM
+			tag = RRM
+			tag = TRS
+		}
+		82 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			82 = {
+				set_state_name = "Banat"
+				set_state_flag = renamed_state
+				clr_state_flag = renamed_state_AUS
+				clr_state_flag = renamed_state_SER
+			}
+			set_province_name = { id = 9606 name = "Timisoara"}
+		}
+	}
+}
+
+# AUS: rename Bánság
+country_event = {
+	id = rename.8202
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = {
+			tag = AUS
+			tag = GER
+		}
+		82 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state_AUS }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			82 = {
+				set_state_name = "Banat"
+				set_state_flag = renamed_state_AUS
+				clr_state_flag = renamed_state
+				clr_state_flag = renamed_state_SER
+			}
+			set_province_name = { id = 9606 name = "Temeswar"}
+		}
+	}
+}
+
+# SER: rename Bánság
+country_event = {
+	id = rename.8203
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		tag = SER
+		82 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state_SER }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			82 = {
+				set_state_name = "Banat"
+				set_state_flag = renamed_state_SER
+				clr_state_flag = renamed_state
+				clr_state_flag = renamed_state_AUS
+			}
+			set_province_name = { id = 9606 name = "Temišvar"}
+		}
+	}
+}
+
+### 83 - Körösvidék
+# HUN - restore Körösvidék's name
+country_event = {
+	id = rename.8300
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		tag = HUN
+		83 = {
+			is_controlled_by = ROOT
+			OR = {
+				has_state_flag = renamed_state
+				has_state_flag = renamed_state_AUS
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			83 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+				clr_state_flag = renamed_state_AUS
+			}
+		}
+	}
+}
+
+# ROM/RRM/TRS: rename Körösvidék
+country_event = {
+	id = rename.8301
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = {
+			tag = ROM
+			tag = RRM
+			tag = TRS
+		}
+		83 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			83 = {
+				set_state_name = "Crișana"
+				set_state_flag = renamed_state
+				clr_state_flag = renamed_state_AUS
+			}
+		}
+	}
+}
+
+# AUS: rename Körösvidék
+country_event = {
+	id = rename.8302
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = {
+			tag = AUS
+			tag = GER
+		}
+		83 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state_AUS }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			83 = {
+				set_state_name = "Kreischgebiet"
+				set_state_flag = renamed_state_AUS
+				clr_state_flag = renamed_state
+			}
+		}
+	}
+}
+
+### 84 - Erdély/Transylvania
+# HUN - restore Erdély's name
+country_event = {
+	id = rename.8400
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		tag = HUN
+		84 = {
+			is_controlled_by = ROOT
+			OR = {
+				has_state_flag = renamed_state
+				has_state_flag = renamed_state_AUS
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			84 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+				clr_state_flag = renamed_state_AUS
+			}
+			reset_province_name = 690
+		}
+	}
+}
+
+# ROM/RRM/TRS - rename Erdély
+country_event = {
+	id = rename.8401
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = {
+			tag = ROM
+			tag = RRM
+			tag = TRS
+		}
+		84 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			84 = {
+				set_state_name = "Transilvania"
+				set_state_flag = renamed_state
+				clr_state_flag = renamed_state_AUS
+			}
+			set_province_name = { id = 690 name = "Brasov" }
+		}
+	}
+}
+
+# AUS - rename Erdély
+country_event = {
+	id = rename.8402
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = {
+			tag = AUS
+			tag = GER
+		}
+		84 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state_AUS }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			84 = {
+				set_state_name = "Siebenbürgen"
+				set_state_flag = renamed_state_AUS
+				clr_state_flag = renamed_state
+			}
+			set_province_name = { id = 690 name = "Kronstadt" }
+		}
+	}
+}
+
+### 88 - Krakow
+# POL/PLC/GAL - restore Krakow
+country_event = {
+	id = rename.8800
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		OR = {
+			tag = POL
+			tag = PLC
+			tag = GAL
+		}
+		88 = {
+			is_controlled_by = ROOT
+			has_state_flag = renamed_state
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			88 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+			}
+			reset_province_name = 9427
+		}
+	}
+}
+
+# RUS/SOV - rename Krakow
+country_event = {
+	id = rename.8801
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = {
+			tag = RUS
+			tag = SOV
+		}
+		88 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			88 = {
+				set_state_name = "Krakov"
+				set_state_flag = renamed_state
+			}
+			set_province_name = { id = 9427 name = "Krakov" }
+		}
+	}
+}
+
+### 89 - Stanislav
+# POL/GAL/PLC - restore Stanislav
+country_event = {
+	id = rename.8900
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		OR = {
+			tag = POL
+			tag = PLC
+			tag = GAL
+		}
+		89 = {
+			is_controlled_by = ROOT
+			has_state_flag = renamed_state
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			89 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+			}
+		}
+	}
+}
+
+# RUS/SOV - rename Stanislav
+country_event = {
+	id = rename.8901
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		OR = {
+			tag = RUS
+			tag = SOV
+		}
+		89 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			89 = {
+				set_state_name = "Stanislav"
+				set_state_flag = renamed_state
+			}
+		}
+	}
+}
+
+### 91 - Lvov
+# POL/GAL/PLC - restore Lvov
+country_event = {
+	id = rename.9100
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		OR = {
+			tag = POL
+			tag = PLC
+			tag = GAL
+		}
+		91 = {
+			is_controlled_by = ROOT
+			has_state_flag = renamed_state
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			91 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+			}
+			reset_province_name = 11479
+		}
+	}
+}
+
+# RUS/SOV - rename Lvov
+country_event = {
+	id = rename.9101
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		OR = {
+			tag = RUS
+			tag = SOV
+		}
+		91 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			91 = {
+				set_state_name = "Lvov"
+				set_state_flag = renamed_state
+			}
+			set_province_name = { id = 11479 name = "Lvov" }
+		}
+	}
+}
+
+### 93, 198, 199, 791, 792 - Western Ukraine
+# UKR - rename Western Ukraine
+country_event = {
+	id = rename.9300
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		tag = UKR
+		93 = { is_controlled_by = ROOT }
+		198 = { is_controlled_by = ROOT }
+		199 = { is_controlled_by = ROOT }
+		791 = { is_controlled_by = ROOT }
+		792 = { is_controlled_by = ROOT }
+		has_global_flag = renamed_western_ukraine
+	}
+
+	immediate = {
+		hidden_effect = {
+			clr_global_flag = renamed_western_ukraine
+			93 = { reset_state_name = yes }
+			198 = { reset_state_name = yes }
+			199 = { reset_state_name = yes }
+			791 = { reset_state_name = yes }
+			792 = { reset_state_name = yes }
+			reset_province_name = 3392		
+		}
+	}
+}
+
+# RUS/SOV - rename Western Ukraine
+country_event = {
+	id = rename.9301
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = {
+			tag = RUS
+			tag = SOV
+		}
+		93 = { is_controlled_by = ROOT }
+		198 = { is_controlled_by = ROOT }
+		199 = { is_controlled_by = ROOT }
+		791 = { is_controlled_by = ROOT }
+		792 = { is_controlled_by = ROOT }
+		NOT = { has_global_flag = renamed_western_ukraine }
+	}
+
+	immediate = {
+		hidden_effect = {
+			set_global_flag = renamed_western_ukraine
+			93 = { set_state_name = "Brest-Litovsk" }
+			198 = { set_state_name = "Vinnitsa" }
+			199 = { set_state_name = "Proskurov" }
+			791 = { set_state_name = "Mogilev-Podolskyi" }
+			792 = { set_state_name = "Rovno" }
+			set_province_name = { id = 3392 name = "Brest-Litovsk" }
+		}
+	}
+}
+
+### 94, 95, 96, 194 - White Ruthenia
+# WHR - rename White Ruthenia
+country_event = {
+	id = rename.9400
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		tag = WHR
+		94 = { is_controlled_by = ROOT }
+		95 = { is_controlled_by = ROOT }
+		96 = { is_controlled_by = ROOT }
+		194 = { is_controlled_by = ROOT }
+		has_global_flag = renamed_white_ruthenia
+	}
+
+	immediate = {
+		hidden_effect = {
+			clr_global_flag = renamed_white_ruthenia
+			94 = { reset_state_name = yes }
+			95 = { reset_state_name = yes }
+			96 = { reset_state_name = yes }
+			194 = { reset_state_name = yes }
+		}
+	}
+}
+
+# RUS/SOV - rename White Ruthenia
+country_event = {
+	id = rename.9401
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		OR = {
+			tag = RUS
+			tag = SOV
+		}
+		94 = { is_controlled_by = ROOT }
+		95 = { is_controlled_by = ROOT }
+		96 = { is_controlled_by = ROOT }
+		194 = { is_controlled_by = ROOT }
+		NOT = { has_global_flag = renamed_white_ruthenia }
+	}
+
+	immediate = {
+		hidden_effect = {
+			set_global_flag = renamed_white_ruthenia
+			94 = { set_state_name = "Baranovichi" }
+			95 = { set_state_name = "Novogrudok" }
+			96 = { set_state_name = "Mogilev" }
+			194 = { set_state_name = "Mozyr" }
+		}
+	}
+}
+
+### 102 - Krain
+# GER/AUS - restore Krain's name
+country_event = {
+	id = rename.10200
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		OR = {
+			tag = GER
+			tag = AUS
+		}
+		102 = {
+			is_controlled_by = ROOT
+			has_state_flag = renamed_state
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			102 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+			}
+			reset_province_name = 9627
+		}
+	}
+}
+
+# CRO/ILL/SER - rename Krain
+country_event = {
+	id = rename.10201
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = {
+			tag = CRO
+			tag = ILL
+			tag = SER
+		}
+		102 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			102 = {
+				set_state_name = "Kranjska"
+				set_state_flag = renamed_state
+			}
+			set_province_name = { id = 9627 name = "Ljubljana" }
+		}
+	}
+}
+
+### 103 - Lika
+# ILL/CRO/SER - restore Lika
+country_event = {
+	id = rename.10300
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		OR = {
+			tag = ILL
+			tag = CRO
+			tag = SER
+		}
+		103 = {
+			is_controlled_by = ROOT
+			has_state_flag = renamed_state
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			103 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+			}
+			reset_province_name = 11564
+		}
+	}
+}
+
+# HUN/ITA/AUS/SRI/GER - rename Lika
+country_event = {
+	id = rename.10301
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = {
+			tag = HUN
+			tag = ITA
+			tag = AUS
+			tag = SRI
+			tag = GER
+		}
+		103 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			103 = {
+				set_state_flag = renamed_state
+			}
+			set_province_name = { id = 11564 name = "Fiume" }
+		}
+	}
+}
+
+### 109 - Posavina
+# ILL/CRO/SER - restore Posavina
+country_event = {
+	id = rename.10900
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		OR = {
+			tag = ILL
+			tag = CRO
+			tag = SER
+		}
+		109 = {
+			is_controlled_by = ROOT
+			has_state_flag = renamed_state
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			109 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+			}
+			reset_province_name = 11581
+		}
+	}
+}
+
+# HUN - rename Posavina
+country_event = {
+	id = rename.10901
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		tag = HUN
+		109 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			109 = {
+				set_state_name = "Szávamente"
+				set_state_flag = renamed_state
+			}
+			set_province_name = { id = 11581 name = "Zágráb" }
+		}
+	}
+}
+
+### 137, 192, 197, 200, 226 - Southern Ukraine
+# UKR - rename Southern Ukraine
+country_event = {
+	id = rename.13700
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		tag = UKR
+		137 = { is_controlled_by = ROOT }
+		192 = { is_controlled_by = ROOT }
+		197 = { is_controlled_by = ROOT }
+		200 = { is_controlled_by = ROOT }
+		226 = { is_controlled_by = ROOT }
+		has_global_flag = renamed_southern_ukraine
+	}
+
+	immediate = {
+		hidden_effect = {
+			clr_global_flag = renamed_southern_ukraine
+			137 = { reset_state_name = yes }
+			192 = { reset_state_name = yes }
+			197 = { reset_state_name = yes }
+			200 = { reset_state_name = yes }
+			226 = { reset_state_name = yes }
+			reset_province_name = 11437
+			reset_province_name = 11670
+			reset_province_name = 11405	
+			reset_province_name = 11561		
+		}
+	}
+}
+
+# RUS/SOV - rename Southern Ukraine
+country_event = {
+	id = rename.13701
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = {
+			tag = RUS
+			tag = SOV
+		}
+		137 = { is_controlled_by = ROOT }
+		192 = { is_controlled_by = ROOT }
+		197 = { is_controlled_by = ROOT }
+		200 = { is_controlled_by = ROOT }
+		226 = { is_controlled_by = ROOT }
+		NOT = { has_global_flag = renamed_southern_ukraine }
+	}
+
+	immediate = {
+		hidden_effect = {
+			set_global_flag = renamed_southern_ukraine
+			137 = { set_state_name = "Tavrida" }
+			192 = { set_state_name = "Odessa" }
+			197 = { set_state_name = "Nikolaev" }
+			200 = { set_state_name = "Alexandrovsk" }
+			226 = { set_state_name = "Yekaterinoslav" }
+			set_province_name = { id = 11437 name = "Yekaterinoslav" }
+			set_province_name = { id = 11670 name = "Odessa" }
+			set_province_name = { id = 11405 name = "Alexandrovsk" }
+			set_province_name = { id = 11561 name = "Krivoy Rog" }		
+		}
+	}
+}
+
+### 138 - Skåneland
+# SWE - restore Skåneland
+country_event = {
+	id = rename.1380
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		OR = {
+			tag = SWE
+			tag = SCA
+		}
+		138 = {
+			is_controlled_by = ROOT
+			has_state_flag = renamed_state
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			138 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+			}
+			reset_province_name = 9279
+		}
+	}
+}
+
+# DEN - rename Skåneland
+country_event = {
+	id = rename.1381
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		tag = DEN
+		138 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			138 = {
+				set_state_name = "Skånelandene"
+				set_state_flag = renamed_state
+			}
+			set_province_name = { id = 9279 name = "Malmø" }
+		}
+	}
+}
+
+### 146 - Karelia
+# FIN - restore Karelia
+country_event = {
+	id = rename.14600
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		tag = FIN
+		146 = {
+			is_controlled_by = ROOT
+			has_state_flag = renamed_state
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			146 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+			}
+			reset_province_name = 9206
+		}
+	}
+}
+
+# RUS/SOV - rename Karelia
+country_event = {
+	id = rename.14601
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = {
+			tag = RUS
+			tag = SOV
+		}
+		146 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			146 = {
+				set_state_name = "Vyborg"
+				set_state_flag = renamed_state
+			}
+			set_province_name = { id = 9206 name = "Vyborg" }
+		}
+	}
+}
+
+### 163 - Dalmacija
+# ILL/CRO - restore Dalmacija's name
+country_event = {
+	id = rename.16300
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		OR = {
+			tag = ILL
+			tag = CRO
+		}
+		163 = {
+			is_controlled_by = ROOT
+			has_state_flag = renamed_state
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			163 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+			}
+		}
+	}
+}
+
+# ITA - rename Dalmacija
+country_event = {
+	id = rename.16301
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = {
+			tag = ITA
+			tag = SRI
+		}
+		163 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			163 = {
+				set_state_name = "Dalmazia"
+				set_state_flag = renamed_state
+			}
+		}
+	}
+}
+
+### 189 - Šiauliai
+# LIT/PLC - restore Šiauliai
+country_event = {
+	id = rename.18900
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		OR = {
+			tag = LIT
+			tag = PLC
+		}
+		189 = {
+			is_controlled_by = ROOT
+			has_state_flag = renamed_state
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			189 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+			}
+			reset_province_name = 9483
+		}
+	}
+}
+
+# RUS/SOV - rename Šiauliai
+country_event = {
+	id = rename.18901
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = {
+			tag = RUS
+			tag = SOV
+		}
+		189 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			189 = {
+				set_state_name = "Shavli"
+				set_state_flag = renamed_state
+			}
+			set_province_name = { id = 9483 name = "Shavli" }
+		}
+	}
+}
+
+### 184 - Gyumyurdzhina
+# BUK - restore Gyumyurdzhina
+country_event = {
+	id = rename.18400
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		tag = BUL
+		184 = {
+			is_controlled_by = ROOT
+			has_state_flag = renamed_state
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			184 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+			}
+		}
+	}
+}
+
+# GRE/SER - rename Gyumyurdzhina to Thrace
+country_event = {
+	id = rename.18401
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = {
+			tag = GRE
+			tag = SER
+		}
+		184 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			184 = {
+				set_state_name = "Thraki"
+				set_state_flag = renamed_state
+			}
+		}
+	}
+}
+
+### 190 - Kurland
+# restore Kurland
+country_event = {
+	id = rename.19000
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		NOT = {
+			tag = RUS
+			tag = SOV
+		}
+		190 = {
+			is_controlled_by = ROOT
+			has_state_flag = renamed_state
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			190 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+			}
+			reset_province_name = 9262
+		}
+	}
+}
+
+# RUS/SOV - rename Kurland
+country_event = {
+	id = rename.19001
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = {
+			tag = RUS
+			tag = SOV
+		}
+		190 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			190 = {
+				set_state_name = "Libava"
+				set_state_flag = renamed_state
+			}
+			set_province_name = { id = 9262 name = "Libava" }
+		}
+	}
+}
+
+### 191 - Dorpat
+# restore Dorpat
+country_event = {
+	id = rename.19100
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		NOT = {
+			tag = RUS
+			tag = SOV
+		}
+		191 = {
+			is_controlled_by = ROOT
+			has_state_flag = renamed_state
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			191 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+			}
+			reset_province_name = 9221
+		}
+	}
+}
+
+# RUS/SOV - rename Dorpat
+country_event = {
+	id = rename.19101
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = {
+			tag = RUS
+			tag = SOV
+		}
+		191 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			191 = {
+				set_state_name = "Yuriev"
+				set_state_flag = renamed_state
+			}
+			set_province_name = { id = 9221 name = "Yuriev" }
+		}
+	}
+}
+
+### 193, 201, 202, 203 - Central Ukraine
+# UKR - rename Central Ukraine
+country_event = {
+	id = rename.19300
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		tag = UKR
+		193 = { is_controlled_by = ROOT }
+		201 = { is_controlled_by = ROOT }
+		202 = { is_controlled_by = ROOT }
+		203 = { is_controlled_by = ROOT }
+		has_global_flag = renamed_central_ukraine
+	}
+
+	immediate = {
+		hidden_effect = {
+			clr_global_flag = renamed_central_ukraine
+			193 = { reset_state_name = yes }
+			203 = { reset_state_name = yes }
+			202 = { reset_state_name = yes }
+			201 = { reset_state_name = yes }
+			reset_province_name = 525	
+		}
+	}
+}
+
+# RUS/SOV - rename Central Ukraine
+country_event = {
+	id = rename.19301
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = {
+			tag = RUS
+			tag = SOV
+		}
+		193 = { is_controlled_by = ROOT }
+		201 = { is_controlled_by = ROOT }
+		202 = { is_controlled_by = ROOT }
+		203 = { is_controlled_by = ROOT }
+		NOT = { has_global_flag = renamed_central_ukraine }
+	}
+
+	immediate = {
+		hidden_effect = {
+			set_global_flag = renamed_central_ukraine
+			193 = { set_state_name = "Chernigov" }
+			201 = { set_state_name = "Zhitomir" }
+			202 = { set_state_name = "Kiev" }
+			203 = { set_state_name = "Cherkassy" }
+			set_province_name = { id = 525 name = "Kiev" }
+		}
+	}
+}
+
+### 213 - Murmansk
+# RUS/SOV - restore Murmansk
+country_event = {
+	id = rename.2130
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		OR = {
+			tag = RUS
+			tag = SOV
+		}
+		213 = {
+			is_controlled_by = ROOT
+			has_state_flag = renamed_state
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			213 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+			}
+			reset_province_name = 3134
+		}
+	}
+}
+
+# FIN - rename Murmansk
+country_event = {
+	id = rename.2131
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		tag = FIN
+		213 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			213 = {
+				set_state_name = "Kuola"
+				set_state_flag = renamed_state
+			}
+			set_province_name = { id = 3134 name = "Muurmanni" }
+		}
+	}
+}
+
+### 215 - Belomorsk
+# RUS/SOV - restore Belomorsk
+country_event = {
+	id = rename.2150
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		OR = {
+			tag = RUS
+			tag = SOV
+		}
+		215 = {
+			is_controlled_by = ROOT
+			has_state_flag = renamed_state
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			215 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+			}
+		}
+	}
+}
+
+# FIN - rename Belomorsk
+country_event = {
+	id = rename.2151
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		tag = FIN
+		215 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			215 = {
+				set_state_name = "Vienan Karjala"
+				set_state_flag = renamed_state
+			}
+		}
+	}
+}
+
+### 216 - Petrozavodsk
+# RUS/SOV - restore Petrozavodsk
+country_event = {
+	id = rename.2160
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		OR = {
+			tag = RUS
+			tag = SOV
+		}
+		216 = {
+			is_controlled_by = ROOT
+			has_state_flag = renamed_state
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			216 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+			}
+			reset_province_name = 11159
+		}
+	}
+}
+
+# FIN - rename Petrozavodsk
+country_event = {
+	id = rename.2161
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		tag = FIN
+		216 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			216 = {
+				set_state_name = "Aunuksen Karjala"
+				set_state_flag = renamed_state
+			}
+			set_province_name = { id = 11159 name = "Äänislinna" }
+		}
+	}
+}
+
+### 221,227,228,240,821 - Western Ukraine
+# UKR - rename Eastern Ukraine
+country_event = {
+	id = rename.22100
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		tag = UKR
+		221 = { is_controlled_by = ROOT }
+		227 = { is_controlled_by = ROOT }
+		228 = { is_controlled_by = ROOT }
+		240 = { is_controlled_by = ROOT }
+		821 = { is_controlled_by = ROOT }
+		has_global_flag = renamed_eastern_ukraine
+	}
+
+	immediate = {
+		hidden_effect = {
+			clr_global_flag = renamed_eastern_ukraine
+			221 = { reset_state_name = yes }
+			228 = { reset_state_name = yes }
+			227 = { reset_state_name = yes }
+			821 = { reset_state_name = yes }
+			reset_province_name = 418
+			reset_province_name = 6474
+			reset_province_name = 9461	
+		}
+	}
+}
+
+# RUS/SOV - rename Eastern Ukraine
+country_event = {
+	id = rename.22101
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = {
+			tag = RUS
+			tag = SOV
+		}
+		221 = { is_controlled_by = ROOT }
+		227 = { is_controlled_by = ROOT }
+		228 = { is_controlled_by = ROOT }
+		821 = { is_controlled_by = ROOT }
+		NOT = { has_global_flag = renamed_eastern_ukraine }
+	}
+
+	immediate = {
+		hidden_effect = {
+			set_global_flag = renamed_eastern_ukraine
+			221 = { set_state_name = "Kharkov" }
+			227 = { set_state_name = "Yuzovka" }
+			228 = { set_state_name = "Lugansk" }
+			821 = { set_state_name = "Pavlograd" }
+			set_province_name = { id = 418 name = "Kharkov" }
+			set_province_name = { id = 6474 name = "Yuzovka" }
+			set_province_name = { id = 9461 name = "Lugansk" }	
+		}
+	}
+}
+
+### 286 - Saigon
+# Others - restore Saigon
+country_event = {
+	id = rename.28600
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		286 = {
+			is_controlled_by = ROOT
+			OR = {
+				has_state_flag = renamed_state_CAM
+				has_state_flag = renamed_state_VIE
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			286 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state_CAM
+				clr_state_flag = renamed_state_VIE
+				clr_state_flag = renamed_state_INC
+			}
+			reset_province_name = 4401
+		}
+	}
+}
+
+# CAM - rename Prey Nokor
+country_event = {
+	id = rename.28601
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		tag = CAM
+		286 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state_CAM }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			286 = {
+				set_state_name = "Prey Nokor"
+				set_state_flag = renamed_state_CAM
+				clr_state_flag = renamed_state_VIE
+				clr_state_flag = renamed_state_INC
+			}
+			set_province_name = { id = 4401 name = "Prey Nokor" }
+		}
+	}
+}
+
+# VIE - rename Gia Dinh
+country_event = {
+	id = rename.28602
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = {
+			tag = VIE
+			tag = INC
+		}
+		NOT = {
+			has_government = totalist
+			has_government = radical_socialist
+			has_government = syndicalist
+		}
+		286 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state_VIE }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			286 = {
+				set_state_name = "Gia Dinh"
+				set_state_flag = renamed_state_VIE
+				clr_state_flag = renamed_state_CAM
+				clr_state_flag = renamed_state_INC
+			}
+			set_province_name = { id = 4401 name = "Gia Dinh" }
+		}
+	}
+}
+
+# INC - rename Ho Chi Minh City
+country_event = {
+	id = rename.28603
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = {
+			tag = VIE
+			tag = INC
+		}
+		OR = {
+			has_government = totalist
+			has_government = radical_socialist
+			has_government = syndicalist
+		}
+		286 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state_INC }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			286 = {
+				set_state_name = "Gia Dinh"
+				set_state_flag = renamed_state_INC
+				clr_state_flag = renamed_state_VIE
+				clr_state_flag = renamed_state_CAM
+			}
+			set_province_name = { id = 4401 name = "Ho Chi Minh City" }
+		}
+	}
+}
+
+### 335 - Java
+# HOL - Restore Batavia
+country_event = {
+	id = rename.33500
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		tag = HOL
+		335 = {
+			is_controlled_by = ROOT
+			has_state_flag = renamed_state
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			335 = {
+				clr_state_flag = renamed_state
+			}
+			reset_province_name = 7381
+		}
+	}
+}
+
+# Independent INS - Rename Jakarta
+country_event = {
+	id = rename.33501
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		tag = INS
+		NOT = { is_subject_of = HOL }
+		335 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			335 = {
+				set_state_flag = renamed_state
+			}
+			set_province_name = { id = 7381 name = "Jakarta" }
+		}
+	}
+}
+
+### 336 - Singapore
+# GER/AUS - restore Singapur
+country_event = {
+	id = rename.33600
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		OR = {
+			tag = ILL
+			tag = CRO
+		}
+		336 = {
+			is_controlled_by = ROOT
+			OR = {
+				has_state_flag = renamed_state
+				has_state_flag = renamed_state_SIA
+				has_state_flag = renamed_state_JAP
+				has_state_flag = renamed_state_INS
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			336 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+				clr_state_flag = renamed_state_SIA
+				clr_state_flag = renamed_state_JAP
+				clr_state_flag = renamed_state_INS
+			}
+			reset_province_name = 12299
+		}
+	}
+}
+
+# Others - rename Singapore
+country_event = {
+	id = rename.33601
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		NOT = {
+			tag = GER
+			tag = AUS
+			tag = SIA
+			tag = JAP
+			tag = INS
+		}
+		336 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			336 = {
+				set_state_name = "Singapore"
+				set_state_flag = renamed_state
+				clr_state_flag = renamed_state_SIA
+				clr_state_flag = renamed_state_JAP
+				clr_state_flag = renamed_state_INS
+			}
+			set_province_name = { id = 12299 name = "Singapore" }
+		}
+	}
+}
+
+# SIA - rename Singhanakhon
+country_event = {
+	id = rename.33602
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		tag = SIA
+		336 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state_SIA }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			336 = {
+				set_state_name = "Singhanakhon"
+				set_state_flag = renamed_state_SIA
+				clr_state_flag = renamed_state
+				clr_state_flag = renamed_state_JAP
+				clr_state_flag = renamed_state_INS
+			}
+			set_province_name = { id = 12299 name = "Singhanakhon" }
+		}
+	}
+}
+
+# JAP - rename Shōnan-tō
+country_event = {
+	id = rename.33603
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		tag = JAP
+		336 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state_JAP }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			336 = {
+				set_state_name = "Shōnan-tō"
+				set_state_flag = renamed_state_JAP
+				clr_state_flag = renamed_state
+				clr_state_flag = renamed_state_SIA
+				clr_state_flag = renamed_state_INS
+			}
+			set_province_name = { id = 12299 name = "Shōnan-tō" }
+		}
+	}
+}
+
+# INS - rename Temasek
+country_event = {
+	id = rename.33604
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		tag = INS
+		336 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state_INS }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			336 = {
+				set_state_name = "Temasek"
+				set_state_flag = renamed_state_INS
+				clr_state_flag = renamed_state
+				clr_state_flag = renamed_state_SIA
+				clr_state_flag = renamed_state_JAP
+			}
+			set_province_name = { id = 12299 name = "Temasek" }
+		}
+	}
+}
+
+### 339 - Izmir
+# OTT/TUR - restore Izmir
+country_event = {
+	id = rename.33900
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		OR = {
+			tag = OTT
+			tag = TUR
+		}
+		339 = {
+			is_controlled_by = ROOT
+			has_state_flag = renamed_state
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			339 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+			}
+			reset_province_name = 4112			
+		}
+	}
+}
+
+# GRE - rename Izmir
+country_event = {
+	id = rename.33901
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		tag = GRE
+		339 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			339 = {
+				set_state_name = "Smyrna"
+				set_state_flag = renamed_state
+			}
+			set_province_name = { id = 4112 name = "Smyrna"}
+		}
+	}
+}
+
+### 341 - Edirne
+# OTT/TUR - restore Edirne
+country_event = {
+	id = rename.34100
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		OR = {
+			tag = OTT
+			tag = TUR
+		}
+		341 = {
+			is_controlled_by = ROOT
+			has_state_flag = renamed_state
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			341 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+			}
+			reset_province_name = 3893			
+		}
+	}
+}
+
+# GRE - rename Edirne
+country_event = {
+	id = rename.34101
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		tag = GRE
+		341 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			341 = {
+				set_state_name = "Anatoliki Thraki"
+				set_state_flag = renamed_state
+			}
+			set_province_name = { id = 3893 name = "Hadrianopolis"}
+		}
+	}
+}
+
+### 342 - Antalya
+# OTT/TUR - restore Antalya
+country_event = {
+	id = rename.34200
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		OR = {
+			tag = OTT
+			tag = TUR
+		}
+		342 = {
+			is_controlled_by = ROOT
+			has_state_flag = renamed_state
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			342 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+			}
+			reset_province_name = 1005			
+		}
+	}
+}
+
+# GRE - rename Antalya
+country_event = {
+	id = rename.34201
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		tag = GRE
+		342 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			342 = {
+				set_state_name = "Attaleia"
+				set_state_flag = renamed_state
+			}
+			set_province_name = { id = 1005 name = "Attaleia"}
+		}
+	}
+}
+
+### 354 - Trabzon
+# OTT/TUR - restore Trabzon
+country_event = {
+	id = rename.35400
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		OR = {
+			tag = OTT
+			tag = TUR
+		}
+		354 = {
+			is_controlled_by = ROOT
+			has_state_flag = renamed_state
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			354 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+			}
+			reset_province_name = 9932
+		}
+	}
+}
+
+# GRE - rename Trabzon
+country_event = {
+	id = rename.35401
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		tag = GRE
+		354 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			354 = {
+				set_state_name = "Trebizond"
+				set_state_flag = renamed_state
+			}
+			set_province_name = { id = 9932 name = "Trebizond"}
+		}
+	}
+}
+
+### 375 - Northern Texas
+# MEX - rename Southern Texas
+country_event = {
+	id = rename.37500
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		tag = MEX
+		375 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state_375_MEX }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			375 = {
+				set_state_name = "Norte de Tejas"
+				set_state_flag = renamed_state_375_MEX
+			}
+		}
+	}
+}
+
+# Others - restore Northern Texas
+country_event = {
+	id = rename.37501
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		NOT = { tag = MEX }
+		375 = {
+			is_controlled_by = ROOT
+			OR = {
+				has_state_flag = renamed_state_375_MEX
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			375 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state_375_MEX
+			}
+		}
+	}
+}
+
+### 376 - New Mexico
+# MEX - rename Southern Texas
+country_event = {
+	id = rename.37600
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		tag = MEX
+		376 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state_376_MEX }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			376 = {
+				set_state_name = "Nuevo México"
+				set_state_flag = renamed_state_376_MEX
+			}
+		}
+	}
+}
+
+# Others - restore Southern Texas
+country_event = {
+	id = rename.37601
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		NOT = { tag = MEX }
+		376 = {
+			is_controlled_by = ROOT
+			OR = {
+				has_state_flag = renamed_state_376_MEX
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			376 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state_376_MEX
+			}
+		}
+	}
+}
+
+### 376 - Northern California
+# MEX - rename Northern California
+country_event = {
+	id = rename.37800
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		tag = MEX
+		378 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state_378_MEX }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			378 = {
+				set_state_name = "Norte De California"
+				set_state_flag = renamed_state_378_MEX
+			}
+		}
+	}
+}
+
+# Others - restore Northern California
+country_event = {
+	id = rename.37801
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		NOT = { tag = MEX }
+		378 = {
+			is_controlled_by = ROOT
+			OR = {
+				has_state_flag = renamed_state_378_MEX
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			378 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state_378_MEX
+			}
+		}
+	}
+}
+
+### 524 - Taiwan
+# JAP - rename Taiwan
+country_event = {
+	id = rename.52400
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		tag = JAP
+		524 = {
+			is_controlled_by = ROOT
+			has_state_flag = renamed_state
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			524 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+			}
+			reset_province_name = 7186
+		}
+	}
+}
+
+# TAI and other Chinese factions - rename Taiwan
+country_event = {
+	id = rename.52401
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = {
+			tag = TAI
+			tag = CHI
+			tag = QIE
+			tag = YUN
+			tag = NPA
+			tag = SQI
+			tag = FNG
+			tag = XSM
+		}
+		524 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			524 = {
+				set_state_name = "Taipei"
+				set_state_flag = renamed_state
+			}
+			set_province_name = { id = 7186 name = "Taipei"}
+		}
+	}
+}
+
+### 525 - South Korea
+# JAP - rename South Korea
+country_event = {
+	id = rename.52500
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		tag = JAP
+		525 = {
+			is_controlled_by = ROOT
+			has_state_flag = renamed_state
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			525 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+			}
+			reset_province_name = 4056
+			reset_province_name = 7125
+		}
+	}
+}
+
+# Korea - rename South Korea
+country_event = {
+	id = rename.52501
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		tag = KOR
+		525 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			525 = {
+				set_state_name = "South Korea"
+				set_state_flag = renamed_state
+			}
+			set_province_name = { id = 4056 name = "Pusan"}
+			set_province_name = { id = 7125 name = "Gyeongseong"}
+		}
+	}
+}
+
+### 527 - North Korea
+# JAP - rename North Korea
+country_event = {
+	id = rename.52700
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		tag = JAP
+		527 = {
+			is_controlled_by = ROOT
+			has_state_flag = renamed_state
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			527 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+			}
+			reset_province_name = 4052
+		}
+	}
+}
+
+# Korea - rename North Korea
+country_event = {
+	id = rename.52701
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		tag = KOR
+		527 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			527 = {
+				set_state_name = "North Korea"
+				set_state_flag = renamed_state
+			}
+			set_province_name = { id = 4052 name = "Pyongyang" }
+		}
+	}
+}
+
+### 537 - South Sakhalin
+# JAP - rename Karafuto
+country_event = {
+	id = rename.53700
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		tag = JAP
+		537 = {
+			is_controlled_by = ROOT
+			has_state_flag = renamed_state
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			537 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+			}
+			reset_province_name = 12446
+		}
+	}
+}
+
+# Russia/Soviet/Siberia/Transamur - rename Yuzhno-Sakhalinsk (South Sakhalin)
+country_event = {
+	id = rename.53701
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = {
+			tag = RUS
+			tag = SOV
+			tag = TRM
+			tag = SIB
+		}
+		537 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			537 = {
+				set_state_name = "Yuzhno-Sakhalinsk"
+				set_state_flag = renamed_state
+			}
+			set_province_name = { id = 12446 name = "Vladimirovka" }
+		}
+	}
+}
+
+### 555 - Chishima Retto
+# JAP - rename Chishima Retto
+country_event = {
+	id = rename.55500
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		tag = JAP
+		555 = {
+			is_controlled_by = ROOT
+			has_state_flag = renamed_state
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			555 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+			}
+		}
+	}
+}
+
+# Russia/Soviet/Siberia/Transamur - rename Kuril Islands
+country_event = {
+	id = rename.55501
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = {
+			tag = RUS
+			tag = SOV
+			tag = TRM
+			tag = SIB
+		}
+		555 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			555 = {
+				set_state_name = "Kurilskiye Ostrova"
+				set_state_flag = renamed_state
+			}
+		}
+	}
+}
+
+### 655 - Kita Karafuto
+# JAP - rename Kita Karafuto
+country_event = {
+	id = rename.65500
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		tag = JAP
+		655 = {
+			is_controlled_by = ROOT
+			has_state_flag = renamed_state
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			655 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+			}
+		}
+	}
+}
+
+# Russia/Soviet/Siberia/Transamur - rename Sakhalin
+country_event = {
+	id = rename.65501
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = {
+			tag = RUS
+			tag = SOV
+			tag = TRM
+			tag = SIB
+		}
+		655 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			655 = {
+				set_state_name = "Sakhalin"
+				set_state_flag = renamed_state
+			}
+		}
+	}
+}
+
+### 670 - Laos
+# Others - rename Laos
+country_event = {
+	id = rename.67000
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		NOT = {
+			tag = SIA
+			tag = LAO
+		}
+		670 = {
+			is_controlled_by = ROOT
+			OR = {
+				has_state_flag = renamed_state
+				has_state_flag = renamed_state_LAO
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			670 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+				clr_state_flag = renamed_state_LAO
+			}
+			reset_province_name = 1464
+			reset_province_name = 4613
+		}
+	}
+}
+
+# SIA - rename Laos
+country_event = {
+	id = rename.67001
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		tag = SIA
+		670 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			670 = {
+				set_state_name = "Laos"
+				set_state_flag = renamed_state
+				clr_state_flag = renamed_state_LAO
+			}
+			set_province_name = { id = 1464 name = "Viangchan"}
+			set_province_name = { id = 4613 name = "Luang Prabang"}
+		}
+	}
+}
+
+# LAO - rename Laos
+country_event = {
+	id = rename.67002
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		tag = LAO
+		670 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state_LAO }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			670 = {
+				set_state_name = "Laos"
+				set_state_flag = renamed_state_LAO
+				clr_state_flag = renamed_state
+			}
+			set_province_name = { id = 1464 name = "Viangchan"}
+			set_province_name = { id = 4613 name = "Louangphabang"}
+		}
+	}
+}
+
+### 722 - Pechenga
+# FIN - restore Pechenga
+country_event = {
+	id = rename.72200
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		tag = FIN
+		722 = {
+			is_controlled_by = ROOT
+			has_state_flag = renamed_state
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			722 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+			}
+		}
+	}
+}
+
+# RUS/SOV - rename Pechenga
+country_event = {
+	id = rename.72201
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = {
+			tag = RUS
+			tag = SOV
+		}
+		722 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			722 = {
+				set_state_name = "Pechenga"
+				set_state_flag = renamed_state
+			}
+		}
+	}
+}
+
+### 731 - Thessaloniki/Solun
+# BUL - restore Solun
+country_event = {
+	id = rename.73100
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		tag = BUL
+		731 = {
+			is_controlled_by = ROOT
+			has_state_flag = renamed_state
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			731 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+			}
+		}
+	}
+}
+
+# GRE/SER - rename Thessaloniki
+country_event = {
+	id = rename.73101
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = {
+			tag = GRE
+			tag = SER
+		}
+		731 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			731 = {
+				set_state_name = "Thessaloniki"
+				set_state_flag = renamed_state
+			}
+		}
+	}
+}
+
+### 735 - Savoy
+# ITA/SRI - restore Savoia
+country_event = {
+	id = rename.73500
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		OR = { tag = ITA tag = SRI }
+		735 = {
+			is_controlled_by = ROOT
+			has_state_flag = renamed_state
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			735 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+			}
+		}
+	}
+}
+
+# FRA/NFA/FRP - rename Savoia into Savoie
+country_event = {
+	id = rename.73501
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = { tag = FRA tag = NFA tag = FRP }
+		735 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			735 = {
+				set_state_name = "Savoie"
+				set_state_flag = renamed_state
+			}
+		}
+	}
+}
+
+### 736 - Kustenland
+# GER/AUS - restore Kustenland's name
+country_event = {
+	id = rename.73600
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		OR = {
+			tag = AUS
+			tag = GER
+		}
+		736 = {
+			is_controlled_by = ROOT
+			OR = {
+				has_state_flag = renamed_state
+				has_state_flag = renamed_state_CRO
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			736 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+				clr_state_flag = renamed_state_CRO
+			}
+		}
+	}
+}
+
+# ITA - rename Küstenland
+country_event = {
+	id = rename.73601
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		tag = ITA
+		736 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			736 = {
+				set_state_name = "Pola"
+				set_state_flag = renamed_state
+				clr_state_flag = renamed_state_CRO
+			}
+		}
+	}
+}
+
+# CRO/ILL/SER/SLO - rename Küstenland
+country_event = {
+	id = rename.73602
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = {
+			tag = CRO
+			tag = ILL
+			tag = SER
+			tag = SLO
+		}
+		736 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state_CRO }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			736 = {
+				set_state_name = "Primorje"
+				set_state_flag = renamed_state_CRO
+				clr_state_flag = renamed_state
+			}
+		}
+	}
+}
+
+### 741 - Deutsch Wallonien
+# Restore German Name
+country_event = {
+	id = rename.74100
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		OR = {
+			tag = GER
+			tag = AUS
+			tag = GRU
+			tag = RHI
+		}
+		741 = {
+			is_controlled_by = ROOT
+			has_state_flag = renamed_state
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			741 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+			}
+			reset_province_name = 11407
+		}
+	}
+}
+
+# FRA/NFA/FRP/WLL/BEL: rename South Wallonia
+country_event = {
+	id = rename.74101
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = { tag = FRA tag = FRP tag = NFA tag = WLL tag = BEL }
+		741 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			741 = {
+				set_state_name = "Wallonie du Sud"
+				set_state_flag = renamed_state
+			}
+			set_province_name = { id = 11407 name = "Bastogne"}
+		}
+	}
+}
+
+### 745 - Dairen
+# JAP - restore Dairen
+country_event = {
+	id = rename.74500
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		tag = JAP
+		745 = {
+			is_controlled_by = ROOT
+			OR = {
+				has_state_flag = renamed_state
+				has_state_flag = renamed_state_RUS
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			745 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+				clr_state_flag = renamed_state_RUS
+			}
+			reset_province_name = 1150
+		}
+	}
+}
+
+# Chinese Factions - rename Dairen/Dalniy -> Dalian
+country_event = {
+	id = rename.74501
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = {
+			tag = FNG
+			tag = SQI
+			tag = QIE
+			tag = CHI
+			tag = RUS
+			tag = XSM
+			tag = YUN
+		}
+		745 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			745 = {
+				set_state_name = "Dalian"
+				set_state_flag = renamed_state
+				clr_state_flag = renamed_state_RUS
+			}
+			set_province_name = { id = 1150 name = "Dalian" }
+		}
+	}
+}
+
+# RUS/SOV - rename Dalian/Dairen -> Dalniy
+country_event = {
+	id = rename.74502
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = {
+			tag = RUS
+			tag = SOV
+		}
+		745 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state_RUS }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			745 = {
+				set_state_name = "Dalniy"
+				set_state_flag = renamed_state_RUS
+				clr_state_flag = renamed_state
+			}
+			set_province_name = { id = 1150 name = "Dalniy" }
+		}
+	}
+}
+
+### 759 - Friaul
+# GER/AUS - restore Friaul's name
+country_event = {
+	id = rename.75900
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		OR = {
+			tag = AUS
+			tag = GER
+		}
+		759 = {
+			is_controlled_by = ROOT
+			has_state_flag = renamed_state
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			759 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+			}
+			reset_province_name = 9613
+		}
+	}
+}
+
+# ITA - rename Friaul
+country_event = {
+	id = rename.75901
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		tag = ITA
+		759 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			759 = {
+				set_state_name = "Friuli"
+				set_state_flag = renamed_state
+			}
+			set_province_name = { id = 9613 name = "Friuli" }
+		}
+	}
+}
+
+### 762 - Nice
+# ITA/SRI - restore Nizza
+country_event = {
+	id = rename.76200
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		OR = { tag = ITA tag = SRI }
+		762 = {
+			is_controlled_by = ROOT
+			has_state_flag = renamed_state
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			762 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+			}
+			reset_province_name = 9909
+		}
+	}
+}
+
+# FRA/NFA/FRP - rename Nizza into Nice
+country_event = {
+	id = rename.76201
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = { tag = FRA tag = NFA tag = FRP }
+		762 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			762 = {
+				set_state_name = "Nice"
+				set_state_flag = renamed_state
+			}
+			set_province_name = { id = 9909 name = "Nice" }
+		}
+	}
+}
+
+### 765 - Kosovo
+# SER - restore Kosovo
+country_event = {
+	id = rename.76500
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		tag = SER
+		765 = {
+			is_controlled_by = ROOT
+			has_state_flag = renamed_state
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			765 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+			}
+		}
+	}
+}
+
+# ALB - rename Kosovo into Kosova
+country_event = {
+	id = rename.76501
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		tag = ALB
+		765 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			765 = {
+				set_state_name = "Kosova"
+				set_state_flag = renamed_state
+			}
+		}
+	}
+}
+
+### 766 - Vlöre
+# ALB - rename Vlöre
+country_event = {
+	id = rename.76600
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		tag = ALB
+		766 = {
+			is_controlled_by = ROOT
+			has_state_flag = renamed_state
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			766 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+			}
+		}
+	}
+}
+
+# GRE - rename Gjirokastër
+country_event = {
+	id = rename.76601
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		tag = GRE
+		766 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			766 = {
+				set_state_name = "Vorios Ipiros"
+				set_state_flag = renamed_state
+			}
+		}
+	}
+}
+
+### 772 - Dobrudzha / Northern Dobruja
+# BUL - restore Dobrudzha
+country_event = {
+	id = rename.77200
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		tag = BUL
+		772 = {
+			is_controlled_by = ROOT
+			has_state_flag = renamed_state
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			772 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+			}
+		}
+	}
+}
+
+# ROM/RRM - rename Dobrudzha
+country_event = {
+	id = rename.77201
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = {
+			tag = ROM
+			tag = RRM
+			tag = TRS
+		}
+		772 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			772 = {
+				set_state_name = "Dobrogea"
+				set_state_flag = renamed_state
+			}
+		}
+	}
+}
+
+### 773 - Konstantiniyye
+# OTT - restore Konstantiniyye
+country_event = {
+	id = rename.77300
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		tag = OTT
+		773 = {
+			is_controlled_by = ROOT
+			has_state_flag = renamed_state
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			773 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+			}
+			reset_province_name = 9833			
+		}
+	}
+}
+
+# GRE - rename Konstantiniyye
+country_event = {
+	id = rename.77301
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		tag = GRE
+		773 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			773 = {
+				set_state_name = "Konstantinoúpolis"
+				set_state_flag = renamed_state
+			}
+			set_province_name = { id = 9833 name = "Konstantinoúpolis"}
+		}
+	}
+}
+
+# TUR - rename Konstantiniyye
+country_event = {
+	id = rename.77302
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		tag = TUR
+		773 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			773 = {
+				set_state_name = "Istanbul"
+				set_state_flag = renamed_state
+			}
+			set_province_name = { id = 9833 name = "Istanbul"}
+		}
+	}
+}
+
+### 778 - Jämtland
+# Restore Swedish Name
+country_event = {
+	id = rename.7780
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		OR = {
+			tag = SWE
+			tag = SCA
+		}
+		778 = {
+			is_controlled_by = ROOT
+			has_state_flag = renamed_state
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			778 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+			}
+		}
+	}
+}
+
+# NOR: rename Jämtland
+country_event = {
+	id = rename.7781
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = {
+			tag = NOR
+			tag = DEN
+		}
+		778 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			778 = {
+				set_state_name = "Jemtland"
+				set_state_flag = renamed_state
+			}
+		}
+	}
+}
+
+### 779 - Nancy
+# Restore German Name
+country_event = {
+	id = rename.77900
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		OR = {
+			tag = GER
+			tag = AUS
+		}
+		779 = {
+			is_controlled_by = ROOT
+			has_state_flag = renamed_state
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			28 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+			}
+			reset_province_name = 11516
+		}
+	}
+}
+
+# FRA/NFA/FRP: rename Nancy
+country_event = {
+	id = rename.77901
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = { tag = FRA tag = FRP tag = NFA }
+		779 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			779 = {
+				set_state_name = "Nancy"
+				set_state_flag = renamed_state
+			}
+			set_province_name = { id = 11516 name = "Nancy"}
+		}
+	}
+}
+
+### 780 - Saarland
+# Restore German Name
+country_event = {
+	id = rename.78000
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		OR = {
+			tag = GER
+			tag = AUS
+		}
+		780 = {
+			is_controlled_by = ROOT
+			has_state_flag = renamed_state
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			780 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+			}
+		}
+	}
+}
+
+# FRA/NFA/FRP: rename Sarre
+country_event = {
+	id = rename.78001
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = { tag = FRA tag = FRP tag = NFA }
+		780 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			780 = {
+				set_state_name = "Sarre"
+				set_state_flag = renamed_state
+			}
+		}
+	}
+}
+
+### 784 - Sopron/Burgenland
+# Restore Hungarian Name
+country_event = {
+	id = rename.78400
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		tag = HUN
+		784 = {
+			is_controlled_by = ROOT
+			has_state_flag = renamed_state
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			784 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+			}
+		}
+	}
+}
+
+# AUS/GER rename Burgenland
+country_event = {
+	id = rename.78401
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = {
+			tag = AUS
+			tag = GER
+		}
+		784 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			784 = {
+				set_state_name = "Burgenland"
+				set_state_flag = renamed_state
+			}
+		}
+	}
+}
+
+### 789 - Székelyföld/Szeklerland
+# HUN - rename Székelyföld
+country_event = {
+	id = rename.78900
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		tag = HUN
+		789 = {
+			is_controlled_by = ROOT
+			OR = {
+				has_state_flag = renamed_state
+				has_state_flag = renamed_state_AUS
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			789 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+				clr_state_flag = renamed_state_AUS
+			}
+		}
+	}
+}
+
+# ROM/RRM/TRS - rename Székelyföld
+country_event = {
+	id = rename.78901
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = {
+			tag = ROM
+			tag = RRM
+			tag = TRS
+		}
+		789 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			789 = {
+				set_state_name = "Secuimea"
+				set_state_flag = renamed_state
+				clr_state_flag = renamed_state_AUS
+			}
+		}
+	}
+}
+
+# AUS - rename Székelyföld
+country_event = {
+	id = rename.78902
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = {
+			tag = AUS
+			tag = GER
+		}
+		789 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state_AUS }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			789 = {
+				set_state_name = "Szeklerland"
+				set_state_flag = renamed_state_AUS
+				clr_state_flag = renamed_state
+			}
+		}
+	}
+}
+
+### 794 - Srijem
+# CRO/ILL restore Srijem
+country_event = {
+	id = rename.79400
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		OR = {
+			tag = CRO
+			tag = ILL
+		}
+		794 = {
+			is_controlled_by = ROOT
+			has_state_flag = renamed_state
+			has_state_flag = renamed_state_2
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			794 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+				clr_state_flag = renamed_state_2
+			}
+		}
+	}
+}
+
+# SER - rename Srijem
+country_event = {
+	id = rename.79401
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		tag = SER
+		794 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			794 = {
+				set_state_name = "Srem"
+				set_state_flag = renamed_state
+			}
+		}
+	}
+}
+
+# HUN - rename Srijem
+country_event = {
+	id = rename.79402
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		tag = HUN
+		794 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state_2 }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			794 = {
+				set_state_name = "Szerémség"
+				set_state_flag = renamed_state_2
+			}
+		}
+	}
+}
+
+### 795 - Triest
+# GER/AUS - restore Triest's name
+country_event = {
+	id = rename.79500
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		OR = {
+			tag = AUS
+			tag = GER
+		}
+		795 = {
+			is_controlled_by = ROOT
+			OR = {
+				has_state_flag = renamed_state
+				has_state_flag = renamed_state_CRO
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			795 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+				clr_state_flag = renamed_state_CRO
+			}
+			reset_province_name = 6626
+		}
+	}
+}
+
+# ITA - rename Triest
+country_event = {
+	id = rename.79501
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		tag = ITA
+		795 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			795 = {
+				set_state_name = "Trieste"
+				set_state_flag = renamed_state
+				clr_state_flag = renamed_state_CRO
+			}
+			set_province_name = { id = 6626 name = "Trieste" }
+		}
+	}
+}
+
+# CRO/ILL/SER/SLO - rename Triest
+country_event = {
+	id = rename.79502
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = {
+			tag = CRO
+			tag = ILL
+			tag = SER
+			tag = SLO
+		}
+		795 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state_CRO }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			795 = {
+				set_state_name = "Trst"
+				set_state_flag = renamed_state_CRO
+				clr_state_flag = renamed_state
+			}
+			set_province_name = { id = 6626 name = "Trst" }	
+		}
+	}
+}
+
+### 825 - Phra Tabong
+# SIA - rename Phra Tabong
+country_event = {
+	id = rename.82500
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		tag = SIA
+		825 = {
+			is_controlled_by = ROOT
+			has_state_flag = renamed_state
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			825 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+			}
+			reset_province_name = 10177
+		}
+	}
+}
+
+# Others - rename Battambang
+country_event = {
+	id = rename.82501
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		NOT = { tag = SIA }
+		825 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			825 = {
+				set_state_name = "Battambang"
+				set_state_flag = renamed_state
+			}
+			set_province_name = { id = 10177 name = "Battambang"}
+		}
+	}
+}
+
+### 829 - Southern California
+# MEX - Rename Southern California
+country_event = {
+	id = rename.82900
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		tag = MEX
+		829 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state_829_MEX }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			829 = {
+				set_state_name = "Alta California"
+				set_state_flag = renamed_state_829_MEX
+			}
+		}
+	}
+}
+
+# Others - restore Southern California
+country_event = {
+	id = rename.82901
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		NOT =  {tag = MEX }
+		829 = {
+			is_controlled_by = ROOT
+			has_state_flag = renamed_state_829_MEX
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			829 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state_829_MEX
+			}
+		}
+	}
+}
+
+### 831 - Morlamaeng
+# Others - restore Moulmein
+country_event = {
+	id = rename.83100
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		831 = {
+			is_controlled_by = ROOT
+			OR = {
+				has_state_flag = renamed_state_SIA
+				has_state_flag = renamed_state_BUR
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			831 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state_SIA
+				clr_state_flag = renamed_state_BUR
+			}
+			reset_province_name = 1403
+		}
+	}
+}
+
+# SIA - rename Morlamaeng
+country_event = {
+	id = rename.83101
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		tag = SIA
+		831 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state_SIA }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			831 = {
+				set_state_name = "Morlamaeng"
+				set_state_flag = renamed_state_SIA
+				clr_state_flag = renamed_state_BUR
+			}
+			set_province_name = { id = 1403 name = "Morlamaeng" }
+		}
+	}
+}
+
+# BUR/MNS - rename Mawlamyine
+country_event = {
+	id = rename.83102
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = {
+			tag = BUR
+			tag = MNS
+		}
+		831 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state_BUR }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			831 = {
+				set_state_name = "Mawlamyine"
+				set_state_flag = renamed_state_BUR
+				clr_state_flag = renamed_state_SIA
+			}
+			set_province_name = { id = 1403 name = "Mawlamyine" }
+		}
+	}
+}
+
+### 833 - Southern Texas
+# MEX - rename Southern Texas
+country_event = {
+	id = rename.83300
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		tag = MEX
+		833 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state_MEX }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			833 = {
+				set_state_name = "Sur de Tejas"
+				set_state_flag = renamed_state_MEX
+			}
+		}
+	}
+}
+
+# Others - restore Southern Texas
+country_event = {
+	id = rename.83301
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		NOT = { tag = MEX }
+		833 = {
+			is_controlled_by = ROOT
+			OR = {
+				has_state_flag = renamed_state_MEX
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			833 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state_MEX
+			}
+		}
+	}
+}
+
+### 834 - Tuscon
+# MEX - rename Southern Texas
+country_event = {
+	id = rename.83400
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		tag = MEX
+		834 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state_834_MEX }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			834 = {
+				set_state_name = "Tucsón"
+				set_state_flag = renamed_state_834_MEX
+			}
+		}
+	}
+}
+
+# Others - restore Tuscon
+country_event = {
+	id = rename.83401
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		NOT = { tag = MEX }
+		834 = {
+			is_controlled_by = ROOT
+			OR = {
+				has_state_flag = renamed_state_834_MEX
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			834 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state_834_MEX
+			}
+		}
+	}
+}
+
+### 859 - Takao
+# JAP - rename Takao
+country_event = {
+	id = rename.85900
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		tag = JAP
+		859 = {
+			is_controlled_by = ROOT
+			OR = {
+				has_state_flag = renamed_state
+				has_state_flag = renamed_state_TAI
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			859 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+				clr_state_flag = renamed_state_TAI
+			}
+			reset_province_name = 12068
+		}
+	}
+}
+
+# Other Chinese factions - Rename Takao
+country_event = {
+	id = rename.85901
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = {
+			tag = CHI
+			tag = QIE
+			tag = YUN
+			tag = NPA
+			tag = SQI
+			tag = FNG
+			tag = XSM
+		}
+		859 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			859 = {
+				set_state_name = "Kaohsiung"
+				set_state_flag = renamed_state
+				clr_state_flag = renamed_state_TAI
+			}
+			set_province_name = { id = 12068 name = "Kaohsiung"}
+		}
+	}
+}
+
+# TAI - rename Takao
+country_event = {
+	id = rename.85902
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		tag = TAI
+		859 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state_TAI }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			859 = {
+				set_state_name = "Takau"
+				set_state_flag = renamed_state_TAI
+				clr_state_flag = renamed_state
+			}
+			set_province_name = { id = 12068 name = "Takau"}
+		}
+	}
+}
+
+### 875 - Western Banat
+# HUN - restore Bánság's name
+country_event = {
+	id = rename.87500
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		tag = HUN
+		875 = {
+			is_controlled_by = ROOT
+			OR = {
+				has_state_flag = renamed_state
+				has_state_flag = renamed_state_AUS
+				has_state_flag = renamed_state_SER
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			875 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+				clr_state_flag = renamed_state_AUS
+				clr_state_flag = renamed_state_SER
+			}
+		}
+	}
+}
+
+# ROM/RRM/TRS: rename Bánság
+country_event = {
+	id = rename.87501
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = {
+			tag = ROM
+			tag = RRM
+			tag = TRS
+		}
+		875 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			875 = {
+				set_state_name = "Vestic Banat"
+				set_state_flag = renamed_state
+				clr_state_flag = renamed_state_AUS
+				clr_state_flag = renamed_state_SER
+			}
+		}
+	}
+}
+
+# AUS: rename Bánság
+country_event = {
+	id = rename.87502
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = {
+			tag = AUS
+			tag = GER
+		}
+		875 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state_AUS }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			875 = {
+				set_state_name = "Westlich Banat"
+				set_state_flag = renamed_state_AUS
+				clr_state_flag = renamed_state
+				clr_state_flag = renamed_state_SER
+			}
+		}
+	}
+}
+
+# SER: rename Bánság
+country_event = {
+	id = rename.87503
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		tag = SER
+		875 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state_SER }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			875 = {
+				set_state_name = "Zapadni Banat"
+				set_state_flag = renamed_state_SER
+				clr_state_flag = renamed_state
+				clr_state_flag = renamed_state_AUS
+			}
+		}
+	}
+}
+
+### 882 - Chaiyaburi
+# SIA - rename Chaiyaburi
+country_event = {
+	id = rename.88200
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		tag = SIA
+		882 = {
+			is_controlled_by = ROOT
+			OR = {
+				has_state_flag = renamed_state
+				has_state_flag = renamed_state_OTH
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			882 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+				clr_state_flag = renamed_state_OTH
+			}
+		}
+	}
+}
+
+# LAO - rename Xaignabouli
+country_event = {
+	id = rename.88201
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		tag = LAO
+		882 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			882 = {
+				set_state_name = "Xaignabouli"
+				set_state_flag = renamed_state
+				clr_state_flag = renamed_state_OTH
+			}
+		}
+	}
+}
+
+# Others - rename Sainyabuli
+country_event = {
+	id = rename.88202
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		NOT = { 
+			tag = SIA
+			tag = LAO
+		}
+		882 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state_OTH }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			882 = {
+				set_state_name = "Sainyabuli"
+				set_state_flag = renamed_state_OTH
+				clr_state_flag = renamed_state
+			}
+		}
+	}
+}
+
+### 908 - Bohuslän
+# SWE - restore Tornedalen
+country_event = {
+	id = rename.9080
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		OR = {
+			tag = SWE
+			tag = SCA
+		}
+		908 = {
+			is_controlled_by = ROOT
+			has_state_flag = renamed_state
+		}
+	}
+
+	immediate = {
+		hidden_effect = {													
+			908 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+			}
+		}
+	}
+}
+
+# NOR/DEN - rename Bohuslän
+country_event = {
+	id = rename.9081
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = {
+			tag = NOR
+			tag = DEN
+		}
+		908 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			908 = {
+				set_state_name = "Båhuslen"
+				set_state_flag = renamed_state
+			}
+		}
+	}
+}
+
+### 909 - Tornedalen
+# SWE - restore Tornedalen
+country_event = {
+	id = rename.9090
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		tag = SWE
+		909 = {
+			is_controlled_by = ROOT
+			has_state_flag = renamed_state
+		}
+	}
+
+	immediate = {
+		hidden_effect = {													
+			909 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+			}
+		}
+	}
+}
+
+# FIN - rename Tornedalen
+country_event = {
+	id = rename.9091
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		tag = FIN
+		909 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			909 = {
+				set_state_name = "Tornionlaakso"
+				set_state_flag = renamed_state
+			}
+		}
+	}
+}
+
+### 936 - Varangerhalvøya
+# NOR - restore Varangerhalvøya
+country_event = {
+	id = rename.9360
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		tag = NOR
+		936 = {
+			is_controlled_by = ROOT
+			has_state_flag = renamed_state
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			936 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+			}
+		}
+	}
+}
+
+# FIN - rename Varangerhalvøya
+country_event = {
+	id = rename.9361
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		tag = FIN
+		936 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			936 = {
+				set_state_name = "Vesisaari"
+				set_state_flag = renamed_state
+			}
+		}
+	}
+}
+
+### 937 - Finnmarksvidda
+# NOR - restore Finnmarksvidda
+country_event = {
+	id = rename.9370
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		tag = NOR
+		937 = {
+			is_controlled_by = ROOT
+			has_state_flag = renamed_state
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			937 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+			}
+		}
+	}
+}
+
+# FIN - rename Finnmarksvidda
+country_event = {
+	id = rename.9371
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		tag = FIN
+		937 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			937 = {
+				set_state_name = "Koutokeino"
+				set_state_flag = renamed_state
+			}
+		}
+	}
+}
+
+### 943 - Haute Savoie
+# ITA/SRI - restore Alta Savoia
+country_event = {
+	id = rename.94300
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		OR = { tag = ITA tag = SRI }
+		943 = {
+			is_controlled_by = ROOT
+			has_state_flag = renamed_state
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			943 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+			}
+		}
+	}
+}
+
+# FRA/NFA/FRP - rename Alta Savoia into Haute savoie
+country_event = {
+	id = rename.94301
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		OR = { tag = FRA tag = NFA tag = FRP }
+		943 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			943 = {
+				set_state_name = "Haute-Savoie"
+				set_state_flag = renamed_state
+			}
+		}
+	}
+}
+
+### 960 - Kiruna
+# SWE - restore Kiruna
+country_event = {
+	id = rename.9600
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		OR = {
+			tag = SWE
+			tag = SCA
+		}
+		960 = {
+			is_controlled_by = ROOT
+			has_state_flag = renamed_state
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			960 = {
+				reset_state_name = yes
+				clr_state_flag = renamed_state
+			}
+		}
+	}
+}
+
+# FIN - rename Kiruna
+country_event = {
+	id = rename.9601
+	
+	is_triggered_only = yes
+	hidden = yes
+
+	trigger = {
+		tag = FIN
+		960 = {
+			is_controlled_by = ROOT
+			NOT = { has_state_flag = renamed_state }
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			960 = {
+				set_state_name = "Kiiruna"
+				set_state_flag = renamed_state
+			}
+		}
+	}
+}

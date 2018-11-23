@@ -1,0 +1,91 @@
+ENG_support_KOR = {
+	
+	enable = {		
+		tag = ENG
+	}
+	
+	
+	ai_strategy = {
+		type = send_volunteers_desire
+		id = "KOR"			
+		value = 400
+	}
+	ai_strategy = {
+		type = befriend
+		id = "KOR"			
+		value = 100
+	}
+	ai_strategy = {
+		type = protect
+		id = "KOR"			
+		value = 75
+	}
+}
+
+USA_support_KOR = {
+	
+	enable = {		
+		tag = USA
+	}
+	
+	ai_strategy = {
+		type = send_volunteers_desire
+		id = "KOR"			
+		value = 300
+	}
+	ai_strategy = {
+		type = befriend
+		id = "KOR"			
+		value = 150
+	}
+	ai_strategy = {
+		type = protect
+		id = "KOR"			
+		value = 100
+	}
+}
+
+UN_support_KOR = {
+	
+	enable = {	
+		OR = {	
+			tag = BEL
+			tag = AST
+			tag = LUX
+			tag = CAN
+			tag = FRA
+			tag = HOL
+			tag = GRE
+			tag = TUR
+			tag = SIA
+			tag = SAF
+			tag = COL
+			tag = SIA
+			tag = ETH
+			tag = JAP
+			tag = CHI
+			tag = SPR
+		}
+		KOR = { has_war_with = KPA }
+	}
+	
+	abort = {
+		KOR = { NOT = { has_war_with = KPA } }
+	}
+	
+	ai_strategy = {
+		type = send_volunteers_desire
+		id = "KOR"			
+		value = 200
+	}
+	ai_strategy = {
+		type = befriend
+		id = "KOR"			
+		value = 100
+	}
+	ai_strategy = {
+		type = protect
+		id = "KOR"			
+		value = 25
+	}
+}

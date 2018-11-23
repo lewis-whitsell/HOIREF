@@ -1,0 +1,556 @@
+ideas = {
+	country = {
+	
+		idea_ISR_Trump_to_Victory = {
+			
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+
+			removal_cost = -1
+
+			modifier = { 
+				conscription = 0.05
+			}
+
+			picture = air_war_plans_division_focus
+		}
+		
+		idea_ISR_Military_to_Victory = {
+			
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+
+			removal_cost = -1
+
+			modifier = {
+				army_org_factor = 0.05
+				army_morale_factor = 0.05
+				army_org = 2.00
+				army_infantry_attack_factor = 0.05
+				army_infantry_defence_factor = 0.05
+			}
+
+			picture = generic_manpower_bonus
+		}
+		
+		
+		idea_ISR_Impulse_Settlements= {
+			
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+
+			removal_cost = -1
+
+			modifier = {
+				consumer_goods_factor = -0.15
+				production_speed_industrial_complex_factor = 0.25
+				production_speed_arms_factory_factor = 0.25
+			}
+
+			picture = generic_manpower_bonus
+		}
+		
+		idea_ISR_Defence_of_the_Sionist_Nation= {
+			
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+
+			removal_cost = -1
+
+			modifier = {
+				industrial_capacity_factory = 0.1
+				MONTHLY_POPULATION = 0.05
+				army_org_factor = 0.05
+				army_morale_factor = 0.05
+				army_org = 2.00
+				army_core_attack_factor = 0.1
+				army_core_defence_factor = 0.1
+				conscription = 0.02
+			}
+
+			picture = generic_manpower_bonus
+		}
+		
+		idea_ISR_Infantery_equipment = {
+			
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+
+			removal_cost = -1
+
+			equipment_bonus = {
+
+				infantry_equipment = {
+					build_cost_ic = -0.1 instant = yes
+				}
+				lmg_infantry_equipment  = {
+					build_cost_ic = -0.1 instant = yes
+				}
+			}
+
+			picture = generic_manpower_bonus
+		}
+		
+		idea_ISR_Motorized_Equipment = {
+			
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+
+			removal_cost = -1
+
+			equipment_bonus = {
+
+				mechanized_equipment = {
+					build_cost_ic = -0.1 instant = yes
+				}
+				motorized_equipment = {
+					build_cost_ic = -0.1 instant = yes
+				}
+				lt_equipment = {
+					build_cost_ic = -0.1 instant = yes
+				}
+				mbt_equipment = {
+					build_cost_ic = -0.1 instant = yes
+				}
+				ht_equipment = {
+					build_cost_ic = -0.1 instant = yes
+				}
+				 
+			}
+
+			picture = generic_manpower_bonus
+		}
+		
+		idea_ISR_Industrial = {
+		
+			allowed = { always = no }
+
+			allowed_civil_war = { always = yes }
+
+			removal_cost = -1
+
+			modifier = {
+				consumer_goods_factor = -0.05
+				production_speed_industrial_complex_factor = 0.1
+				production_speed_arms_factory_factor = 0.1
+				industrial_capacity_factory = 0.15
+			}
+
+			picture = generic_manpower_bonus
+		}
+	}
+
+	political_advisor = {
+		
+		Pinchas_Rosen = {
+			
+			allowed = {
+				original_tag = ISR
+			}
+
+			traits = { for_the_people }
+		}		
+		
+		Israel_Rokah = {
+			
+			allowed = {
+				original_tag = ISR
+			}
+
+			traits = { silent_workhorse }
+		}		
+		
+		
+	#}
+	#intel_advisor = {
+		Isser_Harel = {
+			
+			allowed = {
+				original_tag = ISR
+			}
+
+			traits = { extreme_state_security }
+		}		
+	#}
+	#economic_advisor = {		
+
+		Levi_Eshkol	= {
+			
+			allowed = {
+				original_tag = ISR
+			}
+
+			traits = { financial_expert }
+		}		
+		Mordechai_Bentov = {
+			
+			allowed = {
+				original_tag = ISR
+			}
+
+			traits = { resource_extraction_expert }
+		}		
+		Peretz_Bernstein = {
+			
+			allowed = {
+				original_tag = ISR
+			}
+
+			traits = { captain_of_industry }
+		}	
+
+	#}
+	#foriegn_advisor = {
+		Moshe_Sharett = {
+			
+			allowed = {
+				original_tag = ISR
+			}
+
+			traits = { highly_regarded_minister }
+		}			
+		Menachem_Begin = {
+			allowed = {
+				original_tag = ISR
+			}
+
+			traits = { interventionist_minister }		
+		}
+		Golda_Meir = {
+			
+			allowed = {
+				original_tag = ISR
+			}
+
+			traits = { tough_minister }
+		}	
+	#}
+	
+	#education_advisor = {
+		Yosef_Burg = {
+			
+			allowed = {
+				original_tag = ISR
+			}
+
+			traits = { conservative_educator }
+		}	
+		Zalman_Shazar = {
+			
+			allowed = {
+				original_tag = ISR
+			}
+
+			traits = { secular_educator }
+		}	
+		Ben_Zion_Dinur = {
+			
+			allowed = {
+				original_tag = ISR
+			}
+
+			traits = { progressive_educator }
+		}	
+
+	}
+	army_chief = {
+		
+		Moshe_Dayan_chief = {
+			
+			allowed = {
+				original_tag = ISR
+			}
+			
+			traits = { army_chief_offensive_2 }
+		}
+		Yigael_Yadin_chief = {
+			
+			allowed = {
+				original_tag = ISR
+			}
+			
+			traits = { army_chief_defensive_2 }
+		}
+
+		Yitzhak_Rabin_chief = {
+			
+			allowed = {
+				original_tag = ISR
+			}
+			
+			traits = { army_chief_maneuver_2 }
+		}
+		Yaakov_Dori_chief = {
+			
+			allowed = {
+				original_tag = ISR
+			}
+			
+			traits = { army_chief_organizational_2 }
+		}
+		Haim_Laskov_chief = {
+			
+			allowed = {
+				original_tag = ISR
+			}
+			
+			traits = { army_chief_drill_2 }
+		}
+		Uzi_Narkiss = {
+			
+			allowed = {
+				original_tag = ISR
+			}
+			
+			traits = { army_chief_reform_2 }
+		}
+
+	}
+
+	navy_chief = {		
+
+		Gershon_Zak_chief = {
+			
+			allowed = {
+				original_tag = ISR
+			}
+			
+			traits = { navy_chief_reform_2 }
+		}
+
+		Avraham_Botzer_chief = {
+			
+			allowed = {
+				original_tag = ISR
+			}
+			
+			traits = { navy_chief_commerce_raiding_2 }
+		}
+		Paul_Shulman_chief = {
+			
+			allowed = {
+				original_tag = ISR
+			}
+			
+			traits = { navy_chief_maneuver_2 }
+		}
+		Shmuel_Tankus_chief = {
+			
+			allowed = {
+				original_tag = ISR
+			}
+			
+			traits = { navy_chief_naval_aviation_2 }
+		}
+
+		
+	}
+
+	air_chief = {
+
+		Shlomo_Shamir_chief = {
+			
+			allowed = {
+				original_tag = ISR
+			}
+			
+			traits = { air_chief_reform_2 }
+		}
+	
+		Mordechai_Hod_chief = {
+			
+			allowed = {
+				original_tag = ISR
+			}
+			
+			traits = { air_chief_ground_support_2 }			
+		}
+		Ezer_Weizman_chief = {
+
+			allowed = {
+				original_tag = ISR
+			}
+			
+			traits = { air_air_combat_training_2 }			
+		}	
+	}
+
+	high_command = {
+		Paul_Shulman = {
+			
+			allowed = {
+				original_tag = ISR
+			}
+			
+			traits = { navy_screen_2 }
+		}
+		Yitzhak_Rabin = {
+			
+			
+			allowed = {
+				original_tag = ISR
+			}
+			
+
+			
+			traits = { army_infantry_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
+		Ariel_Sharon = {
+			
+			
+			allowed = {
+				original_tag = ISR
+			}
+			
+
+			
+			traits = { military_genius }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		Israel_Tal = {
+
+			allowed = {
+				original_tag = ISR
+			}
+			
+			traits = { army_armored_2 }			
+		}
+		
+		Mordechai_Maklef = {
+
+			allowed = {
+				original_tag = ISR
+			}
+			
+			traits = { army_logistics_2 }			
+		}
+		Moshe_Dayan = {
+
+			allowed = {
+				original_tag = ISR
+			}
+			
+			traits = { army_infantry_2 }			
+		}		
+		
+
+		Haim_Laskov = {
+
+			allowed = {
+				original_tag = ISR
+			}
+			
+			traits = { army_cavalry_2 }			
+		}
+
+		Gershon_Zak = {
+
+			allowed = {
+				original_tag = ISR
+			}
+			
+			traits = { navy_submarine_2 }			
+		}
+		
+		Avraham_Botzer = {
+
+			allowed = {
+				original_tag = ISR
+			}
+			
+			traits = { navy_amphibious_assault_2 }			
+		}
+
+		
+		Mordechai_Hod = {
+
+			allowed = {
+				original_tag = ISR
+			}
+			
+			traits = { air_air_superiority_2 }			
+		}		
+		
+		Tzvi_Tzur = {
+
+			allowed = {
+				original_tag = ISR
+			}
+			
+			traits = { army_commando_2 }	 		
+		}	
+
+		
+
+		Mordechai_Gur = {
+			allowed = {
+				original_tag = ISR
+			}
+			
+			traits = { air_airborne_2 }				
+		}
+		
+				
+		
+	}
+
+	theorist = {
+
+		
+		Israel_Tal_theorist = {
+			
+			allowed = {
+				original_tag = ISR
+			}
+			
+			research_bonus = {
+				land_doctrine = 0.15
+			}
+			
+			traits = { blitzkrieg_theorist }
+		}
+
+		Paul_Shulman_theorist = {
+			
+			allowed = {
+				original_tag = ISR
+			}
+			
+			research_bonus = {
+				naval_doctrine = 0.07
+			}
+			
+			traits = { naval_theorist }
+		}
+
+		Mordechai_Hod_theorist = {
+			
+			allowed = {
+				original_tag = ISR
+			}
+			
+			research_bonus = {
+				air_warfare_doctrine = 0.07
+			}
+			
+			traits = { air_warfare_theorist }
+		}
+
+	}
+}
+

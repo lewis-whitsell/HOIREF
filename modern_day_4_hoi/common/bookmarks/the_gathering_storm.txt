@@ -1,0 +1,125 @@
+bookmarks = {
+	bookmark = {
+		name = "GATHERING_STORM_NAME"
+		desc = "GATHERING_STORM_DESC"
+		date = 2017.1.1.12
+		picture = "GFX_select_date_1936"
+		default_country = "FSA"
+		default = yes
+		
+		"USA"={
+			history = "USA_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+				christian
+				land_of_the_free
+				p5_member
+			}
+			focuses = {
+				USA_MAGA
+				USA_THE_WALL
+				USA_NEW_MIDDLE_EAST
+			}
+		}
+		"GER"={
+			history = "GER_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+				christian
+				german_legacy
+				EU_member
+			}
+		}
+		"FSA"={
+			history = "FSA_GATHERING_STORM_DESC"
+			ideology = neutrality
+			ideas = {
+				sunni
+				youth_radicalization
+				al_jazeera_allowed
+			}
+			focuses = {
+				SYR_free_syria
+				SYR_stance_west
+				SYR_rebuild_economy
+			}
+		}
+		"SYR"={
+			history = "SYR_GATHERING_STORM_DESC"
+			ideology = communism
+			ideas={
+				syrian_shiite
+				divided_syria
+				syrian_social_nationalists
+			}
+			focuses = {
+				SYR_assad_day
+				SYR_greater_syria
+				SYR_loyal_elite
+			}			
+		}
+		"ROJ"={
+			history = "ROJ_GATHERING_STORM_DESC"
+			ideology = fascism
+			ideas={
+				sunni
+			}		
+		}
+		"SOV"={
+			history = "SOV_GATHERING_STORM_DESC"
+			ideology = communism
+			ideas = {
+				orthodox_christian
+				russian_legacy
+				p5_member
+			}
+		}
+		"CHI"={
+			history = "CHI_GATHERING_STORM_DESC"
+			ideology = communism
+			ideas={
+			    zhonghua
+				party_before_country
+				p5_member
+			}			
+		}
+
+		"---"={
+			history = "OTHER_GATHERING_STORM_DESC"
+		}
+		"BRA"={
+			minor = yes
+			history = "BRA_GATHERING_STORM_DESC"
+			ideology = neutrality
+			ideas = {
+				brazilian_knack
+				rio_pact_member
+			}
+			focuses = {
+				lava_jato
+				renounce_pt
+				support_pt
+			}
+		}
+		"NUS"={
+			minor = yes
+			history = "NUS_GATHERING_STORM_DESC"
+			ideology = fascism
+			ideas={
+				sunni
+				youth_radicalization
+				al_jazeera_banned
+			}
+			focuses = {
+				SYR_islamic_emirate
+				SYR_support_palestine
+				SYR_loan_money_saudi
+			}			
+		}
+		
+		effect = {
+			randomize_weather = 22345 # <- Obligatory in every bookmark !
+			#123 = { rain_light = yes }
+		}
+	}
+}

@@ -1,0 +1,127 @@
+﻿capital = 784
+
+oob = "MAL_1949"
+
+set_research_slots = 3
+
+set_technology = {
+	## Tech ##
+	radio = 1
+
+	## Industry ##
+	ww_production = 1
+	ww_construction = 1
+
+	## AIR ##
+	
+	## NAVY ##
+	transport = 1
+
+	## Infantry ##
+	infantry_equip_1 = 1
+	team_weapons_1 = 1
+	specialist_1 = 1
+	
+	## Support ##
+	tech_support = 1
+	tech_engineers = 1
+	tech_recon = 1
+	tech_field_hospital = 1
+
+	## Artillery  ##
+	gw_artillery = 1
+	interwar_antitank = 1
+	interwar_antiair = 1
+	
+	## Armor ## 
+	iw_armored_vehicles = 1  # dummy tech
+	motorised_infantry = 1
+}
+
+
+set_convoys = 24
+
+add_ideas = {
+	cold_war_civil_war_ideological_idea
+	population_growth_explosion
+}
+
+set_cosmetic_tag = MAL_ENG
+
+set_politics = {
+
+	parties = {
+		democratic = { 
+			popularity = 33
+		}
+
+		fascism = {
+			popularity = 0		
+		}
+		
+		communism = {
+			popularity = 33
+		}
+		neutrality = {
+			popularity = 34
+		}
+		pan_arabism = {
+			popularity = 0
+			banned = yes
+		} 
+	}
+	ruling_party = democratic
+	last_election = "1949.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+create_country_leader = {
+	name = "Sir Henry Gurney"
+	picture = "Henry_Gurney.dds"
+	ideology = liberalism
+}
+
+create_country_leader = {
+	name = "Ibrahim Hj Yaacob" 
+	picture = "Ibrahim_Hj_Yaacob.dds"
+	ideology = moderatism
+}
+
+create_country_leader = {
+	name = "Tunku Abdul Rahman" 
+	picture = "Tunku_Abdul_Rahman.dds"
+	ideology = conservatism
+}
+
+1957.1.1 = {
+	set_politics = {
+
+		parties = {
+			democratic = { 
+				popularity = 12
+			}
+			socialist = {
+				popularity = 29		
+			}
+			conservative = {
+				popularity = 45	
+			}
+			fascism = {
+				popularity = 0
+			}
+			communism = {
+				popularity = 14
+			}
+		}
+			
+		ruling_party = conservative
+		last_election = "1957.6.6"
+		election_frequency = 36
+		elections_allowed = yes
+	}
+}
+
+1963.1.1 = {
+	drop_cosmetic_tag = yes
+}

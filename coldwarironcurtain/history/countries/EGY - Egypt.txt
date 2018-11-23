@@ -1,0 +1,222 @@
+﻿capital = 446
+
+oob = "EGY_1949"
+
+set_research_slots = 3
+
+# Starting tech
+set_technology = {
+	## Tech ##
+	radio = 1
+
+	## Industry ##
+	ww_production = 1
+	ww_construction = 1
+
+	## AIR ##
+	
+	## NAVY ##
+	transport = 1
+
+	## Infantry ##
+	infantry_equip_1 = 1
+	team_weapons_1 = 1
+	specialist_1 = 1
+	
+	## Support ##
+	tech_support = 1
+	tech_engineers = 1
+	tech_recon = 1
+	tech_field_hospital = 1
+
+	## Artillery  ##
+	gw_artillery = 1
+	interwar_antitank = 1
+	interwar_antiair = 1
+	
+	## Armor ## 
+	iw_armored_vehicles = 1  # dummy tech
+	motorised_infantry = 1
+}
+
+set_convoys = 47
+
+set_politics = {
+
+	parties = {
+		democratic = { 
+			popularity = 25
+		}
+
+		fascism = {
+			popularity = 5
+		}
+		
+		communism = {
+			popularity = 5
+			#banned = no #default is no
+		}
+		
+		monarchism = { 
+			popularity = 35
+		}
+		pan_arabism = {
+			popularity = 30
+		}
+	}
+	
+	ruling_party = monarchism
+	last_election = "1949.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+add_ideas = {
+	population_growth_rapid
+	idea_EGY_Mobilizate_League_Arabe
+	incompetent_officer_corps
+}
+
+if = {
+	
+	set_autonomy = {
+		target = PAL
+		autonomous_state = autonomy_puppet
+		freedom_level = 0.4
+	}
+	else = {
+		puppet = PAL
+
+	}
+}
+
+create_country_leader = {
+	name = "Muhammad Naguib"
+	picture = "gfx/leaders/EGY/Portrait_Arabia_Generic_3.dds"
+	ideology = liberalism
+}
+
+create_country_leader = {
+	name = "Ahmed Husayn"
+	picture = "gfx/leaders/EGY/Portrait_Arabia_Generic_1.dds"
+	ideology = fascism_ideology
+}
+
+create_country_leader = {
+	name = "King Farouk I"
+	picture = "Farouk_I.dds"
+	ideology = absolute_monarchist
+}
+
+create_country_leader = {
+	name = "Hosni al-Arabi"
+	picture = "gfx/leaders/EGY/Portrait_Arabia_Generic_3.dds"
+	ideology = leninism
+}
+create_country_leader = {
+	name = "Gamal Abdel Nasser"
+	picture = "gfx/leaders/EGY/Nasser.dds"
+	ideology = nasserism
+}
+1955.1.1 = {
+	set_politics = {
+		ruling_party = pan_arabism
+		elections_allowed = no
+	}
+}
+1960.1.1 = {
+	set_cosmetic_tag = UAR_EGY
+	create_faction = "United Arab Republics"
+	add_to_faction = EGY
+	add_to_faction = SYR
+	add_to_faction = YEM
+}
+
+1970.10.1 = {
+    dismantle_faction = yes
+	set_politics = {
+
+		parties = {
+			socialist = { 
+				popularity = 0
+			}
+
+			pan_arabism = {
+				popularity = 30
+			}
+
+			centrist = {
+				popularity = 60
+			}
+
+			conservative = {
+				popularity = 0
+			}
+			
+			communism = {
+				popularity = 10
+			}
+		}
+		
+		ruling_party = centrist
+		last_election = "1949.11.9"
+		election_frequency = 48
+		elections_allowed = no
+	}
+	create_country_leader = {
+		name = "Anwar Sadat"
+		picture = "gfx/leaders/EGY/Sadat.dds"
+		ideology = centrism
+	}
+
+}
+create_corps_commander = {
+    name = "Mohammed Fawzi"
+    picture = "Mohammed_Fawzi.dds"
+    traits = {   }
+    skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 2
+}
+create_corps_commander = {
+    name = "Abdul Munim Riad"
+    picture = "Riad.dds"
+    traits = {   }
+    skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 2
+}
+create_corps_commander = {
+    name = "Mohammed Ahmed Sadek"
+    picture = "Sadek.dds"
+    traits = {   }
+    skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 2
+}
+create_corps_commander = {
+    name = "Mohammed Abdul Ghany Al-Gamasy"
+    picture = "Al-Gamasy.dds"
+    traits = {   }
+    skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 2
+}
+create_corps_commander = {
+    name = "Mohammed Ali Fahmiy"
+    picture = "Mohammed_Ali_Fahmi.dds"
+    traits = {   }
+    skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 2
+}

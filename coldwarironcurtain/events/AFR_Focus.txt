@@ -1,0 +1,460 @@
+﻿add_namespace = africa
+
+# African Colonial Nations can trigger this event through their focus tree. It is sent to their overlord.
+country_event = {
+	id = africa.1
+	title = {
+		text = "Uganda demands independence"
+		trigger = { FROM = { tag = UGA } }
+	}
+	title = {
+		text = "Kenya demands independence"
+		trigger = { FROM = { tag = KEN } }
+	}
+	title = {
+		text = "Nyasaland demands independence"
+		trigger = { FROM = { tag = NYA } }
+	}
+	title = {
+		text = "Zambia demands independence"
+		trigger = { FROM = { tag = ZAM } }
+	}
+	title = {
+		text = "Nigeria demands independence"
+		trigger = { FROM = { tag = NIA } }
+	}
+	title = {
+		text = "West Africa demands independence"
+		trigger = { FROM = { tag = SEN } }
+	}
+	title = {
+		text = "Equatorial Africa demands independence"
+		trigger = { FROM = { tag = ROC } }
+	}
+	title = {
+		text = "Lesotho demands independence"
+		trigger = { FROM = { tag = LES } }
+	}
+	title = {
+		text = "The Gambia demands independence"
+		trigger = { FROM = { tag = GAM } }
+	}
+	title = {
+		text = "Sierra Leone demands independence"
+		trigger = { FROM = { tag = SLE } }
+	}
+	title = {
+		text = "Djibuti demands independence"
+		trigger = { FROM = { tag = DJB } }
+	}
+	title = {
+		text = "Belgian Congo demands independence"
+		trigger = { FROM = { tag = DOC } }
+	}
+	desc = africa.1.d
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "Allow their independence"
+		ai_chance = {
+			factor = 100
+		}
+		set_autonomy = { target = FROM autonomy_state = autonomy_free }	
+		FROM = {
+			drop_cosmetic_tag = yes
+			remove_from_faction = FROM
+			if = {
+				limit = {
+					has_war_with = VIN
+				}
+				white_peace = VIN			
+			}
+			if = {
+				limit = {
+					has_war_with = MLA
+				}
+				white_peace = MLA		
+			}
+			if = {
+				limit = {
+					has_idea = nato_member
+				}
+				remove_ideas = nato_member			
+			}
+			if = {
+				limit = {
+					tag = UGA
+				}
+				set_autonomy = { target = UGA autonomy_state = autonomy_free }	
+				set_politics = {
+					ruling_party = democratic
+					elections_allowed = yes
+				}				
+				create_country_leader = {
+					name = "Milton Obote"
+					picture = "gfx/leaders/AFR/Obote.dds"
+					ideology = liberalism
+				}
+			}
+			if = {
+				limit = {
+					tag = KEN
+				}
+				set_autonomy = { target = KEN autonomy_state = autonomy_free }	
+				set_politics = {
+					ruling_party = democratic
+					elections_allowed = yes
+				}
+				create_country_leader = {
+					name = "Jomo Kenyatta"
+					picture = "Jomo.dds"
+					ideology = liberalism
+				}
+			}
+			if = {
+				limit = {
+					tag = NYA
+				}
+				set_autonomy = { target = NYA autonomy_state = autonomy_free }	
+
+				set_politics = {
+					ruling_party = neutrality
+					elections_allowed = no
+				}
+			}
+			if = {
+				limit = {
+					tag = ZAM
+				}
+				set_autonomy = { target = ZAM autonomy_state = autonomy_free }	
+				set_politics = {
+					ruling_party = democratic
+					elections_allowed = yes
+				}
+				create_country_leader = {
+					name = "Kenneth Kaunda"
+					picture = "Kenneth.dds"
+					ideology = liberalism
+				}
+			}
+			if = {
+				limit = {
+					tag = NIA
+				}
+				set_autonomy = { target = NIA autonomy_state = autonomy_free }	
+				set_politics = {
+					ruling_party = democratic
+					elections_allowed = yes
+				}
+				create_country_leader = {
+					name = "Nnamdi Azikiwe"
+					picture = "gfx/leaders/AFR/Azikiwe.dds"
+					ideology = liberalism
+				}
+			}
+			if = {
+				limit = {
+					tag = SEN
+				}
+				set_autonomy = { target = SEN autonomy_state = autonomy_free }	
+				release = MLI
+				release = MAU
+				release = GUI
+				release = TOG
+				release = CTD
+				release = BRK
+				release = BEN
+				release = NIG
+				set_politics = {
+					ruling_party = democratic
+					elections_allowed = yes
+				}
+				create_country_leader = {
+					name = "Léopold Sédar Senghor"
+					picture = "gfx/leaders/AFR/Senghor"
+					ideology = liberalism
+				}
+				GUI = {
+				    set_politics = {
+					    ruling_party = democratic
+					    elections_allowed = yes
+				    }
+				    create_country_leader = {
+					    name = "Ahmed Sékou Touré"
+					    picture = "gfx/leaders/AFR/Touré"
+					    ideology = liberalism
+					}
+				}
+				MAU = {
+				    retire_country_leader = yes
+				    set_politics = {
+					    ruling_party = neutrality
+					    elections_allowed = no
+				    }
+				}
+				TOG = {
+				    set_politics = {
+					    ruling_party = democratic
+					    elections_allowed = yes
+				    }
+				    create_country_leader = {
+					    name = "Sylvanus Olympio"
+					    picture = "gfx/leaders/AFR/Olympio.dds"
+					    ideology = liberalism
+				    }
+			    }
+				CTD = {
+				    retire_country_leader = yes
+				    set_politics = {
+					    ruling_party = neutrality
+					    elections_allowed = no
+				    }
+			    }
+				BEN = {
+				    set_politics = {
+					    ruling_party = democratic
+					    elections_allowed = yes
+				    }
+				    create_country_leader = {
+					    name = "Hubert Maga"
+					    picture = "gfx/leaders/AFR/Portrait_Africa_Generic_1.dds"
+					    ideology = liberalism
+				    }
+			    }
+				BRK = {
+				    set_politics = {
+					    ruling_party = democratic
+					    elections_allowed = yes
+				    }
+				    create_country_leader = {
+					    name = "Maurice Yaméogo"
+					    picture = "gfx/leaders/AFR/Portrait_Africa_Generic_1.dds"
+					    ideology = liberalism
+				    }
+				}
+				NIG = {
+				    set_politics = {
+					    ruling_party = democratic
+					    elections_allowed = yes
+				    }
+				    create_country_leader = {
+					    name = "Hamani Diori"
+					    picture = "gfx/leaders/AFR/Diori.dds"
+					    ideology = liberalism
+				    }
+			    }
+				MLI = {
+				    set_politics = {
+					    ruling_party = democratic
+					    elections_allowed = yes
+				    }
+				    create_country_leader = {
+					    name = "Modibo Keita"
+					    picture = "gfx/leaders/AFR/Keïta.dds"
+					    ideology = liberalism
+				    }
+			    }
+			}
+			if = {
+				limit = { tag = ROC }
+				release = CAR
+            	release = CHA
+                release = GAB	
+                set_politics = {
+					ruling_party = conservative
+					elections_allowed = yes
+				}				
+			}
+			if = {
+				limit = { tag = LES }
+				set_autonomy = { target = LES autonomy_state = autonomy_free }	
+				set_politics = {
+					ruling_party = democratic
+					elections_allowed = yes
+				}
+				add_popularity ={
+		        	ideology = democratic
+		            popularity = 0.20
+		        }
+
+			}
+			if = {
+				limit = { tag = GAM }
+				set_autonomy = { target = GAM autonomy_state = autonomy_free }	
+				set_politics = {
+					ruling_party = centrist
+					elections_allowed = yes
+				}
+				add_popularity ={
+		            ideology = centrist
+		            popularity = 0.25
+		        }
+			}
+		    if = {
+				limit = { tag = MAD }
+				set_autonomy = { target = MAD autonomy_state = autonomy_free }	
+				set_politics = {
+					ruling_party = socialist
+					elections_allowed = yes
+				}
+				add_popularity ={
+		            ideology = socialist
+		            popularity = 0.25
+		        }
+			}
+			if = {
+				limit = { tag = SLE }
+				set_autonomy = { target = SLE autonomy_state = autonomy_free }	
+				set_politics = {
+					ruling_party = socialist
+					elections_allowed = yes
+				}
+				add_popularity ={
+		            ideology = socialist
+		            popularity = 0.25
+		        }
+
+			}
+			if = {
+				limit = { tag = DJB }
+				set_autonomy = { target = DJB autonomy_state = autonomy_free }	
+				set_politics = {
+					ruling_party = socialist
+					elections_allowed = yes
+				}
+				add_popularity ={
+		            ideology = socialist
+		            popularity = 0.25
+		        }
+			}
+			if = {
+				limit = { tag = DOC }
+				set_autonomy = { target = DOC autonomy_state = autonomy_free }	
+				set_politics = {
+					ruling_party = Liberal_Conservatism
+					elections_allowed = yes
+				}
+				add_popularity ={
+		            ideology = Liberal_Conservatism
+		            popularity = 0.80
+		        }
+				add_popularity ={
+		            ideology = nationalism
+		            popularity = 0.20
+		        }
+			}
+			country_event = { id = africa.3 hours = 6 }
+		}
+	}
+	option = {
+		name = "Reject their demand"
+		ai_chance = {
+			factor = 0
+		}
+		FROM = { country_event = { id = africa.2 hours = 6 } }
+	}
+}
+
+# independence Refused
+country_event = {
+	id = africa.2
+	title = africa.2.t
+	desc = africa.2.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = "This means war!"
+		set_autonomy = { target = ROOT autonomy_state = autonomy_free }	
+		declare_war_on = {
+			target = FROM
+			type = civil_war
+		}
+		if = {
+			limit = {
+				has_idea = nato_member
+			}
+			remove_ideas = nato_member
+		}
+		add_political_power = 250
+		add_war_support = 0.3
+		ai_chance = {
+			factor = 50
+			modifier = {
+				add = 10
+				check_variable = {
+					ROOT.Anger > 9
+				}
+			}
+			modifier = {
+				add = 20
+				check_variable = {
+					ROOT.Anger > 19
+				}
+			}
+			modifier = {
+				add = 30
+				check_variable = {
+					ROOT.Anger > 29
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "It's not over yet"
+		custom_effect_tooltip = "We'll ask them again in about a year. Maybe their decision will change..."
+		hidden_effect = {
+			OVERLORD = { country_event = { id = africa.1 days = 360 random = 1 } }
+			add_to_variable = { var = ROOT.Anger value = 10 }
+		}
+		ai_chance = {
+			factor = 50
+			modifier = {
+				add = -10
+				check_variable = {
+					ROOT.Anger > 9
+				}
+			}
+			modifier = {
+				add = -20
+				check_variable = {
+					ROOT.Anger > 19
+				}
+			}
+			modifier = {
+				add = -30
+				check_variable = {
+					ROOT.Anger > 29
+				}
+			}
+		}
+	}
+}
+
+# independence Allowed
+country_event = {
+	id = africa.3
+	title = africa.3.t
+	desc = africa.3.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = "Great!"
+	}
+}
+
+country_event = {
+	id = africa.4
+	title = africa.4.t
+	desc = africa.4.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = "Demand independence"
+		OVERLORD = { country_event = africa.1 }
+	}
+}

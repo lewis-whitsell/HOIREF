@@ -1,0 +1,539 @@
+#####-----------------------------------------------------------> Mod by Sig "Greatexperiment" Altre
+
+technologies = {
+
+###------> BRA <><> <><> <><> <><> <><>
+	
+	selva_tech = {
+
+		research_cost = 1
+
+		# only from focus!!! #####
+		allow = {
+			always = no
+		}
+
+
+		#If you change these
+		#Change the custom tooltip too: RAJ_jungle_training_effect
+		
+		infantry = {
+			jungle = {
+				attack = 0.142
+				movement = 0.67
+			}
+		}
+		
+		marine = {
+			jungle = {
+				attack = 0.1 
+				movement = 0.1
+			}
+		}
+
+		mountaineers = {
+			jungle = {
+				movement = 0.1
+			}
+		}
+
+		paratrooper = {
+			jungle = {
+				movement = 0.1
+			}
+		}
+		
+		mechanized = {
+			jungle = {
+				attack = -0.25 
+				movement = 0.1
+			}
+		}
+		
+		motorized = {
+			jungle = {
+				attack = -0.25
+				movement = 0.1
+			}
+		}
+	}
+	
+###------> COL <><> <><> <><> <><> <><>
+
+	adapte_montana = {
+
+		research_cost = 1
+
+		# only from focus!!! #####
+		allow = {
+			always = no
+		}
+
+		artillery_brigade = {
+			mountain = {
+				movement = 0.10
+			}
+		}
+
+		rocket_artillery_brigade = {
+			mountain = {
+				movement = 0.10
+			}
+		}
+
+		cavalry = {
+			mountain = {
+				movement = 0.10
+			}
+		}
+	}
+
+	awaite = {
+
+		research_cost = 1
+
+		# only from focus!!! #####
+		allow = {
+			always = no
+		}
+
+		recon = {
+			mountain = {
+				movement = 0.10
+			}
+			jungle = {
+				movement = 0.10
+			}			
+		}
+	}	
+
+	junglares = {
+
+		research_cost = 1
+
+		# only from focus!!! #####
+		allow = {
+			always = no
+		}
+
+		cavalry = {
+			jungle = {
+				attack = 0.10
+			}
+		}
+
+		infantry = {
+			jungle = {
+				attack = 0.10
+				movement = 0.10
+			}			
+		}	
+		
+		rocket_artillery_brigade = {
+			jungle = {
+				movement = 0.10
+			}
+		}		
+	}
+	
+###------> EST <><> <><> <><> <><> <><>
+
+	Mil = {
+        enable_subunits = {
+            NK
+        }
+
+        research_cost = 1
+        start_year = 1936
+
+        # not researchable #####
+        allow = {
+            always = no
+        }
+
+        ai_will_do = {
+            factor = 0
+        }
+    }
+
+###------> FIN <><> <><> <><> <><> <><>
+
+	motti_warfare = {
+
+		research_cost = 1
+
+        # not researchable #####
+		allow = {
+			always = no
+		}
+
+		infantry = {
+			forest = {
+				defence = 0.1
+				movement = 0.05
+			}
+		}	
+	}
+	
+###------> HON <><> <><> <><> <><> <><>
+
+	HON_jungle_infantry = {
+
+		research_cost = 1
+
+		allow = {
+			always = no
+		}
+
+		category_light_infantry = {
+			jungle = {
+				attack = 0.05 
+				movement = 0.1
+			}
+		}
+	}
+	
+	HON_jungle_motor = {
+
+		research_cost = 1
+
+		allow = {
+			always = no
+		}
+
+		motorized = {
+			jungle = {
+				attack = 0.05
+				movement = 0.1
+			}
+		}
+
+		mechanized = {
+			jungle = {
+				attack = 0.05
+				movement = 0.1
+			}
+		}
+		
+		category_tanks = {
+			jungle = {
+				attack = 0.05
+				movement = 0.1
+			}
+		}
+	}
+	
+###------> ICE <><> <><> <><> <><> <><>
+	
+	ICE_elite_mountaineers = {
+		
+		research_cost = 1
+		
+		allow = { #FOCUS ONLY!
+			always = no
+		}
+		
+		mountaineers = {
+			soft_attack = 0.05
+			need = {
+				infantry_equipment = -40
+			}
+		}
+		
+		folder = {
+			name = infantry_folder
+		}
+		
+		categories = {
+			infantry_tech
+			mountaineers_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	ICE_elite_marines = {
+		
+		research_cost = 1
+		
+		allow = { #FOCUS ONLY!
+			always = no
+		}
+		
+		marine = {
+			soft_attack = 0.05
+			need = {
+				infantry_equipment = -50
+			}
+		}
+		
+		folder = {
+			name = infantry_folder
+		}
+		
+		categories = {
+			infantry_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	ICE_elite_paratroopers = {
+		
+		research_cost = 1
+		
+		allow = { #FOCUS ONLY!
+			always = no
+		}
+		
+		paratrooper = {
+			soft_attack = 0.05
+			need = {
+				infantry_equipment = -30
+			}
+		}
+		
+		folder = {
+			name = infantry_folder
+		}
+		
+		categories = {
+			infantry_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	ICE_elite_infantry_tech = {
+		
+		research_cost = 1
+		
+		allow = { #FOCUS ONLY!
+			always = no
+		}
+		
+		enable_subunits = {
+			ICE_elite_infantry
+		}
+		
+		folder = {
+			name = infantry_folder
+		}
+		
+		categories = {
+			infantry_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+###------> KMT <><> <><> <><> <><> <><>
+	
+	shitty_furnace = {
+
+		enable_building = {
+			building = immature_steelmaking_furnace
+			level = 5
+		}
+		
+		research_cost = 0
+		
+		ai_will_do = {
+			factor = 0			
+		}
+	}
+	
+	dare_to_die_corps = {
+		
+			
+		category_light_infantry = {
+			hard_attack = 0.15
+			ap_attack = 0.15
+			breakthrough = 0.05
+		}
+		
+		#enable_tactic = tactic_dtd_operation_defense
+		#enable_tactic = tactic_dtd_operation_attack
+		
+		research_cost = 0
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	preserve = {
+		
+		category_all_infantry = {
+			casualty_trickleback = 0.01
+			experience_loss_factor = -0.015
+		}
+		
+		research_cost = 0
+		
+		ai_will_do = {
+			factor = 0		
+		}
+	}	
+
+	mountain_warfare = {
+
+		research_cost = 1
+
+		# only from focus!!! #####
+		allow = {
+			always = no
+		}
+
+		
+		category_all_infantry = {
+			mountain = {
+				movement = 0.1
+			}
+			hills = {
+				movement = 0.1
+			}
+		}
+		marine = {
+			mountain = {
+				attack = 0.05 
+			}
+			hills = {
+				attack = 0.05 
+			}
+		}
+
+		mountaineers = {
+			mountain = {
+				attack = 0.05
+			}
+			hills = {
+				attack = 0.05 
+			}
+		}
+
+		paratrooper = {
+			mountain = {
+				attack = 0.05 
+			}
+			hills = {
+				attack = 0.05 
+			}
+		}
+	}
+	
+###------> NOR <><> <><> <><> <><> <><>
+
+	NOR_mountain_men = {
+
+		research_cost = 1
+
+		# only from focus!!! #
+		allow = {
+			always = no
+		}
+
+		category_army = {
+			mountain = {
+				attack = 0.10
+				movement = 0.10
+			}
+		}
+	}
+	
+###------> POR <><> <><> <><> <><> <><>
+
+    gnr = {
+        enable_subunits = {
+            GNR
+        }
+
+        research_cost = 1
+        start_year = 1936
+
+        # not researchable #####
+        allow = {
+            always = no
+        }
+
+        ai_will_do = {
+            factor = 0
+        }
+    }
+	
+	 fec = {
+        enable_subunits = {
+            FEC
+        }
+
+        research_cost = 1
+        start_year = 1936
+
+        # not researchable #####
+        allow = {
+            always = no
+        }
+
+        ai_will_do = {
+            factor = 0
+        }
+    }
+	
+	mil = {
+        enable_subunits = {
+            Milicia
+        }
+
+        research_cost = 1
+        start_year = 1936
+
+        # not researchable #####
+        allow = {
+            always = no
+        }
+
+        ai_will_do = {
+            factor = 0
+        }
+    }
+
+###------> SWI <><> <><> <><> <><> <><>
+
+	SWI_red_cross_tech = {
+		
+		research_cost = 1
+		
+		allow = { # FOCUS ONLY!
+			always = no
+		}
+		
+		field_hospital = {
+			casualty_trickleback = 0.10
+			experience_loss_factor = -0.05
+		}
+		
+		folder = {
+			name = support_folder
+		}
+		
+		categories = {
+			support_tech
+			hospital_tech
+			motorized_equipment
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}
+
+#####-----------------------------------------------------------> End

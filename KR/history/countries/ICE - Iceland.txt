@@ -1,0 +1,159 @@
+﻿capital = 100 #Iceland
+OOB = "empty"
+set_research_slots = 3
+set_technology = {
+### MOD ###
+	### General ###
+	shipbuild_basics = 1
+	### Navy ###
+	early_submarine = 1
+	early_destroyer = 1
+	transport = 1
+	### Tanks ###
+	### INF ###
+	infantry_weapons = 1
+	### AIR ###
+	early_fighter = 1
+}
+
+create_country_leader = {
+	name = "Sveinn Björnsson"
+	desc = "ENG_björnsson_desc"
+	picture = "Portrait_Iceland_Sveinn_Björnsson.tga"
+	expire = "1965.1.1"
+	ideology = radical_socialist_subtype
+	traits = { }
+}
+
+create_country_leader = {
+	name = "�?sgeir �?sgeirsson"
+	desc = "ENG_asgeirsson_desc"
+	picture = "Portrait_Iceland_Asgeir_Asgeirsson.tga"
+	expire = "1965.1.1"
+	ideology = social_liberal_subtype
+	traits = { }
+}
+
+create_country_leader = {
+	name = "Brynjólfur Bjarnason"
+	desc = "ENG_bjarnason_desc"
+	picture = "Portrait_Iceland_Brynjolfur_Bjarnason.tga"
+	expire = "1965.1.1"
+	ideology = radical_socialist_subtype
+	traits = { }
+}
+
+set_politics = {
+
+	parties = {
+		totalist = {
+			popularity = 3
+		}
+		radical_socialist = {
+			popularity = 10
+		}
+		syndicalist = {
+			popularity = 15
+		}
+		social_democrat = {
+			popularity = 22
+		}
+		social_liberal = {
+			popularity = 36
+		}
+		market_liberal = {
+			popularity = 6
+		}
+		social_conservative = {
+			popularity = 5
+		}
+		authoritarian_democrat = {
+			popularity = 2
+		}
+		paternal_autocrat = {
+			popularity = 1
+		}
+		national_populist = {
+			popularity = 0
+		}
+	}
+	
+	ruling_party = social_democrat
+	last_election = "1888.15.6"
+	election_frequency = 48
+	elections_allowed = no
+
+}
+
+### Field Marshal
+create_field_marshal = { #Auto-Generated
+	name = "Evers"
+	portrait_path = "gfx/leaders/ICE/Portrait_ICE_Evers.tga"
+	traits = {
+		logistics_wizard
+		old_guard
+	}
+	skill = 1
+}
+
+### Corps Commander
+create_corps_commander = { #Auto-Generated
+	name = "Dyby"
+	portrait_path = "gfx/leaders/ICE/Portrait_ICE_Dyby.tga"
+	traits = {
+	}
+	skill = 1
+}
+
+create_corps_commander = { #Auto-Generated
+	name = "Haack"
+	portrait_path = "gfx/leaders/ICE/Portrait_ICE_Haack.tga"
+	traits = {
+		old_guard
+	}
+	skill = 1
+}
+
+create_corps_commander = { #Auto-Generated
+	name = "Jegstrup"
+	portrait_path = "gfx/leaders/ICE/Portrait_ICE_Jegstrup.tga"
+	traits = {
+	}
+	skill = 1
+}
+
+create_corps_commander = { #Auto-Generated
+	name = "Juel-Brockdorff"
+	portrait_path = "gfx/leaders/ICE/Portrait_ICE_Juel_Brockdorff.tga"
+	traits = {
+		fortress_buster
+		old_guard
+	}
+	skill = 1
+}
+
+create_corps_commander = { #Auto-Generated
+	name = "Sonne"
+	portrait_path = "gfx/leaders/ICE/Portrait_ICE_Sonne.tga"
+	traits = {
+	}
+	skill = 1
+}
+
+create_corps_commander = { #Auto-Generated
+	name = "Ulrich"
+	portrait_path = "gfx/leaders/ICE/Portrait_ICE_Ulrich.tga"
+	traits = {
+	}
+	skill = 1
+}
+
+create_corps_commander = { #Auto-Generated
+	name = "Wenck"
+	portrait_path = "gfx/leaders/ICE/Portrait_ICE_Wenck.tga"
+	traits = {
+	}
+	skill = 1
+}
+
+### Navy Leader

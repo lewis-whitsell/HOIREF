@@ -1,0 +1,36 @@
+state={
+	id=806
+	name="STATE_806"
+	manpower = 859239
+	resources={
+		oil=3
+	}
+	
+	state_category = town
+
+	history={
+		owner = EGY
+		
+		
+		victory_points = {
+			1071 5
+		}
+				
+		buildings = {
+			infrastructure =4
+			industrial_complex = 1
+			arms_factory =1
+			air_base = 2
+
+		}
+
+		add_core_of = EGY
+		1961.1.1 = {
+			owner = EGY
+		}
+	}
+
+	provinces={
+		1071 4145  
+	}
+}

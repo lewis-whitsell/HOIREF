@@ -1,0 +1,53 @@
+﻿capital = 152
+
+oob = "ADR_1949"
+
+set_technology = {
+	## Tech ##
+	radio = 1
+
+	## Industry ##
+	ww_production = 1
+	ww_construction = 1
+
+	## AIR ##
+	
+	## NAVY ##
+
+	## Infantry ##
+	infantry_equip_1 = 1
+	team_weapons_1 = 1
+	specialist_1 = 1
+	
+	## Support ##
+	tech_support = 1
+	tech_engineers = 1
+	tech_recon = 1
+	tech_field_hospital = 1
+
+	## Artillery  ##
+	gw_artillery = 1
+	interwar_antitank = 1
+	interwar_antiair = 1
+	
+	## Armor ## 
+	iw_armored_vehicles = 1  # dummy tech
+	motorised_infantry = 1
+}
+
+set_convoys =0
+
+set_politics = {
+
+	parties = {
+        communism = { popularity = 96 }
+		democratic = { popularity = 4 }
+
+	}
+	
+	ruling_party = communism
+	last_election = "1949.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+

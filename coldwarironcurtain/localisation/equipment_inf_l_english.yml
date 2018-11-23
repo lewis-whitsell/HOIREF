@@ -1,0 +1,288 @@
+﻿l_english:
+ WGR_infantry_equipment_0:0 "Sturmgewehr 45"
+ WGR_infantry_equipment_0_short:0 "STG 45"
+ WGR_infantry_equipment_0_desc:0 "A prototype assault rifle made by the nazis during the end of ww2."
+ 
+ WGR_infantry_equipment_1:0 "CEAM Modèle 1950"
+ WGR_infantry_equipment_1_short:0 "M1950"
+ WGR_infantry_equipment_1_desc:0 ""
+ 
+ WGR_infantry_equipment_2:0 "Gewehr G3A1"
+ WGR_infantry_equipment_2_short:0 "G3A1"
+ WGR_infantry_equipment_2_desc:0 ""
+ 
+ WGR_infantry_equipment_3:0 "HK33A1"
+ WGR_infantry_equipment_3_short:0 "HK33"
+ WGR_infantry_equipment_3_desc:0 ""
+ 
+ WGR_infantry_equipment_4:0 "Gewehr G3A4"
+ WGR_infantry_equipment_4_short:0 "G3A4"
+ WGR_infantry_equipment_4_desc:0 ""
+ 
+ WGR_infantry_equipment_5:0 "G41"
+ WGR_infantry_equipment_5_short:0 "G41"
+ WGR_infantry_equipment_5_desc:0 ""
+ 
+ WGR_infantry_equipment_6:0 "G11"
+ WGR_infantry_equipment_6_short:0 "G11"
+ WGR_infantry_equipment_6_desc:0 ""
+ 
+ WGR_infantry_equipment_7:0 "Gewehr G36"
+ WGR_infantry_equipment_7_short:0 "G36"
+ WGR_infantry_equipment_7_desc:0 "The G36 is a 5.56×45mm assault rifle, designed in the early 1990s by Heckler & Koch in Germany as a replacement for the heavier 7.62mm G3 battle rifle."
+ 
+ 
+ ARG_infantry_equipment_0:0 "Mauser 1909 Modelo Argentino"
+ ARG_infantry_equipment_0_short:0 "M1909"
+ ARG_infantry_equipment_0_desc:0 ""
+ 
+ ARG_infantry_equipment_1:0 "Halcón M-1943"
+ ARG_infantry_equipment_1_short:0 "M-1943"
+ ARG_infantry_equipment_1_desc:0 ""
+ 
+ ARG_infantry_equipment_3:0 "Fabricaciones Militares Fusil Automático Liviano"
+ ARG_infantry_equipment_3_short:0 "FM FAL"
+ ARG_infantry_equipment_3_desc:0 ""
+
+ ARG_infantry_equipment_7:0 "Fusil Automático República Argentina"
+ ARG_infantry_equipment_7_short:0 "FARA 83"
+ ARG_infantry_equipment_7_desc:0 ""
+ 
+ HUN_infantry_equipment_0:0 "Király Géppisztoly"
+ HUN_infantry_equipment_0_short:0 "GP"
+ HUN_infantry_equipment_0_desc:0 "Full Automatic Machine Gun Developed by Hungarians during WW2."
+
+ HUN_infantry_equipment_1:0 "SVT-40"
+ HUN_infantry_equipment_1_short:0 "SVT-40"
+ HUN_infantry_equipment_1_desc:0 "Soviet Semi Automatic Rifle"
+
+ HUN_infantry_equipment_2:0 "PPS-51"
+ HUN_infantry_equipment_2_short:0 "PPS-51"
+ HUN_infantry_equipment_2_desc:0 "The Legendary Soviet Sub Machine Gun"
+ 
+ HUN_infantry_equipment_3:0 "AK-47"
+ HUN_infantry_equipment_3_short:0 "AK-47"
+ HUN_infantry_equipment_3_desc:0 "The Legendary Soviet Machine Gun"
+ 
+ HUN_infantry_equipment_4:0 "Automata Módosított Deszant 1965"
+ HUN_infantry_equipment_4_short:0 "AMD-65"
+ HUN_infantry_equipment_4_desc:0 "Hungarian Made AK By FÉG"
+ 
+ HUN_infantry_equipment_5:0 "AK-63"
+ HUN_infantry_equipment_5_short:0 "AK-63"
+ HUN_infantry_equipment_5_desc:0 "Newer Soviet Made AK"
+ 
+ HUN_infantry_equipment_6:0 "AKSZU-74"
+ HUN_infantry_equipment_6_short:0 "AKSZU-74"
+ HUN_infantry_equipment_6_desc:0 "Newer Soviet Made AK"
+ 
+ HUN_infantry_equipment_7:0 "AN-94"
+ HUN_infantry_equipment_7_short:0 "AN-94"
+ HUN_infantry_equipment_7_desc:0 "Newer Soviet Made AK"
+ 
+ HUN_infantry_equipment_8:0 "AK-105"
+ HUN_infantry_equipment_8_short:0 "AK-105"
+ HUN_infantry_equipment_8_desc:0 "Newer Soviet Made AK"
+ 
+ DDR_infantry_equipment_0:0 "Sturmgewehr 44"
+ DDR_infantry_equipment_0_short:0 "StG44"
+ DDR_infantry_equipment_0_desc:0 "The StG 44 (abbreviation of Sturmgewehr 44, "assault rifle 44") is a German selective-fire rifle developed during World War II. It is the first assault rifle developed in the world."
+ 
+ DDR_infantry_equipment_1:0 "Karabiner S"
+ DDR_infantry_equipment_1_short:0 "Karabiner S"
+ DDR_infantry_equipment_1_desc:0 ""
+ 
+ DDR_infantry_equipment_3:0 "Maschinenpistole K"
+ DDR_infantry_equipment_3_short:0 "MPi-K"
+ DDR_infantry_equipment_3_desc:0 "East-German AKM variant"
+ 
+ DDR_infantry_equipment_4:0 "Maschinenpistole KM"
+ DDR_infantry_equipment_4_short:0 "MPi-KM"
+ DDR_infantry_equipment_4_desc:0 "East-German AKM variant"
+ 
+ DDR_infantry_equipment_5:0 "Maschinenpistole KM-72"
+ DDR_infantry_equipment_5_short:0 "MPi-72"
+ DDR_infantry_equipment_5_desc:0 "Modernized MPi-k"
+ 
+ DDR_infantry_equipment_6:0 "Maschinenpistole Avtomat Kalashnikova-74N"
+ DDR_infantry_equipment_6_short:0 "MPi-AK-74N"
+ DDR_infantry_equipment_6_desc:0 ""
+ 
+ DDR_infantry_equipment_7:0 "Maschinenpistole KM-90"
+ DDR_infantry_equipment_7_short:0 "MPi-90"
+ DDR_infantry_equipment_7_desc:0 ""
+ 
+ DDR_infantry_equipment_8:0 "Maschinenpistole 95"
+ DDR_infantry_equipment_8_short:0 "MPi-95"
+ DDR_infantry_equipment_8_desc:0 "East-German made HK33"
+ 
+ ENG_infantry_equipment_0:0 "Sterling submachine gun"
+ ENG_infantry_equipment_0_short:0 "Sterling"
+ ENG_infantry_equipment_0_desc:0 ""
+ 
+ ENG_infantry_equipment_1:0 "Rifle No.9 Mk1"
+ ENG_infantry_equipment_1_short:0 "EM-2"
+ ENG_infantry_equipment_1_desc:0 ""
+ 
+ ENG_infantry_equipment_2:0 "L1A1 Self-Loading Rifle"
+ ENG_infantry_equipment_2_short:0 "L1A1"
+ ENG_infantry_equipment_2_desc:0 ""
+ 
+ ENG_infantry_equipment_4:0 "L1A2"
+ ENG_infantry_equipment_4_short:0 "L1A2"
+ ENG_infantry_equipment_4_desc:0 ""
+ 
+ ENG_infantry_equipment_5:0 "L85A1"
+ ENG_infantry_equipment_5_short:0 "L85A1"
+ ENG_infantry_equipment_5_desc:0 ""
+ 
+ ENG_infantry_equipment_7:0 "L85A2"
+ ENG_infantry_equipment_7_short:0 "L85A2"
+ ENG_infantry_equipment_7_desc:0 "Updated version of the L85A1"
+ 
+ IRE_infantry_equipment_0:0 "Lee EnField NO.4 MK.1"
+ IRE_infantry_equipment_0_short:0 "SMLE NO.4 MK.1"
+ IRE_infantry_equipment_0_desc:0 "Chamberd in .303"
+ 
+ IRE_infantry_equipment_1:0 "Lee EnField NO.4 MK.2"
+ IRE_infantry_equipment_1_short:0 "SMLE NO.4 MK.2"
+ IRE_infantry_equipment_1_desc:0 "Chamberd in .303"
+ 
+ IRE_infantry_equipment_2:0 "FN Herstal FN FAL"
+ IRE_infantry_equipment_2_short:0 "FN FAL"
+ IRE_infantry_equipment_2_desc:0 "Chamberd in 7.62mm. The FN FAL is a semi-automatic/selective fire rifle produced by the Belgian manafacturer Fabrique Nationale. During the Cold Warit was adopted by most NATO countries and became known as the, Right arm of the Free World"
+ 
+ IRE_infantry_equipment_3:0 "FN Herstal FN FAL 50.61"
+ IRE_infantry_equipment_3_short:0 "FN FAL"
+ IRE_infantry_equipment_3_desc:0 "This was a variant of the FN FAl, it had a folding stock."
+
+ IRE_infantry_equipment_4:0 "FN Herstal FN FAL 50.63"
+ IRE_infantry_equipment_4_short:0 "FN FAL"
+ IRE_infantry_equipment_4_desc:0 "This was another variant of the FN FAL, it had a shorter barrrel which made it easier to get in and out of APCs."
+ 
+ IRE_infantry_equipment_5:0 "FN Herstal FN FAL 50.64"
+ IRE_infantry_equipment_5_short:0 "FN FAL"
+ IRE_infantry_equipment_5_desc:0 "This was another variant of the FN FAL, the lower receiver was made out of Hiduminium alloy."
+ 
+ IRE_infantry_equipment_6:0 "Styer AUG"
+ IRE_infantry_equipment_6_short:0 "AUG"
+ IRE_infantry_equipment_6_desc:0 "The Styer AUG is an Austrian Bullpup assault rifle chamberd in 5.56mm. It was designed by Styer Mannlicher. The Styer AUG stands for, Armee Universal Geweher: Universal Army Rifle."
+ 
+ IRE_infantry_equipment_7:0 "Styer AUG A1"
+ IRE_infantry_equipment_7_short:0 "AUG A1"
+ IRE_infantry_equipment_7_desc:0 "The Steyr AUG A1 is an improved variant of the AUG."
+ 
+ IRE_infantry_equipment_8:0 "Styer AUG mod 14"
+ IRE_infantry_equipment_8_short:0 "AUG mod 14"
+ IRE_infantry_equipment_8_desc:0 "The Styer AUG mod 14, was an Irish varian of the Styer AUG A1, it was fitted with a new optical sight the Trijicon ACOG 4×"
+ 
+ YUG_infantry_equipment_0:0 "Király Géppisztoly"
+ YUG_infantry_equipment_0_short:0 "GP"
+ YUG_infantry_equipment_0_desc:0 "Full Automatic Machine Gun Developed by YUGgarians during WW2."
+
+ YUG_infantry_equipment_1:0 "Puška M.48 7,9 mm"
+ YUG_infantry_equipment_1_short:0 "Zastava M48"
+ YUG_infantry_equipment_1_desc:0 "The Zastava M48 is a post World War II Yugoslavian version of the German Karabiner 98k designed by Mauser and the Belgian designed M24 series."
+
+ YUG_infantry_equipment_2:0 "Polu-automatska Puška M59"
+ YUG_infantry_equipment_2_short:0 "PAP M59"
+ YUG_infantry_equipment_2_desc:0 "A variant of the SKS"
+ 
+ YUG_infantry_equipment_3:0 "AK-47"
+ YUG_infantry_equipment_3_short:0 "AK-47"
+ YUG_infantry_equipment_3_desc:0 "The Legendary Soviet Machine Gun"
+ 
+ YUG_infantry_equipment_4:0 "Zastava M70"
+ YUG_infantry_equipment_4_short:0 "Zastava M70"
+ YUG_infantry_equipment_4_desc:0 "Yugoslavain assault rifle based on the Soviet AKM."
+ 
+ YUG_infantry_equipment_5:0 "AK-63"
+ YUG_infantry_equipment_5_short:0 "AK-63"
+ YUG_infantry_equipment_5_desc:0 "Newer Soviet Made AK"
+ 
+ YUG_infantry_equipment_6:0 "Automatska puška M.1977B1"
+ YUG_infantry_equipment_6_short:0 "Zastava M77 B1"
+ YUG_infantry_equipment_6_desc:0 "Updated version of the M70."
+ 
+ YUG_infantry_equipment_7:0 "AN-94"
+ YUG_infantry_equipment_7_short:0 "AN-94"
+ YUG_infantry_equipment_7_desc:0 "Newer Soviet Made AK"
+ 
+ YUG_infantry_equipment_8:0 "AK-105"
+ YUG_infantry_equipment_8_short:0 "AK-105"
+ YUG_infantry_equipment_8_desc:0 "Newer Soviet Made AK"
+ 
+ FRA_infantry_equipment_0:0 "Fusil à répétition 7 mm 5 M. 36"
+ FRA_infantry_equipment_0_short:0 "MAS-36"
+ FRA_infantry_equipment_0_desc:0 "A Semi-automatic French bolt-action rifle."
+ 
+ FRA_infantry_equipment_1:0 "Fusil semi-automatique 7 mm 5 M. 49"
+ FRA_infantry_equipment_1_short:0 "MAS-49"
+ FRA_infantry_equipment_1_desc:0 ""
+ 
+ FRA_infantry_equipment_2:0 "Fusil semi-automatique 7 mm 5 M. 56"
+ FRA_infantry_equipment_2_short:0 "MAS-49/56"
+ FRA_infantry_equipment_2_desc:0 ""
+ 
+ FRA_infantry_equipment_3:0 "FA-MAS Type 62"
+ FRA_infantry_equipment_3_short:0 "FA-MAS Type 62"
+ FRA_infantry_equipment_3_desc:0 ""
+ 
+ FRA_infantry_equipment_4:0 "Fusil d'Assaut de la Manufacture d'Armes de Saint-Étienne F1"
+ FRA_infantry_equipment_4_short:0 "FAMAS F1"
+ FRA_infantry_equipment_4_desc:0 ""
+ 
+ FRA_infantry_equipment_6:0 "Fusil d'Assaut de la Manufacture d'Armes de Saint-Étienne G1"
+ FRA_infantry_equipment_6_short:0 "FAMAS G2"
+ FRA_infantry_equipment_6_desc:0 ""
+ 
+ FRA_infantry_equipment_7:0 "Fusil d'Assaut de la Manufacture d'Armes de Saint-Étienne G2"
+ FRA_infantry_equipment_7_short:0 "FAMAS G2"
+ FRA_infantry_equipment_7_desc:0 ""
+ 
+  SAF_infantry_equipment_0:0 "Short magazine Lee-Enfield No. 4 Mk 2 "
+ SAF_infantry_equipment_0_short:0 "SMLE No. 4 Mk 2"
+ SAF_infantry_equipment_0_desc:0 ""
+ 
+ SAF_infantry_equipment_1:0 "CEAM Modèle 1950"
+ SAF_infantry_equipment_1_short:0 "M1950"
+ SAF_infantry_equipment_1_desc:0 ""
+ 
+ SAF_infantry_equipment_2:0 "Vector R1"
+ SAF_infantry_equipment_2_short:0 "Vector R1"
+ SAF_infantry_equipment_2_desc:0 ""
+ 
+ SAF_infantry_equipment_3:0 "Vector R2"
+ SAF_infantry_equipment_3_short:0 "Vector R2"
+ SAF_infantry_equipment_3_desc:0 "Improved version of the R1 with a folding buttstock."
+ 
+ SAF_infantry_equipment_4:0 "Vector R3"
+ SAF_infantry_equipment_4_short:0 "Vector R3"
+ SAF_infantry_equipment_4_desc:0 ""
+ 
+ SAF_infantry_equipment_5:0 "Vektor R4"
+ SAF_infantry_equipment_5_short:0 "Vektor R4"
+ SAF_infantry_equipment_5_desc:0 "The R4 is a 5.56 assault rifle based off the Isareli Galil. It was designed to replace the earlier R1."
+ 
+ SAF_infantry_equipment_6:0 "Vektor R5"
+ SAF_infantry_equipment_6_short:0 "Vektor R5"
+ SAF_infantry_equipment_6_desc:0 "Carabine version of the R4."
+ 
+ SAF_infantry_equipment_7:0 "Vektor CR-21"
+ SAF_infantry_equipment_7_short:0 "CR-21"
+ SAF_infantry_equipment_7_desc:0 "A prototype South African assault rifle chambered for 5.56."
+ 
+ chemical_weapons_1:0 "Mustard Gas"
+ chemical_weapons_2:0 "White Phosphorus"
+ chemical_weapons_3:0 "Napalm"
+ chemical_weapons_4:0 "Sarin"
+ chemical_weapons_5:0 "Defoilants"
+ chemical_weapons_6:0 "VX"
+ white_phosphorus_1:0 "White Phosphorus"
+ vx_1:0 "VX"
+ napalm_1:0 "Napalm"
+ sarin_1:0 "Sarin"
+ defoilants_1:0 "Defoilants"
+ 
+ 
+ 

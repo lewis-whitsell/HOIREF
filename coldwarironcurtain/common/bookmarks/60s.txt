@@ -1,0 +1,148 @@
+
+bookmarks = {
+	bookmark = {
+		name = "Decade of Crisis (Early Access)"
+		desc = "DECADE_CRISIS_DESC"
+		date = 1960.1.1.12
+		picture = "GFX_select_date_1939"
+		default_country = "USA"
+		default = yes
+		
+		"USA"={
+			history = "USA_DECADE_CRISIS_DESC"
+			ideology = conservative
+			ideas = {
+				home_of_the_free
+				organized_crime_problem
+				taft_hartley_act
+			}
+			focuses = {
+				USA_George_Wallace_1968
+				USA_The_Great_Society_1964
+				USA_Nixon_68
+			}
+		}
+
+		"SOV"={
+			history = "SOV_DECADE_CRISIS_DESC"
+			ideology = communism
+			ideas = {
+			}
+			focuses = {
+			
+			}
+		}
+		
+		"PRC"={
+			history = "PRC_DECADE_CRISIS_DESC"
+			ideology = maoism
+			ideas={
+				PRC_cultural_revolution
+				PRC_Mao_Purged
+				PRC_Mao_Reasserts_Authority
+			}			
+		}
+		
+		"DDR"={
+			history = "DDR_DECADE_CRISIS_DESC"
+			ideology = communism
+			ideas = {
+				
+			}
+			focuses = {
+				DDR_The_Kingdom_of_Prussia
+				DDR_Honecker
+				DDR_Fascist_Clique_Coup
+			}
+		}
+			
+		"CUB" = {
+			history = CUB_DECADE_CRISIS_DESC
+			ideology = communism
+			minor = yes
+			ideas={
+				NATO_Military_Restrictions
+				Occupation
+			}
+			focuses = {
+
+			}
+			
+		}
+	
+		"VIN"={
+			history = "VIN_DECADE_CRISIS_DESC"
+			ideology = communism
+			minor = yes
+			ideas = {
+			}
+			focuses = {
+				
+			}
+		}
+		"VIE"={
+			history = "VIE_DECADE_CRISIS_DESC"
+			ideology = conservative
+			ideas = {
+			}
+			focuses = {
+				VIE_60s_Anti_Diem_Coup_1963
+				VIE_60s_Viet_Quoc_Takes_Power
+				VIE_60s_Diem_Coup_Failure
+			}
+		}
+
+		"FRA"={
+			history = "FRA_DECADE_CRISIS_DESC"
+			ideology = socialist
+			ideas = {
+			}
+			focuses = {
+				FRA_Self_Determination_for_Algeria
+				FRA_The_Algeirs_Coup
+				FRA_May_1968
+			}
+		}
+		"ENG"={
+			history = "ENG_DECADE_CRISIS_DESC"
+			ideology = conservative
+			ideas = {
+			}
+			focuses = {
+				ENG_60s_Salvation_of_Britain
+				ENG_60s_Prime_MinisteR_Harold_Wilson
+				ENG_60s_The_Entriest_Threat
+			}
+		}
+		"WGR"={
+			minor = yes
+			history = "WGR_DECADE_CRISIS_DESC"
+			ideology = conservative
+			ideas = {
+			}
+			focuses = {
+				
+			}
+		}
+		
+		"SAF"={
+			minor = yes
+			history = "SAF_DECADE_CRISIS_DESC"
+			ideology = neutrality
+			ideas = {
+			}
+			focuses = {
+				
+			}
+		}
+
+		"---"={
+			history = "OTHER_DECADE_CRISIS_DESC"
+		}
+
+		effect = {
+			randomize_weather = 22345 # <- Obligatory in every bookmark !
+			#123 = { rain_light = yes }
+		}
+	}
+}

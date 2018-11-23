@@ -1,0 +1,32 @@
+ideas = {
+
+	country = {
+		
+		multi_ethnic_state_idea = {
+			
+			allowed = {
+					Multi_Ethnic_State = yes
+			}
+			
+			default = yes
+	
+			modifier = {
+				stability_factor = -0.05
+			}
+		}
+		
+		al_qaeda_network = {
+		
+			allowed = {
+				has_government = fascism
+			}
+			
+			modifier = {
+				send_volunteers_tension = -0.15
+			}
+			
+		}
+		
+	}
+	
+}

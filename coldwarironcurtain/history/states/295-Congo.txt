@@ -1,0 +1,36 @@
+
+state={
+	id=295
+	name="STATE_295" # Bas-Congo
+	manpower = 1540948
+	resources={
+		oil=8
+	}
+	
+	state_category = city
+	
+	resources={
+		tungsten=20
+	}
+
+	history={
+		owner = DOC
+		add_core_of = DOC
+		buildings = {
+		infrastructure = 4
+		arms_factory = 2
+		industrial_complex = 1
+			10968 = {
+				naval_base = 1
+			}
+		}
+		
+		victory_points = {
+			5117 10 
+		}
+	}
+
+	provinces={
+		 10968 12925 5117 12945 10025 12896 4128
+	}
+}

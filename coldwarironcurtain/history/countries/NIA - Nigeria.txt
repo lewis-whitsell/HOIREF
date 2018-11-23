@@ -1,0 +1,192 @@
+﻿capital = 1011
+
+oob = "NIA_1949"
+
+# Starting tech
+set_technology = {
+	## Tech ##
+	radio = 1
+
+	## Industry ##
+	ww_production = 1
+	ww_construction = 1
+
+	## AIR ##
+	
+	## NAVY ##
+	transport = 1
+
+	## Infantry ##
+	infantry_equip_1 = 1
+	team_weapons_1 = 1
+	specialist_1 = 1
+	
+	## Support ##
+	tech_support = 1
+	tech_engineers = 1
+	tech_recon = 1
+	tech_field_hospital = 1
+
+	## Artillery  ##
+	gw_artillery = 1
+	interwar_antitank = 1
+	interwar_antiair = 1
+	
+	## Armor ## 
+	iw_armored_vehicles = 1  # dummy tech
+	motorised_infantry = 1
+}
+
+add_ideas = {
+	population_growth_explosion
+}
+
+set_convoys = 46
+
+set_cosmetic_tag = NIA_ENG
+
+set_politics = {
+
+	parties = {
+		democratic = { 
+			popularity = 60
+		}
+
+		fascism = {
+			popularity = 12
+		}
+		
+		communism = {
+			popularity = 20
+			#banned = no #default is no
+		}
+		
+		neutrality = { 
+			popularity = 8
+		}
+		pan_arabism = {
+			popularity = 0
+			banned = yes
+		}
+	}
+	
+	ruling_party = democratic
+	last_election = "1949.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+
+create_country_leader = {
+	name = "John Stuart Macpherson"
+	desc = ""
+	picture = "gfx/leaders/ENG/Portrait_Britain_Generic_navy_1.dds"
+	expire = "1965.1.1"
+	ideology = liberalism
+	traits = {
+		#
+	}
+}
+create_country_leader = { 
+	name = "Johnson Aguiyi-Ironsi"
+	desc = ""
+	picture = "Portrait_NIA_Ironsi.dds"
+	ideology = military_junta
+	traits = {
+		#
+	}
+}
+
+create_country_leader = { 
+	name = "Tunji Otegbeye"
+	picture = "Portrait_NIA_Otegbeye.dds"
+	ideology = stalinism
+}
+1960.1.1 = {
+	load_focus_tree = NIA_1960s
+	set_politics = {
+
+		parties = {
+			democratic = { 
+				popularity = 60
+			}
+
+			fascism = {
+				popularity = 12
+			}
+			
+			communism = {
+				popularity = 20
+				#banned = no #default is no
+			}
+			
+			neutrality = { 
+				popularity = 8
+			}
+			pan_arabism = {
+				popularity = 0
+				banned = yes
+			}
+		}
+		
+		ruling_party = democratic
+		last_election = "1960.1.1"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+		create_country_leader = {
+			name = "Nnamdi Azikiwe"
+			desc = ""
+			picture = "gfx/leaders/AFR/Portrait_AFR_Nnamdi_Azikiwe.dds"
+			expire = "1999.1.1"
+			ideology = liberalism
+			traits = {
+
+			}
+	}
+}
+1960.10.1 = {
+	drop_cosmetic_tag = yes	
+}
+1966.1.1 = {
+	set_politics = {
+
+		parties = {
+			democratic = { 
+				popularity = 40
+			}
+
+			fascism = {
+				popularity = 10
+			}
+			
+			communism = {
+				popularity = 20
+				#banned = no #default is no
+			}
+			
+			neutrality = { 
+				popularity = 30
+			}
+			pan_arabism = {
+				popularity = 0
+				banned = yes
+			}
+		}
+		
+		ruling_party = neutrality
+		last_election = "1960.1.1"
+		election_frequency = 48
+		elections_allowed = no
+	}
+		create_country_leader = {
+			name = "Yakubu Gowon"
+			desc = ""
+			picture = "gfx/leaders/AFR/Gowon.dds"
+			expire = "1999.1.1"
+			ideology = despotism
+			traits = {
+
+			}
+	}
+}

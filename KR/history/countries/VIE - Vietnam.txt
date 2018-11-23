@@ -1,0 +1,208 @@
+﻿capital = 671
+OOB = "empty"
+set_research_slots = 2
+set_technology = {
+	### MOD ###
+	### General ###
+	shipbuild_basics = 1
+	### Navy ###
+	transport = 1
+	### Tanks ###
+	gwtank = 1
+	### INF ###
+	infantry_weapons = 1
+	tech_support = 1
+	tech_engineers = 1
+	gw_artillery = 1
+	### AIR ###
+}
+add_ideas = { 
+	#medium_economy
+	VIE_Ngo_Dinh_Diem_hog_ade
+	VIE_Ngo_Dinh_Thuc_for_ade
+	VIE_Nguyen_Van_Vinh_sec_mli
+	VIE_Tran_Van_Minh_eco_ade
+}
+
+set_politics = {
+
+	parties = {
+		totalist = {
+			popularity = 0
+		}
+		radical_socialist = {
+			popularity = 19
+		}
+		syndicalist = {
+			popularity = 41
+		}
+		social_democrat = {
+			popularity = 4
+		}
+		social_liberal = {
+			popularity = 6
+		}
+		market_liberal = {
+			popularity = 8
+		}
+		social_conservative = {
+			popularity = 12
+		}
+		authoritarian_democrat = {
+			popularity = 2
+		}
+		paternal_autocrat = {
+			popularity = 0
+		}
+		national_populist = {
+			popularity = 8
+		}
+	}
+	
+	ruling_party = syndicalist
+	last_election = "1888.15.6"
+	election_frequency = 48
+	elections_allowed = no
+
+}
+### Leader Spam ###
+create_country_leader = {
+	name = "Le Duc Tho"
+	desc = "POLITICS_LE_DUC_THO_DESC"
+	picture = "gfx/leaders/INC/Portrait_INC_Le_Duc_Tho.tga"
+	expire = "1990.10.13"
+	ideology = totalist_subtype
+	traits = { }
+}
+create_country_leader = {
+	name = "Le Duc Tho"
+	desc = "POLITICS_LE_DUC_THO_DESC"
+	picture = "gfx/leaders/INC/Portrait_INC_Le_Duc_Tho.tga"
+	expire = "1990.10.13"
+	ideology = syndicalist_subtype
+	traits = { }
+}
+create_country_leader = {
+	name = "Le Duc Tho"
+	desc = "POLITICS_LE_DUC_THO_DESC"
+	picture = "gfx/leaders/INC/Portrait_INC_Le_Duc_Tho.tga"
+	expire = "1990.10.13"
+	ideology = radical_socialist_subtype
+	traits = { }
+}
+create_country_leader = {
+	name = "Le Duc Tho"
+	desc = "POLITICS_LE_DUC_THO_DESC"
+	picture = "gfx/leaders/INC/Portrait_INC_Le_Duc_Tho.tga"
+	expire = "1990.10.13"
+	ideology = social_democrat_subtype
+	traits = { }
+}
+create_country_leader = {
+	name = "H.R.H. Bao Dai"
+	desc = "POLITICS_BAO_DAI_DESC"
+	picture = "gfx/leaders/VIE/Portrait_Vietnam_Bao_Dai.tga"
+	expire = "1997.7.30"
+	ideology = social_liberal_subtype
+	traits = { }
+}
+create_country_leader = {
+	name = "H.R.H. Bao Dai"
+	desc = "POLITICS_BAO_DAI_DESC"
+	picture = "gfx/leaders/VIE/Portrait_Vietnam_Bao_Dai/.tga"
+	expire = "1997.7.30"
+	ideology = market_liberal_subtype
+	traits = { }
+}
+create_country_leader = {
+	name = "H.R.H. Bao Dai"
+	desc = "POLITICS_BAO_DAI_DESC"
+	picture = "gfx/leaders/VIE/Portrait_Vietnam_Bao_Dai.tga"
+	expire = "1997.7.30"
+	ideology = social_conservative_subtype
+	traits = { }
+}
+create_country_leader = {
+	name = "H.R.H. Bao Dai"
+	desc = "POLITICS_BAO_DAI_DESC"
+	picture = "gfx/leaders/VIE/Portrait_Vietnam_Bao_Dai.tga"
+	expire = "1997.7.30"
+	ideology = authoritarian_democrat_subtype
+	traits = { }
+}
+create_country_leader = { # Needed Portrait
+	name = "Ngo Din Diem"
+	desc = "POLITICS_MGO_DIN_DIEM_DESC"
+	picture = "gfx/leaders/VIE/Portrait_Vietnam_Ngo_Din_Diem.tga"
+	expire = "1963.11.2"
+	ideology = authoritarian_democrat_subtype
+	traits = { }
+}
+create_country_leader = { # Needed Portrait
+	name = "Prinz Cuong De"
+	desc = "POLITICS_PRINCE_COUNG_DE_DESC"
+	picture = "gfx/leaders/VIE/Portrait_Vietnam_Prinz_Cuong_De.tga"
+	expire = "1951.4.5"
+	ideology = paternal_autocrat_subtype
+	traits = { }
+}
+create_country_leader = { # Needed Portrait
+	name = "Pham Cong Tac"
+	desc = "POLITICS_PHAM_CONG_TAC_DESC"
+	picture = "gfx/leaders/VIE/Portrait_Vietnam_Pham_Cong_Tac.tga"
+	expire = "1959.5.17"
+	ideology = national_populist_subtype
+	traits = { }
+}
+
+### Corps Commander
+create_corps_commander = { # Needed Portrait
+	name = "Nguyen Van Hinh"
+	portrait_path = "gfx/leaders/VIE/Portrait_Vietnam_Nguyen_Van_Hinh.tga"
+	traits = { }
+	skill = 1
+}
+create_corps_commander = { # Needed Portrait
+	name = "Duong Van Minh"
+	portrait_path = "gfx/leaders/VIE/Portrait_Vietnam_Duong_Van_Minh.tga"
+	traits = { }
+	skill = 1
+}
+create_corps_commander = { # Needed Portrait
+	name = "Tran Van Don"
+	portrait_path = "gfx/leaders/VIE/Portrait_Vietnam_Tran_Van_Don.tga"
+	traits = { }
+	skill = 1
+}
+create_corps_commander = { # Needed Portrait
+	name = "Le Van Ty"
+	portrait_path = "gfx/leaders/VIE/Portrait_Vietnam_Le_Van_Ty.tga"
+	traits = { }
+	skill = 1
+}
+create_corps_commander = { # Needed Portrait
+	name = "Tran Quang Vinh"
+	portrait_path = "gfx/leaders/VIE/Portrait_Vietnam_Tran_Quang_Vinh.tga"
+	traits = { }
+	skill = 1
+}
+create_corps_commander = { # Needed Portrait
+	name = "Le Quang Vinh"
+	portrait_path = "gfx/leaders/VIE/Portrait_Vietnam_Le_Quang_Vinh.tga"
+	traits = { }
+	skill = 1
+}
+
+### Naval Commander ###
+create_navy_leader = { # Needed Portrait
+	name = "Le Quang My"
+	portrait_path = "gfx/leaders/VIE/Portrait_Vietnam_Le_Quang_My.tga"
+	traits = { }
+	skill = 1
+}
+create_navy_leader = { # Needed Portrait
+	name = "Tran Van Chon"
+	portrait_path = "gfx/leaders/VIE/Portrait_Vietnam_Tran_Van_Chon.tga"
+	traits = { }
+	skill = 1
+}

@@ -1,0 +1,113 @@
+﻿division_template = {
+	name = "Police District"					
+
+	regiments = {
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 0 y = 2 }
+		militia = { x = 1 y = 0 }
+		militia = { x = 1 y = 1 }
+		militia = { x = 1 y = 2 }
+		militia = { x = 2 y = 0 }
+		militia = { x = 2 y = 1 }
+		militia = { x = 2 y = 2 }
+
+	}
+	support = {
+	military_police = { x = 0 y = 0 }
+	}
+}
+
+division_template = {
+	name = "Mobile Police District"					
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+   		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+  		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+	}
+	support = {
+	military_police = { x = 0 y = 0 }
+	}
+}
+
+division_template = {
+	name = "Defence Force"		
+	regiments = {
+		garrison = { x = 0 y = 0 }
+		garrison = { x = 0 y = 1 }
+		garrison = { x = 0 y = 2 }
+   		garrison = { x = 1 y = 0 }
+		garrison = { x = 1 y = 1 }
+		garrison = { x = 1 y = 2 }
+	}
+	support = {
+	}
+}
+
+units = {
+	division= {	
+		name = "Shanghai Mobile Police District"
+		location = 7014
+		division_template = "Mobile Police District"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+	division= {	
+		name = "Shanghai Police District"
+		location = 10076
+		division_template = "Police District"
+		start_experience_factor = 0.0
+		start_equipment_factor = 0.5
+	}
+	division= {	
+		name = "Tianjin Police District"
+		location = 10068
+		division_template = "Police District"
+		start_experience_factor = 0.0
+		start_equipment_factor = 0.5
+	}
+	division= {	
+		name = "Ningbo Police District"
+		location = 9974
+		division_template = "Police District"
+		start_experience_factor = 0.0
+		start_equipment_factor = 0.5
+	}
+	division= {	
+		name = "Fuzhou Police District"
+		location = 4196
+		division_template = "Police District"
+		start_experience_factor = 0.0
+		start_equipment_factor = 0.5
+	}
+	division= {	
+		name = "Hong Kong Defence Force"
+		location = 10062
+		division_template = "Defence Force"
+		start_experience_factor = 0.1
+		start_equipment_factor = 1.0
+	}
+	division= {	
+		name = "Hong Kong Police District"
+		location = 10062
+		division_template = "Police District"
+		start_experience_factor = 0.0
+		start_equipment_factor = 0.5
+	}
+}
+
+air_wings = {
+		743 = {
+			tac_bomber_equipment_0 = {
+			owner = "LEC"
+			amount = 50
+			}		
+		}	
+}

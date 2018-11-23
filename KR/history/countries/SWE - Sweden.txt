@@ -1,0 +1,333 @@
+﻿capital = 141	
+OOB = "SWE"
+
+add_ideas = {
+#medium_economy
+#SWE_landstormen
+#SWE_contentious_elections
+#SWE_statare
+limited_conscription
+SWE_Goesta_Bagge_hog_sco
+SWE_Christian_Guenther_for_sco
+SWE_Gustav_Cassel_eco_mli
+SWE_Carlos_Adlercreutz_sec_ade
+low_popularity
+}
+
+set_convoys = 75
+
+set_technology = {
+
+### MOD ###
+	### General ###
+	shipbuild_basics = 1
+	### Navy ###
+	early_submarine = 1
+	basic_submarine = 1
+	early_destroyer = 1
+	basic_destroyer = 1
+	early_light_cruiser = 1
+	early_heavy_cruiser = 1
+	early_battleship = 1
+	early_battlecruiser = 1
+	transport = 1
+	### Tanks ###
+	gwtank = 1
+	### INF ###
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	motorised_infantry = 1
+	gw_artillery = 1
+	tech_support = 1
+	### AIR ###
+	early_fighter = 1
+	naval_bomber1 = 1
+	early_bomber = 1
+}
+
+	set_research_slots = 3
+
+
+set_politics = {
+
+	parties = {
+		totalist = {
+			popularity = 3
+		}
+		radical_socialist = {
+			popularity = 7
+		}
+		syndicalist = {
+			popularity = 4
+		}
+		social_democrat = {
+			popularity = 26
+		}
+		social_liberal = {
+			popularity = 8
+		}
+		market_liberal = {
+			popularity = 8
+		}
+		social_conservative = {
+			popularity = 37
+		}
+		authoritarian_democrat = {
+			popularity = 3
+		}
+		paternal_autocrat = {
+			popularity = 2
+		}
+		national_populist = {
+			popularity = 2
+		}
+	}
+	
+	ruling_party = social_conservative
+	last_election = "1888.15.6"
+	election_frequency = 48
+	elections_allowed = no
+
+}
+
+create_country_leader = {
+	name = "Gustaf V"
+	desc = "POLITICS_Gustaf_V_DESC"
+	picture = "Portrait_Sweden_Gustaf_V.tga"
+	expire = "1965.1.1"
+	ideology = social_conservative_subtype
+	traits = {
+		
+	}
+}	
+
+create_country_leader = {
+	name = "Gustaf V"
+	desc = "POLITICS_Gustaf_V_DESC"
+	picture = "Portrait_Sweden_Gustaf_V.tga"
+	expire = "1965.1.1"
+ ideology = authoritarian_democrat_subtype
+ traits = {
+
+ }
+}
+
+create_country_leader = {
+	name = "Gustaf V"
+	desc = "POLITICS_Gustaf_V_DESC"
+	picture = "Portrait_Sweden_Gustaf_V.tga"
+	expire = "1965.1.1"
+ ideology = social_democrat_subtype
+ traits = {
+
+ }
+}
+
+create_country_leader = {
+ name = "Frans Severin"
+ desc = "POLITICS_Frans_Severin_DESC"
+ picture = "Portrait_Sweden_Frans_Severin.tga"
+ expire = "1965.1.1"
+ ideology = syndicalist_subtype
+ traits = { }
+}
+
+create_country_leader = {
+	name = "Gustaf V"
+	desc = "POLITICS_Gustaf_V_DESC"
+	picture = "Portrait_Sweden_Gustaf_V.tga"
+	expire = "1965.1.1"
+ ideology = paternal_autocrat_subtype
+ traits = {
+
+ }
+}
+
+create_country_leader = {
+	name = "Gustaf V"
+	desc = "POLITICS_Gustaf_V_DESC"
+	picture = "Portrait_Sweden_Gustaf_V.tga"
+	expire = "1965.1.1"
+ ideology = national_populist_subtype
+ traits = {
+
+ }
+}
+
+create_country_leader = {
+ name = "The Revolutionary Committee"
+ desc = "POLITICS_REVOLUTIONARY_COMMITTEE_DESC"
+ picture = "Portrait_Switzerland_Council.tga"
+ expire = "1965.1.1"
+ ideology = radical_socialist_subtype
+ traits = {
+
+ }
+}
+
+create_country_leader = {
+	name = "Gustaf V"
+	desc = "POLITICS_Gustaf_V_DESC"
+	picture = "Portrait_Sweden_Gustaf_V.tga"
+	expire = "1965.1.1"
+ ideology = market_liberal_subtype
+ traits = {
+
+ }
+}
+
+create_country_leader = {
+	name = "Gustaf V"
+	desc = "POLITICS_Gustaf_V_DESC"
+	picture = "Portrait_Sweden_Gustaf_V.tga"
+	expire = "1965.1.1"
+ ideology = social_liberal_subtype
+ traits = {
+
+ }
+}
+
+create_country_leader = {
+ name = "The Revolutionary Committee"
+ desc = "POLITICS_REVOLUTIONARY_COMMITTEE_DESC"
+ picture = "Portrait_Switzerland_Council.tga"
+ expire = "1965.1.1"
+ ideology = totalist_subtype
+ traits = {
+
+ }
+}
+
+
+### Field Marshal
+
+create_field_marshal = { #Auto-Generated
+	name = "Olof Thörnell"
+	portrait_path = "gfx/leaders/SWE/Portrait_SWE_Thornell.tga"
+	traits = { defensive_doctrine old_guard }
+	skill = 3
+}
+
+create_field_marshal = { #Auto-Generated
+	name = "Oscar Nygren"
+	portrait_path = "gfx/leaders/SWE/Portrait_SWE_Nygren.tga"
+	traits = { thorough_planner }
+	skill = 2
+}
+
+
+### Corps Commander
+
+create_corps_commander = { #Auto-Generated
+	name = "Archibald Douglas"
+	portrait_path = "gfx/leaders/SWE/Portrait_SWE_Douglas.tga"
+	traits = { panzer_leader }
+	skill = 3
+}
+
+create_corps_commander = { #Auto-Generated
+	name = "Axel Rappe"
+	portrait_path = "gfx/leaders/SWE/Portrait_SWE_Rappe.tga"
+	traits = { trait_engineer trickster }
+	skill = 3
+}
+
+create_corps_commander = { #Auto-Generated
+	name = "Carl August Ehrensvärd"
+	portrait_path = "gfx/leaders/SWE/Portrait_SWE_August_Ehrensvard.tga"
+	traits = { panzer_leader }
+	skill = 1
+}
+
+create_corps_commander = { #Auto-Generated
+	name = "Erik af Edholm"
+	portrait_path = "gfx/leaders/SWE/Portrait_SWE_af_Edholm.tga"
+	skill = 1
+}
+
+create_corps_commander = { #Auto-Generated
+	name = "Ernst af Klercker"
+	portrait_path = "gfx/leaders/SWE/Portrait_SWE_af_Klercker.tga"
+	traits = { trickster }
+	skill = 2
+}
+
+create_corps_commander = { #Auto-Generated
+	name = "Gustaf Petri"
+	portrait_path = "gfx/leaders/SWE/Portrait_SWE_Petri.tga"
+	skill = 1
+		traits = { old_guard }
+}
+
+create_corps_commander = { #Auto-Generated
+	name = "Erik af Edholm"
+	portrait_path = "gfx/leaders/SWE/Portrait_SWE_af_Edholm.tga"
+	traits = { trickster }
+	skill = 1
+}
+
+create_corps_commander = { #Auto-Generated
+	name = "Helge Jung"
+	portrait_path = "gfx/leaders/SWE/Portrait_SWE_Jung.tga"
+	skill = 2
+}
+
+create_corps_commander = { #Auto-Generated
+	name = "Henry Peyron"
+	portrait_path = "gfx/leaders/SWE/Portrait_SWE_Peyron.tga"
+	skill = 1
+}
+
+create_corps_commander = { #Auto-Generated
+	name = "Ivar Holmquist"
+	portrait_path = "gfx/leaders/SWE/Portrait_SWE_Holmquist.tga"
+	skill = 1
+}
+
+create_corps_commander = { #Auto-Generated
+	name = "Per Sylvan"
+	portrait_path = "gfx/leaders/SWE/Portrait_SWE_Sylvan.tga"
+	skill = 2
+}
+
+
+
+### Navy Leader
+create_navy_leader = { #Auto-Generated
+	name = "Gösta Ehrensvärd"
+	portrait_path = "gfx/leaders/SWE/Portrait_SWE_Gosta_Ehrensvard.tga"
+	traits = {
+		spotter
+		fly_swatter
+	}
+	skill = 2
+}
+
+create_navy_leader = { #Auto-Generated
+	name = "Fabian Tamm"
+	portrait_path = "gfx/leaders/SWE/Portrait_SWE_Tamm.tga"
+	traits = {
+		superior_tactician
+		blockade_runner
+	}
+	skill = 3
+}
+
+create_navy_leader = { #Auto-Generated
+	name = "Otto Lybeck"
+	portrait_path = "gfx/leaders/SWE/Portrait_SWE_Lybeck.tga"
+	traits = {
+		seawolf
+	}
+	skill = 2
+}
+
+create_navy_leader = { #Auto-Generated
+	name = "Claes Olof Lindsström"
+	portrait_path = "gfx/leaders/SWE/Portrait_SWE_Lindsstrom.tga"
+	traits = {
+		ironside
+		old_guard_navy
+	}
+	skill = 2
+}

@@ -1,0 +1,133 @@
+autonomy_state = {
+	id = autonomy_colony
+	
+	
+	min_freedom_level = 0.50
+	
+	rule = {
+		can_not_declare_war = yes
+		can_decline_call_to_war = no
+	}
+	
+	modifier = {
+		autonomy_manpower_share = 0.7
+		
+		extra_trade_to_overlord_factor = 0.5
+		overlord_trade_cost_factor = -0.5
+		can_master_build_for_us = 1
+
+		research_sharing_per_country_bonus_factor = -0.5
+	}
+	
+	ai_subject_wants_higher = {
+		factor = 1.0
+	}
+	
+	ai_overlord_wants_lower = {
+		factor = 1.0
+	}
+
+	ai_overlord_wants_garrison = {
+		always = no
+	}
+
+	allowed = {
+		has_dlc = "Together for Victory"
+		NOT = { 
+			tag = ARM 
+			has_government = communism
+		}
+		NOT = { 
+			tag = GEO
+			has_government = communism
+		}
+		NOT = {
+			tag = AZR 
+			has_government = communism
+		}
+		NOT = { 
+			tag = DDR 
+			has_government = communism
+		}
+		NOT = {
+			tag = POL 
+			has_government = communism
+		} 
+		NOT = { 
+			tag = CZE 
+			has_government = communism
+		} 
+		NOT = {
+			tag = HUN
+			has_government = communism
+		}
+		NOT = { 
+			tag = ROM 
+			has_government = communism
+		}
+		NOT = { 
+			tag = BUL
+			has_government = communism
+		}	
+		NOT = { 
+			tag = EST
+			has_government = communism
+		}
+		NOT = { 
+			tag = LAT 
+			has_government = communism
+		}
+		NOT = { 
+			tag = LIT 
+			has_government = communism
+		}
+		NOT = { 
+			tag = UKR 
+			has_government = communism
+		}
+		NOT = { 
+			tag = BLR 
+			has_government = communism
+		}
+		NOT = { 
+			tag = MLD 
+			has_government = communism
+		}	
+		NOT = { 
+			tag = KAZ 
+			has_government = communism
+		}
+		NOT = { 
+			tag = TJK 
+			has_government = communism
+		}
+		NOT = { 
+			tag = UZB
+			has_government = communism
+		}
+		NOT = { 
+			tag = KRG 
+			has_government = communism
+		}
+		NOT = { 
+			tag = TRK 
+			has_government = communism
+		}
+		NOT = { 
+			tag = KRL 
+			has_government = communism
+		} 
+		if = {
+			limit = { has_dlc = "Death or Dishonor" }
+			NOT = { has_government = fascism }
+		}
+	}
+	
+	can_take_level = {
+
+	}
+
+	can_lose_level = {
+		#trigger here
+	}
+}

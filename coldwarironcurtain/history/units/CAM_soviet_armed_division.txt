@@ -1,0 +1,25 @@
+﻿####### OOB #######
+units = {
+	####### HOME THEATRE #######
+	division= {	
+		name = "1.Armored Division"
+		location = 7404
+		division_template = "Medium Armored Division"
+		start_experience_factor = 0.6
+		start_equipment_factor = 1.0
+	}
+	division= {	
+		name = "2.Armored Division"
+		location = 7404
+		division_template = "Medium Armored Division"
+		start_experience_factor = 0.6
+		start_equipment_factor = 1.0
+	}
+	division= {	
+		name = "3.Armored Division"
+		location = 7404
+		division_template = "Medium Armored Division"
+		start_experience_factor = 0.6
+		start_equipment_factor = 1.0
+	}
+}

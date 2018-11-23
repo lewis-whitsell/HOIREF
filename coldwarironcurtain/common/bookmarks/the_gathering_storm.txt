@@ -1,0 +1,176 @@
+bookmarks = {
+	bookmark = {
+		name = "GATHERING_STORM_NAME"
+		desc = "GATHERING_STORM_DESC"
+		date = 1949.5.23.12
+		picture = "GFX_select_date_1936"
+		default_country = "USA"
+		default = yes
+		
+		"USA"={
+			history = "USA_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+				home_of_the_free
+				organized_crime_problem
+				taft_hartley_act
+			}
+		}
+		"ENG"={
+			history = "ENG_GATHERING_STORM_DESC"
+			ideology = conservative
+			ideas = {
+				nato_member
+				UN_Security_Council_Member_Perm			}
+		}
+		WGR = {
+			history = WGR_GATHERING_STORM_DESC
+			ideology = conservative
+			ideas={
+				Occupation
+				NATO_Military_Restrictions
+				Scientific_Collapse
+				Disorganized_Navy
+			}
+		}
+		"KOR"={
+			history = "KOR_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+			}
+		}
+		"KPA"={
+			history = "KPA_GATHERING_STORM_DESC"
+			ideology = communism
+			ideas={
+			}			
+		}
+		"PRC"={
+			history = "PRC_GATHERING_STORM_DESC"
+			ideology = maoism
+			ideas={
+				PRC_peoples_army
+			}			
+		}
+		"SOV"={
+			history = "SOV_GATHERING_STORM_DESC"
+			ideology = communism
+			ideas = {
+				home_of_revolution
+
+			}
+		}
+		
+		"DDR"={
+			minor = yes
+			history = "DDR_GATHERING_STORM_DESC"
+			ideology = communism
+			ideas = {
+				ddr_idea_industrial_corruption
+				ddr_idea_mass_emigration
+				Warsaw_Pact_Military_Restrictions				
+			}
+			focuses = {
+				
+			}
+		}
+		"FRA"={
+			minor = yes
+			history = "FRA_GATHERING_STORM_DESC"
+			ideology = socialist
+			ideas = {
+				fra_rationing
+				fra_legacy_of_occupation
+				nato_member
+			}
+			focuses = {
+				
+			}
+		}
+		"ITA"={
+			minor = yes
+			history = "ITA_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+				nato_member
+				organized_crime_problem				
+			}
+			focuses = {
+				
+			}
+		}
+		"RAJ"={
+			minor = yes
+			history = "RAJ_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+				idea_RAJ_Ehtos_Independence
+				ban_on_rss
+				caste_discrimination				
+			}
+			focuses = {
+				
+			}
+		}
+		"POL"={
+			minor = yes
+			history = "POL_GATHERING_STORM_DESC"
+			ideology = communism
+			ideas = {
+				
+			}
+			focuses = {
+				POL_poznan_uprising
+				POL_return_of_the_government_in_exile
+				POL_gomulka_will_save_us
+			}
+		}
+		"ISR"={
+			minor = yes
+			history = "ISR_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+				idea_ISR_Defence_of_the_Sionist_Nation
+			}
+			focuses = {
+				
+			}
+		}
+		"YUG"={
+			minor = yes
+			history = "YUG_GATHERING_STORM_DESC"
+			ideology = communism
+			ideas = {
+				YUG_anti_soviet	
+			}
+			focuses = {
+				proclaim_the_sfry
+				path_to_nato
+				radical_coup
+			}
+		}
+		"FIN"={
+			minor = yes
+			history = "FIN_GATHERING_STORM_DESC"
+			ideology = Liberal_Conservatism
+			ideas = {
+				soviet_reparations
+			}
+			focuses = {
+				FIN_join_nato
+				FIN_legacy_of_1918
+				FIN_back_to_30s
+				
+			}
+		}
+
+		"---"={
+			history = "OTHER_GATHERING_STORM_DESC"
+		}
+
+		effect = {
+			randomize_weather = 22345 # <- Obligatory in every bookmark !
+			#123 = { rain_light = yes }
+		}
+	}
+}

@@ -1,0 +1,39 @@
+state={
+	id=446
+	name="STATE_446"
+	manpower = 7386596
+	state_category = megalopolis
+	history={
+		owner = EGY
+		buildings = {
+			infrastructure =6
+			industrial_complex =4
+			arms_factory =2
+			air_base = 6
+			
+			10005 = {
+				bunker = 2
+			}
+			7011 = {
+				bunker = 2
+			}
+			12004 = {
+				bunker = 2
+			}
+		}
+		
+		victory_points = {
+			7011 20
+		}
+
+
+		add_core_of = EGY
+		1961.1.1 = {
+			owner = EGY
+		}
+	}
+
+	provinces={
+		4143 7011 7188 10005 12004   
+	}
+}

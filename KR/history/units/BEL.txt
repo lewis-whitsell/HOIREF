@@ -1,0 +1,91 @@
+﻿division_template = {
+	name = "Infanterie Divisie"			
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+		
+	}
+	support = {
+	
+	}
+}
+division_template = {
+	name = "Infanterie Divisie met Artillerie Ondersteuning"			
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+
+	}
+	support = {
+	artillery = { x = 0 y = 0 } 	
+	}
+}
+
+units = {
+division= {	
+		name = "2. Infanterie-Divisie"
+		location = 3516
+		division_template = "Infanterie Divisie"
+		start_experience_factor = 0.3
+	}
+division= {	
+		name = "3. Infanterie-Divisie"
+		location = 3516
+		division_template = "Infanterie Divisie"
+		start_experience_factor = 0.3
+	}
+division= {	
+		name = "1. Infanterie-Divisie"
+		location = 516
+		division_template = "Infanterie Divisie met Artillerie Ondersteuning"
+		start_experience_factor = 0.3
+	}
+division= {	
+		name = "5. Infantrie-Division"
+		location = 516
+		division_template = "Infanterie Divisie met Artillerie Ondersteuning"
+		start_experience_factor = 0.3
+	}
+	division= {	
+		name = "4. Infanterie-Divisie"
+		location = 6446
+		division_template = "Infanterie Divisie"
+		start_experience_factor = 0.3
+	}
+	
+navy = {
+		name = "1ste Vlaams-Waals Marinekorps"			
+		base = 6446
+		location = 6446
+		ship = { name = "FN Gent" definition = destroyer equipment = { destroyer_pre = { amount = 1 owner = BEL } } }
+		ship = { name = "FN Antwerpen" definition = destroyer equipment = { destroyer_pre = { amount = 1 owner = BEL } } }
+		ship = { name = "FN Brugge" definition = destroyer equipment = { destroyer_pre = { amount = 1 owner = BEL } } }
+		ship = { name = "FN Brussel" definition = destroyer equipment = { destroyer_pre = { amount = 1 owner = BEL } } }
+		}
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		

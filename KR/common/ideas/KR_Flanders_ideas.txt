@@ -1,0 +1,501 @@
+### Flemish Ideas
+
+ideas = {
+##############
+# Country ideas
+##############
+	country = {
+		FLN_Flemish_Lion_1 = {
+		allowed = {
+			always = no
+			}
+		picture = BEL_Vlaamse_Leeuw
+		removal_cost = -1
+		modifier = {
+			conscription = 0.03
+		}	
+		}
+		
+		FLN_Flemish_Lion_2 = {
+		allowed = {
+			always = no
+			}
+		picture = BEL_Vlaamse_Leeuw
+		removal_cost = -1
+		modifier = {
+			conscription = 0.05
+			conscription_factor = 0.10
+		}	
+		}
+		
+		FLN_Code_Napoleon = {
+		allowed = {
+			always = no
+			}
+		picture = OTT_solid_idea
+		removal_cost = -1
+		modifier = {
+			drift_defence_factor = 0.50 
+			unity_factor = 0.05
+		}	
+		}
+		
+		FLN_CoalitionSOC = {
+		allowed = {
+			always = no
+			}
+		picture = BEL_Flemish_Council
+		removal_cost = -1
+		modifier = {
+			political_power_gain = 0.15
+			unity_factor = 0.05
+			industrial_capacity_factory = 0.08
+			consumer_goods_factor = -0.03
+		}	
+		}
+		
+		FLN_CoalitionSOC2 = {
+		allowed = {
+			always = no
+			}
+		picture = BEL_Flemish_Council
+		removal_cost = -1
+		modifier = {
+			political_power_gain = 0.15
+			unity_factor = 0.10
+			industrial_capacity_factory = 0.10
+			consumer_goods_factor = -0.05
+		}	
+		}
+		
+		FLN_Coalition = {
+		allowed = {
+			always = no
+			}
+		picture = BEL_Flemish_Council
+		removal_cost = -1
+		modifier = {
+			political_power_gain = 0.25
+			industrial_capacity_factory = 0.08
+		}	
+		}
+		
+		FLN_Coalition2 = {
+		allowed = {
+			always = no
+			}
+		picture = BEL_Flemish_Council
+		removal_cost = -1
+		modifier = {
+			political_power_gain = 0.30
+			industrial_capacity_factory = 0.10
+		}	
+		}
+		
+		FLN_Flemish_Idea = {
+		allowed = {
+			always = no
+			}
+		picture = BEL_Flemish_Council
+		removal_cost = -1
+		modifier = {
+			political_power_gain = 0.10
+			unity_factor = 0.15
+		}	
+		}
+		
+		FLN_Strong = {
+		allowed = {
+			always = no
+			}
+		picture = BEL_Flemish_Council
+		removal_cost = -1
+		modifier = {
+			political_power_gain = 0.20
+			unity_factor = 0.05
+			drift_defence_factor = 0.25
+		}	
+		}
+		
+		FLN_Abolish = {
+		allowed = {
+			always = no
+			}
+		picture = BEL_Flemish_Council
+		removal_cost = -1
+		modifier = {
+			political_power_gain = 0.25
+			unity_factor = 0.05
+			drift_defence_factor = 0.50
+			consumer_goods_factor = -0.05
+		}	
+		}		
+	
+		FLN_Expand = {
+		allowed = {
+			always = no
+			}
+		picture = BEL_Vlaamse_Leeuw
+		removal_cost = -1
+		modifier = {
+			unity_factor = 0.05
+			justify_war_goal_time = -0.20
+		}	
+		}
+		
+		FLN_Karel = {
+		allowed = {
+			always = no
+			}
+		picture = BEL_Vlaamse_Leeuw
+		removal_cost = -1
+		modifier = {
+			unity_factor = 0.10
+			political_power_gain = 0.20
+			drift_defence_factor = 0.25
+		}	
+		}
+		
+		FLN_Flanders = {
+		allowed = {
+			always = no
+			}
+		picture = BEL_Flemish_Council
+		removal_cost = -1
+		modifier = {
+			industrial_capacity_factory = 0.10
+			drift_defence_factor = 0.25
+		}	
+		}
+		
+		FLN_Karel2 = {
+		allowed = {
+			always = no
+			}
+		picture = BEL_Vlaamse_Leeuw
+		removal_cost = -1
+		modifier = {
+			unity_factor = 0.10
+			political_power_gain = 0.20
+			drift_defence_factor = 0.25
+			consumer_goods_factor = -0.05
+		}	
+		}
+		
+		FLN_Interior = {
+		allowed = {
+			always = no
+			}
+		picture = flemish_economy
+		removal_cost = -1
+		modifier = {
+			industrial_capacity_factory = 0.05
+			consumer_goods_factor = -0.03
+			
+		}	
+		}
+		
+		FLN_invite_foreign_investors = {
+
+			picture = generic_foreign_capital
+
+			allowed_civil_war = {
+				
+			}
+			
+			modifier = {
+				production_speed_infrastructure_factor = 0.1
+				production_speed_industrial_complex_factor = 0.1
+			}
+		}
+	
+	
+	##############
+	# Syndie Ideas
+	##############
+	
+	FLN_Christian_Influence = {
+		allowed = {
+			always = no
+			}
+		picture = Recruitment_Crisis
+		removal_cost = -1
+		modifier = {
+			conscription_factor = -0.10
+		}
+	}
+	
+	FLN_Royal_Coffers = {
+		allowed = {
+			always = no
+			}
+		picture = Economic_Meltdown
+		removal_cost = -1
+		modifier = {
+			consumer_goods_factor = -0.05
+		}	
+	}
+	
+	FLN_Control_Industry = {
+		allowed = {
+			always = no
+			}
+		picture = BEL_Flemish_Council
+		removal_cost = -1
+		modifier = {
+			production_speed_industrial_complex_factor = 0.1
+			industrial_capacity_factory = 0.08
+		}	
+		}
+		
+	FLN_Control_Agriculture = {
+		allowed = {
+			always = no
+			}
+		picture = BEL_Flemish_Council
+		removal_cost = -1
+		modifier = {
+			conscription_factor = 0.10
+			industrial_capacity_factory = 0.05
+		}	
+		}
+
+	FLN_Revolution = {
+		allowed = {
+			always = no
+			}
+		picture = NOR_labour_conflicts
+		removal_cost = -1
+		modifier = {
+			conscription_factor = -0.30
+			unity_factor = -0.20
+			consumer_goods_factor = 0.15
+		}	
+		}
+
+	FLN_Revolution2 = {
+		allowed = {
+			always = no
+			}
+		picture = NOR_uob_support_idea
+		removal_cost = -1
+		modifier = {
+			conscription_factor = -0.10
+			unity_factor = -0.10
+			consumer_goods_factor = 0.05
+			political_power_gain = 0.20
+		}	
+		}		
+	
+	
+	}
+	
+	
+	##############
+	# Companies
+	##############
+
+	#### General ####
+	industrial_concern = {
+
+		solvay_FLN = {
+			allowed = {
+				original_tag = FLN
+			}
+			traits = {
+				chemical_producer
+			}
+			modifier = {
+				production_speed_synthetic_refinery_factor = 0.1
+			}
+			research_bonus = {
+				synth_resources = 0.1
+				industry = 0.05
+			}
+		}
+
+	}
+
+	#### Weapons ####
+	weapons_manufacturer = {
+		designer = yes
+		mecar_FLN = { ####Founded in 1938; made shells for guns but also for mortars in addition to grenades, especially a reknowned AT grenade after the war (So it's mixed between infantry and artillery but there are two artillery producers already. Last but not least the bonus given should be interesting enough otherwise it would have no interest) Logo in a non releasable form available in the gfx folder
+			allowed = {
+				original_tag = FLN
+			}
+			traits = {
+				infantry_equipment_producer_assualt_2
+			}
+			research_bonus = {
+				infantry_weapons = 0.1
+			}
+			modifier = {}
+		}
+	}
+
+	#### Heavy Equipment Manufacturers ####	
+	tank_manufacturer = {
+		designer = yes
+		forges_de_zeebruges_FLN = { #FZ as symbol? Produced specific artillery ammunitions
+			allowed = {
+				original_tag = FLN
+			}
+			picture = generic_artillery_manufacturer_3
+			traits = {
+				artillery_producer_offense_0
+			}
+			modifier = {}
+			research_bonus = {
+				artillery = 0.05
+			}
+		}
+		brossel_FLN = { #Truck Producer, same with Miesse, maybe reserve some for Flanders?
+			allowed = {
+				original_tag = FLN
+			}
+			traits = {
+				motorised_equipment_producer_defense_1
+			}
+			modifier = {}
+			research_bonus = {
+				motorized_equipment = 0.05
+			}
+		}
+		miesse_FLN = { #Truck Producer, same with brossel, maybe reserve some for Flanders?
+			allowed = {
+				original_tag = FLN
+			}
+			traits = {
+				motorised_equipment_producer_mass_1
+			}
+			modifier = {}
+			research_bonus = {
+				motorized_equipment = 0.05
+			}
+		}
+
+		minerva_FLN = { #### Trait maybe not convenient considering that it produced luxury cars.
+			allowed = {
+				original_tag = FLN
+			}
+			traits = {
+				motorised_equipment_producer_mass_1
+			}
+			modifier = {}
+			research_bonus = {
+				motorized_equipment = 0.05
+			}
+		}
+
+		la_brugeoise_FLN = {
+			allowed = {
+				original_tag = FLN
+			}
+			traits = {
+				small_tank_producer_defense_1
+			}
+			modifier = {}
+			research_bonus = {
+				armor = 0.05
+			}
+		}
+	}
+
+	#### Air and Naval Manufacturers ####
+	air_naval_manufacturer = {
+		designer = yes
+		renard_FLN = { #Would like to improv agility/speed by diminushing reliability
+			allowed = {
+				original_tag = FLN
+			}
+			traits = {
+				fighter_producer_offense_1
+			}
+			modifier = {}
+			research_bonus = {
+				air_equipment = 0.05
+			}
+		}
+
+		stampe_vertongen_FLN = {
+			allowed = {
+				original_tag = FLN
+			}
+			traits = {
+				nav_cas_producer_defense_1
+			}
+			modifier = {}
+			research_bonus = {
+				air_equipment = 0.05
+			}
+		}
+		cockerill_scheepwerfen_FLN = { ## Cockerill shipyards near Antwerp (also add a port in Antwerp!) Bigger shipyards than Boel and sons so maybe mass production? use same icon as Cockerill siderurgy?
+			allowed = {
+				original_tag = FLN
+			}
+			picture = generic_naval_manufacturer_1
+			traits = {
+				small_ship_producer_mass_1
+			}
+			modifier = {}
+			research_bonus = {
+				naval_equipment = 0.05
+			}
+		}
+		boel_zonen_FLN = {
+			allowed = {
+				original_tag = FLN
+			}
+			traits = {
+				small_ship_producer_offense_1
+			}
+			modifier = {}
+			research_bonus = {
+				naval_equipment = 0.05
+			}
+		}
+	}
+
+	##############
+	# Theorist
+	##############
+	theorist = {
+		FLN_karel_jan_bossart = { # Flemish rocket scientist studied in the US, returned due to the second american civil war (or maybe if Belgium is free and democratic)
+
+			allowed = {
+				original_tag = FLN
+			}
+			traits = {
+				rocket_theorist
+			}
+			research_bonus = {
+				rocketry = 0.15
+			}
+
+		}
+		FLN_Raoul_van_Overstraeten_mil_th = { ## already in high command, refused the job of chief of staff, was the head of the belgian war college.
+
+			allowed = {
+				original_tag = FLN
+			}
+			traits = {
+				land_doctrine_theorist
+			}
+			research_bonus = {
+				land_doctrine = 0.05
+			}
+		}
+		FLN_Robert_Desmet_mil_th = { ## chief military air instructor.
+
+			allowed = {
+				original_tag = FLN
+			}
+			traits = {
+				air_doctrine_theorist
+			}
+			research_bonus = {
+				air_doctrine = 0.05
+			}
+		}
+	}
+}

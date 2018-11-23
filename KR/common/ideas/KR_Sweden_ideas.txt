@@ -1,0 +1,882 @@
+ideas = {
+
+##############
+# Country ideas
+##############
+
+country = {
+	SWE_SENREF_revolution = {
+		picture = home_of_revolution
+		modifier = {
+			unity_factor = -0.3
+			political_power_cost = 0.5
+		}
+	}
+	SWE_SENREF_economicstandstill = {
+		picture = great_depression
+		modifier = {
+			industrial_capacity_factory = -0.6
+			production_factory_max_efficiency_factor = -0.2
+			production_speed_buildings_factor = -0.8
+		}
+	}
+	SWE_SENREF_noarmy = {
+		picture = nkvd_2
+		modifier = {
+			army_attack_factor = -0.8
+			army_org_factor = -0.4
+			army_morale_factor = -0.8
+			conscription = -0.1
+		}
+	}
+	SWE_SENREF_taxhike = {
+		picture = country_focus_political
+		modifier = {
+			consumer_goods_factor = 0.05
+		}
+	}
+	SWE_SENREF_taxcuts = {
+		picture = country_focus_political
+		modifier = {
+			consumer_goods_factor = 0.1
+			industrial_capacity_factory = 0.1
+		}
+	}
+	SWE_SENREF_healthcare = {
+		picture = country_focus_political
+		modifier = {
+			monthly_population = 0.1
+		}
+	}
+	SWE_SENREF_pensions = {
+		picture = country_focus_political
+		modifier = {
+			political_power_gain = 0.1
+		}
+	}
+	SWE_SENREF_culture = {
+		picture = country_focus_political
+		modifier = {
+			research_time_factor = -0.05
+		}
+	}
+	SWE_SENREF_freemedia = {
+		picture = country_focus_political
+		modifier = {
+			political_power_cost = 0.2
+			unity_factor = -0.1
+			research_time_factor = -0.1
+		}
+	}
+	SWE_SENREF_freemarket = {
+		picture = generic_production_bonus
+		modifier = {
+			research_time_factor = -0.05
+			production_factory_max_efficiency_factor = 0.1
+			political_power_cost = 0.1
+		}
+	}
+	SWE_SENREF_womenwork = {
+		picture = generic_production_bonus
+		modifier = {
+			industrial_capacity_factory = 0.1
+			conscription_factor = 0.50
+		}
+	}
+	SWE_SENREF_forcedlabor = {
+		picture = ast_all_in
+		modifier = {
+			consumer_goods_factor = -0.1
+			local_resources_factor = 0.2
+		}
+	}
+	SWE_SENREF_industrial_statare = {
+		picture = ast_classify_aliens
+		modifier = {
+			consumer_goods_factor = -0.10
+			industrial_capacity_factory = 0.1
+			unity_factor = -0.1
+			political_power_cost = 0.3
+			local_resources_factor = 0.2
+		}
+	}
+	SWE_SENREF_indoctrination = {
+		picture = generic_manpower_bonus
+		modifier = {
+			research_time_factor = 0.2
+			industrial_capacity_factory = -0.05
+			army_attack_factor = 0.1
+			army_defence_factor = 0.05
+			army_org_factor = 0.1
+			army_morale_factor = 0.2
+			conscription_factor = 0.05
+			political_power_gain = 0.1
+		}
+	}
+	SWE_SENREF_fanaticism = {
+		picture = tfv_can_conscription_crisis
+		modifier = {
+			army_speed_factor = 0.1
+			army_core_defence_factor = 0.1
+			army_core_attack_factor = 0.1
+		}
+	}
+			SWE_landstormen = {
+			picture = generic_manpower_bonus
+			modifier = {
+			conscription = 0.04
+			army_org_factor = -0.1
+		}
+	}
+	
+			SWE_contentious_elections = {
+			picture = generic_disjointed_gov
+			modifier = {
+			industrial_capacity_factory = -0.1
+			unity_factor = -0.2
+			political_power_cost = 0.35
+		}
+	}
+	
+			SWE_statare = {
+			picture = generic_agrarian_society
+			modifier = {
+			consumer_goods_factor = -0.1
+			unity_factor = -0.1
+			political_power_cost = 0.25
+			local_resources_factor = 0.1
+		}
+	}
+	
+		SWE_redrule1 = {
+		picture = trotskyite_plot
+		modifier = {
+			unity_factor = -0.2
+			political_power_cost = 0.25
+		}
+	}
+	
+		SWE_redrule2 = {
+		picture = trotskyite_plot
+		modifier = {
+			industrial_capacity_factory = -0.1
+			unity_factor = -0.2
+			political_power_cost = 0.25
+		}
+	}
+		SWE_redrule3 = {
+		picture = trotskyite_plot
+		modifier = {
+			industrial_capacity_factory = -0.1
+			unity_factor = -0.2
+			political_power_cost = 0.25
+			army_morale_factor = -0.4
+		}
+	}
+		SWE_redrule4 = {
+		picture = trotskyite_plot
+		modifier = {
+			industrial_capacity_factory = -0.1
+			unity_factor = -0.2
+			army_morale_factor = -0.2
+			political_power_cost = 0.40
+		}
+	}	
+			SWE_totalistmilitary = {
+		picture = generic_morale_bonus
+		modifier = {
+				army_attack_factor = 0.5
+				army_defence_factor = 0.5
+				army_org_factor = 0.05
+		}
+	}
+				SWE_radicalistmilitary = {
+		picture = generic_morale_bonus
+		modifier = {
+				army_morale_factor = 0.5
+				attrition = -0.05				
+		
+		}
+	}
+				SWE_syndicalistmilitary = {
+		picture = generic_morale_bonus
+		modifier = {
+				army_core_defence_factor = 0.15
+				army_core_attack_factor = 0.10
+				dig_in_speed_factor = 0.5
+				max_planning = -0.75
+				planning_speed = -0.25
+				army_org_factor = -0.20
+			}
+	}
+			SWE_totalisteconomy = {
+		picture = FRA_factory_strikes
+		modifier = {
+			production_factory_max_efficiency_factor = 0.05	
+			production_speed_arms_factory_factor = 0.05
+		}
+	}
+				SWE_radicalisteconomy = {
+		picture = FRA_factory_strikes
+		modifier = {
+			production_speed_industrial_complex_factor = 0.05
+		}
+	}
+				SWE_syndicalisteconomy = {
+		picture = FRA_factory_strikes
+		modifier = {
+			local_resources_factor = 0.10
+			}
+	}	
+			SWE_totalistsociety = {
+		picture = generic_communism_drift_bonus
+		modifier = {
+			political_power_gain = 0.2
+			consumer_goods_factor = 0.04
+		}
+	}
+				SWE_radicalistsociety = {
+		picture = generic_communism_drift_bonus
+		modifier = {
+			political_power_gain = 0.15
+			consumer_goods_factor = 0.02		
+		}
+	}
+				SWE_syndicalistsociety = {
+		picture = generic_communism_drift_bonus
+		modifier = {
+			political_power_gain = 0.1
+			}
+	}
+			SWE_totalistpeople = {
+		picture = generic_pp_unity_bonus
+		modifier = {
+			foreign_subversive_activites = -0.2
+			drift_defence_factor = 0.2
+		}
+	}
+				SWE_radicalistpeople = {
+		picture = generic_pp_unity_bonus
+		modifier = {
+			unity_factor = 0.05
+		}
+	}
+				SWE_syndicalistpeople = {
+		picture = generic_pp_unity_bonus
+		modifier = {
+			consumer_goods_factor = -0.05
+			}
+	}		
+	
+			SWE_folkhemmet1 = {
+		picture = neutrality_idea
+		modifier = {
+			consumer_goods_factor = -0.05
+			}
+
+	
+	}
+			SWE_folkhemmet2 = {
+		picture = neutrality_idea
+		modifier = {
+			consumer_goods_factor = -0.1
+			unity_factor = 0.1
+			}	
+	}
+				SWE_folkhemmet3 = {
+		picture = neutrality_idea
+		modifier = {
+			consumer_goods_factor = -0.1
+			unity_factor = 0.15
+			social_democrat_drift = 0.05
+			syndicalist_drift = -0.01
+			radical_socialist_drift = -0.01
+			totalist_drift = -0.01
+			}
+	}
+				SWE_freetradeidea = {
+		picture = liberty_ships_focus
+		modifier = {
+			trade_opinion_factor = 0.05
+			consumer_goods_factor = -0.05
+						}
+			equipment_bonus = {
+			convoy = {
+					build_cost_ic = -0.15
+					instant = yes
+				}
+			}
+			
+	}		
+				SWE_freertradeidea = {
+				picture = liberty_ships_focus
+				modifier = {
+			trade_opinion_factor = 0.15
+			consumer_goods_factor = -0.1 }
+			equipment_bonus = {
+			convoy = {
+					build_cost_ic = -0.25
+					instant = yes
+				}
+			}
+	}
+
+				SWE_protectedtrade = {
+				picture = liberty_ships_focus
+				modifier = {
+				political_power_gain = 0.1
+				production_speed_industrial_complex_factor = 0.1
+				production_speed_arms_factory_factor = 0.1
+			}
+	}
+	
+				SWE_agrarianreform = {
+				picture = can_wartime_prices_and_trade_board
+			modifier = {
+			conscription_factor = 0.1
+			consumer_goods_factor = -0.05
+			local_resources_factor = 0.1
+			}
+	}
+			SWE_germ_swe_trade = {
+			picture = escort_effort_focus
+			modifier = {
+			consumer_goods_factor = -0.05
+			local_resources_factor = 0.15
+		}
+	}	
+			SWE_nordic_bloctrade = {
+			picture = can_wartime_prices_and_trade_board
+			modifier = {
+			consumer_goods_factor = -0.05
+			political_power_cost = -0.15
+		}		
+		
+	}
+			
+			
+			SWE_reformed_statare = {
+			picture = generic_agrarian_society
+			modifier = {
+			consumer_goods_factor = -0.1
+			political_power_cost = 0.05
+			local_resources_factor = 0.15
+		}
+	}
+			SWE_corporate_statare = {
+			picture = generic_agrarian_society
+			modifier = {
+			production_speed_buildings_factor = 0.1
+			political_power_cost = 0.1
+			local_resources_factor = 0.25
+		}
+	}
+			SWE_redscare_idea = {
+			picture = continuous_suppression
+			modifier = {
+				justify_war_goal_time = -0.25
+				monthly_population = 0.05
+				}
+		}
+			SWE_new_rule_mili	= {
+			picture = idea_general_staff
+			modifier = {
+				opinion_gain_monthly_same_ideology_factor = 1.0
+				army_morale_factor = 0.02
+				}
+		}
+			SWE_new_rule_natpo	= {
+			picture = triumphant_will
+			modifier = {
+				opinion_gain_monthly_same_ideology_factor = 1.0
+				production_factory_max_efficiency_factor = 0.1
+				}
+		}
+			SWE_new_rule_authde	= {
+			picture = FRA_scw_intervention_nationalists_focus
+			modifier = {
+				opinion_gain_monthly_same_ideology_factor = 1.0
+				drift_defence_factor = 0.3
+				}
+		}
+
+			SWE_gothenburg_officers = {
+			picture = the_long_lance
+				equipment_bonus = {
+				battlecruiser = {
+					build_cost_ic = -0.2
+					instant = yes
+					}
+				}
+				equipment_bonus = {				
+				naval_bomber = {
+					build_cost_ic = -0.2
+					instant = yes
+					}
+				}
+			}			
+			SWE_karlskrona_officers = {
+			picture = escort_effort_focus
+				equipment_bonus = {
+				destroyer = {
+					build_cost_ic = -0.2
+					instant = yes
+					}
+				}
+				equipment_bonus = {				
+				submarine = {
+					build_cost_ic = -0.2
+					instant = yes
+					}
+				}
+		}
+
+
+			SWE_neutral = {
+			picture = neutrality_idea
+			modifier = {
+				join_faction_tension = 1.00
+				send_volunteers_tension = 0.20
+				guarantee_tension = 1.0
+				ai_badass_factor = 0.01
+				ai_get_ally_desire_factor = -100
+			}
+		}
+		
+			SWE_svensktiger = {
+			picture = neutrality_idea
+			modifier = {
+				join_faction_tension = 1.00
+				send_volunteers_tension = 0.20
+				guarantee_tension = 1.0
+				ai_badass_factor = 0.01
+				ai_get_ally_desire_factor = -100
+				drift_defence_factor = 0.15
+				enemy_justify_war_goal_time = 0.25
+			}
+
+		}		
+
+			SWE_gransen = {
+			picture = neutrality_idea
+			modifier = {
+				join_faction_tension = 1.00
+				send_volunteers_tension = 0.20
+				guarantee_tension = 1.0
+				ai_badass_factor = 0.01
+				ai_get_ally_desire_factor = -100
+				drift_defence_factor = 0.2
+				enemy_justify_war_goal_time = 0.35
+				production_speed_bunker_factor = 0.2
+				production_speed_coastal_bunker_factor = 0.2
+				production_speed_anti_air_building_factor = 0.2
+				production_speed_arms_factory_factor = 0.2
+			}
+
+		}		
+			SWE_labor_division = {
+			picture = generic_production_bonus
+			modifier = {
+				production_speed_bunker_factor = 0.2
+				production_speed_coastal_bunker_factor = 0.2
+				production_speed_anti_air_building_factor = 0.2
+				production_speed_arms_factory_factor = 0.2
+			}
+		}			
+		
+		SWE_defensive_armies = {
+				picture = FRA_fortification_focus
+				modifier = {
+				max_dig_in = 1
+				army_core_defence_factor = 0.15
+				army_core_attack_factor = 0.15
+			}
+		}
+		
+		SWE_defensive_armies_thor = {
+				picture = generic_manpower_bonus
+				modifier = {
+				max_dig_in = 1
+				army_core_defence_factor = 0.15
+				army_core_attack_factor = 0.15
+				conscription = 0.05
+				training_time_army_factor = -0.2				
+			}
+		}
+		
+		SWE_defensive_armies_nygr = {
+				picture = FRA_fortification_focus
+				modifier = {
+				max_dig_in = 1
+				army_core_defence_factor = 0.15
+				army_core_attack_factor = 0.15
+				max_planning = 0.15
+				planning_speed = 0.25
+				supply_consumption_factor = -0.1
+			}
+		}
+
+		SWE_offensive_armies = {
+				picture = generic_intel_bonus
+				modifier = {
+				army_attack_factor = 0.15
+			}
+		}		
+		
+		SWE_bef_taktik = {
+				picture = idea_general_staff
+				modifier = {
+				max_planning = 0.25
+				supply_consumption_factor = -0.1
+			}
+		}
+		
+		SWE_auftaktik = {
+				picture = generic_infantry_bonus
+				modifier = {
+				experience_gain_factor = 0.25
+				army_org_factor = 0.15
+				
+			}
+		}
+
+		SWE_auftaktik_rappe = {
+				picture = generic_intel_bonus
+				modifier = {
+				army_attack_factor = 0.1
+				army_artillery_attack_factor = 0.15
+				army_artillery_defence_factor = 0.15
+			}
+			equipment_bonus = {	recon = { recon = 1 instant = yes } }
+		}
+		
+		SWE_auftaktik_arch = {
+				picture = generic_intel_bonus
+				modifier = {
+				army_attack_factor = 0.1
+				army_armor_attack_factor = 0.15
+				army_armor_defence_factor = 0.15
+				}		
+				equipment_bonus = {
+				armor = { maximum_speed = 0.1 reliability = 0.1 instant = yes }
+				}
+		}
+
+			SWE_lottorna11 = {
+				picture = air_support_focus
+				modifier = {
+				conscription_factor = 0.05
+				industrial_capacity_factory = 0.05
+			}
+		}
+			
+			SWE_lottorna_aux1 = {
+				picture = air_support_focus
+				modifier = {
+				conscription_factor = 0.1
+				industrial_capacity_factory = 0.1
+				unity_factor = -0.05
+			}
+		}
+			
+			SWE_lottorna_mil1 = {
+				picture = air_support_focus
+				modifier = {
+				conscription_factor = 0.15
+				consumer_goods_factor = 0.05
+				unity_factor = -0.1
+			}
+		}
+			SWE_air_production = {
+				picture = air_support_focus
+				equipment_bonus = {
+				fighter = {
+				build_cost_ic = -0.10
+				instant = yes
+				}
+			}
+		}
+			SWE_upplund = {
+				picture = generic_research_bonus
+				modifier = {
+				research_time_factor = -0.05
+			}
+		}
+				SWE_hotellockout = {
+				picture = trotskyite_plot
+				modifier = {
+				consumer_goods_factor = 0.2
+			}
+		}
+			SWE_black_monday = {
+				picture = great_depression
+				modifier = {
+				production_factory_max_efficiency_factor = -0.2
+				industrial_capacity_factory = -0.2
+				production_speed_buildings_factor = -0.2
+				consumer_goods_factor = 0.1
+			}
+		}
+
+	########################
+	### Democratic Tree  ###
+	########################
+	
+	SWE_nordic_council = {
+		allowed = { always = no }
+		modifier = {
+			political_power_factor = 0.05
+		}
+		removal_cost = -1
+		picture = NOR_nordic_council
+	}
+	
+	SWE_common_mil_purchases = {
+		allowed = { always = no }
+		equipment_bonus = {
+			infantry_equipment = {
+				build_cost_ic = -0.05 instant = yes
+			}
+		}
+		removal_cost = -1
+		picture = ast_volunteer_defence_corps
+	}
+	
+	SWE_passport_union_idea = {
+		allowed = { always = no }
+		modifier = {
+			line_change_production_efficiency_factor = 0.05
+		}
+		removal_cost = -1
+		picture = NOR_passport_union_idea
+	}
+	
+	SWE_monetary_union_idea = {
+		allowed = { always = no }
+		modifier = {
+			production_speed_buildings_factor = 0.05
+		}
+		removal_cost = -1
+		picture = NOR_monetary_union_idea
+	}
+	
+	SWE_custom_union_idea = {
+		allowed = { always = no }
+		modifier = {
+			production_speed_buildings_factor = 0.05
+			industrial_capacity_factory = 0.05
+			consumer_goods_factor = -0.05
+		}
+		removal_cost = -1
+		picture = NOR_monetary_union_idea
+	}
+	
+	SWE_union_activity = {
+		modifier = { 
+			production_factory_max_efficiency_factor = -0.1
+			industrial_capacity_factory = -0.1
+		}
+		picture = NOR_labour_conflicts
+	}
+	
+	SWE_kompani_linge_idea = {
+		modifier = { 
+			production_factory_max_efficiency_factor = -0.02
+			industrial_capacity_factory = -0.02
+		}
+	}
+}	
+
+##############
+# Companies
+##############
+
+#### General ####
+industrial_concern = {
+
+	lkab = {
+		allowed = { original_tag = SWE }
+		traits = { industrial_manufacturer }
+		modifier = {
+			production_speed_arms_factory_factor = 0.1
+			production_speed_industrial_complex_factor = 0.1
+		}
+		research_bonus = {
+			industry = 0.1
+		}
+	}
+		
+	ericsson = {
+		allowed = {original_tag = SWE }
+		traits = {electronics_manufacturer }
+		modifier = {}
+		research_bonus = {
+			electronics = 0.1
+		}
+	}
+		
+	aga = {
+		allowed = {original_tag = SWE }
+		traits = {chemical_producer }
+		research_bonus = {
+			synth_resources = 0.1
+		}
+	}
+
+}
+
+#### Weapons Manufacturer ####
+weapons_manufacturer = {
+	designer = yes
+
+	carl_gustavs_stad = {
+		allowed = { original_tag = SWE }
+		traits = { infantry_equipment_producer_defense_1 }
+		modifier = {}
+		research_bonus = {
+			infantry_weapons = 0.1
+		}
+	}
+	
+	husqvarna_vapenfabriks = {
+		allowed = { original_tag = SWE }
+		available = { has_completed_focus = SWE_ARMSINDUSTRY }
+		traits = { infantry_equipment_producer_offense_2 }
+		modifier = {}
+		research_bonus = {
+			infantry_weapons = 0.1
+		}
+	}
+}
+	
+#### Heavy Equipment Manufacturer ####
+tank_manufacturer = {
+	designer = yes
+
+	swe_bofors = {
+		allowed = { original_tag = SWE }
+		traits = { artillery_producer_offense_2 }
+		modifier = {}
+		research_bonus = {
+			artillery = 0.05
+		}
+	}
+	
+	swe_scania_vabis = {
+		allowed = { original_tag = SWE }
+		traits = { motorised_equipment_producer_offense_1 }
+		modifier = {}
+		research_bonus = {
+			motorized_equipment = 0.05
+		}
+	}
+	
+	volvo = {
+		allowed = { original_tag = SWE }
+		traits = { motorised_equipment_producer_mass_1 }
+		modifier = {}
+		research_bonus = {
+			motorized_equipment = 0.05
+		}
+	}
+	
+	asea = {
+		allowed = { original_tag = SWE }
+		traits = { heavy_tank_producer_defense_1 }
+		modifier = {}
+		research_bonus = {
+			armor = 0.05
+		}
+	}
+	
+	swe_landsverk = {
+		allowed = { original_tag = SWE }
+		traits = { medium_tank_producer_offense_2 }
+		modifier = {}
+		research_bonus = {
+			armor = 0.05
+		}
+	}
+	
+	tidaholms_bruk = {
+		allowed = { original_tag = SWE }
+		traits = { medium_tank_producer_mass_0 }
+		modifier = {}
+		research_bonus = {
+			armor = 0.05
+		}
+	}
+
+	hagglunds = {
+		allowed = { original_tag = SWE }
+		traits = { small_tank_producer_offense_1 }
+		modifier = {}
+		research_bonus = {
+			armor = 0.05
+		}
+	}
+}
+
+#### Air and Naval Manufacturer ####
+air_naval_manufacturer = {
+	designer = yes
+
+	svenska_aeroplan = {
+		allowed = { original_tag = SWE }
+		available = { has_completed_focus = SWE_AIR1 }
+		traits = { fighter_producer_offense_2 }
+		modifier = {}
+		research_bonus = {
+			air_equipment = 0.05
+		}
+	}
+	
+	thulinverken = {
+		allowed = { original_tag = SWE }
+		traits = { nav_cas_producer_defense_1 }
+		modifier = {}
+		research_bonus = {
+			air_equipment = 0.05
+		}
+	}
+	
+	sweden_sas_company = {
+		allowed = { original_tag = SWE }
+		available = {
+			has_completed_focus = SWE_DEM_found_sas
+		}
+		traits = { bomber_producer_mass_1 }
+		modifier = {}
+		research_bonus = {
+			air_equipment = 0.05
+		}
+	}
+	
+	gotaverken = {
+		allowed = { original_tag = SWE }
+		traits = { capital_ship_producer_defense_1 }
+		modifier = {}
+		research_bonus = {
+			naval_equipment = 0.05
+		}
+	}		
+
+	kockums = {
+		allowed = { original_tag = SWE }
+		traits = { cruiser_producer_offense_1 }
+		modifier = {}
+		research_bonus = {
+			naval_equipment = 0.05
+		}
+	}	
+	
+	lindholmen = {
+		allowed = { original_tag = SWE }
+		traits = { small_ship_producer_mass_1 }
+		modifier = {}
+		research_bonus = {
+			naval_equipment = 0.05
+		}
+	}
+}
+}

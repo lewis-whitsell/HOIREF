@@ -1,0 +1,89 @@
+﻿capital = 556
+
+oob = "CTD_1949"
+
+# Starting tech
+set_technology = {
+	## Tech ##
+	radio = 1
+
+	## Industry ##
+
+	## AIR ##
+	
+	## NAVY ##
+
+	## Infantry ##
+	infantry_equip_1 = 1 
+	
+	## Support ##
+	tech_support = 1
+
+	## Artillery  ##
+	gw_artillery = 1
+
+	## Armor ## 
+	iw_armored_vehicles = 1  # dummy tech
+}
+
+add_ideas = {
+	population_growth_explosion
+}
+
+set_convoys = 0
+
+		set_politics = {
+
+			parties = {
+				democratic = { 
+					popularity = 40
+				}
+
+				centrist = {
+					popularity = 40
+				}
+				
+				communism = {
+					popularity = 10
+					#banned = no #default is no
+				}
+				fascism = {
+					popularity = 10
+				}
+			}
+			
+			ruling_party = centrist
+			last_election = "1958.1.1"
+			election_frequency = 48
+			elections_allowed = no
+		}
+create_country_leader = {
+	name = "Félix Houphouët-Boigny"
+	picture = "gfx/leaders/AFR/Portrait_CTD_Felix"
+	expire = "1987.1.1"
+	ideology = centrism
+}
+
+1980.1.1 = {
+	set_politics = {
+
+		parties = {
+		
+			conservative = { 
+				popularity = 100
+			}
+		}
+		
+		ruling_party = conservative
+		last_election = "1949.1.1"
+		election_frequency = 48
+		elections_allowed = no
+	}
+
+	create_country_leader = {
+		name = "Félix Houphouët-Boigny"
+		picture = "Portrait_CTD_Felix.dds"
+		expire = "1993.12.7"
+		ideology = conservatism
+	}
+}

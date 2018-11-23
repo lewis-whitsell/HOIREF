@@ -1,0 +1,131 @@
+#########################################################################
+# OPINION MODIFIERS
+##########################################################################
+# value
+# min_trust
+# max_trust
+# decay
+# months/years/days = timer
+# trade = yes/no
+
+opinion_modifiers = {
+
+	barbarian_practices = {
+		value = -25
+		decay = 1
+	}
+
+	left_alliance = {
+		value = -25
+		decay = 1
+	}
+	
+	##### TRADE MODIFIERS
+	embargo = {
+		trade = yes
+		value = -100
+	}
+	harsh_sanctions = {
+		trade = yes
+		value = -60
+	}
+	sanctions = {
+		trade = yes
+		value = -40
+	}
+	minor_sanctions = {
+		trade = yes
+		value = -20
+	}
+	arms_embargo = {
+		value = -50
+	}
+	
+	#Being friendly
+	supports_us = {
+		value = 50
+	}
+	supports_us_2 = {
+		value = 10
+		months = 36
+	}
+	
+	#insult
+	insult = {
+		value = -20
+		months = 12
+	}
+	gratitude = {
+		value = 20
+		months = 36
+	}
+
+	#Generic
+	supports_rival = {
+		value = -50
+	}
+
+	#Special
+	pro_american = {
+		value = 50
+	}
+	supports_g4 = {
+		value = 50
+	}
+	supports_brics = {
+		value = 50
+	}
+	new_development_bank = {
+		trade = yes
+		value = 50
+	}
+
+	#China
+	bamboo_network = {
+		trade = yes
+		value = 20
+	}
+
+	#Melanesia
+	melanesian_spearhead_group = {
+		value = 50
+	}
+
+	#NZL Polynesian relations
+	polynesian_diplomacy = {
+		value = 50
+	}
+
+	#AST Melanesian relations
+	melanesian_diplomacy = {
+		value = 50
+	}
+
+	#Nordic relations
+	nordic = {
+		value = 50
+	}
+
+	#Resistance Axis
+	resistance_axis = {
+		value = 100
+	}
+
+	#Trade
+	improve_trade = {
+		trade = yes
+		value = 25
+	}
+	free_trade_agreement = {
+		trade = yes
+		value = 50
+	}
+	common_market = {
+		trade = yes
+		value = 70
+	}
+	economic_union = {
+		trade = yes
+		value = 100
+	}
+}

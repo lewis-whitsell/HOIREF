@@ -1,0 +1,550 @@
+﻿###########################
+# Chile Federation Events
+###########################
+
+add_namespace = chl
+add_namespace = chl.ally
+
+country_event = { #Earthquake!
+
+	id = chl.1
+	title = chl.1.t
+	desc = chl.1.d
+	trigger = {
+		country_exists = CHL
+		tag = CHL
+		date > 1939.25.1
+	}
+
+	mean_time_to_happen = { days = 1 }
+	fire_only_once = yes
+
+		option = {
+		name = chl.1.a
+		add_political_power = 20
+		add_manpower = -400
+		ai_chance = { factor = 90 }
+
+}
+		option = {
+		name = chl.1.b
+		add_political_power = -20
+		ai_chance = { factor = 10 }
+
+}
+}
+
+
+country_event = { #The Third Chairman!
+
+	id = chl.2
+	title = chl.2.t
+	desc = chl.2.d
+	trigger = {
+		is_subject = no
+		tag = CHL
+		date > 1940.11.29
+	}
+	fire_only_once = yes
+    immediate = {
+	hidden_effect = {
+	set_country_flag = CHLelectionshappened
+	kill_country_leader = yes
+	remove_ideas_with_trait = head_of_government
+	remove_ideas_with_trait = foreign_minister
+	remove_ideas_with_trait = economy_minister
+	remove_ideas_with_trait = security_minister
+	remove_ideas_with_trait = head_of_intel
+	}
+	}
+	 option = {
+		name =  chl.2.a
+		ai_chance = { factor = 70 }
+		add_political_power = 40
+
+		create_country_leader = {
+		name = "Clotario Leopoldo Blest Riffo"
+		desc = "POLITICS_CLOTARIO_BEST_DESC"
+		picture = "Portrait_Chile_Blest_Riffo.tga"
+		expire = "1965.1.1"
+		ideology = syndicalist_subtype
+		traits = {}
+		}
+		set_country_flag = CHLsynelevib
+		add_ideas = CHL_CL_Blest_Riffo_hog_syn
+		add_ideas = CHL_Luis_Arteaga_Garcia_for_syn
+		add_ideas = CHL_CL_Blest_Riffo_eco_syn
+		add_ideas = CHL_Marmaduke_Grove_sec_syn
+		add_ideas = CHL_Julio_Allard_Pinto_int_syn 		
+		set_politics = {
+				ruling_party = syndicalist
+				elections_allowed = no
+				parties = {
+					totalist = {
+						popularity = 10
+					}
+					radical_socialist = {
+						popularity = 18
+					}
+					syndicalist = {
+						popularity = 52
+					}
+					social_democrat = {
+						popularity = 8
+					}
+					social_liberal = {
+						popularity = 1
+					}
+					market_liberal = {
+						popularity = 0
+					}
+					social_conservative = {
+						popularity = 4
+					}
+					authoritarian_democrat = {
+						popularity = 1
+					}
+					paternal_autocrat = {
+						popularity = 1
+					}
+					national_populist = {
+						popularity = 3
+					}
+				}
+			}
+
+	}
+		option = {
+		name = chl.2.b
+		add_political_power = 100
+		ai_chance = { factor = 20 }
+		create_country_leader = {
+	name = "Salvador Allende"
+	desc = "POLITICS_SALVADOR_ALLENDE_DESC"
+	picture = "Portrait_Chile_Salvador_Allende.tga"
+	expire = "1965.1.1"
+	ideology = radical_socialist_subtype
+	traits = {}
+    }
+   set_country_flag = CHLallende
+   add_ideas = CHL_Salvador_Allende_hog_rso
+   add_ideas = CHL_Cristobal_Saenz_Cerda_for_sde 
+   add_ideas = CHL_Aurelio_Celedon_Palma_eco_rso
+   add_ideas = CHL_Manuel_Salinas_sec_sde
+   add_ideas = CHL_Juan_Rios_Morales_int_sde 
+		set_politics = {
+				ruling_party = radical_socialist
+				elections_allowed = no
+				parties = {
+					totalist = {
+						popularity = 10
+					}
+					radical_socialist = {
+						popularity = 59
+					}
+					syndicalist = {
+						popularity = 6
+					}
+					social_democrat = {
+						popularity = 18
+					}
+					social_liberal = {
+						popularity = 1
+					}
+					market_liberal = {
+						popularity = 1
+					}
+					social_conservative = {
+						popularity = 1
+					}
+					authoritarian_democrat = {
+						popularity = 1
+					}
+					paternal_autocrat = {
+						popularity = 1
+					}
+					national_populist = {
+						popularity = 2
+					}
+				}
+			}
+
+}
+
+option = {
+		name = chl.2.c
+		add_political_power = -100
+		ai_chance = { factor = 5 }
+    create_country_leader = {
+	name = "Carlos Contrera Labarca"
+	desc = "POLITICS_CARLOS_LABARCA_DESC"
+	picture = "Portrait_Chile_Carlos_Labarca.tga"
+	expire = "1965.1.1"
+	ideology = totalist_subtype
+	traits = {}
+    }
+   add_ideas = CHL_Carlos_Labarca_hog_tot
+   add_ideas = CHL_Carlos_Ignacio_Diaz_Loyola_for_tot 
+   add_ideas = CHL_Victor_Contreras_Tapia_eco_tot
+   add_ideas = CHL_Carlos_Labarca_sec_tot
+   add_ideas = CHL_Ricardo_Fonseca_Aguayo_int_tot
+		set_politics = {
+				ruling_party = totalist
+				elections_allowed = no
+				parties = {
+					totalist = {
+						popularity = 39
+					}
+					radical_socialist = {
+						popularity = 18
+					}
+					syndicalist = {
+						popularity = 18
+					}
+					social_democrat = {
+						popularity = 14
+					}
+					social_liberal = {
+						popularity = 1
+					}
+					market_liberal = {
+						popularity = 1
+					}
+					social_conservative = {
+						popularity = 2
+					}
+					authoritarian_democrat = {
+						popularity = 2
+					}
+					paternal_autocrat = {
+						popularity = 2
+					}
+					national_populist = {
+						popularity = 3
+					}
+				}
+			}
+			set_country_flag = CHLtotalist
+
+}
+}
+
+country_event = { #intro
+
+	id = chl.3
+	title = chl.3.t
+	desc = chl.3.d
+
+	fire_only_once = yes
+
+	trigger = { tag = CHL }
+	option = {
+		name = chl.3.a
+	}
+}
+
+country_event = { #FRA response to focus
+
+	id = chl.ally.1
+	title = chl.ally.1.t
+	desc = chl.ally.1.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+
+	option = {
+		name = chl.ally.1.a
+		ai_chance = { factor = 99 }
+		add_to_faction = CHL
+	}
+
+	option = {
+		name = chl.ally.1.b
+		ai_chance = { factor = 1 }
+		CHL = {add_opinion_modifier = { target = FRA modifier = VEN_alliance_deny }   }
+	}
+}
+
+country_event = { #BRA response to focus
+
+	id = chl.ally.2
+	title = chl.ally.2.t
+	desc = chl.ally.2.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+
+	option = {
+		name = chl.ally.2.a
+		ai_chance = { factor = 99 }
+		add_to_faction = CHL
+	}
+
+	option = {
+		name = chl.ally.2.b
+		ai_chance = { factor = 1 }
+		CHL = {add_opinion_modifier = { target = BRA modifier = VEN_alliance_deny }   }
+	}
+}
+
+country_event = { #The Fourth Chairman!
+
+	id = chl.4
+	title = chl.4.t
+	desc = chl.4.d
+	trigger = {
+		is_subject = no
+		tag = CHL
+		date > 1945.11.29
+		NOT = {
+		has_country_flag = CHLtotalist
+		}
+	}
+	fire_only_once = yes
+    immediate = {
+	hidden_effect = {
+	set_country_flag = CHLelectionshappened2
+	kill_country_leader = yes
+	remove_ideas_with_trait = head_of_government
+	remove_ideas_with_trait = foreign_minister
+	remove_ideas_with_trait = economy_minister
+	remove_ideas_with_trait = security_minister
+	remove_ideas_with_trait = head_of_intel
+	}
+	}
+	
+	 option = {
+		name =  chl.4.a
+		ai_chance = { factor = 20 }
+		add_political_power = 40
+
+		create_country_leader = {
+		name = "Lucila Godoy y Alcayaga"
+		desc = "POLITICS_GABRIELA_MISTRAL_DESC"
+		picture = "Portrait_Chile_Gabriela.tga"
+		expire = "1965.1.1"
+		ideology = social_democrat_subtype
+		traits = {}
+		}
+		set_country_flag = CHLcedraemistral
+		add_ideas = CHL_Pedro_Aguirre_Cerda_hog_sde
+		add_ideas = CHL_J_Fernandez_y_Fernandez_for_sde
+		add_ideas = CHL_Francisco_Walker_Linares_eco_sde
+		add_ideas = CHL_Manuel_Salinas_sec_sde 
+		add_ideas = CHL_Juan_Rios_Morales_int_sde
+		
+		set_politics = {
+				ruling_party = social_democrat
+				elections_allowed = no
+				parties = {
+					totalist = {
+						popularity = 10
+					}
+					radical_socialist = {
+						popularity = 18
+					}
+					syndicalist = {
+						popularity = 28
+					}
+					social_democrat = {
+						popularity = 32
+					}
+					social_liberal = {
+						popularity = 1
+					}
+					market_liberal = {
+						popularity = 0
+					}
+					social_conservative = {
+						popularity = 4
+					}
+					authoritarian_democrat = {
+						popularity = 1
+					}
+					paternal_autocrat = {
+						popularity = 1
+					}
+					national_populist = {
+						popularity = 3
+					}
+				}
+			}
+
+	}
+		option = {
+		name = chl.4.b
+		add_political_power = 100
+		ai_chance = { factor = 40 }
+		create_country_leader = {
+	name = "Aurelio Celedon Palma"
+	desc = "POLITICS_AURELIO_PALMA_DESC"
+	picture = "Portrait_Chile_Aurelio_Palma.tga"
+	expire = "1965.1.1"
+	ideology = radical_socialist_subtype
+	traits = {}
+    }
+   set_country_flag = CHLallende
+   add_ideas = CHL_Salvador_Allende_hog_rso
+   add_ideas = CHL_Fernando_Brown_Morales_for_rso
+   add_ideas = CHL_Aurelio_Celedon_Palma_eco_rso
+   add_ideas = CHL_Cristobal_Saenz_Cerda_sec_rso
+   add_ideas = CHL_Salvador_Allende_int_sde 
+		set_politics = {
+				ruling_party = radical_socialist
+				elections_allowed = no
+				parties = {
+					totalist = {
+						popularity = 10
+					}
+					radical_socialist = {
+						popularity = 59
+					}
+					syndicalist = {
+						popularity = 6
+					}
+					social_democrat = {
+						popularity = 18
+					}
+					social_liberal = {
+						popularity = 1
+					}
+					market_liberal = {
+						popularity = 1
+					}
+					social_conservative = {
+						popularity = 1
+					}
+					authoritarian_democrat = {
+						popularity = 1
+					}
+					paternal_autocrat = {
+						popularity = 1
+					}
+					national_populist = {
+						popularity = 2
+					}
+				}
+			}
+
+}
+
+ option = {
+		name =  chl.4.c
+		ai_chance = { factor = 40 }
+		add_political_power = 40
+
+		create_country_leader = {
+		name = "Ricardo Eliécer Neftalí Reyes Basoalto"
+		desc = "POLITICS_NERUDA_DESC"
+		picture = "Portrait_Chile_Neruda.tga"
+		expire = "1965.1.1"
+		ideology = syndicalist_subtype
+		traits = {}
+		}
+		set_country_flag = CHLneruda
+		add_ideas = CHL_Marmaduke_Grove_hog_syn
+		add_ideas = CHL_Luis_Arteaga_Garcia_for_syn
+		add_ideas = CHL_Augustin_Edwards_eco_syn
+		add_ideas = CHL_Marmaduke_Grove_sec_syn
+		add_ideas = CHL_Julio_Allard_Pinto_int_syn	
+		
+		set_politics = {
+				ruling_party = syndicalist
+				elections_allowed = no
+				parties = {
+					totalist = {
+						popularity = 10
+					}
+					radical_socialist = {
+						popularity = 18
+					}
+					syndicalist = {
+						popularity = 52
+					}
+					social_democrat = {
+						popularity = 8
+					}
+					social_liberal = {
+						popularity = 1
+					}
+					market_liberal = {
+						popularity = 0
+					}
+					social_conservative = {
+						popularity = 4
+					}
+					authoritarian_democrat = {
+						popularity = 1
+					}
+					paternal_autocrat = {
+						popularity = 1
+					}
+					national_populist = {
+						popularity = 3
+					}
+				}
+			}
+
+	}
+	
+	
+option = {
+		name = chl.4.e
+		add_political_power = -100
+		ai_chance = { factor = 5 }
+    create_country_leader = {
+	name = "Carlos Díaz Loyola"
+	desc = "POLITICS_ROKHA_DESC"
+	picture = "Portrait_Chile_Pablo_Rokha.tga"
+	expire = "1965.1.1"
+	ideology = totalist_subtype
+	traits = {}
+    }
+       add_ideas = CHL_Carlos_Labarca_hog_tot
+   add_ideas = CHL_Carlos_Ignacio_Diaz_Loyola_for_tot 
+   add_ideas = CHL_Victor_Contreras_Tapia_eco_tot
+   add_ideas = CHL_Carlos_Labarca_sec_tot
+   add_ideas = CHL_Ricardo_Fonseca_Aguayo_int_tot
+		set_politics = {
+				ruling_party = totalist
+				elections_allowed = no
+				parties = {
+					totalist = {
+						popularity = 39
+					}
+					radical_socialist = {
+						popularity = 18
+					}
+					syndicalist = {
+						popularity = 18
+					}
+					social_democrat = {
+						popularity = 14
+					}
+					social_liberal = {
+						popularity = 1
+					}
+					market_liberal = {
+						popularity = 1
+					}
+					social_conservative = {
+						popularity = 2
+					}
+					authoritarian_democrat = {
+						popularity = 2
+					}
+					paternal_autocrat = {
+						popularity = 2
+					}
+					national_populist = {
+						popularity = 3
+					}
+				}
+			}
+			set_country_flag = CHLtotalistrohka
+
+}
+}
+

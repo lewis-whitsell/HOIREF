@@ -1,0 +1,2314 @@
+focus_tree = {
+	id = sweden_focus
+
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = SWE
+		}
+	}
+
+	default = no
+
+	### Generic Industry Placeholder ###
+	
+	focus = {
+		id = industrial_effort
+		icon = GFX_goal_generic_production
+		x = 1
+		y = 0
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+		}
+
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				factor = 0
+				date < 1939.1.1
+				OR = { 
+					# we dont want chinese minors to go crazy on slots early since they get eaten
+					tag = GXC 
+					tag = YUN
+					tag = SHX
+					tag = XSM
+					tag = BEL
+					tag = LUX
+					tag = HOL
+					tag = DEN
+
+					# we also dont want tiny nations to go crazy with slots right away
+					num_of_controlled_states < 2
+				}				
+			}
+		}
+	}
+
+	focus = {
+		id = construction_effort
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = industrial_effort }
+		x = 0
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		
+		ai_will_do = {
+			factor = 2
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = construction_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = industrial_complex
+						size < 1
+						include_locked = yes
+					}					
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}			
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = production_effort
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = industrial_effort }
+		x = 2
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 2			
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = production_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = arms_factory
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = construction_effort_2
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = construction_effort }
+		x = 0
+		y = 2
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = construction_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = industrial_complex
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}		
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = production_effort_2
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = production_effort }
+		x = 2
+		y = 2
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = production_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = arms_factory
+						size < 1
+						include_locked = yes
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}		
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = infrastructure_effort
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = construction_effort_2 }
+		x = 0
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = infrastructure_effort_tt
+				all_owned_state = {			
+					free_building_slots = {
+						building = infrastructure
+						size < 1
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 1
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 1
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = production_effort_3
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = production_effort_2 }
+		x = 2
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = production_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = arms_factory
+						size < 1
+						include_locked = yes
+					}					
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}		
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = infrastructure_effort_2
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = infrastructure_effort }
+		x = 0
+		y = 4
+		cost = 10
+
+		available_if_capitulated = yes
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = infrastructure_effort_tt
+				all_owned_state = {			
+					free_building_slots = {
+						building = infrastructure
+						size < 1
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 1
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 1
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = construction_effort_3
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = infrastructure_effort }
+		x = 2
+		y = 4
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = construction_effort_tt
+				all_owned_state = {
+					free_building_slots = {
+						building = industrial_complex
+						size < 2
+						include_locked = yes
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 1
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = extra_tech_slot
+		icon = GFX_focus_research
+		prerequisite = { focus = infrastructure_effort_2 }
+		x = 0
+		y = 5
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	
+	focus = {
+		id = extra_tech_slot_2
+		icon = GFX_focus_research
+		prerequisite = { focus = extra_tech_slot }
+		available = {
+			num_of_factories > 50
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		x = 0
+		y = 6
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}	
+
+#	focus = {
+#		id = secret_weapons
+#		icon = GFX_goal_generic_secret_weapon
+#		prerequisite = { focus = infrastructure_effort_2 }
+#		x = 2
+#		y = 5
+#		cost = 10
+#
+#		available_if_capitulated = yes
+#
+#		completion_reward = {
+#			add_tech_bonus = {
+#				name = secret_bonus
+#				bonus = 0.5
+#				uses = 4
+#				category = electronics
+#				category = nuclear
+#				category = rocketry
+#			}
+#		}
+#
+#		ai_will_do = {
+#			factor = 1
+#			modifier = {
+#				factor = 0.25
+#				always = yes
+#			}
+#		}
+#	}
+
+	
+	
+
+############
+#   Navy   #
+############
+
+	focus = {
+		id = SWE_STROMBACK
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		x = 2
+		y = 8
+		cost = 10
+		ai_will_do = {
+			factor = 100
+		}
+		mutually_exclusive = { focus = SWE_PALMSTIERNA }
+		completion_reward = {
+			add_political_power = 25
+			add_tech_bonus = {
+				name = navdoctrine_bonus
+				bonus = 0.5
+				uses = 2
+				category = cat_fleet_in_being
+			}
+			SWE = { set_country_flag = SWE_Ekstrand }
+			
+		}
+	}
+
+	focus = {
+		id = SWE_PALMSTIERNA
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		x = 6
+		y = 8
+		cost = 10
+		ai_will_do = {
+			factor = 100
+		}
+		mutually_exclusive = { focus = SWE_STROMBACK }
+		completion_reward = {
+		add_political_power = 50
+		add_tech_bonus = {
+				name = navdoctrine_bonus
+				bonus = 0.5
+				uses = 2
+				category = cat_trade_interdiction
+			}
+			SWE = { set_country_flag = SWE_Tamm }
+		}
+	}
+
+	focus = {
+		id = SWE_EXPANDNAVY1
+		icon = GFX_goal_generic_build_navy
+		x = 4
+		y = 9
+		cost = 10
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+			date > 1937.9.20
+			}
+		}
+		prerequisite = { focus = SWE_PALMSTIERNA focus = SWE_STROMBACK }
+		completion_reward = {
+				navy_experience = 30
+		140 = { add_building_construction = {
+					type = coastal_bunker
+					level = 2
+					province = 383
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					province = 383
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = anti_air_building
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = dockyard
+						level = 3
+						instant_build = yes
+					} }
+		}
+	}
+
+	focus = {
+		id = SWE_BATTLESHIP
+		icon = GFX_goal_generic_navy_battleship
+		available = { has_country_flag = SWE_EKSTRAND }
+		x = 1
+		y = 10
+		cost = 10
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = { focus = SWE_EXPANDNAVY1 }
+		mutually_exclusive = { focus = SWE_CARRIER }
+		completion_reward = {
+				add_tech_bonus = {
+				name = battlecruiser_bonus
+				ahead_reduction = 1
+				bonus = 0.25
+				uses = 1
+				category = bc_tech
+			}
+			}
+		}
+
+	focus = {
+		id = SWE_CARRIER
+		icon = GFX_goal_generic_air_naval_bomber
+		available = { has_country_flag = SWE_EKSTRAND }
+		x = 3
+		y = 10
+		cost = 10
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = { focus = SWE_EXPANDNAVY1 }
+		mutually_exclusive = { focus = SWE_BATTLESHIP }
+		completion_reward = {
+				add_tech_bonus = {
+				air_experience = 30
+				name = nav_bomber_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				category = naval_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = SWE_DESTROYER1
+		icon = GFX_goal_generic_navy_anti_submarine
+		available = { has_country_flag = SWE_Tamm }
+		x = 5
+		y = 10
+		cost = 10
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = { focus = SWE_EXPANDNAVY1 }
+		mutually_exclusive = { focus = SWE_SUB1 }
+		completion_reward = {
+			add_tech_bonus = {
+				name = dd_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				technology = improved_destroyer
+				technology = advanced_destroyer
+			}
+		}
+	}
+
+	focus = {
+		id = SWE_SUB1
+		icon = GFX_goal_generic_navy_submarine
+		available = { has_country_flag = SWE_Tamm }
+		x = 7
+		y = 10
+		cost = 10
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = { focus = SWE_EXPANDNAVY1 }
+		mutually_exclusive = { focus = SWE_DESTROYER1 }
+		completion_reward = {
+				add_tech_bonus = {
+				name = ss_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				technology = improved_submarine
+			}
+		}
+	}
+
+	focus = {
+		id = SWE_LIGHTCRUI
+		icon = GFX_goal_generic_navy_cruiser
+		x = 2
+		y = 11
+		cost = 10
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = { focus = SWE_BATTLESHIP focus = SWE_CARRIER }
+		completion_reward = {
+			add_tech_bonus = {
+				name = cr_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				technology = basic_light_cruiser
+				technology = improved_light_cruiser
+				technology = advanced_light_cruiser
+			}
+		}
+	}
+
+	focus = {
+		id = SWE_HEAVYCRUI
+		icon = GFX_goal_generic_navy_cruiser
+		x = 6
+		y = 11
+		cost = 10
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = { focus = SWE_DESTROYER1 focus = SWE_SUB1 }
+		completion_reward = {
+				add_tech_bonus = {
+				name = cr_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				technology = basic_heavy_cruiser
+				technology = improved_heavy_cruiser
+				technology = advanced_heavy_cruiser
+			}
+		}
+	}
+
+	focus = {
+		id = SWE_BATTLESHIP2
+		icon = GFX_goal_generic_navy_battleship
+		x = 1
+		y = 12
+		cost = 10
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = { focus = SWE_BATTLESHIP }
+		completion_reward = {
+				add_tech_bonus = {
+				name = cr_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				technology = basic_battleship
+				technology = improved_battleship
+				technology = advanced_battleship
+			}
+		}
+	}
+
+	focus = {
+		id = SWE_CARRIER2
+		icon = GFX_goal_generic_navy_carrier
+		x = 3
+		y = 12
+		cost = 10
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = { focus = SWE_CARRIER }
+		completion_reward = {
+				add_tech_bonus = {
+				name = cr_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				technology = basic_heavy_cruiser
+				technology = improved_heavy_cruiser
+				technology = advanced_heavy_cruiser	
+			}
+				add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = air_doctrine
+			}			
+		}
+	}
+	
+	focus = {
+		id = SWE_DESTROYER2
+		icon = GFX_goal_generic_occupy_states_coastal
+		x = 5
+		y = 12
+		cost = 10
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = { focus = SWE_DESTROYER1 }
+		completion_reward = {
+				add_tech_bonus = {
+				name = dest_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				technology = basic_light_cruiser
+				technology = improved_light_cruiser
+				technology = advanced_light_cruiser
+			}
+		}
+	}
+
+	focus = {
+		id = SWE_SUB2
+		icon = GFX_goal_generic_wolf_pack
+		x = 7
+		y = 12
+		cost = 10
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = { focus = SWE_SUB1 }
+		completion_reward = {
+				add_tech_bonus = {
+				name = ss_bonus
+				bonus = 0.5
+				uses = 1
+				technology = advanced_submarine
+			}
+				add_tech_bonus = {
+				name = navdoctrine_bonus
+				bonus = 0.5
+				uses = 1
+				category = cat_trade_interdiction
+			}
+		}
+	}
+
+	focus = {
+		id = SWE_DOCSTRO
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		x = 2
+		y = 13
+		cost = 10
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = { focus = SWE_LIGHTCRUI }
+		prerequisite = { focus = SWE_BATTLESHIP2 focus = SWE_CARRIER2 }
+		completion_reward = {
+				navy_experience = 25
+				add_tech_bonus = {
+				name = naval_doctrine_bonus
+				bonus = 0.5
+				uses = 1
+				category = naval_doctrine
+			}
+				add_ideas = SWE_gothenburg_officers
+		}
+	}
+
+	focus = {
+		id = SWE_DOCPALM
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		x = 6
+		y = 13
+		cost = 10
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = { focus = SWE_HEAVYCRUI }
+		prerequisite = { focus = SWE_DESTROYER2 focus = SWE_SUB2 }
+		completion_reward = {
+				navy_experience = 25
+				add_tech_bonus = {
+				name = naval_doctrine_bonus
+				bonus = 0.5
+				uses = 1
+				category = naval_doctrine
+			}
+				add_ideas = SWE_karlskrona_officers
+		}
+	}
+
+	focus = {
+		id = SWE_NAVALPROD2
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 4
+		y = 14
+		cost = 10
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = { focus = SWE_DOCSTRO focus = SWE_DOCPALM }
+		completion_reward = {
+		138 = { add_building_construction = {
+					type = coastal_bunker
+					level = 2
+					province = 9279
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					province = 9279
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = anti_air_building
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = dockyard
+						level = 3
+						instant_build = yes
+					} }
+		}
+	}
+
+############
+# Military #
+############
+
+	focus = {
+		id = SWE_THORNELL
+		icon = GFX_goal_generic_army_doctrines
+		x = 7
+		y = 0
+		cost = 10
+		ai_will_do = {
+			factor = 100
+		}
+		mutually_exclusive = { focus = SWE_NYGREN }
+		mutually_exclusive = { focus = SWE_RAPPE }
+		mutually_exclusive = { focus = SWE_DOUGLAS }
+		completion_reward = {
+				add_political_power = 125
+				add_tech_bonus = {
+				name = doctrine_bonus
+				bonus = 0.5
+				uses = 1
+				category = cat_mass_assault
+			}
+				SWE = { set_country_flag = SWE_thornell_plan }
+		}
+	}
+
+	focus = {
+		id = SWE_NYGREN
+		icon = GFX_goal_generic_army_doctrines
+		x = 2
+		y = 0
+		cost = 10
+		ai_will_do = {
+			factor = 100
+		}
+		
+		relative_position_id = SWE_THORNELL
+		
+		mutually_exclusive = { focus = SWE_THORNELL }
+		mutually_exclusive = { focus = SWE_RAPPE }
+		mutually_exclusive = { focus = SWE_DOUGLAS }
+		completion_reward = {
+				add_political_power = 75
+				add_tech_bonus = {
+				name = doctrine_bonus
+				bonus = 0.5
+				uses = 1
+				category = cat_grand_battle_plan
+			}
+				SWE = { set_country_flag = SWE_nygren_plan }
+		}
+	}
+
+	focus = {
+		id = SWE_RAPPE
+		icon = GFX_goal_generic_army_doctrines
+		x = 4
+		y = 0
+		cost = 10
+		ai_will_do = {
+			factor = 100
+		}
+		
+		relative_position_id = SWE_THORNELL
+		
+		mutually_exclusive = { focus = SWE_THORNELL }
+		mutually_exclusive = { focus = SWE_NYGREN }
+		mutually_exclusive = { focus = SWE_DOUGLAS }
+		completion_reward = {
+			add_political_power = 50
+				add_tech_bonus = {
+				name = doctrine_bonus
+				bonus = 0.5
+				uses = 1
+				category = cat_superior_firepower
+			}
+				SWE = { set_country_flag = SWE_rappe_plan }
+		}
+	}
+
+	focus = {
+		id = SWE_DOUGLAS
+		icon = GFX_goal_generic_army_doctrines
+		x = 6
+		y = 0
+		cost = 10
+		ai_will_do = {
+			factor = 100
+		}
+		
+		relative_position_id = SWE_THORNELL
+		
+		mutually_exclusive = { focus = SWE_THORNELL }
+		mutually_exclusive = { focus = SWE_NYGREN }
+		mutually_exclusive = { focus = SWE_RAPPE }
+		completion_reward = {
+			add_political_power = 25
+				add_tech_bonus = {
+				name = doctrine_bonus
+				bonus = 0.5
+				uses = 1
+				category = cat_mobile_warfare
+			}
+				SWE = { set_country_flag = SWE_douglas_plan }	
+		}
+	}
+
+	focus = {
+		id = SWE_SENREF_DOCTRINE
+		icon = GFX_goal_generic_military_deal
+		x = 1
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+			date > 1937.9.20
+			}
+		}
+		
+		relative_position_id = SWE_THORNELL
+		
+		prerequisite = { focus = SWE_THORNELL focus = SWE_NYGREN focus = SWE_RAPPE focus = SWE_DOUGLAS }
+		completion_reward = {
+			army_experience = 20
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+	
+	focus = {
+		id = SWE_ARMSINDUSTRY
+		icon = GFX_goal_generic_small_arms
+		x = 3
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+			date > 1937.9.20
+			}
+		}
+		
+		relative_position_id = SWE_THORNELL
+		
+		prerequisite = { focus = SWE_THORNELL focus = SWE_NYGREN focus = SWE_RAPPE focus = SWE_DOUGLAS }
+		completion_reward = {
+			add_ideas = husqvarna_vapenfabriks
+			139 = { add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					} }
+		}
+	}
+
+	focus = {
+		id = SWE_STATPOL
+		icon = GFX_focus_generic_support_the_left_right
+		available = { OR = { has_country_flag = SWE_Right_win has_country_flag = SWE_Rappe_Coup has_country_flag = SWE_syn_survive } }
+		x = 6
+		y = 2
+		cost = 10
+		ai_will_do = {
+			factor = 100
+		}
+		
+		relative_position_id = SWE_THORNELL
+		
+		prerequisite = { focus = SWE_SENREF_DOCTRINE }
+		completion_reward = {
+			add_political_power = 125
+		}
+	}
+
+	focus = {
+		id = SWE_FRA
+		icon = GFX_goal_generic_radar
+		x = 6
+		y = 4
+		cost = 10
+		ai_will_do = {
+			factor = 100
+		}
+		
+		relative_position_id = SWE_THORNELL
+		
+		prerequisite = { focus = SWE_STATPOL }
+		completion_reward = {
+				add_tech_bonus = {
+				name = intel_bonus
+				bonus = 0.5
+				uses = 2
+				category = encryption_tech
+				category = decryption_tech
+				category = computing_tech
+			}
+
+		}
+	}
+
+	focus = {
+		id = SWE_LABORDIV
+		icon = GFX_goal_generic_construction
+		x = 6
+		y = 6
+		cost = 10
+		ai_will_do = {
+			factor = 100
+		}
+		
+		relative_position_id = SWE_THORNELL
+		
+		prerequisite = { focus = SWE_FRA }
+		prerequisite = { focus = SWE_NEWOFFICERS }
+		completion_reward = {
+			add_ideas = SWE_labor_division
+		}
+	}
+
+	focus = {
+		id = SWE_DEFENSE
+		icon = GFX_goal_fortify_the_westwall
+		available = { OR = { has_country_flag = SWE_thornell_plan has_country_flag = SWE_nygren_plan } }
+		x = -1
+		y = 2
+		cost = 10
+		ai_will_do = {
+			factor = 100
+		}
+		
+		relative_position_id = SWE_THORNELL
+		
+		prerequisite = { focus = SWE_SENREF_DOCTRINE }
+		mutually_exclusive = { focus = SWE_OFFENSE }
+		completion_reward = {
+			add_ideas = SWE_defensive_armies
+		}
+	}
+
+	focus = {
+		id = SWE_HEMVARN
+		icon = GFX_goal_conscription
+		available = { has_country_flag = SWE_thornell_plan }
+		x = -2
+		y = 3
+		cost = 10
+		ai_will_do = {
+			factor = 100
+		}
+		
+		relative_position_id = SWE_THORNELL
+		
+		prerequisite = { focus = SWE_DEFENSE }
+		mutually_exclusive = { focus = SWE_BERGJAGARE }
+		completion_reward = {
+			remove_ideas = SWE_defensive_armies
+			remove_ideas = SWE_landstormen
+			add_ideas = SWE_defensive_armies_thor
+		}
+	}
+
+	focus = {
+		id = SWE_BERGJAGARE
+		icon = GFX_focus_generic_little_entente
+		available = { has_country_flag = SWE_nygren_plan }
+		x = 0
+		y = 3
+		cost = 10
+		ai_will_do = {
+			factor = 100
+		}
+		
+		relative_position_id = SWE_THORNELL
+		
+		prerequisite = { focus = SWE_DEFENSE }
+		mutually_exclusive = { focus = SWE_HEMVARN }
+		completion_reward = {
+				add_tech_bonus = {
+				name = special_forces_bonus
+				bonus = 0.5
+				uses = 1
+				technology = tech_mountaineers
+				technology = tech_mountaineers2
+				technology = tech_mountaineers3
+			}
+				add_tech_bonus = {
+				name = doctrine_bonus
+				bonus = 0.5
+				uses = 1
+				category = cat_grand_battle_plan
+			}
+		}
+	}
+
+	focus = {
+		id = SWE_HEMVARN2
+		icon = GFX_goal_generic_small_arms
+		x = -2
+		y = 4
+		cost = 10
+		ai_will_do = {
+			factor = 100
+		}
+		
+		relative_position_id = SWE_THORNELL
+		
+		prerequisite = { focus = SWE_HEMVARN }
+		completion_reward = {
+				army_experience = 25
+				add_tech_bonus = {
+				name = doctrine_bonus
+				bonus = 0.5
+				uses = 1
+				category = cat_mass_assault
+			}
+				add_tech_bonus = {
+				name = infantry_bonus
+				bonus = 0.5
+				uses = 1
+				category = infantry_weapons
+				category = support_tech
+			}
+		}
+	}
+
+	focus = {
+		id = SWE_BERGJAGARE2
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		x = 0
+		y = 4
+		cost = 10
+		ai_will_do = {
+			factor = 100
+		}
+		
+		relative_position_id = SWE_THORNELL
+		
+		prerequisite = { focus = SWE_BERGJAGARE }
+		completion_reward = {
+			army_experience = 25
+			remove_ideas = SWE_defensive_armies
+			add_ideas = SWE_defensive_armies_nygr
+		}
+	}
+
+	focus = {
+		id = SWE_OFFENSE
+		icon = GFX_goal_generic_army_motorized
+		available = { OR = { has_country_flag = SWE_douglas_plan has_country_flag = SWE_rappe_plan } }
+		x = 3
+		y = 2
+		cost = 10
+		ai_will_do = {
+			factor = 100
+		}
+		
+		relative_position_id = SWE_THORNELL
+		
+		prerequisite = { focus = SWE_SENREF_DOCTRINE }
+		mutually_exclusive = { focus = SWE_DEFENSE }
+		completion_reward = {
+			add_ideas = SWE_offensive_armies
+		}
+	}
+
+	focus = {
+		id = SWE_ARTYCORD
+		icon = GFX_goal_generic_army_artillery2
+		available = { has_country_flag = SWE_rappe_plan }
+		x = 2
+		y = 3
+		cost = 10
+		ai_will_do = {
+			factor = 100
+		}
+		
+		relative_position_id = SWE_THORNELL
+		
+		prerequisite = { focus = SWE_OFFENSE }
+		mutually_exclusive = { focus = SWE_TANKS }
+		completion_reward = {
+				army_experience = 25
+				add_tech_bonus = {
+				name = artillery_bonus
+				bonus = 0.5
+				uses = 1
+				category = artillery
+			}
+				add_tech_bonus = {
+				name = infantry_bonus
+				bonus = 0.5
+				uses = 1
+				category = infantry_weapons
+				category = support_tech
+			} 			
+		}
+	}
+
+	focus = {
+		id = SWE_TANKS
+		icon = GFX_goal_generic_army_tanks
+		available = { has_country_flag = SWE_douglas_plan }
+		x = 4
+		y = 3
+		cost = 10
+		ai_will_do = {
+			factor = 100
+		}
+		
+		relative_position_id = SWE_THORNELL
+		
+		prerequisite = { focus = SWE_OFFENSE }
+		mutually_exclusive = { focus = SWE_ARTYCORD }
+		completion_reward = {
+				army_experience = 25
+				add_tech_bonus = {
+				name = armor_bonus
+				bonus = 0.5
+				uses = 2
+				category = armor
+			}
+		}
+	}
+
+	focus = {
+		id = SWE_NEWOFFICERS
+		icon = GFX_goal_generic_cavalry
+		x = 1
+		y = 5
+		cost = 10
+		ai_will_do = {
+			factor = 100
+		}
+		
+		relative_position_id = SWE_THORNELL
+		
+		prerequisite = { focus = SWE_SENREF_DOCTRINE }
+		completion_reward = {
+				army_experience = 30
+				add_political_power = 75
+				add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = SWE_BEFELHSTAKTIK
+		icon = GFX_goal_generic_defence
+		available = { OR = { has_country_flag = SWE_thornell_plan has_country_flag = SWE_nygren_plan } }
+		x = 0
+		y = 6
+		cost = 10
+		ai_will_do = {
+			factor = 100
+		}
+		
+		relative_position_id = SWE_THORNELL
+		
+		prerequisite = { focus = SWE_NEWOFFICERS }
+		prerequisite = { focus = SWE_BERGJAGARE2 focus = SWE_HEMVARN2 }
+		mutually_exclusive = { focus = SWE_AUFTRAGSTAKTIK }
+		completion_reward = {
+				add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+				add_ideas = SWE_bef_taktik
+		}
+	}
+
+	focus = {
+		id = SWE_AUFTRAGSTAKTIK
+		icon = GFX_goal_generic_major_war
+		available = { OR = { has_country_flag = SWE_douglas_plan has_country_flag = SWE_rappe_plan } }
+		x = 2
+		y = 6
+		cost = 10
+		ai_will_do = {
+			factor = 100
+		}
+		
+		relative_position_id = SWE_THORNELL
+		
+		prerequisite = { focus = SWE_NEWOFFICERS }
+		prerequisite = { focus = SWE_ARTYCORD focus = SWE_TANKS }
+		mutually_exclusive = { focus = SWE_BEFELHSTAKTIK }
+		completion_reward = {
+				add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+				add_ideas = SWE_auftaktik
+		}
+	}
+
+	focus = {
+		id = SWE_ARTCORD2
+		icon = GFX_goal_generic_army_artillery
+		available = { has_country_flag = SWE_rappe_plan }
+		x = 2
+		y = 7
+		cost = 10
+		ai_will_do = {
+			factor = 100
+		}
+		
+		relative_position_id = SWE_THORNELL
+		
+		prerequisite = { focus = SWE_AUFTRAGSTAKTIK }
+		mutually_exclusive = { focus = SWE_TANKS2 }
+		completion_reward = {
+			remove_ideas = SWE_offensive_armies
+			add_ideas = SWE_auftaktik_rappe
+		}
+	}
+
+
+	focus = {
+		id = SWE_TANKS2
+		icon = GFX_goal_generic_build_tank
+		available = { has_country_flag = SWE_douglas_Plan }
+		x = 4
+		y = 7
+		cost = 10
+		ai_will_do = {
+			factor = 100
+		}
+		
+		relative_position_id = SWE_THORNELL
+		
+		prerequisite = { focus = SWE_AUFTRAGSTAKTIK }
+		mutually_exclusive = { focus = SWE_ARTCORD2 }
+		completion_reward = {
+			remove_ideas = SWE_offensive_armies
+			add_ideas = SWE_auftaktik_arch
+			
+		}
+	}
+
+	focus = {
+		id = SWE_LOTTOR1
+		icon = GFX_focus_generic_strike_at_democracy1
+		x = -2
+		y = 6
+		cost = 10
+		ai_will_do = {
+			factor = 100
+		}
+		
+		relative_position_id = SWE_THORNELL
+		
+		prerequisite = { focus = SWE_NEWOFFICERS }
+		completion_reward = {
+			add_political_power = 25
+			add_ideas = SWE_lottorna11
+		}
+	}
+
+	focus = {
+		id = SWE_LOTTORAUX
+		icon = GFX_goal_generic_consumer_goods
+		x = -3
+		y = 7
+		cost = 10
+		ai_will_do = {
+			factor = 100
+		}
+		
+		relative_position_id = SWE_THORNELL
+		
+		prerequisite = { focus = SWE_LOTTOR1 }
+		mutually_exclusive = { focus = SWE_LOTTORMIL }
+		completion_reward = {
+			add_political_power = 50
+			remove_ideas = SWE_lottorna11
+			add_ideas = SWE_lottorna_aux1
+		}
+	}
+
+	focus = {
+		id = SWE_LOTTORMIL
+		icon = GFX_goal_generic_secret_weapon
+		available = { OR = { has_country_flag = SWE_left_win has_country_flag = SWE_syn_survive } }		
+		x = -1
+		y = 7
+		cost = 10
+		ai_will_do = {
+			factor = 100
+		}
+		
+		relative_position_id = SWE_THORNELL
+		
+		prerequisite = { focus = SWE_LOTTOR1 }
+		mutually_exclusive = { focus = SWE_LOTTORAUX }
+		completion_reward = {
+			add_political_power = -75
+			remove_ideas = SWE_lottorna11
+			add_ideas = SWE_lottorna_mil1
+			SWE = { set_country_flag = SWE_women_military }
+		}
+	}
+
+############
+# AIR #
+############
+
+	focus = {
+		id = SWE_AIR1
+		icon = GFX_goal_generic_build_airforce
+		x = 16
+		y = 0
+		cost = 10
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+					building = air_base
+					size > 1
+					}
+				}
+					add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+					building = air_base
+					size > 1
+					}
+				}
+					add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}				
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = air_doctrine
+			}		
+			add_ideas = svenska_aeroplan
+		}
+	}
+
+	focus = {
+		id = SWE_AIR2
+		icon = GFX_goal_generic_air_doctrine
+		x = 16
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+			date > 1937.9.20
+			}
+		}
+		prerequisite = { focus = SWE_AIR1 }
+		completion_reward = {
+				air_experience = 30
+				add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = air_doctrine
+			}	
+		}
+	}
+
+	focus = {
+		id = SWE_BOMB
+		icon = GFX_goal_generic_air_bomber
+		x = 15
+		y = 2
+		cost = 10
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = { focus = SWE_AIR2 }
+		mutually_exclusive = { focus = SWE_FIGHT }
+		completion_reward = {
+				add_tech_bonus = {
+				name = fighter_bonus
+				bonus = 0.5
+				uses = 1
+				technology = early_fighter
+				technology = fighter1
+				technology = fighter2
+				technology = fighter3
+			}
+				add_tech_bonus = {
+				name = bomber_bonus
+				bonus = 0.5
+				uses = 1
+				category = cas_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = SWE_FIGHT
+		icon = GFX_goal_generic_air_fighter
+		x = 17
+		y = 2
+		cost = 10
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = { focus = SWE_AIR2 }
+		mutually_exclusive = { focus = SWE_BOMB }
+		completion_reward = {
+				add_tech_bonus = {
+				name = fighter_bonus
+				bonus = 0.5
+				uses = 1
+				technology = early_fighter
+				technology = fighter1
+				technology = fighter2
+				technology = fighter3
+			}
+				add_tech_bonus = {
+				name = CAS_bonus
+				bonus = 0.5
+				uses = 1
+				category = cas_bomber
+			}	
+		}
+	}
+
+	focus = {
+		id = SWE_AIR3
+		icon = GFX_goal_continuous_air_production
+		x = 16
+		y = 3
+		cost = 10
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = { focus = SWE_FIGHT focus = SWE_BOMB }
+		completion_reward = {
+				add_tech_bonus = {
+				name = fighter_bonus
+				bonus = 0.5
+				uses = 1
+				technology = early_fighter
+				technology = fighter1
+				technology = fighter2
+				technology = fighter3
+			}
+			add_ideas = SWE_air_production
+		}
+	}
+
+	focus = {
+		id = SWE_AIR4
+		icon = GFX_goal_generic_air_fighter2
+		x = 16
+		y = 4
+		cost = 10
+		ai_will_do = {
+			factor = 100
+		}
+		prerequisite = { focus = SWE_AIR3}
+		completion_reward = {
+				air_experience = 50
+				add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 0.5
+				uses = 2
+				category = air_doctrine
+			}	
+				add_national_unity = 0.05
+		}
+	}
+
+#######################
+# Nordic Intergration #
+#######################
+
+	focus = {
+		id = SWE_DEM_treaty_of_stockholm
+		icon = GFX_goal_support_democracy
+		available = { has_global_flag = SCA_treaty_of_stockholm }
+		x = 20
+		y = 0
+		cost = 10
+
+		ai_will_do = {
+			factor = 5
+		}
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = SWE_DEM_nordic_council
+		icon = GFX_goal_NOR_nordic_council
+		prerequisite = { focus = SWE_DEM_treaty_of_stockholm }
+		x = 2
+		y = 1
+		cost = 10
+		bypass = {
+			has_global_flag = SCA_nordic_council
+		}
+		
+		relative_position_id = SWE_DEM_treaty_of_stockholm
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			country_event = { id = swe.24 }
+		}
+	}
+	
+	focus = {
+		id = SWE_DEM_defense_union
+		icon = GFX_goal_NOR_defense_union
+		prerequisite = { focus = SWE_DEM_nordic_council }
+		x = 1
+		y = 2
+		cost = 10
+		bypass = {
+			has_global_flag = SCA_defense_union
+		}
+		
+		relative_position_id = SWE_DEM_treaty_of_stockholm
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			SWE = {
+				country_event = { id = swe.25 }
+			}
+		}
+	}
+	
+	focus = {
+		id = SWE_DEM_material_cooperation
+		icon = GFX_goal_generic_army_artillery
+		prerequisite = { focus = SWE_DEM_defense_union }
+		x = 0
+		y = 3
+		cost = 10
+		
+		relative_position_id = SWE_DEM_treaty_of_stockholm
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_ideas = SWE_common_mil_purchases
+		}
+	}
+	
+	focus = {
+		id = SWE_DEM_military_volunteers
+		icon = GFX_focus_generic_commonwealth_build_infantry
+		prerequisite = { focus = SWE_DEM_material_cooperation }
+		x = -1
+		y = 4
+		cost = 10
+		
+		relative_position_id = SWE_DEM_treaty_of_stockholm
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			custom_effect_tooltip = SWE_new_generals_tooltip
+			hidden_effect = {
+				create_corps_commander = {
+					name = "Frode Lund Hvalkof"
+					gfx = "GFX_DEN_frode_lund_hvalkof"
+					traits = { }
+					skill = 2
+				}
+				create_corps_commander = {
+					name = "Erland Frisvold"
+					gfx = "GFX_NOR_erland_frisvold"
+					traits = { }
+					skill = 1
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = SWE_DEM_passport_union
+		icon = GFX_goal_NOR_passport_convention
+		prerequisite = { focus = SWE_DEM_investments }
+		x = 2
+		y = 3
+		cost = 10
+		bypass = {
+			has_global_flag = SCA_passport_union
+		}
+		
+		relative_position_id = SWE_DEM_treaty_of_stockholm
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			country_event = { id = swe.26 }
+		}
+	}
+	
+	focus = {
+		id = SWE_DEM_joint_sessions
+		icon = GFX_goal_generic_national_unity
+		prerequisite = { focus = SWE_DEM_passport_union }
+		x = 1
+		y = 4
+		cost = 10
+		
+		relative_position_id = SWE_DEM_treaty_of_stockholm
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	
+	focus = {
+		id = SWE_DEM_investments
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = SWE_DEM_nordic_council }
+		x = 4
+		y = 2
+		cost = 10
+		
+		relative_position_id = SWE_DEM_treaty_of_stockholm
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			NOR = {
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			DEN = {
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = SWE_DEM_monetary_union
+		icon = GFX_goal_generic_trade
+		prerequisite = { focus = SWE_DEM_investments }
+		x = 4
+		y = 3
+		cost = 10
+		bypass = {
+			has_global_flag = SCA_monetary_union
+		}
+		
+		relative_position_id = SWE_DEM_treaty_of_stockholm
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			country_event = { id = swe.27 }
+		}
+	}
+	
+	focus = {
+		id = SWE_DEM_found_sas
+		icon = GFX_goal_NOR_SAS
+		prerequisite = { focus = SWE_DEM_monetary_union }
+		x = 3
+		y = 4
+		cost = 10
+		
+		relative_position_id = SWE_DEM_treaty_of_stockholm
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			custom_effect_tooltip = available_designer
+			show_ideas_tooltip = sweden_sas_company
+		}
+	}
+	
+	focus = {
+		id = SWE_DEM_custom_union
+		icon = GFX_goal_generic_consumer_goods
+		prerequisite = { focus = SWE_DEM_monetary_union }
+		x = 5
+		y = 4
+		cost = 10
+		bypass = {
+			has_global_flag = SCA_custom_union
+		}
+		
+		relative_position_id = SWE_DEM_treaty_of_stockholm
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			country_event = { id = swe.28 }
+		}
+	}
+	
+	focus = {
+		id = SWE_DEM_common_tech
+		icon = GFX_goal_NOR_scandi_research
+		prerequisite = { focus = SWE_DEM_investments }
+		x = 6
+		y = 3
+		cost = 10
+		bypass = {
+			has_global_flag = SCA_research_cooperation
+		}
+		
+		relative_position_id = SWE_DEM_treaty_of_stockholm
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			country_event = { id = swe.29 }
+		}
+	}
+	
+	focus = {
+		id = SWE_DEM_common_tech_2
+		icon = GFX_goal_generic_scientific_exchange
+		prerequisite = { focus = SWE_DEM_common_tech }
+		x = 7
+		y = 4
+		cost = 10
+		
+		relative_position_id = SWE_DEM_treaty_of_stockholm
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			modify_tech_sharing_bonus = {
+			  	id = scandinavian_research
+			   	bonus = 0.05
+			}
+		}
+	}
+	
+	focus = {
+		id = SWE_DEM_form_federation
+		icon = GFX_goal_NOR_scandinavia
+		prerequisite = { focus = SWE_DEM_military_volunteers }
+		prerequisite = { focus = SWE_DEM_joint_sessions }
+		prerequisite = { focus = SWE_DEM_found_sas }
+		prerequisite = { focus = SWE_DEM_custom_union }
+		prerequisite = { focus = SWE_DEM_common_tech_2 }
+		x = 3
+		y = 5
+		cost = 10
+		
+		relative_position_id = SWE_DEM_treaty_of_stockholm
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 3
+				DEN = { is_ai = yes }
+				NOR = { is_ai = yes }
+			}
+		}
+		
+		completion_reward = {
+			NOR = {
+				country_event = { id = norway.156 }
+			}
+		}
+	}
+}

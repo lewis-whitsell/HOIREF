@@ -1,0 +1,495 @@
+﻿division_template = {
+    name = "Airmobile Brigade"
+
+    regiments = {                       
+		L_Air_assault_Bat = { x = 0 y = 0 }
+		L_Air_assault_Bat = { x = 0 y = 1 }
+		L_Air_assault_Bat = { x = 0 y = 2 }
+		L_Air_assault_Bat = { x = 0 y = 3 }
+    }
+}
+division_template = {
+    name = "Light Mechanized Brigade"
+
+    regiments = { 
+		Mech_Inf_Bat = { x = 0 y = 0 }
+		Mech_Inf_Bat = { x = 0 y = 1 }
+		Mot_Inf_Bat = { x = 1 y = 0 }
+		Mot_Recce_Bat = { x = 1 y = 1}
+		H_Engi_Bat = { x = 2 y = 0}
+		SP_Arty_Bat = { x = 2 y = 1 }
+    }
+}
+division_template = {
+    name = "Mechanized Brigade"
+
+    regiments = {
+		armor_Bat = { x = 0 y = 0 }
+		Arm_Inf_Bat = { x = 1 y = 0 }
+		Arm_Inf_Bat = { x = 1 y = 1 }
+		Mech_Recce_Bat = { x = 1 y = 2 }
+		Mot_Inf_Bat = { x = 2 y = 0 }
+		H_Engi_Bat = { x = 3 y = 0 }
+		SP_Arty_Bat = { x = 3 y = 1 }
+    }
+}
+division_template = {
+	name = "Korps Commandotroepen"
+	
+	regiments = {
+		special_forces = { x = 0 y = 0 }
+	}
+}
+#Marines
+division_template = {
+	name = "Korps Mariniers"
+	
+	regiments = {
+		Mech_Marine_Bat = { x = 0 y = 0 }
+		Mot_Marine_Bat = { x = 0 y = 1 }
+		special_forces = { x = 1 y = 0 }
+	}
+}
+division_template = {
+	name = "Raiding Squadron"
+	
+	regiments = {
+		special_forces = { x = 0 y = 0 }
+	}
+	priority = 2
+}
+		
+units = {
+		division = {           
+			name = "11th Airmobile Brigade"
+			location = 6241
+			division_template = "Airmobile Brigade"
+			start_experience_factor = 0.8
+			start_equipment_factor = 0.01
+		}
+		division = {           
+			name = "13th Light Mechanized Brigade"
+			location = 6500
+			division_template = "Light Mechanized Brigade"
+			start_experience_factor = 0.75
+			start_equipment_factor = 0.01
+		}
+		division = {           
+			name = "43rd Mechanized Brigade"
+			location = 9403
+			division_template = "Mechanized Brigade"
+			start_experience_factor = 0.75
+			start_equipment_factor = 0.01
+		}
+		division = {
+			name = "Korps Commandotroepen"
+			location = 3262
+			division_template = "Korps Commandotroepen"
+			start_experience_factor = 0.9
+			start_equipment_factor = 0.01
+		}
+		#marines
+		division = {
+			name = "Korps Mariniers"
+			location = 9498
+			division_template = "Korps Mariniers"
+			start_experience_factor = 0.8
+			start_equipment_factor = 0.01
+		}
+		division = {
+			name = "32nd Raiding Squadron"
+			location = 153
+			division_template = "Raiding Squadron"
+			start_experience_factor = 0.9
+			start_equipment_factor = 0.01
+		}
+		
+		#diesel_attack_submarine_3 = Walrus-Class
+		#missile_frigate_4 = De Zeven Provinciën-Class
+		#missile_frigate_1 = Karel Doorman-Class
+		#LPD_1 = Rotterdam Class
+		
+		
+		navy = {
+			name = "Koninklijke Marine"				
+			base = 3314
+			location = 3314
+			
+			ship = { name = "Walrus" definition = diesel_attack_submarine experience = 75 equipment = { diesel_attack_submarine_3 = { amount = 1 owner = HOL } } }
+			ship = { name = "Zeeleeuw" definition = diesel_attack_submarine experience = 75 equipment = { diesel_attack_submarine_3 = { amount = 1 owner = HOL } } }
+			ship = { name = "Dolfijn" definition = diesel_attack_submarine experience = 75 equipment = { diesel_attack_submarine_3 = { amount = 1 owner = HOL } } }
+			ship = { name = "Bruinvis" definition = diesel_attack_submarine experience = 75 equipment = { diesel_attack_submarine_3 = { amount = 1 owner = HOL } } }
+			
+			ship = { name = "De Zeven Provinciën" definition = frigate experience = 75 equipment = { missile_frigate_4 = { amount = 1 owner = HOL } } }
+			ship = { name = "Tromp" definition = frigate experience = 75 equipment = { missile_frigate_4 = { amount = 1 owner = HOL } } }
+			ship = { name = "De Ruyter" definition = frigate experience = 75 equipment = { missile_frigate_4 = { amount = 1 owner = HOL } } }
+			ship = { name = "Evertsen" definition = frigate experience = 75 equipment = { missile_frigate_4 = { amount = 1 owner = HOL } } }
+			
+			ship = { name = "Van Amstel" definition = frigate experience = 75 equipment = { missile_frigate_1 = { amount = 1 owner = HOL } } }
+			ship = { name = "Van Speijk" definition = frigate experience = 75 equipment = { missile_frigate_1 = { amount = 1 owner = HOL } } }
+			
+			ship = { name = "HNLMS Rotterdam" definition = LPD experience = 75 equipment = { LPD_1 = { amount = 1 owner = HOL } } air_wings = {} }
+			ship = { name = "HNLMS Johan de Witt" definition = LPD experience = 75 equipment = { LPD_1 = { amount = 1 owner = HOL  version_name = "Improved Rotterdam-Class" } } air_wings = {} }
+			
+		}
+		
+}		
+
+instant_effect = {
+
+	add_equipment_to_stockpile = {
+		type = Inf_equipment_2 #C7NLD
+		amount = 1930
+		producer = CAN
+    }
+	add_equipment_to_stockpile = {
+		type = command_control_equipment_4 #C4ISTAR Equipment
+		amount = 434
+    }
+	add_equipment_to_stockpile = {
+		type = Inf_equipment_3 #C8NLD
+		amount = 1500
+		producer = CAN
+    }
+	add_equipment_to_stockpile = {
+		type = Inf_equipment_4 #HK-416
+		amount = 150
+		producer = GER
+    }
+	add_equipment_to_stockpile = {
+		type = L_AT_Equipment_2 #Spike
+		amount = 162
+		producer = ISR
+    }
+	add_equipment_to_stockpile = {
+		type = H_AT_Equipment_2 #Spike
+		amount = 36
+		producer = ISR
+	}
+	add_equipment_to_stockpile = {
+		type = AA_Equipment_1 #FIM-92 Stinger
+		amount = 147
+		producer = USA
+	}
+	#Vehicles
+	add_equipment_to_stockpile = {
+		type = MBT_Equipment_5 #LEO2A7
+		amount = 18
+		producer = GER
+	}
+	add_equipment_to_stockpile = {
+		type = ENGI_MBT_Equipment_1 #Bergepanzer 2
+		amount = 20
+		producer = GER
+	}
+	add_equipment_to_stockpile = {
+		type = ENGI_MBT_Equipment_2 #Büffel
+		amount = 18
+		producer = GER
+	}
+	add_equipment_to_stockpile = {
+		type = APC_Equipment_6 #Boxer
+		amount = 85
+		producer = GER
+	}
+	add_equipment_to_stockpile = {
+		type = APC_Equipment_3 #Patria Pasi
+		amount = 70
+		producer = FIN
+	}
+	add_equipment_to_stockpile = {
+		type = APC_Equipment_2 #Bv-206
+		amount = 87
+		producer = SWE
+	}
+	add_equipment_to_stockpile = {
+		type = APC_Equipment_4 #Bv-10
+		amount = 73
+		producer = SWE
+	}
+	add_equipment_to_stockpile = {
+		type = APC_Equipment_3 #Tpz-1
+		amount = 9
+		producer = GER
+	}
+	add_equipment_to_stockpile = {
+		type = IFV_Equipment_4 #CV90
+		amount = 184
+		producer = SWE
+	}
+	add_equipment_to_stockpile = {
+		type = SP_arty_equipment_2 #Pz-2000
+		amount = 57
+		producer = GER
+	}
+	
+	
+	add_equipment_to_stockpile = {
+		type = util_vehicle_equipment_3 #FENNEK
+		amount = 365
+		producer = GER
+	}
+	add_equipment_to_stockpile = {
+		type = util_vehicle_equipment_3 #Bushmaster
+		amount = 85
+		producer = AST
+	}
+	add_equipment_to_stockpile = {
+		type = util_vehicle_equipment_2 #lohr lva
+		amount = 150
+	}
+	add_equipment_to_stockpile = {
+		type = util_vehicle_equipment_4 #VECTOR
+		amount = 50
+	}
+	
+	### Airforce ###
+	add_equipment_to_stockpile = {
+		type = Air_UAV_equipment_2 #MQ9
+		amount = 12
+		producer = USA
+	}
+	
+    add_equipment_to_stockpile = {
+    type = MR_Fighter_equipment_4 #F-35
+    amount = 2
+    producer = USA
+    }
+
+    add_equipment_to_stockpile = {
+    type = MR_Fighter_equipment_2 #F-16A
+    amount = 61
+    producer = USA
+    }
+	
+	add_equipment_to_stockpile = {
+    type = transport_helicopter_equipment_4 #NHIndustries NH-90
+    amount = 18
+    producer = FRA
+    }
+	
+	add_equipment_to_stockpile = {
+    type = transport_helicopter_equipment_2 #
+    amount = 8
+    producer = FRA
+    }
+	
+	add_equipment_to_stockpile = {
+    type = attack_helicopter_equipment_3 #AH-64D
+    amount = 28
+    producer = USA
+    }
+	
+	add_equipment_to_stockpile = {
+    type = transport_helicopter_equipment_3 #chinook
+    amount = 17
+    producer = USA
+    }
+	
+	add_equipment_to_stockpile = {
+    type = transport_plane_equipment_4 #C-130J Super Hercules
+    amount = 4
+    producer = USA
+    }
+	
+	if = {
+		limit = { has_dlc = "Death or Dishonor" }
+		GER = {
+			create_production_license = {
+				target = HOL 
+				equipment = {
+					type = APC_Equipment_6 #GTK Boxer
+				}
+				cost_factor = 0
+			}
+			
+		}
+		else = {
+			add_equipment_production = {
+				equipment = {
+					type = APC_Equipment_6 #GTK Boxer
+					creator = "GER"
+				}
+				requested_factories = 1
+				progress = 0.2
+				efficiency = 50
+			}
+		}
+	}
+	if = {
+		limit = { has_dlc = "Death or Dishonor" }
+		GER = {
+			create_production_license = {
+				target = HOL 
+				equipment = {
+					type = MBT_Equipment_5 #Leo2A7
+				}
+				cost_factor = 0
+			}
+			
+		}
+		else = {
+			add_equipment_production = {
+				equipment = {
+					type = MBT_Equipment_5 #Leo2A7
+					creator = "GER"
+				}
+				requested_factories = 1
+				progress = 0.2
+				efficiency = 50
+			}
+		}
+	}
+	if = {
+		limit = { has_dlc = "Death or Dishonor" }
+		USA = {
+			create_production_license = {
+				target = HOL 
+				equipment = {
+					type = MR_Fighter_equipment_4 #F-35 Lightning II
+				}
+				cost_factor = 0
+			}
+			
+		}
+		else = {
+			add_equipment_production = {
+				equipment = {
+					type = MR_Fighter_equipment_4 #F-35 Lightning II
+					creator = "USA"
+				}
+				requested_factories = 1
+				progress = 0.2
+				efficiency = 50
+			}
+		}
+	}
+	if = {
+		limit = { has_dlc = "Death or Dishonor" }
+		FRA = {
+			create_production_license = {
+				target = HOL 
+				equipment = {
+					type = transport_helicopter_equipment_4 #NH90 NFH/TTH
+				}
+				cost_factor = 0
+			}
+			
+		}
+		else = {
+			add_equipment_production = {
+				equipment = {
+					type = transport_helicopter_equipment_4 #
+					creator = "FRA"
+				}
+				requested_factories = 1
+				progress = 0.2
+				efficiency = 50
+			}
+		}
+	}
+	if = {
+		limit = { has_dlc = "Death or Dishonor" }
+		GER = {
+			create_production_license = {
+				target = HOL 
+				equipment = {
+					type = Inf_equipment_4
+				}
+				cost_factor = 0
+			}
+			
+		}
+	}
+	if = {
+		limit = { has_dlc = "Death or Dishonor" }
+		ISR = {
+			create_production_license = {
+				target = HOL 
+				equipment = {
+					type = L_AT_Equipment_2
+				}
+				cost_factor = 0
+			}
+			
+		}
+	}
+	if = {
+		limit = { has_dlc = "Death or Dishonor" }
+		ISR = {
+			create_production_license = {
+				target = HOL 
+				equipment = {
+					type = H_AT_Equipment_2
+				}
+				cost_factor = 0
+			}
+			
+		}
+	}
+	if = {
+		limit = { has_dlc = "Death or Dishonor" }
+		GER = {
+			create_production_license = {
+				target = HOL 
+				equipment = {
+					type = SP_arty_equipment_2
+				}
+				cost_factor = 0
+			}
+			
+		}
+	}
+	if = {
+		limit = { has_dlc = "Death or Dishonor" }
+		USA = {
+			create_production_license = {
+				target = HOL 
+				equipment = {
+					type = AA_Equipment_2
+				}
+				cost_factor = 0
+			}
+			
+		}
+	}
+	if = {
+		limit = { has_dlc = "Death or Dishonor" }
+		USA = {
+			create_production_license = {
+				target = HOL 
+				equipment = {
+					type = Air_UAV_equipment_2
+				}
+				cost_factor = 0
+			}
+			
+		}
+	}
+	if = {
+		limit = { has_dlc = "Death or Dishonor" }
+		USA = {
+			create_production_license = {
+				target = HOL 
+				equipment = {
+					type = attack_helicopter_equipment_3
+				}
+				cost_factor = 0
+			}
+			
+		}
+	}
+	if = {
+		limit = { has_dlc = "Death or Dishonor" }
+		USA = {
+			create_production_license = {
+				target = HOL 
+				equipment = {
+					type = transport_plane_equipment_4
+				}
+				cost_factor = 0
+			}
+			
+		}
+	}
+}		

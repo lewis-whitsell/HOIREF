@@ -1,0 +1,248 @@
+﻿capital = 849
+OOB = "VEN"
+set_convoys = 30
+set_research_slots = 3
+set_technology = {
+	### Navy ###
+	shipbuild_basics = 1
+	early_submarine = 1
+	early_destroyer = 1
+	early_light_cruiser = 1
+	transport = 1
+	####Tanks ###
+	### INF ###
+	infantry_weapons = 1
+	tech_mountaineers = 1
+	tech_support = 1
+	tech_recon = 1
+	gw_artillery = 1
+	### AIR ###
+	early_fighter = 1
+	naval_bomber1 = 1
+}
+
+set_politics = {
+
+	parties = {
+		totalist = {
+			popularity = 0
+		}
+		radical_socialist = {
+			popularity = 2
+		}
+		syndicalist = {
+			popularity = 5
+		}
+		social_democrat = {
+			popularity = 9
+		}
+		social_liberal = {
+			popularity = 10
+		}
+		market_liberal = {
+			popularity = 12
+		}
+		social_conservative = {
+			popularity = 47
+		}
+		authoritarian_democrat = {
+			popularity = 8
+		}
+		paternal_autocrat = {
+			popularity = 5
+		}
+		national_populist = {
+			popularity = 2
+		}
+	}
+	
+	ruling_party = social_conservative
+	last_election = "1888.15.6"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+add_ideas = { 
+	#medium_economy
+	VEN_Juan_Bautista_Perez_hog_sco
+	VEN_Esteban_Gil_Borges_for_ade
+	VEN_Pedro_Beauperthuy_Urich_eco_sco
+		VEN_Santiago_Key_Ayala_sec_ade
+}
+
+create_country_leader = {
+	name = "Eleazar López Contreras"
+	desc = "POLITICS_ELEAZAR_CONTRERAS_DESC"
+	picture = "Portrait_Venezuela_Eleazar_Contreraz.tga"
+	expire = "1965.1.1"
+	ideology = social_conservative_subtype
+	traits = {}
+}
+
+create_country_leader = {
+	name = "Rómulo Betancourt"
+	desc = "POLITICS_ROMULO_BETANCOURT_DESC"
+	picture = "Portrait_Venezuela_Romulo_Betancourt.tga"
+	expire = "1965.1.1"
+	ideology = social_democrat_subtype
+	traits = {}
+}
+
+create_country_leader = {
+	name = "Isaías Medina Angarita"
+	desc = "POLITICS_ISAIAS_MEDINA_DESC"
+	picture = "Portrait_Venezuela_Isaias_Medina.tga"
+	expire = "1965.1.1"
+	ideology = market_liberal_subtype
+	traits = {}
+}
+
+	create_country_leader = {
+	name = "Juan Bautista Fuenmayor"
+	desc = "POLITICS_JUAN_FUNEMAYOR_DESC"
+	picture = "Portrait_Venezuela_Juan_Funemayor.tga"
+	expire = "1965.1.1"
+	ideology = radical_socialist_subtype
+	traits = {}
+}
+
+	create_country_leader = {
+	name = "Tomas Contreras Villalobos"
+	desc = "POLITICS_TOMAS_VILLALOBOS_DESC"
+	picture = "Portrait_Venezuela_Tomas_Villalobos.tga"
+	expire = "1965.1.1"
+	ideology = national_populist_subtype
+	traits = {}
+}
+
+	create_country_leader = {
+	name = "Isidoro Ruiz Tuerro"
+	desc = "POLITICS_ISIDORO_TUERRO_DESC"
+	picture = "Portrait_Venezuela_Isidoro_Tuerro.tga"
+	expire = "1965.1.1"
+	ideology = paternal_autocrat_subtype
+	traits = {}
+}
+
+	create_country_leader = {
+	name = "Diogenes Escalante"
+	desc = "POLITICS_DIOGENES_ESCALANTE_DESC"
+	picture = "Portrait_Venezuela_Diogenes_Escalante.tga"
+	expire = "1965.1.1"
+	ideology = authoritarian_democrat_subtype
+	traits = {}
+}
+
+	create_country_leader = {
+	name = "Elías Toro"
+	desc = "POLITICS_ELIAS_TORO_DESC"
+	picture = "Portrait_Venezuela_Elias_Toro.tga"
+	expire = "1965.1.1"
+	ideology = social_liberal_subtype
+	traits = {}
+}
+
+### Field Marshal
+### Corps Commander
+create_corps_commander = { #Auto-Generated
+	name = "Marcos Perez Jimenez"
+	portrait_path = "gfx/leaders/VEN/Portrait_VEN_Marcos_Perez_Jimenez.tga"
+	traits = {
+	}
+	skill = 1
+}
+
+create_corps_commander = { #Auto-Generated
+	name = "Elías Guiterrez"
+	portrait_path = "gfx/leaders/VEN/Portrait_VEN_Elías_Guiterrez.tga"
+	traits = {
+	}
+	skill = 1
+}
+
+create_corps_commander = { #Auto-Generated
+	name = "Carlos Delgado Chabauld"
+	portrait_path = "gfx/leaders/VEN/Portrait_VEN_Delgado_Chabauld.tga"
+	traits = {
+		commando
+	}
+	skill = 1
+}
+
+create_corps_commander = { #Auto-Generated
+	name = "Eleazar Lopez Contreras"
+	portrait_path = "gfx/leaders/VEN/Portrait_VEN_Lopez_Contreras_General.tga"
+	traits = {
+		old_guard
+	}
+	skill = 2
+}
+
+create_corps_commander = { #Auto-Generated
+	name = "Lopez Marino"
+	portrait_path = "gfx/leaders/VEN/Portrait_VEN_Lopez_Marino.tga"
+	traits = {
+	}
+	skill = 1
+}
+
+create_corps_commander = { #Auto-Generated
+	name = "Isaias Medina Angarita"
+	portrait_path = "gfx/leaders/VEN/Portrait_Venezuela_Isaias_Medina.tga"
+	traits = {
+	trickster
+	}
+	skill = 3
+}
+
+create_corps_commander = { #Auto-Generated
+	name = "Reyes Chamorra"
+	portrait_path = "gfx/leaders/VEN/Portrait_VEN_Reyes_Chamorra.tga"
+	traits = {
+	}
+	skill = 1
+}
+
+create_corps_commander = { #Auto-Generated
+	name = "Simon Rios"
+	portrait_path = "gfx/leaders/VEN/Portrait_VEN_Simon_Rios.tga"
+	traits = {
+	}
+	skill = 1
+}
+
+create_corps_commander = { #Auto-Generated
+	name = "Toro Key"
+	portrait_path = "gfx/leaders/VEN/Portrait_VEN_Toro_Key.tga"
+	traits = {
+		commando
+	}
+	skill = 1
+}
+
+create_corps_commander = { #Auto-Generated
+	name = "Vicente Gomez"
+	portrait_path = "gfx/leaders/VEN/Portrait_VEN_Vicente_Gomez.tga"
+	traits = {
+	}
+	skill = 1
+}
+
+### Navy Leader
+create_navy_leader = { #Auto-Generated
+	name = "Mariano Henrique López Méndez"
+	portrait_path = "gfx/leaders/VEN/Portrait_VEN_Mariano_Mendez.tga"
+	traits = {
+		old_guard
+		superior_tactician
+	}
+	skill = 1
+}
+
+create_navy_leader = { #Auto-Generated
+	name = "Wolfgang Enrique Larrazábal Ugueto"
+	portrait_path = "gfx/leaders/VEN/Portrait_VEN_Wolfgang_Enrique.tga"
+	traits = {
+	}
+	skill = 1
+}

@@ -1,0 +1,271 @@
+﻿###########################
+# Iraq Events
+###########################
+
+add_namespace = iraq
+add_namespace = IRQ
+
+#Surrender when Israel has taken too much land in Iraq
+country_event = {
+	id = iraq.1
+	title = iraq.1.t
+	desc = iraq.1.d
+	picture = GFX_report_event_soviet_tanks_snow
+	
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	#Surrender and offer territory
+	option = {
+		name = iraq.1.a
+
+		ISR = {
+			country_event = { id = iraq.2 }
+		}
+		custom_effect_tooltip = iraq.1.a_tt
+		effect_tooltip = {
+			ISR = { 
+				white_peace = {
+					tag = IRQ 
+					message = IRQ_agree_peace 
+				} 
+			}
+
+		}
+	}
+}
+
+#Israel response to Iraq surrender
+country_event = {
+	id = iraq.2
+	title = iraq.2.t
+	desc = iraq.2.d
+	picture = GFX_report_event_finnish_soldiers_snow
+	
+	is_triggered_only = yes
+
+	#Accept surrender
+	option = {
+		name = iraq.2.a
+
+		white_peace = IRQ
+	}
+}
+
+
+
+
+###############################################################################
+
+add_namespace = swfs
+add_namespace = ARF
+country_event = {
+	id = swfs.2
+	title = "14th of July Revolution"
+	desc = "Free Officer Coup Attempt"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "Successful Coup"
+		release = JOR
+		drop_cosmetic_tag = yes	
+		set_country_flag = fall_of_the_monarchy
+			set_politics = { ruling_party = socialist elections_allowed = no }
+			add_timed_idea = { idea = IRQ_free_officer_era_drift days = 365 }	
+		ai_chance = {
+			factor = 80
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 100
+			}
+		}
+	}
+
+	option = {
+		ai_chance = {
+			factor = 20
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+		name = "Support the Monarchy"
+		set_country_flag = stand_with_the_monarchy
+		start_civil_war = { ideology = socialist size = 0.40 }	
+	}
+}
+
+country_event = {
+	id = swfs.5
+	title = "Iraq Requests the Annexation of Kuwait"
+	desc = "Iraq Requests the Annexation of Kuwait"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "Agree to the Demands"
+		IRQ = { annex_country = { target = KUW } }
+		ai_chance = {
+			factor = 80
+		}
+	}
+
+	option = {
+		ai_chance = {
+			factor = 20
+		}
+		name = "Decline"
+		IRQ = { create_wargoal = { type = annex_everything target = KUW }	}
+	}
+}
+country_event = {
+	id = ARF.1
+	title = "The Arab Federation"
+	desc = "The Arab Federation Proposal to Unite Iraq and Jordan"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "Agree to the Proposal"
+		FROM = {
+			set_cosmetic_tag = ARF_IRQ
+			annex_country = { target = ROOT transfer_troops = yes } 
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+
+	option = {
+		ai_chance = {
+			factor = 0
+		}
+		name = "Decline"
+
+	}
+}
+country_event = {
+	id = swfs.1250
+	title = "Pro-Iranian Uprising in Kuwait"
+	desc = "Pro-Iranian Uprising in Kuwait"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "Agree to the Demands"
+		PER = { annex_country = { target = KUW } }
+		ai_chance = {
+			factor = 80
+		}
+	}
+
+	option = {
+		ai_chance = {
+			factor = 20
+		}
+		name = "Reject Demands"
+		KUW = {
+			add_stability = -0.25
+		}
+	}
+}	
+country_event = {
+	id = IRQ.1500
+	title = "Iraq Proposes Royal Marriage and Unification"
+	desc = "Iraq Proposes Royal Marriage and Unification"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "Agree to the Proposal"
+		FROM = {
+			set_cosmetic_tag = IMP_IRQ
+			annex_country = { target = PER transfer_troops = yes } 
+			create_country_leader = {
+				name = "Mohammad Reza Pahlavi"
+				desc = "POLITICS_REZA_SHAH_PAHLAVI_DESC"
+				picture = "Reza.dds"
+				expire = "1965.1.1"
+				ideology = royal_democrat
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+
+	option = {
+		ai_chance = {
+			factor = 0
+		}
+		name = "Decline"
+
+	}
+}
+
+country_event = {
+	id = IRQ.1752
+	title = "Iraq Demands Turkish Kurdistan"
+	desc = "Iraq Demands Turkish Kurdistan"
+
+	is_triggered_only = yes
+
+	immediate = {
+		349 = { add_core_of = IRQ }
+		350 = { add_core_of = IRQ }
+		352 = { add_core_of = IRQ }
+		353 = { add_core_of = IRQ }
+	}
+	option = {
+		name = "Agree to the Demands"
+		IRQ = { transfer_state = 349 }
+		IRQ = { transfer_state = 350 }
+		IRQ = { transfer_state = 352 }	
+		IRQ = { transfer_state = 353 }	
+		ai_chance = {
+			factor = 80
+		}
+	}
+
+	option = {
+		ai_chance = {
+			factor = 20
+		}
+		name = "Decline"
+		IRQ = { create_wargoal = { type = annex_everything target = TUR }	}
+	}
+}
+country_event = {
+	id = IRQ.1751
+	title = "Iraq Demands Kurdistan and Khuzestan"
+	desc = "Iraq Demands Kurdistan and Khuzestan"
+
+	is_triggered_only = yes
+	immediate = {
+		778 = { add_core_of = IRQ }
+		421 = { add_core_of = IRQ }
+		413 = { add_core_of = IRQ }
+	}
+	option = {
+		name = "Agree to the Demands"
+		IRQ = { transfer_state = 778 }
+		IRQ = { transfer_state = 421 }
+		IRQ = { transfer_state = 413 }	
+		
+
+		ai_chance = {
+			factor = 80
+		}
+	}
+
+	option = {
+		ai_chance = {
+			factor = 20
+		}
+		name = "Decline"
+		IRQ = { create_wargoal = { type = annex_everything target = PER }	}
+	}
+}

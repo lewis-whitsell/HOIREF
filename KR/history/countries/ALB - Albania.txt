@@ -1,0 +1,101 @@
+﻿capital = 44
+
+OOB = "ALB"
+
+set_convoys = 20
+set_research_slots = 3
+set_technology = {
+	### MOD ###
+	### General ###
+	shipbuild_basics = 1
+	### Navy ###
+	### Tanks ###
+	### INF ###
+	infantry_weapons = 1
+	tech_support = 1
+	tech_recon = 1
+	### AIR ###
+}
+
+add_ideas = { 
+	#medium_economy
+	ALB_Midhat_Frasheri_hog_ade
+	ALB_Fuat_Aslam_for_ade
+	ALB_Ruok_Geraj_eco_ade
+	ALB_Jocelyn_Percy_sec_ade
+}
+	
+set_politics = {
+
+	parties = {
+		totalist = {
+			popularity = 0
+		}
+		radical_socialist = {
+			popularity = 0
+		}
+		syndicalist = {
+			popularity = 2
+		}
+		social_democrat = {
+			popularity = 4
+		}
+		social_liberal = {
+			popularity = 6
+		}
+		market_liberal = {
+			popularity = 8
+		}
+		social_conservative = {
+			popularity = 12
+		}
+		authoritarian_democrat = {
+			popularity = 41
+		}
+		paternal_autocrat = {
+			popularity = 19
+		}
+		national_populist = {
+			popularity = 8
+		}
+	}
+	
+	ruling_party = authoritarian_democrat
+	last_election = "1888.15.6"
+	election_frequency = 48
+	elections_allowed = no
+
+}
+
+create_country_leader = {
+	name = "Prince Wilhelm zu Wied"
+	desc = "POLITICS_WILLIAM_WIED_DESC"
+	picture = "Portrait_Albania_Wilhelm_Wied.tga"
+	expire = "1965.1.1"
+	ideology = authoritarian_democrat_subtype
+	traits = {}
+}
+
+create_country_leader = {
+	name = "Prince Wilhelm zu Wied"
+	desc = "POLITICS_WILLIAM_WIED_DESC"
+	picture = "Portrait_Albania_Wilhelm_Wied.tga"
+	expire = "1965.1.1"
+	ideology = paternal_autocrat_subtype
+	traits = {}
+}
+
+### Corps Commander
+create_corps_commander = {
+	name = "Muharrem Bajraktari"
+	portrait_path = "gfx/leaders/ALB/Portrait_Albania_Muharrem_Bajraktari.tga"
+	traits = {}
+	skill = 1
+}
+
+create_corps_commander = {
+	name = "Prenk Pervizi"
+	portrait_path = "gfx/leaders/ALB/Portrait_Albania_Prenk_Pervizi.tga"
+	traits = {}
+	skill = 1
+}

@@ -1,0 +1,285 @@
+﻿capital = 117
+
+oob = "SRI"
+
+set_research_slots = 3
+
+add_ideas = { 
+	#medium_economy
+	SRI_Antonio_Gramsci_hog_syn
+	SRI_Pietro_Nenni_for_syn
+	SRI_Vittorio_Vidali_eco_syn
+	SRI_Ruggiero_Grieco_sec_syn
+	SRI_crime_problem
+	SRI_recovering_economy
+	SRI_divided_nation
+}
+
+add_opinion_modifier = { target = AST modifier = embargo }
+add_opinion_modifier = { target = AUS modifier = embargo }
+add_opinion_modifier = { target = BOM modifier = embargo }
+add_opinion_modifier = { target = HUN modifier = embargo }
+add_opinion_modifier = { target = CRO modifier = embargo }
+add_opinion_modifier = { target = CAN modifier = embargo }
+add_opinion_modifier = { target = GER modifier = embargo }
+add_opinion_modifier = { target = SAU modifier = embargo }
+add_opinion_modifier = { target = ITA modifier = embargo }
+add_opinion_modifier = { target = LIT modifier = embargo }
+add_opinion_modifier = { target = MAF modifier = embargo }
+add_opinion_modifier = { target = FRP modifier = embargo }
+add_opinion_modifier = { target = OTT modifier = embargo }
+add_opinion_modifier = { target = PRF modifier = embargo }
+add_opinion_modifier = { target = BUL modifier = embargo }
+add_opinion_modifier = { target = UKR modifier = embargo }
+add_opinion_modifier = { target = WHR modifier = embargo }
+add_opinion_modifier = { target = GBR modifier = embargo }
+add_opinion_modifier = { target = BAT modifier = embargo }
+
+# Starting tech
+set_technology = {
+	shipbuild_basics = 1
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1		
+	tech_engineers = 1
+	tech_mountaineers = 1
+	motorised_infantry = 1
+	gw_artillery = 1
+	gwtank = 1
+	basic_light_tank = 1
+	early_fighter = 1
+	early_bomber = 1
+	naval_bomber1 = 1
+	CAS1 = 1
+	early_submarine = 1
+	early_destroyer = 1
+	early_light_cruiser = 1
+	early_heavy_cruiser = 1
+	early_battleship = 1
+	basic_battleship = 1
+	early_battlecruiser = 1
+	transport = 1
+}
+
+
+
+set_convoys = 50
+set_national_unity = 0.6
+
+country_event = { id = socitaly.1 days = 1 }
+
+set_politics = {
+
+	parties = {
+		totalist = {
+			popularity = 10
+		}
+		radical_socialist = {
+			popularity = 28
+		}
+		syndicalist = {
+			popularity = 48
+		}
+		social_democrat = {
+			popularity = 10
+		}
+		social_liberal = {
+			popularity = 5
+		}
+		market_liberal = {
+			popularity = 0
+		}
+		social_conservative = {
+			popularity = 0
+		}
+		authoritarian_democrat = {
+			popularity = 0
+		}
+		paternal_autocrat = {
+			popularity = 0
+		}
+		national_populist = {
+			popularity = 0
+		}
+	}
+	
+	ruling_party = syndicalist
+	last_election = "1930.11.9"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+
+
+create_country_leader = {
+	name = "Benito Mussolini"
+	picture = "Portrait_Italy_Benito_Mussolini.tga"
+	expire = "1965.1.1"
+	ideology = totalist_subtype
+	traits = {
+		warmonger
+	}
+}
+
+create_country_leader = {
+	name = "Palmiro Togliatti"
+	picture = "Portrait_Italy_Palmiro_Togliatti.tga"
+	expire = "1965.1.1"
+	ideology = syndicalist_subtype
+	traits = {}
+}
+
+create_country_leader = {
+	name = "Filippo Turati"
+	picture = "Portrait_Italy_Filippo_Turati.tga"
+	expire = "1965.1.1"
+	ideology = radical_socialist_subtype
+	traits = {}
+}
+
+create_country_leader = {
+	name = "Enrico De Nicola"
+	picture = "Portrait_Italy_Enrico_De_Nicola.tga"
+	expire = "1965.1.1"
+	ideology = social_liberal_subtype
+	traits = {}
+}
+
+create_country_leader = {
+	name = "Mario Scelba"
+	picture = "Portrait_Italy_Mario_Scelba.tga"
+	expire = "1965.1.1"
+	ideology = social_conservative_subtype
+	traits = {}
+}
+
+create_country_leader = {
+	name = "Sandro Pertini"
+	picture = "Portrait_Italy_Sandro_Pertini.tga"
+	expire = "1965.1.1"
+	ideology = social_democrat_subtype
+	traits = {}
+}
+
+create_country_leader = {
+	name = "Alfonso Maria di Borbone-Due Sicilie"
+	picture = "Portrait_SRI_Alfonso_Maria_di_Borbone.tga"
+	expire = "1965.1.1"
+	ideology = authoritarian_democrat_subtype
+	traits = {}
+}
+
+create_country_leader = {
+	name = "Fulco Ruffo di Calabria"
+	picture = "Portrait_Italy_Fulco_Ruffo_di_Calabria.tga"
+	expire = "1965.1.1"
+	ideology = paternal_autocrat_subtype
+	traits = {}
+}
+
+create_country_leader = {
+	name = "Vito Cascio Ferro"
+	picture = "Portrait_Italy_Vito_Cascio_Ferro.tga"
+	expire = "1965.1.1"
+	ideology = national_populist_subtype
+	traits = {}
+}
+
+
+### Field Marshal
+create_field_marshal = { #Auto-Generated
+	name = "Italo Balbo"
+	portrait_path = "gfx/leaders/ITA/portrait_italy_italo_balbo.dds"
+	traits = {
+		logistics_wizard
+	}
+	skill = 3
+	id = 850
+}
+
+create_field_marshal = { #Auto-Generated
+	name = "Emilio De Bono"
+	portrait_path = "gfx/leaders/ITA/Portrait_SRI_Emilio_De_Bono.tga"
+	traits = {
+		defensive_doctrine
+		old_guard
+	}
+	skill = 1
+	id = 851
+}
+
+### Corps Commander
+create_corps_commander = { #Auto-Generated
+	name = "Roberto Farinacci"
+	portrait_path = "gfx/leaders/SRI/Portrait_SRI_Farinacci.tga"
+	traits = {
+	}
+	skill = 1
+}
+
+create_corps_commander = { #Auto-Generated
+	name = "Gastone Gambara"
+	portrait_path = "gfx/leaders/SRI/Portrait_SRI_Gambara.tga"
+	traits = {
+		winter_specialist
+	}
+	skill = 2
+	rank = 1
+}
+
+create_corps_commander = { #Auto-Generated
+	name = "Rodolfo Graziani"
+	portrait_path = "gfx/leaders/ITA/portrait_italy_radolfo_graziani.dds"
+	traits = {
+	}
+	skill = 2
+}
+
+create_corps_commander = { #Auto-Generated
+	name = "Cesare Maria De Vecchi"
+	portrait_path = "gfx/leaders/SRI/Portrait_SRI_de_Vecchi.tga"
+	traits = {
+		old_guard
+	}
+	skill = 1
+	id = 852
+}
+
+create_corps_commander = {
+	name = "Ubaldo Soddu"
+	portrait_path = "gfx/leaders/ITA/Portrait_Italy_Ubaldo_Soddu.dds"
+	traits = {  }
+	skill = 1
+}
+
+create_corps_commander = {
+	name = "Annibale Bergonzoli"
+	picture = "Portrait_Italy_Annibale_Bergonzoli.tga"
+	traits = { old_guard }
+	skill = 2
+}
+
+### Navy Leader
+
+create_navy_leader = {
+	name = "Carlo Bergamini"
+	portrait_path = "gfx/leaders/ITA/Portrait_Italy_Carlo_Bergamini.dds"
+	traits = { superior_tactician }
+	skill = 2
+}
+
+create_navy_leader = {
+	name = "Angelo Iachino"
+	portrait_path = "gfx/leaders/ITA/Portrait_Italy_Angelo_Iachino.dds"
+	traits = { superior_tactician spotter }
+	skill = 2
+}
+
+create_navy_leader = { #Auto-Generated
+	name = "Luigi Rizzo"
+	portrait_path = "gfx/leaders/SRI/Portrait_SRI_Rizzo.tga"
+	traits = {
+	}
+	skill = 1
+}
+

@@ -1,0 +1,70 @@
+﻿capital = 304
+OOB = "PAN"
+set_convoys = 10
+set_research_slots = 2
+set_technology = {
+	### Navy ###
+	shipbuild_basics = 1
+	early_submarine = 1
+	early_destroyer = 1
+	transport = 1
+	####Tanks ###
+	### INF ###
+	infantry_weapons = 1
+	tech_support = 1
+	tech_engineers = 1
+	gw_artillery = 1
+	### AIR ###
+	early_fighter = 1
+	naval_bomber1 = 1
+}
+
+set_politics = {
+
+	parties = {
+		totalist = {
+			popularity = 2
+		}
+		radical_socialist = {
+			popularity = 3
+		}
+		syndicalist = {
+			popularity = 4
+		}
+		social_democrat = {
+			popularity = 8
+		}
+		social_liberal = {
+			popularity = 16
+		}
+		market_liberal = {
+			popularity = 52
+		}
+		social_conservative = {
+			popularity = 7
+		}
+		authoritarian_democrat = {
+			popularity = 4
+		}
+		paternal_autocrat = {
+			popularity = 3
+		}
+		national_populist = {
+			popularity = 1
+		}
+	}
+	
+	ruling_party = market_liberal
+	last_election = "1888.15.6"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+create_country_leader = {
+	name = "Juan Demostenes Arosemena"
+	desc = "POLITICS_JUAN_AROSEMENA_DESC"
+	picture = "Portrait_Panama_Juan_Demostenes_Arosemena.tga"
+	expire = "1965.1.1"
+	ideology = market_liberal_subtype
+	traits = {}
+}

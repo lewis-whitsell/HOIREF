@@ -1,0 +1,151 @@
+﻿add_namespace = eng
+
+#Independence of Uganda
+country_event = {
+  id = eng.5
+	title = eng.5.t
+	desc = eng.5.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+	  ai_chance = {
+		  factor = 90
+		}
+		name = eng.5.a
+				set_autonomy = { target = UGA autonomy_state = autonomy_free }	
+				UGA = {
+					set_politics = {
+						ruling_party = democratic
+						elections_allowed = yes
+					}				
+					create_country_leader = {
+						name = "Milton Obote"
+						picture = "gfx/leaders/AFR/Obote.dds"
+						expire = "1999.1.1"
+						ideology = liberalism
+					}
+					drop_cosmetic_tag = yes
+				}
+		
+	}
+
+	option = {
+	  ai_chance = {
+		  factor = 10
+		}
+		name = eng.5.b
+		add_political_power = -125
+	}
+}
+
+	#Independence of Nigeria
+	country_event = {
+	  id = eng.6
+		title = eng.6.t
+		desc = eng.6.d
+		is_triggered_only = yes
+		fire_only_once = yes
+
+
+		option = {
+		  ai_chance = {
+			  factor = 90
+			}
+			name = eng.6.a
+				drop_cosmetic_tag = yes
+				set_autonomy = { target = NIA autonomy_state = autonomy_free }	
+				NIA = {
+					set_politics = {
+						ruling_party = democratic
+						elections_allowed = yes
+					}
+					create_country_leader = {
+						name = "Nnamdi Azikiwe"
+						picture = "gfx/leaders/AFR/Azikiwe.dds"
+						expire = "1999.1.1"
+						ideology = liberalism
+					}
+				}
+		}
+
+		option = {
+		  ai_chance = {
+			  factor = 10
+			}
+			name = eng.6.b
+			add_political_power = -125
+		}
+  }
+
+	#Independence of Kenya
+	country_event = {
+	  id = eng.7
+		title = eng.7.t
+		desc = eng.7.d
+		is_triggered_only = yes
+		fire_only_once = yes
+
+
+		option = {
+		  ai_chance = {
+			  factor = 90
+			}
+			name = eng.7.a
+				drop_cosmetic_tag = yes
+				set_autonomy = { target = KEN autonomy_state = autonomy_free }	
+				KEN = {
+					set_politics = {
+						ruling_party = democratic
+						elections_allowed = yes
+					}
+					create_country_leader = {
+						name = "Jomo Kenyatta"
+						picture = "Jomo.dds"
+						expire = "1999.1.1"
+						ideology = liberalism
+					}		
+				}
+		}
+
+		option = {
+		  ai_chance = {
+			  factor = 10
+			}
+			name = eng.7.b
+			add_political_power = -125
+		}
+  }
+
+	#Independence of Sudan
+	country_event = {
+	  id = eng.8
+		title = eng.8.t
+		desc = eng.8.d
+		is_triggered_only = yes
+		fire_only_once = yes
+
+
+		option = {
+		  ai_chance = {
+			  factor = 90
+			}
+			name = eng.8.a
+			set_autonomy = { target = SUD autonomy_state = autonomy_free }	
+			SUD = {
+				drop_cosmetic_tag = yes
+				set_politics = {
+					ruling_party = centrist
+					elections_allowed = yes
+				}	
+			}
+		}
+
+		option = {
+		  ai_chance = {
+			  factor = 10
+			}
+			name = eng.8.b
+			add_political_power = -125
+		}
+  }

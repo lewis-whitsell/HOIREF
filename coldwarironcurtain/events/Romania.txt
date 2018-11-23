@@ -1,0 +1,79 @@
+﻿add_namespace = swfs
+country_event = {
+	id = swfs.3
+	title = "Romania Demands The Return of Moldavia"
+	desc = "Romania Demands The Return of Moldavia"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "Agree to the Demands"
+		ROM = { transfer_state = 78 }
+        ROM = { transfer_state = 1235 } 		
+        UKR = { transfer_state = 949 } 
+		ai_chance = {
+			factor = 80
+		}
+	}
+
+	option = {
+		ai_chance = {
+			factor = 20
+		}
+		name = "Decline"
+
+	}
+}
+country_event = {
+	id = swfs.4
+	title = "Romania Demands The Return of Bucovina"
+	desc = "Romania Demands The Return of Bucovina"
+
+	is_triggered_only = yes
+
+	option = {
+		name = "Agree to the Demands"
+		ROM = { transfer_state = 80 } 
+		80 = { add_core_of = ROM }
+		ai_chance = {
+			factor = 80
+		}
+	}
+
+	option = {
+		ai_chance = {
+			factor = 20
+		}
+		name = "Decline"
+
+	}
+}
+add_namespace = ROM
+country_event = {
+	id = ROM.1
+	title = "Nicolae Ceausescu becomes the General Secretary"
+	desc = ""
+	picture = GFX_report_event_usa_election_generic
+
+	is_triggered_only = yes
+
+	trigger = {
+		tag = ROM
+		date > 1965.4.2
+		date < 1965.4.22
+	}
+
+	option = { 
+		name = "God bless Romania"
+		ai_chance = {
+			factor = 100
+		}
+		set_politics = { ruling_party = communism elections_allowed = no }
+	create_country_leader = {
+		name = "Nicolae Ceausescu"
+		picture = "Portrait_romania_NicolaeCeausescu.dds"
+		expire = "1989.12.25"
+		ideology = stalinism
+	}
+     }
+}

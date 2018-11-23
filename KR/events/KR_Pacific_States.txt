@@ -1,0 +1,1430 @@
+﻿###########################
+# Pacific States Events
+###########################
+# By esmaerla and herkles
+###########################
+
+add_namespace = pacificstates
+
+country_event = {# The Capital
+	id = pacificstates.2
+	title = pacificstates.2.t
+	desc = pacificstates.2.d
+	picture = GFX_report_event_spain_civil_war_soldiers
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = CAL
+		has_global_flag = END_ACW
+		has_war = no
+		OR = {
+			owns_state = 386
+			owns_state = 378
+			owns_state = 797
+			owns_state = 798
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 12
+	}
+
+	option = {
+		name = pacificstates.2.a
+
+		ai_chance = {
+			factor = 33
+		}
+		trigger = { owns_state = 378 }
+
+		set_capital = 378
+	}
+
+	option = {
+		name = pacificstates.2.b
+
+		ai_chance = {
+			factor = 33
+		}
+		trigger = { owns_state = 798 }
+
+		set_capital = 798
+	}
+
+	option = {
+		name = pacificstates.2.c
+
+		ai_chance = {
+			factor = 17
+		}
+		trigger = { owns_state = 386 }
+
+		set_capital = 386
+	}
+
+	option = {
+		name = pacificstates.2.e
+
+		ai_chance = {
+			factor = 17
+		}
+		trigger = { owns_state = 797 }
+
+		set_capital = 797
+	}
+}
+country_event = {# The name of Washington State
+	id = pacificstates.3
+	title = pacificstates.3.t
+	desc = pacificstates.3.d
+	picture = GFX_report_event_spain_civil_war_soldiers
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = CAL
+		owns_state = 386
+		NOT = { is_subject = yes }
+	}
+
+	mean_time_to_happen = {
+		days = 15
+	}
+
+	option = {
+		name = pacificstates.3.a
+		ai_chance = {
+			factor = 80
+		}
+		386 = { set_state_name = "Columbia" }
+		add_opinion_modifier = { target = USA modifier = CAL_RENAME } # -20
+	}
+	option = {
+		name = pacificstates.3.b
+		ai_chance = {
+			factor = 20
+		}
+		add_opinion_modifier = { target = USA modifier = CAL_NO_RENAME } # 20
+	}
+}
+country_event = {# The Hughes Airshow
+	id = pacificstates.4
+	title = pacificstates.4.t
+	desc = pacificstates.4.d
+	picture = GFX_report_event_spain_civil_war_soldiers
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = CAL
+		NOT = { has_global_flag = END_ACW }
+		has_war = yes
+		has_political_power < -300
+	}
+
+	mean_time_to_happen = {
+		days = 5
+	}
+
+	option = {
+		name = pacificstates.4.a
+
+		add_political_power = 40
+	}
+}
+country_event = {# PSA wins Long and the AUS escape to South America
+	id = pacificstates.5
+	title = pacificstates.5.t
+	desc = pacificstates.5.d
+	picture = GFX_report_event_spain_civil_war_soldiers
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = CAL
+		has_global_flag = END_ACW
+		has_global_flag = ACW_AUS
+		NOT = { country_exists = TEX }
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = pacificstates.5.a
+
+		add_political_power = 20
+	}
+}
+country_event = {# Reed escapes to France
+	id = pacificstates.6
+	title = pacificstates.6.t
+	desc = pacificstates.6.d
+	picture = GFX_report_event_spain_civil_war_soldiers
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = CAL
+		country_exists = FRA
+		has_global_flag = END_ACW
+		has_global_flag = ACW_CSA
+		NOT = { country_exists = CSA }
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = pacificstates.6.a
+
+		add_political_power = -20
+		add_opinion_modifier = { target = FRA modifier = REED_ESCAPES } # -25
+	}
+}
+country_event = {# Conscription or volunteer
+	id = pacificstates.14
+	title = pacificstates.14.t
+	desc = pacificstates.14.d
+	picture = GFX_report_event_spain_civil_war_soldiers
+
+	is_triggered_only = yes
+
+	option = {
+		name = pacificstates.14.a
+
+		ai_chance = {
+			factor = 40
+		}
+
+		add_political_power = -100
+		add_ideas = limited_conscription
+		add_manpower = 80000
+	}
+
+	option = {
+		name = pacificstates.14.b
+
+		ai_chance = {
+			factor = 60
+		}
+
+		add_political_power = 20
+		add_ideas = volunteer_only
+		add_manpower = 40000
+	}
+}
+country_event = {# Bank of the Pacific
+	id = pacificstates.15
+	title = pacificstates.15.t
+	desc = pacificstates.15.d
+	picture = GFX_report_event_spain_civil_war_soldiers
+
+	is_triggered_only = yes
+
+	option = {
+		name = pacificstates.15.a
+
+		add_timed_idea = { idea = bank_of_the_pacific days = 730 }
+	}
+}
+country_event = {# A new flag for the new pacific states ?
+	id = pacificstates.8
+	title = pacificstates.8.t
+	desc = pacificstates.8.d
+	picture = GFX_report_event_spain_civil_war_soldiers
+
+	fire_only_once = yes
+
+	trigger = { tag = CAL
+		owns_state = 797
+		owns_state = 798
+		owns_state = 386 
+		OR = {
+			AND = { owns_state = 379 owns_state = 379 }
+			AND = { owns_state = 387 owns_state = 387 }
+		}
+		date > 1937.1.1 
+	}
+
+	mean_time_to_happen = { days = 5 }
+
+	option = {
+		name = pacificstates.8.a # Yes, it should represent our 'newcomers'
+
+		ai_chance = {
+			factor = 50
+		}
+
+		add_political_power = 20
+		set_cosmetic_tag = CAL_NEW
+
+	}
+	option = {
+		name = pacificstates.8.b # No, we shall fly the banner that has brought us victory!
+
+		ai_chance = {
+			factor = 50
+		}
+
+		add_political_power = -20
+	}
+}
+country_event = {# Royal Visit to the Pacific States(Canada)
+	id = pacificstates.20
+	title = pacificstates.20.t
+	desc = pacificstates.20.d
+	picture = GFX_report_event_spain_civil_war_soldiers
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = CAN
+		CAL = {
+			has_completed_focus = CAL_canadian_freindship
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 365
+	}
+
+	option = {# Royal Charm meets Hollywood Glamor
+		name = pacificstates.20.a
+		add_political_power = 50
+		hidden_effect = {
+			CAL = { country_event = { id = pacificstates.21 days = 2 }}
+		}
+	}
+}
+country_event = {# Royal Visit to the Pacific States(PSA)
+	id = pacificstates.21
+	title = pacificstates.21.t
+	desc = pacificstates.21.d
+	picture = GFX_report_event_spain_civil_war_soldiers
+
+	is_triggered_only = yes
+
+	option = {# Who doesn't love a visiting royal!
+		name = pacificstates.21.a
+		add_political_power = 50
+		add_opinion_modifier = { target = CAN modifier = CAN_royal_visit }
+		CAN = { add_opinion_modifier = { target = ROOT modifier = CAN_royal_visit } }		
+	}
+}
+country_event = {# Referendum to split California
+	id = pacificstates.22
+	title = pacificstates.22.t
+	desc = pacificstates.22.d
+	picture = GFX_report_event_spain_civil_war_soldiers
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = CAL
+		has_completed_focus = CAL_new_nationalism
+		date > 1940.1.1 
+	}
+
+	mean_time_to_happen = {
+		days = 365
+	}
+
+	option = {# Split the State!
+		name = pacificstates.22.a
+		ai_chance = { factor = 80 }
+		add_political_power = 60
+		378 = { set_state_name = "Jefferson" }
+		829 = { set_state_name = "Mojave" }
+	}
+	option = {# Don't Split the State
+		name = pacificstates.22.b
+		ai_chance = { factor = 20 }
+		add_political_power = -40
+	}	
+}
+country_event = {# The Golden Gate Bridge is Complete
+	id = pacificstates.23
+	title = pacificstates.23.t
+	desc = pacificstates.23.d
+	picture = GFX_Golden_Gate_Bridge
+
+	fire_only_once = yes
+	trigger = {
+		tag = CAL
+		date > 1937.4.19
+		owns_state = 797
+		controls_state = 797
+	}
+
+	option = {
+		name= pacificstates.23.a
+
+		add_political_power = 20
+	}
+
+}
+###############################
+### Foreign Policies Events ###
+###############################
+country_event = { # PSA puppets Mexico
+	id = pacificstates.40
+	title = pacificstates.40.t
+	desc = pacificstates.40.d
+	picture = GFX_report_event_spain_civil_war_soldiers
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = MEX
+		surrender_progress > 0.2
+		has_war_with = CAL
+		CAL = { owns_state = 482 }
+	}
+
+	option = {
+		name = pacificstates.40.a
+
+		ai_chance = {
+			factor = 99
+		}
+
+		CAL = { country_event = { id = pacificstates.41 } }
+	}
+
+	option = {
+		name = pacificstates.40.b
+
+		ai_chance = {
+			factor = 1
+		}
+
+		add_political_power = 20
+	}
+}
+country_event = { # Mexico Surrenders
+	id = pacificstates.41
+	title = pacificstates.41.t
+	desc = pacificstates.41.d
+	picture = GFX_report_event_spain_civil_war_soldiers
+
+	is_triggered_only = yes
+
+	option = {
+		name = pacificstates.41.a
+
+		ai_chance = {
+			factor = 15
+		}
+
+		MEX = { white_peace_with_ROOT = yes }
+		add_state_core = 484
+		add_political_power = 40
+		MEX = { country_event = { id = pacificstates.42 } }
+	}
+
+	option = {
+		name = pacificstates.41.b
+
+		ai_chance = {
+			factor = 50
+		}
+
+		MEX = { white_peace_with_ROOT = yes }
+		puppet = MEX
+		add_political_power = 20
+	}
+
+	option = {
+		name = pacificstates.41.c
+
+		ai_chance = {
+			factor = 10
+		}
+
+		MEX = { white_peace_with_ROOT = yes }
+		puppet = MEX
+		add_state_core = 484
+		add_political_power = 100
+		MEX = { country_event = { id = pacificstates.42 } }
+	}
+
+	option = {
+		name = pacificstates.41.e
+
+		ai_chance = {
+			factor = 25
+		}
+
+		MEX = { white_peace_with_ROOT = yes }
+	}
+}
+country_event = { # The loss of South California
+	id = pacificstates.42
+	title = pacificstates.42.t
+	desc = pacificstates.42.d
+	picture = GFX_report_event_spain_civil_war_soldiers
+
+	is_triggered_only = yes
+
+	option = {
+		name = pacificstates.42.a
+
+		add_political_power = -80
+
+		CAL = { transfer_state = 484 }
+	}
+}
+#####################################################
+#PSA after civil war - USA democracy, PSA democracy #
+#####################################################
+country_event = {# Rejoin the US?
+	id = pacificstates.43
+	title = pacificstates.43.t
+	desc = pacificstates.43.d
+	picture = GFX_report_event_spain_civil_war_soldiers
+
+	is_triggered_only = yes
+
+	option = {# We shall not Rejoin America!
+		name = pacificstates.43.b
+
+		ai_chance = {
+			factor = 5
+		}
+
+		add_political_power = -20
+	}
+	option = {# We shall but with Autonomy
+		name = pacificstates.43.c
+
+		ai_chance = {
+			factor = 15
+		}
+
+		USA = { country_event = { id = pacificstates.44 } }
+	}
+	option = {# Time to rejoin completely
+		name = pacificstates.43.e
+
+		ai_chance = {
+			factor = 80
+		}
+
+		USA = { country_event = { id = pacificstates.45 } }
+	}
+}
+country_event = {# PSA becames US puppet
+	id = pacificstates.44
+	title = pacificstates.44.t
+	desc = pacificstates.44.d
+	picture = GFX_report_event_spain_civil_war_soldiers
+
+	is_triggered_only = yes
+
+	option = {
+		name = pacificstates.44.a
+
+		ai_chance = {
+			factor = 70
+		}
+
+		puppet = CAL
+		remove_state_claim = 386
+		remove_state_claim = 385
+		remove_state_claim = 378
+		remove_state_claim = 829
+		remove_state_claim = 797
+		remove_state_claim = 798
+		remove_state_core = 386
+		remove_state_core = 385
+		remove_state_core = 378
+		remove_state_core = 829
+		remove_state_core = 797
+		remove_state_core = 798
+		if = { limit = { CAL = { owns_state = 379 owns_state = 387 } }
+		remove_state_claim = 379
+		remove_state_claim = 387
+		remove_state_core = 379
+		remove_state_core = 387 }
+		add_political_power = -20
+	}
+	option = {
+		name = pacificstates.44.b
+
+		ai_chance = {
+			factor = 0
+		}
+
+		add_political_power = -200
+	}
+	option = {
+		name = pacificstates.44.c
+
+		ai_chance = {
+			factor = 30
+		}
+
+		add_political_power = -100
+		add_state_core = 386
+		add_state_core = 385
+		add_state_core = 378
+		add_state_core = 829
+		add_state_core = 379
+		add_state_core = 387
+		add_state_core = 797
+		add_state_core = 798
+	}
+}
+country_event = {# PSA comes back to Union
+	id = pacificstates.45
+	title = pacificstates.45.t
+	desc = pacificstates.45.d
+	picture = GFX_report_event_spain_civil_war_soldiers
+
+	is_triggered_only = yes
+
+	option = {
+		name = pacificstates.45.a
+
+		add_political_power = -100
+		add_state_core = 386
+		add_state_core = 385
+		add_state_core = 378
+		add_state_core = 829
+		add_state_core = 379
+		add_state_core = 387
+		add_state_core = 797
+		add_state_core = 798
+		annex_country = { target = CAL transfer_troops = no }
+	}
+}
+##################################
+##		Foreign Policy			##
+##################################
+country_event = {# PSA wants to join Entente
+	id = pacificstates.53
+	title = pacificstates.53.t
+	desc = pacificstates.53.d
+	picture = GFX_report_event_spain_civil_war_soldiers
+
+	is_triggered_only = yes
+
+	option = {
+		name = pacificstates.53.a
+		ai_chance = {
+			factor = 100
+		}
+		add_political_power = 40
+		add_to_faction = CAL
+	}
+	option = {
+		name = pacificstates.53.b
+		ai_chance = {
+			factor = 0
+		}
+		add_political_power = -40
+	}
+}
+country_event = {# PSA wants an alliance with us (GER)
+	id = pacificstates.50
+	title = pacificstates.50.t
+	desc = pacificstates.50.d
+	picture = GFX_report_event_spain_civil_war_soldiers
+
+	is_triggered_only = yes
+
+	option = {
+		name = pacificstates.50.a
+		ai_chance = {
+			factor = 99
+		}
+		add_to_faction = CAL
+		add_opinion_modifier = { target = USA modifier = cal_accepted } # -50
+	}
+	option = {
+		name = pacificstates.50.b
+		ai_chance = {
+			factor = 1
+		}
+	}	
+}
+country_event = {# PSA wants an alliance with us (RUS)
+	id = pacificstates.51
+	title = pacificstates.51.t
+	desc = pacificstates.51.d
+	picture = GFX_report_event_spain_civil_war_soldiers
+
+	is_triggered_only = yes
+
+	option = {
+		name = pacificstates.51.a
+		add_to_faction = CAL
+		add_opinion_modifier = { target = USA modifier = cal_accepted } # -50
+	}
+	option = {
+		name = pacificstates.51.b
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+country_event = {# PSA wants an alliance with us (JAP)
+	id = pacificstates.52
+	title = pacificstates.52.t
+	desc = pacificstates.52.d
+	picture = GFX_report_event_spain_civil_war_soldiers
+
+	is_triggered_only = yes
+
+	option = {
+		name = pacificstates.52.a
+		add_to_faction = CAL
+		add_opinion_modifier = { target = USA modifier = cal_accepted } # -50
+	}
+	option = {
+		name = pacificstates.52.b
+		ai_chance = {
+			factor = 1
+		}
+	}	
+}
+country_event = {# The Treaty of Sacramento
+	id = pacificstates.57
+	title = pacificstates.57.t
+	desc = pacificstates.57.d
+	picture = GFX_report_event_spain_civil_war_soldiers
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = USA
+		has_war_with = CAL
+		CAL = {
+			owns_state = 378
+			owns_state = 379
+			owns_state = 387
+			owns_state = 798
+		}
+		USA = {
+			NOT = {
+				owns_state = 377
+				owns_state = 380
+			}
+		}
+		NOT = {
+			CAL = {
+				OR = {
+				is_in_faction_with = GER
+				is_in_faction_with = CAN
+				is_in_faction_with = JAP
+				is_in_faction_with = RUS
+				}
+			}
+			is_subject = yes
+			CAL = { is_subject = yes }
+		}
+	}
+	mean_time_to_happen = {
+		days = 12
+	}
+
+	option = {
+		name = pacificstates.57.a
+		ai_chance = {
+			factor = 99
+		}
+		CAL = { country_event = { id = pacificstates.54 } }
+		add_political_power = -40
+	}
+	option = {
+		name = pacificstates.57.b
+
+		ai_chance = {
+			factor = 1
+		}
+
+		add_political_power = -100
+	}
+}
+country_event = {# The Treaty of Sacramento
+	id = pacificstates.54
+	title = pacificstates.54.t
+	desc = pacificstates.54.d
+	picture = GFX_report_event_spain_civil_war_soldiers
+
+	is_triggered_only = yes
+
+	option = {
+		name = pacificstates.54.a
+		ai_chance = {
+			factor = 100
+		}
+		add_political_power = 100
+		set_country_flag = treaty_sacramento
+		USA = { white_peace_with_ROOT = yes }
+		diplomatic_relation = { country = USA relation = non_aggression_pact }
+		USA = { country_event = { id = pacificstates.55 days = 1 } }
+		add_state_core = 377
+		add_state_core = 834
+		add_state_core = 380
+		add_state_core = 379
+		add_state_core = 387
+		USA = {
+			if = {
+				limit = { USA = { owns_state = 377 }}
+				transfer_state = 377
+			}
+			if = {
+				limit = { USA = { owns_state = 834 }}
+				transfer_state = 834
+			}
+			if = {
+				limit = { USA = { owns_state = 380 }}
+				transfer_state = 380
+			}
+			if = {
+				limit = { USA = { owns_state = 379 }}
+				transfer_state = 379
+			}
+			if = {
+				limit = { USA = { owns_state = 387 }}
+				transfer_state = 387
+			}				
+		}		
+	}
+	option = {
+		name = pacificstates.54.b
+		ai_chance = {
+			factor = 0
+		}
+		add_political_power = -40
+		USA = { country_event = { id = pacificstates.56 } }
+		add_state_core = 377
+		add_state_core = 834
+		add_state_core = 380
+		add_state_core = 379
+		add_state_core = 387
+	}
+}
+country_event = {# The Treaty of Sacramento
+	id = pacificstates.55
+	title = pacificstates.55.t
+	desc = pacificstates.55.d
+	picture = GFX_report_event_spain_civil_war_soldiers
+
+	is_triggered_only = yes
+
+	option = {
+		name = pacificstates.55.a
+		add_opinion_modifier = { target = CAL modifier = CAL_sacramento_treaty }
+		CAL = { add_opinion_modifier = { target = ROOT modifier = CAL_sacramento_treaty } }
+		add_political_power = -40
+		remove_state_claim = 377
+		remove_state_claim = 834
+		remove_state_claim = 380
+		remove_state_claim = 379
+		remove_state_claim = 387		
+		CAL = {
+			if = {
+				limit = { USA = { owns_state = 377 }}
+				transfer_state = 377
+			}
+			if = {
+				limit = { USA = { owns_state = 834 }}
+				transfer_state = 834
+			}
+			if = {
+				limit = { USA = { owns_state = 380 }}
+				transfer_state = 380
+			}
+			if = {
+				limit = { USA = { owns_state = 379 }}
+				transfer_state = 379
+			}
+			if = {
+				limit = { USA = { owns_state = 387 }}
+				transfer_state = 387
+			}				
+		}
+		set_country_flag = treaty_sacramento
+		
+	}
+}
+country_event = { # PSA refused to sign peace treaty!
+	id = pacificstates.56
+	title = pacificstates.56.t
+	desc = pacificstates.56.d
+	picture = GFX_report_event_spain_civil_war_soldiers
+
+	is_triggered_only = yes
+
+	option = {
+		name = pacificstates.56.a
+		add_opinion_modifier = { target = CAL modifier = CAL_no_sacramento_treaty }
+		CAL = { add_opinion_modifier = { target = ROOT modifier = CAL_no_sacramento_treaty } }
+		add_political_power = -20
+	}
+}
+##################################
+#	Pacific Elections			 #
+##################################
+country_event = {# The Pacific States of America Election
+	id = pacificstates.100
+	title = pacificstates.100.t
+	desc = pacificstates.100.d
+	picture = GFX_report_event_spain_civil_war_soldiers
+
+	is_triggered_only = yes
+
+	option = {# Upton Sinclair - Pacific Social democratic party
+		name = pacificstates.100.a
+		ai_chance = {
+			factor = 25
+		}
+		add_popularity = {
+			ideology = social_democrat
+			popularity = 0.2
+		}
+		set_politics = { ruling_party = social_democrat elections_allowed = no }
+		retire_country_leader = yes
+		create_country_leader = {
+			name = "Upton Sinclair"
+			desc = "UPTON_SINCLAIR_DESC"
+			picture = "Portrait_CAL_upton_sinclair.tga"
+			expire = "1965.1.1"
+			ideology = social_democrat_subtype
+			traits = {}
+		}
+		hidden_effect = {
+			remove_ideas_with_trait = head_of_government
+			remove_ideas_with_trait = foreign_minister
+			remove_ideas_with_trait = economy_minister
+			remove_ideas_with_trait = security_minister
+		}
+		add_ideas = {
+			CAL_Culbert_Levy_Olson_hog_sde
+			CAL_Edwin_T_Layton_for_sde
+			CAL_Nan_Wood_Honeyman_eco_sde
+			CAL_John_Ford_sec_sde
+		}
+		hidden_effect = { country_event = { id = pacificstates.101 days = 1480 }}
+	}
+	option = {# Clarence Martin - Progressive
+		name = pacificstates.100.b
+		ai_chance = {
+			factor = 25
+		}
+		add_popularity = {
+			ideology = social_liberal
+			popularity = 0.2
+		}
+		set_politics = { ruling_party = social_liberal elections_allowed = no }
+		retire_country_leader = yes
+		create_country_leader = {
+			name = "Clarence D. Martin"
+			desc = "CLARENCE_D_MARTIN_DESC"
+			picture = "Portrait_CAL_clarence_martin.tga"
+			expire = "1965.1.1"
+			ideology = social_liberal_subtype
+			traits = {}
+		}
+		hidden_effect = {
+			remove_ideas_with_trait = head_of_government
+			remove_ideas_with_trait = foreign_minister
+			remove_ideas_with_trait = economy_minister
+			remove_ideas_with_trait = security_minister
+		}
+		add_ideas = {
+			CAL_Charles_L_Smith_hog_sli
+			CAL_Howard_Belton_for_sli
+			CAL_Henry_J_Kaiser_eco_sli
+			CAL_Hiram_Johnson_sec_sli
+		}
+		hidden_effect = { country_event = { id = pacificstates.101 days = 1480 }}
+	}
+	option = {# Howard Hughes - Republican
+		name = pacificstates.100.c
+		ai_chance = {
+			factor = 34
+		}
+		add_popularity = {
+			ideology = market_liberal
+			popularity = 0.2
+		}
+		set_politics = { ruling_party = market_liberal elections_allowed = no }
+		create_country_leader = {
+			name = "Howard Hughes"
+			desc = "POLITICS_HOWARD_HUGHES_DESC"
+			picture = "Portrait_CAL_howard_hughes.tga"
+			expire = "1965.1.1"
+			ideology = market_liberal_subtype
+			traits = {
+			}
+		}		
+		hidden_effect = {
+		remove_ideas_with_trait = head_of_government
+		remove_ideas_with_trait = foreign_minister
+		remove_ideas_with_trait = economy_minister
+		}
+		add_ideas = {
+			CAL_Arthur_B_Langlie_hog_mli
+			CAL_William_Lon_Johnson_for_mli
+			CAL_Walt_Disney_eco_mli
+			CAL_Isaac_Homer_Van_Winkle_sec_mli
+		}
+		hidden_effect = { country_event = { id = pacificstates.101 days = 1480 }}
+	}
+	option = {# Henry Arnold - Ursine
+		name = pacificstates.100.e
+		ai_chance = {
+			factor = 25
+		}
+		add_popularity = {
+			ideology = social_conservative
+			popularity = 0.2
+		}
+		set_politics = { ruling_party = social_conservative elections_allowed = no }
+		retire_country_leader = yes
+		create_country_leader = {
+			name = "Henry Arnold Jr."
+			desc = "HENRY_ARNOLD_DESC"
+			picture = "Portrait_CAL_Henry_Arnold.tga"
+			expire = "1965.1.1"
+			ideology = social_conservative_subtype
+			traits = {}
+		}
+		hidden_effect = {
+			remove_ideas_with_trait = head_of_government
+			remove_ideas_with_trait = foreign_minister
+			remove_ideas_with_trait = economy_minister
+			remove_ideas_with_trait = security_minister
+		}
+		add_ideas = {
+			CAL_William_Randolph_Hearst_hog_sco
+			CAL_Friend_W_Richardson_for_sco
+			CAL_Donald_Douglas_eco_sco
+			CAL_James_Jesus_Angleton_sec_sco
+		}
+		hidden_effect = { country_event = { id = pacificstates.101 days = 1480 }}
+	}		
+}
+country_event = {# The Pacific States of America Election
+	id = pacificstates.101
+	title = pacificstates.101.t
+	desc = pacificstates.101.d
+	picture = GFX_report_event_spain_civil_war_soldiers
+
+	is_triggered_only = yes
+
+	option = {# Upton Sinclair - Pacific Social democratic party
+		name = pacificstates.101.a
+		ai_chance = {
+			factor = 25
+		}
+		add_popularity = {
+			ideology = social_democrat
+			popularity = 0.2
+		}
+		set_politics = { ruling_party = social_democrat elections_allowed = no }
+		retire_country_leader = yes
+		create_country_leader = {
+			name = "Upton Sinclair"
+			desc = "UPTON_SINCLAIR_DESC"
+			picture = "Portrait_CAL_upton_sinclair.tga"
+			expire = "1965.1.1"
+			ideology = social_democrat_subtype
+			traits = {}
+		}
+		hidden_effect = {
+			remove_ideas_with_trait = head_of_government
+			remove_ideas_with_trait = foreign_minister
+			remove_ideas_with_trait = economy_minister
+			remove_ideas_with_trait = security_minister
+		}
+		add_ideas = {
+			CAL_Culbert_Levy_Olson_hog_sde
+			CAL_Edwin_T_Layton_for_sde
+			CAL_Nan_Wood_Honeyman_eco_sde
+			CAL_John_Ford_sec_sde
+		}
+		hidden_effect = { country_event = { id = pacificstates.102 days = 1480 }}
+	}
+	option = {# Clarence Martin - Progressive
+		name = pacificstates.101.b
+		ai_chance = {
+			factor = 25
+		}
+		add_popularity = {
+			ideology = social_liberal
+			popularity = 0.2
+		}
+		set_politics = { ruling_party = social_liberal elections_allowed = no }
+		retire_country_leader = yes
+		create_country_leader = {
+			name = "Clarence D. Martin"
+			desc = "CLARENCE_D_MARTIN_DESC"
+			picture = "Portrait_CAL_clarence_martin.tga"
+			expire = "1965.1.1"
+			ideology = social_liberal_subtype
+			traits = {}
+		}
+		hidden_effect = {
+			remove_ideas_with_trait = head_of_government
+			remove_ideas_with_trait = foreign_minister
+			remove_ideas_with_trait = economy_minister
+			remove_ideas_with_trait = security_minister
+		}
+		add_ideas = {
+			CAL_Charles_L_Smith_hog_sli
+			CAL_Howard_Belton_for_sli
+			CAL_Henry_J_Kaiser_eco_sli
+			CAL_Hiram_Johnson_sec_sli
+		}
+		hidden_effect = { country_event = { id = pacificstates.102 days = 1480 }}
+	}
+	option = {# Howard Hughes - Republican
+		name = pacificstates.101.c
+		ai_chance = {
+			factor = 34
+		}
+		add_popularity = {
+			ideology = market_liberal
+			popularity = 0.2
+		}
+		set_politics = { ruling_party = market_liberal elections_allowed = no }
+		create_country_leader = {
+			name = "Howard Hughes"
+			desc = "POLITICS_HOWARD_HUGHES_DESC"
+			picture = "Portrait_CAL_howard_hughes.tga"
+			expire = "1965.1.1"
+			ideology = market_liberal_subtype
+			traits = {
+			}
+		}		
+		hidden_effect = {
+		remove_ideas_with_trait = head_of_government
+		remove_ideas_with_trait = foreign_minister
+		remove_ideas_with_trait = economy_minister
+		}
+		add_ideas = {
+			CAL_Arthur_B_Langlie_hog_mli
+			CAL_William_Lon_Johnson_for_mli
+			CAL_Walt_Disney_eco_mli
+			CAL_Isaac_Homer_Van_Winkle_sec_mli
+		}
+		hidden_effect = { country_event = { id = pacificstates.102 days = 1480 }}
+	}
+	option = {# Henry Arnold - Ursine
+		name = pacificstates.101.e
+		ai_chance = {
+			factor = 25
+		}
+		add_popularity = {
+			ideology = social_conservative
+			popularity = 0.2
+		}
+		set_politics = { ruling_party = social_conservative elections_allowed = no }
+		retire_country_leader = yes
+		create_country_leader = {
+			name = "Henry Arnold Jr."
+			desc = "HENRY_ARNOLD_DESC"
+			picture = "Portrait_CAL_Henry_Arnold.tga"
+			expire = "1965.1.1"
+			ideology = social_conservative_subtype
+			traits = {}
+		}
+		hidden_effect = {
+			remove_ideas_with_trait = head_of_government
+			remove_ideas_with_trait = foreign_minister
+			remove_ideas_with_trait = economy_minister
+			remove_ideas_with_trait = security_minister
+		}
+		add_ideas = {
+			CAL_William_Randolph_Hearst_hog_sco
+			CAL_Friend_W_Richardson_for_sco
+			CAL_Donald_Douglas_eco_sco
+			CAL_James_Jesus_Angleton_sec_sco
+		}
+		hidden_effect = { country_event = { id = pacificstates.102 days = 1480 }}
+	}	
+}
+country_event = {# The Pacific States of America Election
+	id = pacificstates.102
+	title = pacificstates.102.t
+	desc = pacificstates.102.d
+	picture = GFX_report_event_spain_civil_war_soldiers
+
+	is_triggered_only = yes
+
+	option = {# Upton Sinclair - Pacific Social democratic party
+		name = pacificstates.102.a
+		ai_chance = {
+			factor = 25
+		}
+		add_popularity = {
+			ideology = social_democrat
+			popularity = 0.2
+		}
+		set_politics = { ruling_party = social_democrat elections_allowed = no }
+		retire_country_leader = yes
+		create_country_leader = {
+			name = "Upton Sinclair"
+			desc = "UPTON_SINCLAIR_DESC"
+			picture = "Portrait_CAL_upton_sinclair.tga"
+			expire = "1965.1.1"
+			ideology = social_democrat_subtype
+			traits = {}
+		}
+		hidden_effect = {
+			remove_ideas_with_trait = head_of_government
+			remove_ideas_with_trait = foreign_minister
+			remove_ideas_with_trait = economy_minister
+			remove_ideas_with_trait = security_minister
+		}
+		add_ideas = {
+			CAL_Culbert_Levy_Olson_hog_sde
+			CAL_Edwin_T_Layton_for_sde
+			CAL_Nan_Wood_Honeyman_eco_sde
+			CAL_John_Ford_sec_sde
+		}
+		hidden_effect = { country_event = { id = pacificstates.103 days = 1480 }}
+	}
+	option = {# Clarence Martin - Progressive
+		name = pacificstates.102.b
+		ai_chance = {
+			factor = 25
+		}
+		add_popularity = {
+			ideology = social_liberal
+			popularity = 0.2
+		}
+		set_politics = { ruling_party = social_liberal elections_allowed = no }
+		retire_country_leader = yes
+		create_country_leader = {
+			name = "Clarence D. Martin"
+			desc = "CLARENCE_D_MARTIN_DESC"
+			picture = "Portrait_CAL_clarence_martin.tga"
+			expire = "1965.1.1"
+			ideology = social_liberal_subtype
+			traits = {}
+		}
+		hidden_effect = {
+			remove_ideas_with_trait = head_of_government
+			remove_ideas_with_trait = foreign_minister
+			remove_ideas_with_trait = economy_minister
+			remove_ideas_with_trait = security_minister
+		}
+		add_ideas = {
+			CAL_Charles_L_Smith_hog_sli
+			CAL_Howard_Belton_for_sli
+			CAL_Henry_J_Kaiser_eco_sli
+			CAL_Hiram_Johnson_sec_sli
+		}
+		hidden_effect = { country_event = { id = pacificstates.103 days = 1480 }}
+	}
+	option = {# Howard Hughes - Republican
+		name = pacificstates.102.c
+		ai_chance = {
+			factor = 34
+		}
+		add_popularity = {
+			ideology = market_liberal
+			popularity = 0.2
+		}
+		set_politics = { ruling_party = market_liberal elections_allowed = no }
+		create_country_leader = {
+			name = "Howard Hughes"
+			desc = "POLITICS_HOWARD_HUGHES_DESC"
+			picture = "Portrait_CAL_howard_hughes.tga"
+			expire = "1965.1.1"
+			ideology = market_liberal_subtype
+			traits = {
+			}
+		}		
+		hidden_effect = {
+		remove_ideas_with_trait = head_of_government
+		remove_ideas_with_trait = foreign_minister
+		remove_ideas_with_trait = economy_minister
+		}
+		add_ideas = {
+			CAL_Arthur_B_Langlie_hog_mli
+			CAL_William_Lon_Johnson_for_mli
+			CAL_Walt_Disney_eco_mli
+			CAL_Isaac_Homer_Van_Winkle_sec_mli
+		}
+		hidden_effect = { country_event = { id = pacificstates.103 days = 1480 }}
+	}
+	option = {# Henry Arnold - Ursine
+		name = pacificstates.102.e
+		ai_chance = {
+			factor = 25
+		}
+		add_popularity = {
+			ideology = social_conservative
+			popularity = 0.2
+		}
+		set_politics = { ruling_party = social_conservative elections_allowed = no }
+		retire_country_leader = yes
+		create_country_leader = {
+			name = "Henry Arnold Jr."
+			desc = "HENRY_ARNOLD_DESC"
+			picture = "Portrait_CAL_Henry_Arnold.tga"
+			expire = "1965.1.1"
+			ideology = social_conservative_subtype
+			traits = {}
+		}
+		hidden_effect = {
+			remove_ideas_with_trait = head_of_government
+			remove_ideas_with_trait = foreign_minister
+			remove_ideas_with_trait = economy_minister
+			remove_ideas_with_trait = security_minister
+		}
+		add_ideas = {
+			CAL_William_Randolph_Hearst_hog_sco
+			CAL_Friend_W_Richardson_for_sco
+			CAL_Donald_Douglas_eco_sco
+			CAL_James_Jesus_Angleton_sec_sco
+		}
+		hidden_effect = { country_event = { id = pacificstates.103 days = 1480 }}
+	}	
+}
+country_event = {# The Pacific States of America Election
+	id = pacificstates.103
+	title = pacificstates.103.t
+	desc = pacificstates.103.d
+	picture = GFX_report_event_spain_civil_war_soldiers
+
+	is_triggered_only = yes
+
+	option = {# Upton Sinclair - Pacific Social democratic party
+		name = pacificstates.103.a
+		ai_chance = {
+			factor = 25
+		}
+		add_popularity = {
+			ideology = social_democrat
+			popularity = 0.2
+		}
+		set_politics = { ruling_party = social_democrat elections_allowed = no }
+		retire_country_leader = yes
+		create_country_leader = {
+			name = "Upton Sinclair"
+			desc = "UPTON_SINCLAIR_DESC"
+			picture = "Portrait_CAL_upton_sinclair.tga"
+			expire = "1965.1.1"
+			ideology = social_democrat_subtype
+			traits = {}
+		}
+		hidden_effect = {
+			remove_ideas_with_trait = head_of_government
+			remove_ideas_with_trait = foreign_minister
+			remove_ideas_with_trait = economy_minister
+			remove_ideas_with_trait = security_minister
+		}
+		add_ideas = {
+			CAL_Culbert_Levy_Olson_hog_sde
+			CAL_Edwin_T_Layton_for_sde
+			CAL_Nan_Wood_Honeyman_eco_sde
+			CAL_John_Ford_sec_sde
+		}
+	}
+	option = {# Clarence Martin - Progressive
+		name = pacificstates.103.b
+		ai_chance = {
+			factor = 25
+		}
+		add_popularity = {
+			ideology = social_liberal
+			popularity = 0.2
+		}
+		set_politics = { ruling_party = social_liberal elections_allowed = no }
+		retire_country_leader = yes
+		create_country_leader = {
+			name = "Clarence D. Martin"
+			desc = "CLARENCE_D_MARTIN_DESC"
+			picture = "Portrait_CAL_clarence_martin.tga"
+			expire = "1965.1.1"
+			ideology = social_liberal_subtype
+			traits = {}
+		}
+		hidden_effect = {
+			remove_ideas_with_trait = head_of_government
+			remove_ideas_with_trait = foreign_minister
+			remove_ideas_with_trait = economy_minister
+			remove_ideas_with_trait = security_minister
+		}
+		add_ideas = {
+			CAL_Charles_L_Smith_hog_sli
+			CAL_Howard_Belton_for_sli
+			CAL_Henry_J_Kaiser_eco_sli
+			CAL_Hiram_Johnson_sec_sli
+		}
+	}
+	option = {# Howard Hughes - Republican
+		name = pacificstates.103.c
+		ai_chance = {
+			factor = 34
+		}
+		add_popularity = {
+			ideology = market_liberal
+			popularity = 0.2
+		}
+		set_politics = { ruling_party = market_liberal elections_allowed = no }
+		create_country_leader = {
+			name = "Howard Hughes"
+			desc = "POLITICS_HOWARD_HUGHES_DESC"
+			picture = "Portrait_CAL_howard_hughes.tga"
+			expire = "1965.1.1"
+			ideology = market_liberal_subtype
+			traits = {
+			}
+		}		
+		hidden_effect = {
+		remove_ideas_with_trait = head_of_government
+		remove_ideas_with_trait = foreign_minister
+		remove_ideas_with_trait = economy_minister
+		}
+		add_ideas = {
+			CAL_Arthur_B_Langlie_hog_mli
+			CAL_William_Lon_Johnson_for_mli
+			CAL_Walt_Disney_eco_mli
+			CAL_Isaac_Homer_Van_Winkle_sec_mli
+		}
+	}
+	option = {# Henry Arnold - Ursine
+		name = pacificstates.103.e
+		ai_chance = {
+			factor = 25
+		}
+		add_popularity = {
+			ideology = social_conservative
+			popularity = 0.2
+		}
+		set_politics = { ruling_party = social_conservative elections_allowed = no }
+		retire_country_leader = yes
+		create_country_leader = {
+			name = "Henry Arnold Jr."
+			desc = "HENRY_ARNOLD_DESC"
+			picture = "Portrait_CAL_Henry_Arnold.tga"
+			expire = "1965.1.1"
+			ideology = social_conservative_subtype
+			traits = {}
+		}
+		hidden_effect = {
+			remove_ideas_with_trait = head_of_government
+			remove_ideas_with_trait = foreign_minister
+			remove_ideas_with_trait = economy_minister
+			remove_ideas_with_trait = security_minister
+		}
+		add_ideas = {
+			CAL_William_Randolph_Hearst_hog_sco
+			CAL_Friend_W_Richardson_for_sco
+			CAL_Donald_Douglas_eco_sco
+			CAL_James_Jesus_Angleton_sec_sco
+		}
+	}	
+}

@@ -1,0 +1,56 @@
+##############
+# Yunnan
+##############
+ideas = {
+
+##############
+# Country ideas
+##############
+	
+	country = {
+	
+		Yunnan_Raids = {
+			allowed = {always = no}
+			modifier = { consumer_goods_factor = -0.1 }
+			removal_cost = -1
+		}
+
+		Yunnan_Raids2 = {
+			allowed = {always = no}
+			modifier = { consumer_goods_factor = -0.1 }
+			removal_cost = -1
+		}
+
+		Yunnan_Raids3 = {
+			allowed = {always = no}
+			modifier = { consumer_goods_factor = -0.1 }
+			removal_cost = -1
+		}
+
+		Ransom_Yun = {
+			allowed = {always = no}
+			modifier = { consumer_goods_factor = 0.05 }
+			removal_cost = -1
+		}
+
+		Ransom_YUN_paid = {
+			allowed = {always = no}
+			modifier = { consumer_goods_factor = -0.05 }
+			removal_cost = -1
+		}
+
+		Republican_Refugees = {
+			allowed = {always = no}
+			modifier = { consumer_goods_factor = -0.1 }
+			removal_cost = -1
+		}
+
+		CHI_funded = {
+			allowed = {always = no}
+			modifier = { consumer_goods_factor = -0.1 industrial_capacity_factory = 0.1 }
+			removal_cost = -1
+		}
+	}
+}
+
+

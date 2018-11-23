@@ -1,0 +1,31 @@
+
+state={
+	id=309
+	name="STATE_309"
+	manpower = 214999
+
+	resources={
+		aluminium=12
+	}	
+	
+	state_category = rural
+
+	history={
+		owner = HOL
+		victory_points = {
+			12828 5 
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 2
+			12828 = {
+				naval_base = 2
+			}
+		}
+		add_core_of = HOL
+	}
+
+	provinces={
+		1928 10906 12828 
+	}
+}

@@ -1,0 +1,48 @@
+﻿###########################
+# 	  Chinese Events	  #
+###########################
+
+add_namespace = china
+
+# 19th_National Congress
+news_event = {
+	id = china.1
+	title = china.1.t
+	desc = china.1.d
+	picture = GFX_china_19th_national_congress
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = CHI
+		date > 2017.10.18
+		date < 2017.10.24
+	}
+	
+	option = {
+		name = china.1.a
+		add_stability = 0.05
+	}
+}
+
+# 90th PLA Anniversary
+news_event = {
+	id = china.2
+	title = china.2.t
+	desc = china.2.d
+	picture = GFX_china_90th_pla_anniversary
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = CHI
+		date > 2017.8.1
+		date < 2017.8.4
+	}
+	
+	option = {
+		name = china.2.a
+		add_war_support = 0.05
+	}
+}
+	

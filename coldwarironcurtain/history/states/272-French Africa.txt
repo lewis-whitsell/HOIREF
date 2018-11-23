@@ -1,0 +1,34 @@
+
+state={
+	id=272
+	name="STATE_272"
+	resources={
+		steel=6.000
+	}
+
+	history={
+		owner = SEN
+		victory_points = {
+			4948 5 
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 2
+			air_base = 2
+			4948 = {
+				naval_base = 2
+
+			}
+
+		}
+		add_core_of = SEN
+
+	}
+
+	provinces={
+		2100 4948 7972 8015 12710 12834 
+	}
+	manpower=2476637
+	buildings_max_level_factor=1.000
+	state_category=town
+}

@@ -1,0 +1,26 @@
+
+state={
+	id=823
+	name="STATE_823"
+	resources={
+		tungsten=2.000
+	}
+
+	history={
+		owner = DOC
+		add_core_of = DOC
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+
+		}
+
+	}
+
+	provinces={
+		7931 10883 12741 12824 
+	}
+	manpower=340948
+	buildings_max_level_factor=1.000
+	state_category=town
+}
